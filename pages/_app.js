@@ -1,5 +1,8 @@
 // import '../styles/globals.css';
 
+// add bootstrap css
+import 'bootstrap/dist/css/bootstrap.css';
+
 import { ApolloProvider } from '@apollo/client';
 import { useApollo } from '../lib/apolloClient';
 
