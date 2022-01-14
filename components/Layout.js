@@ -7,7 +7,7 @@ export const siteTitle = 'Ao Vua';
 
 export default function Layout({ children, home }) {
 	return (
-		<div>
+		<>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Ao Vua, Ba Vi" />
@@ -23,7 +23,7 @@ export default function Layout({ children, home }) {
 			<header>
 				{home ? (
 					<>
-						<NavBar home/>
+						<NavBar />
 					</>
 				) : (
 					<></>
@@ -31,6 +31,6 @@ export default function Layout({ children, home }) {
 			</header>
 			<main>{children}</main>
 			{!home && <div></div>}
-		</div>
+		</>
 	);
 }

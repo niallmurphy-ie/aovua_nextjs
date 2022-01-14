@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
+import HomePage from '../components/Homepage';
 
 export default function Home() {
 	return (
-		<div className="container-fluid">
+		<>
 			<Head>
 				<title>Create Next App</title>
 				<meta
@@ -15,8 +16,8 @@ export default function Home() {
 			</Head>
 
 			<Layout home>
-
+        <HomePage />
 			</Layout>
-		</div>
+		</>
 	);
 }

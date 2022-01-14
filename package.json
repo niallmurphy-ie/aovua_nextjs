@@ -17,7 +17,9 @@
     "react": "^18.0.0-rc.0",
     "react-bootstrap": "^2.1.1",
     "react-dom": "^18.0.0-rc.0",
-    "reactstrap": "^9.0.1"
+    "react-slick": "^0.28.1",
+    "reactstrap": "^9.0.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "8.6.0",
