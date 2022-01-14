@@ -12,7 +12,7 @@ import '../styles/mobile-menu.css';
 import '../styles/loading.css';
 import '../styles/hero.css';
 import '../styles/search-box.css';
-
+import '../styles/footer.css';
 
 // search date picker
 import 'react-datepicker/dist/react-datepicker.css';

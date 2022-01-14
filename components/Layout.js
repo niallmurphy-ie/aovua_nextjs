@@ -2,12 +2,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import NavBar from './header/NavBar';
+import Footer from './footer/Footer';
 
 export const siteTitle = 'Ao Vua';
 
 export default function Layout({ children, home }) {
 	return (
-		<>
+		<div className="App">
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Ao Vua, Ba Vi" />
@@ -31,6 +32,7 @@ export default function Layout({ children, home }) {
 			</header>
 			<main>{children}</main>
 			{!home && <div></div>}
-		</>
+			<Footer />
+		</div>
 	);
 }

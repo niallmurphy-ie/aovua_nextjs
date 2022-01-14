@@ -1,0 +1,318 @@
+/*==================================================
+#0.5 wpo-serch-area
+=====================================================*/
+.wpo-hero-style-2 .wpo-select-wrap {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.wpo-select-wrap {
+	-webkit-box-shadow: 0px 10px 40px 0px rgba(50, 50, 50, 0.1);
+	-moz-box-shadow: 0px 10px 40px 0px rgba(50, 50, 50, 0.1);
+	box-shadow: 0px 10px 40px 0px rgba(50, 50, 50, 0.1);
+	margin-top: -80px;
+	background: #fff;
+}
+
+.wpo-select-wrap-2 {
+	margin-top: -100px;
+}
+
+@media (max-width: 1200px) {
+	.wpo-select-wrap-2 {
+		margin-top: 30px;
+	}
+
+	.wpo-hero-style-2 .wpo-hero-text {
+		padding-top: 60px;
+	}
+}
+
+.wpo-select-area form {
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	right: -20px;
+	position: relative;
+}
+
+.wpo-select-area form input,
+.wpo-select-area form select,
+.wpo-select-area form .theme-btn-s2 {
+	width: 100%;
+	font-size: 20px;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 0;
+	color: #283a5e;
+	font-weight: 700;
+}
+.wpo-select-area form input {
+	padding-left: 0;
+}
+
+@media (max-width: 991px) {
+	.wpo-select-area form {
+		right: 0px;
+	}
+}
+@media (max-width: 767px) {
+	.wpo-select-area form input,
+	.wpo-select-area form select,
+	.wpo-select-area form .theme-btn-s2 {
+		height: 50px;
+		font-size: 12px;
+		/* font-size: 0.9375rem; */
+	}
+}
+
+.wpo-select-area form select {
+	border-radius: 70px 0 0 70px;
+	padding: 0 5px;
+	background: white;
+}
+
+.wpo-select-area form input:focus,
+.wpo-select-area form select:focus {
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #283a5e;
+}
+
+.select-sub {
+	margin-right: 20px;
+	position: relative;
+}
+.select-sub:first-child {
+	width: 230px;
+}
+.select-sub:nth-child(2) {
+	width: 230px;
+}
+.select-sub:last-child {
+	margin-right: 0;
+}
+.select-sub .fi:before {
+	font-size: 20px;
+}
+.input-group-addon {
+	background: none;
+	border: none;
+}
+.wpo-select-area form .theme-btn-s2 {
+	font-weight: 600;
+	color: #fff;
+	z-index: 1;
+	position: relative;
+	top: 10px;
+	right: 10px;
+	font-size: 15px;
+	width: 175px;
+}
+
+.wpo-select-area form .theme-btn-s2:focus {
+	outline: none;
+	border: none;
+}
+
+.wpo-select-area .nice-select {
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	padding-left: 0;
+}
+
+.wpo-select-area .nice-select span {
+	position: relative;
+	font-size: 20px;
+	color: #283a5e;
+	font-weight: 700;
+}
+.select-sub span {
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 20px;
+	font-size: 15px;
+	color: #687693;
+}
+.select-sub span i {
+	margin-right: 10px;
+}
+.wpo-select-area .select-sub:before {
+	position: absolute;
+	left: -30px;
+	top: 0;
+	width: 1px;
+	height: 70%;
+	background: #dddddd;
+	content: '';
+}
+.select-sub:first-child:before {
+	display: none;
+}
+.select-sub:last-child:before {
+	display: none;
+}
+.wpo-select-area input {
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+@media (max-width: 767px) {
+	.wpo-select-area .nice-select {
+		height: 50px;
+		line-height: 50px;
+	}
+}
+
+.wpo-select-area {
+	padding: 50px 20px 20px;
+}
+
+@media (max-width: 590px) {
+	.wpo-select-area {
+		padding: 20px 2px;
+	}
+}
+
+.nice-select:after {
+	right: 0px;
+}
+
+.react-datepicker button span {
+	margin-bottom: 0;
+}
+
+.react-datepicker button:focus {
+	outline: none;
+}
+
+.wpo-select-area .input-group-addon {
+	background: none;
+	border: none;
+	position: absolute;
+	right: 0;
+	top: 8px;
+}
+
+.wpo-select-area ::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: #283a5e;
+}
+
+.wpo-select-area ::-moz-placeholder {
+	/* Firefox 19+ */
+
+	color: #283a5e;
+}
+
+.wpo-select-area :-ms-input-placeholder {
+	/* IE 10+ */
+	color: #283a5e;
+}
+
+.wpo-select-area :-moz-placeholder {
+	/* Firefox 18- */
+
+	color: #283a5e;
+}
+.datepicker table tr td.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active:hover {
+	background-image: linear-gradient(to bottom, #00d690, #00d690);
+}
+.datepicker table tr td.day.focused,
+.datepicker table tr td.day:hover {
+	background: #00d690;
+	color: #fff;
+}
+
+@media (max-width: 1200px) {
+	.wpo-select-area .nice-select span {
+		font-size: 20px;
+	}
+	.select-sub span {
+		font-size: 15px;
+	}
+	.wpo-select-area form .theme-btn-s2 {
+		font-size: 15px;
+	}
+	.select-sub:first-child {
+		width: 145px;
+	}
+	.select-sub:nth-child(2) {
+		width: 160px;
+	}
+}
+
+@media (max-width: 992px) {
+	.select-sub span {
+		font-size: 10px;
+	}
+	.select-sub .fi:before {
+		font-size: 14px;
+	}
+	.wpo-select-area form input,
+	.wpo-select-area form select {
+		font-size: 14px;
+	}
+	.select-sub:first-child {
+		width: 125px;
+	}
+	.select-sub:nth-child(2) {
+		width: 125px;
+	}
+	.wpo-select-area .nice-select span {
+		font-size: 15px;
+	}
+	.wpo-select-area .select-sub:before {
+		display: none;
+	}
+	.hero-style-1 {
+		margin: 0;
+	}
+}
+@media (max-width: 767px) {
+	.wpo-select-area form {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+	.wpo-select-wrap {
+		margin-top: 0;
+		padding: 20px;
+	}
+	.wpo-select-section {
+		padding-top: 80px;
+	}
+}
+@media (max-width: 550px) {
+	.select-sub {
+		width: 100%;
+		margin-bottom: 30px;
+		border-bottom: 1px solid #ddd;
+	}
+	.select-sub:first-child {
+		width: 100%;
+	}
+	.select-sub:nth-child(2) {
+		width: 100%;
+	}
+	.select-sub:last-child {
+		margin-left: 20px;
+		border-bottom: 0;
+	}
+}
+
+.wpo-select-section-2 .wpo-select-wrap,
+.wpo-select-section-3 .wpo-select-wrap {
+	margin-top: 0;
+}
+
+.wpo-select-section-2,
+.wpo-select-section-3 {
+	padding-top: 100px;
+}

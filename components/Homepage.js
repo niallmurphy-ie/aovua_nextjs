@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Hero from './main/Hero';
-// import SearchSection from '../../components/SearchSection';
+import Search from './main/Search';
 // import About2 from '../../components/about2';
 // import Destination2 from '../../components/Destination2';
 // import RoomSection from '../../components/RoomSection';
@@ -35,8 +35,8 @@ const HomePage = () => {
 				heroClass={'hero-style-2'}
 				heroImages={homepageData.HeroImages}
 			/>
-			{/* <SearchSection />
-			<About2
+			<Search />
+			{/*<About2
 				greetingMessage={homepageData.Greeting}
 				greetingImage={homepageData.GreetingImage}
 			/>
