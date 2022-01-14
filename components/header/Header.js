@@ -2,21 +2,22 @@ import React from 'react';
 import Logo from '../../public/images/logo.png';
 import Link from 'next/link';
 import Image from 'next/image';
-// import MobileMenu from '../../components/MobileMenu';
+import MobileMenu from './MobileMenu';
 import { VietnameseMenu } from '../../utils/menu';
 
-import './Header.module.css';
 import { MenuItems } from './MenuItems';
 
-const Header = () => {
+const Header = ({ home }) => {
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
 
 	const menu = VietnameseMenu();
 
+	const parentStyle = home ? 'header-home middle-header' : 'middle-header';
+
 	return (
-		<div className="middle-header">
+		<div className={parentStyle}>
 			<div className="header-style-2">
 				<div className="container-fluid">
 					<div className="header-content">
@@ -52,7 +53,7 @@ const Header = () => {
 								</div>
 							</div>
 							<div className="col-md-2 col-sm-2 col-2">
-								{/* <MobileMenu /> */}
+								<MobileMenu />
 							</div>
 						</div>
 

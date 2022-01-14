@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 
-const NavBar = () => {
+const NavBar = ({ home }) => {
 	const [scroll, setScroll] = React.useState(0);
 
 	const handleScroll = () => setScroll(document.documentElement.scrollTop);
@@ -18,9 +18,9 @@ const NavBar = () => {
 
 	return (
 		<div className={className}>
-			<Header />
+			<Header home />
 		</div>
 	);
-}
+};
 
 export default NavBar;

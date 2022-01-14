@@ -23,7 +23,7 @@ export default function Layout({ children, home }) {
 			<header>
 				{home ? (
 					<>
-						<NavBar />
+						<NavBar home/>
 					</>
 				) : (
 					<></>
