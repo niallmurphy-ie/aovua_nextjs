@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Hero from './main/Hero';
-import Search from './main/Search';
+import Hero from '../main/Hero';
+import Search from '../main/Search';
 // import About2 from '../../components/about2';
 // import Destination2 from '../../components/Destination2';
 // import RoomSection from '../../components/RoomSection';
@@ -9,8 +9,8 @@ import Search from './main/Search';
 // import LatestNewsSection from '../../components/LatestNewsSection';
 // import Scrollbar from '../../components/scrollbar';
 import { useQuery } from '@apollo/client';
-import { HOMEPAGE } from '../lib/queries';
-import Loading from '../components/Loading';
+import { HOMEPAGE } from '../../lib/queries';
+import Loading from '../Loading';
 
 const HomePage = () => {
 	// States
@@ -26,8 +26,6 @@ const HomePage = () => {
 
 	if (homepage.loading) return <Loading />;
 	if (homepage.error) return <p>Error</p>;
-
-	console.log(homepage);
 
 	return (
 		<>

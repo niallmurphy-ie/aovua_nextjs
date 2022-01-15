@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Logo from '../../public/images/logo.png';
 import ft1 from '../../public/images/images/footer/img-1.jpg';
 import ft2 from '../../public/images/images/footer/img-2.jpg';
-import { FaFacebookF } from 'react-icons/fa';
+// import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = (props) => {
 	const ClickHandler = () => {
@@ -32,7 +32,7 @@ const Footer = (props) => {
 										<Link onClick={ClickHandler} href="/">
 											<a>
 												{/* <i className="ti-facebook"></i> */}
-												<FaFacebookF />
+												{/* <FaFacebookF /> */}
 											</a>
 										</Link>
 									</li>
