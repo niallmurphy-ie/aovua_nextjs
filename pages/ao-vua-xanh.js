@@ -20,11 +20,6 @@ export default function AoVua({ location }) {
 		setPageTitle(location.Name);
 	}, [location]);
 
-	const breadcrumb = {
-		url: '/diadiem',
-		name: 'Địa điểm',
-	};
-
 	return (
 		<>
 			<Head>
@@ -37,7 +32,7 @@ export default function AoVua({ location }) {
 			</Head>
 
 			<Layout home={false}>
-				<Location locationData={locationData} breadcrumb={breadcrumb} />
+				<Location locationData={locationData} />
 			</Layout>
 		</>
 	);

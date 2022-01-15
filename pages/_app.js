@@ -18,6 +18,7 @@ import '../styles/search-box.css';
 import '../styles/footer.css';
 import '../styles/about.css';
 import '../styles/video.css';
+import '../styles/blog.css';
 
 // search date picker
 import 'react-datepicker/dist/react-datepicker.css';

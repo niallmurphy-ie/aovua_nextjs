@@ -3,8 +3,13 @@ import PageTitle from '../main/PageTitle';
 import Loading from '../Loading';
 // import ServiceSingle from '../../components/ServiceSingle';
 
-const LocationPage = ({ locationData, breadcrumb }) => {
+const LocationPage = ({ locationData }) => {
 	if (!locationData) return <Loading />;
+
+	const breadcrumb = {
+		url: '/diadiem',
+		name: 'Địa điểm',
+	};
 
 	return (
 		<>
