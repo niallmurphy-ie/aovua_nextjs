@@ -1,3 +1,5 @@
+// App + Font
+import '../styles/global.css';
 // slick
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -5,8 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 // add bootstrap css
 import 'bootstrap/dist/css/bootstrap.css';
 
-// App + Font
-import '../styles/App.css';
+
 import '../styles/header.css';
 import '../styles/mobile-menu.css';
 import '../styles/loading.css';
