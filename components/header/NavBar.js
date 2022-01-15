@@ -18,7 +18,7 @@ const NavBar = ({ home }) => {
 
 	return (
 		<div className={className}>
-			<Header home />
+			<Header home={home} />
 		</div>
 	);
 };

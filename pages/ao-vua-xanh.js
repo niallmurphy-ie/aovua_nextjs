@@ -32,7 +32,7 @@ export default function AoVua({ location }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Layout>
+			<Layout home={false}>
 				<Location locationData={locationData} />
 			</Layout>
 		</>
@@ -52,6 +52,5 @@ export async function getStaticProps() {
 		props: {
 			location: data.location,
 		},
-		revalidate: 1,
 	});
 }
