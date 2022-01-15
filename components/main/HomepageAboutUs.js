@@ -30,7 +30,6 @@ const About = ({ greetingMessage, greetingImage, greetingVideo }) => {
 								alt={greetingImage.alternativeText}
 								layout="fill"
 								objectFit="contain"
-								height="400px"
 							/>
 							{videoModal ? (
 								<ul className="banner-video">

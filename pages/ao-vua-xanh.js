@@ -3,8 +3,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import Location from '../components/pages/Location';
 import { LOCATION } from '../lib/queries';
-import { initializeApollo, addApolloState } from '../lib/apolloClient';
-import { useQuery } from '@apollo/client';
+import client from '../lib/apolloClient';
 
 export default function AoVua({ location }) {
 	// Initial State
@@ -24,7 +23,7 @@ export default function AoVua({ location }) {
 	const breadcrumb = {
 		url: '/diadiem',
 		name: 'Địa điểm',
-	}
+	};
 
 	return (
 		<>
@@ -45,17 +44,16 @@ export default function AoVua({ location }) {
 }
 
 export async function getStaticProps() {
-	const apolloClient = initializeApollo();
-	const { data } = await apolloClient.query({
+	const { data } = await client.query({
 		query: LOCATION,
 		variables: {
 			id: 1,
 		},
 	});
 
-	return addApolloState(apolloClient, {
+	return {
 		props: {
 			location: data.location,
 		},
-	});
+	};
 }
