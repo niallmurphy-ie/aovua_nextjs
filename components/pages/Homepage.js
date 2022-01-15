@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Hero from '../main/Hero';
 import Search from '../main/Search';
+import About from '../main/HomepageAboutUs';
 // import About2 from '../../components/about2';
 // import Destination2 from '../../components/Destination2';
 // import RoomSection from '../../components/RoomSection';
@@ -11,21 +12,11 @@ import Search from '../main/Search';
 import { useQuery } from '@apollo/client';
 import { HOMEPAGE } from '../../lib/queries';
 import Loading from '../Loading';
+import { initializeApollo, addApolloState } from '../../lib/apolloClient';
 
-const HomePage = () => {
-	// States
-	const [homepageData, setHomepageData] = useState({});
-	// graphQL query
-	const homepage = useQuery(HOMEPAGE);
-	// Fill state
-	useEffect(() => {
-		if (homepage.data) {
-			setHomepageData(homepage.data.homepage);
-		}
-	}, [homepage.data]);
+const HomePage = ({ homepageData }) => {
 
-	if (homepage.loading) return <Loading />;
-	if (homepage.error) return <p>Error</p>;
+	if (!homepageData) return <Loading />;
 
 	return (
 		<>
@@ -34,11 +25,11 @@ const HomePage = () => {
 				heroImages={homepageData.HeroImages}
 			/>
 			<Search />
-			{/*<About2
+			<About
 				greetingMessage={homepageData.Greeting}
 				greetingImage={homepageData.GreetingImage}
 			/>
-			<LatestNewsSection />
+			{/*<LatestNewsSection />
 			<Destination2 />
 			<RoomSection />
 			<Features />
@@ -48,3 +39,4 @@ const HomePage = () => {
 	);
 };
 export default HomePage;
+

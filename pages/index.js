@@ -2,8 +2,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 import HomePage from '../components/pages/Homepage';
+import client from '../lib/apolloClient';
+import { HOMEPAGE } from '../lib/queries';
 
-export default function Home() {
+export default function Home({ homepageData }) {
 	return (
 		<>
 			<Head>
@@ -16,8 +18,20 @@ export default function Home() {
 			</Head>
 
 			<Layout home={true}>
-				<HomePage />
+				<HomePage homepageData={homepageData} />
 			</Layout>
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	// graphQL query
+	const { data } = await client.query({
+		query: HOMEPAGE,
+	});
+	return {
+		props: {
+			homepageData: data.homepage,
+		},
+	};
 }

@@ -23,15 +23,20 @@ const PageTitle = ({ headerImage, pageTitle, breadcrumb }) => {
 									<a>Trang chủ</a>
 								</Link>
 							</li>
-							{breadcrumb && (
-								<li>
-									<span>
-										<Link href={breadcrumb.url}>
-											<a>{breadcrumb.name}</a>
-										</Link>
-									</span>
-								</li>
-							)}
+							{breadcrumb &&
+								(breadcrumb.url ? (
+									<li>
+										<span>
+											<Link href={breadcrumb.url}>
+												<a>{breadcrumb.name}</a>
+											</Link>
+										</span>
+									</li>
+								) : (
+									<li>
+										<span>{breadcrumb.name}</span>
+									</li>
+								))}
 						</ol>
 					</div>
 				</div>

@@ -85,7 +85,7 @@ const Footer = (props) => {
 									</div>
 									<div className="news-wrap">
 										<div className="news-img">
-											<img src={ft1} alt="" />
+											<Image src={ft1} alt="" />
 										</div>
 										<div className="news-text">
 											<h3>Paris, France</h3>
@@ -97,7 +97,7 @@ const Footer = (props) => {
 									</div>
 									<div className="news-wrap">
 										<div className="news-img">
-											<img src={ft2} alt="" />
+											<Image src={ft2} alt="" />
 										</div>
 										<div className="news-text">
 											<h3>San Francisco</h3>
