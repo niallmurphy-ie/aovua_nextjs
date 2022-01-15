@@ -15,7 +15,10 @@ import { HOMEPAGE } from '../../lib/queries';
 import Loading from '../Loading';
 import { initializeApollo, addApolloState } from '../../lib/apolloClient';
 
-const HomePage = ({ homepageData }) => {
+import { lazy, Suspense } from 'react'
+
+
+const HomePage = ({ homepageData, articles }) => {
 
 	if (!homepageData) return <Loading />;
 
@@ -30,7 +33,7 @@ const HomePage = ({ homepageData }) => {
 				greetingMessage={homepageData.Greeting}
 				greetingImage={homepageData.GreetingImage}
 			/>
-			<LatestNewsSection />
+			<LatestNewsSection articles={articles} />
 			{/*<Destination2 />
 			<RoomSection />
 			<Features />

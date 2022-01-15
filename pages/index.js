@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import HomePage from '../components/pages/Homepage';
 import client from '../lib/apolloClient';
-import { HOMEPAGE } from '../lib/queries';
+import { HOMEPAGE, LATEST_NEWS } from '../lib/queries';
 
-export default function Home({ homepageData }) {
+export default function Home({ homepageData, articles }) {
 	return (
 		<>
 			<Head>
@@ -18,20 +18,28 @@ export default function Home({ homepageData }) {
 			</Head>
 
 			<Layout home={true}>
-				<HomePage homepageData={homepageData} />
+				<HomePage homepageData={homepageData} articles={articles} />
 			</Layout>
 		</>
 	);
 }
 
-export async function getStaticProps() {
-	// graphQL query
-	const { data } = await client.query({
+export const getStaticProps = async () => {
+
+	const homepageQuery = client.query({
 		query: HOMEPAGE,
 	});
+
+	const latestNewsQuery = client.query({
+		query: LATEST_NEWS,
+	});
+
+	const responses = await Promise.all([homepageQuery, latestNewsQuery]);
+
 	return {
 		props: {
-			homepageData: data.homepage,
+			homepageData: responses[0].data.homepage,
+			articles: responses[1].data.articles,
 		},
 	};
-}
+};
