@@ -3,8 +3,7 @@ import PageTitle from '../main/PageTitle';
 import Loading from '../Loading';
 // import ServiceSingle from '../../components/ServiceSingle';
 
-const LocationPage = ({ locationData }) => {
-
+const LocationPage = ({ locationData, breadcrumb }) => {
 	if (!locationData) return <Loading />;
 
 	return (
@@ -12,7 +11,7 @@ const LocationPage = ({ locationData }) => {
 			<PageTitle
 				headerImage={locationData.headerImage}
 				pageTitle={locationData.name}
-				pagesub={locationData.name}
+				breadcrumb={breadcrumb}
 			/>
 			{/* <ServiceSingle locationData={locationData} /> */}
 		</>

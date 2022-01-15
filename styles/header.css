@@ -45,7 +45,7 @@
 	}
 }
 
-.header-style-2 .get-quote a {
+.header-style-2 .get-contact a {
 	color: #fff;
 }
 .header-style-2 .cart-search-contact .cart-toggle-btn,
@@ -654,7 +654,7 @@ header.fixed .header-content {
 	}
 }
 
-.get-quote a {
+.get-contact a {
 	font-size: 16px;
 	color: #283a5e;
 	display: flex;
@@ -662,7 +662,7 @@ header.fixed .header-content {
 	margin-right: 30px;
 	justify-content: flex-end;
 }
-.get-quote a i {
+.get-contact a i {
 	font-size: 12px;
 	color: #00d690;
 	margin-right: 3px;
@@ -691,7 +691,7 @@ header.fixed .header-content {
 		padding: 0 10px;
 	}
 
-	.get-quote a {
+	.get-contact a {
 		font-size: 16px;
 	}
 	nav ul {
@@ -783,7 +783,7 @@ header.fixed .header-content {
 	}
 }
 
-.header-home .header-style-2 .get-quote a {
+.header-home .header-style-2 .get-contact a {
 	color: #fff;
 }
 .header-home .header-style-2 .cart-search-contact .cart-toggle-btn,

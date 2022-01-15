@@ -14,11 +14,12 @@ const Header = ({ home }) => {
 
 	const menu = VietnameseMenu();
 
-	const parentStyle = home ? 'header-home middle-header' : 'middle-header';
+	const parentClass = home ? 'header-home middle-header' : 'middle-header';
+	const headerClass = home ? 'header-style-2' : 'header-style-3';
 
 	return (
-		<div className={parentStyle}>
-			<div className="header-style-2">
+		<div className={parentClass}>
+			<div className={headerClass}>
 				<div className="container-fluid">
 					<div className="header-content">
 						<div className="row align-items-center">
@@ -26,7 +27,7 @@ const Header = ({ home }) => {
 								<div className="logo">
 									<Link onClick={ClickHandler} href="/">
 										<a>
-											<Image src={Logo} alt="" />
+											<Image src={Logo} alt="Ao Vua Logo" />
 										</a>
 									</Link>
 								</div>
@@ -38,7 +39,7 @@ const Header = ({ home }) => {
 								/>
 							</div>
 							<div className="col-xl-4 get-q">
-								<div className="get-quote">
+								<div className="get-contact">
 									<Link
 										onClick={ClickHandler}
 										href="/lien-he/"
