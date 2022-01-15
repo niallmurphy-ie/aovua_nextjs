@@ -1,11 +1,21 @@
 import React from 'react';
+import PageTitle from '../main/PageTitle';
+import Loading from '../Loading';
+// import ServiceSingle from '../../components/ServiceSingle';
 
-function Location() {
+const LocationPage = ({ locationData }) => {
+
+	if (!locationData) return <Loading />;
+
 	return (
-		<div>
-			<h1>Location</h1>
-		</div>
+		<>
+			<PageTitle
+				headerImage={locationData.headerImage}
+				pageTitle={locationData.name}
+				pagesub={locationData.name}
+			/>
+			{/* <ServiceSingle locationData={locationData} /> */}
+		</>
 	);
-}
-
-export default Location;
+};
+export default LocationPage;

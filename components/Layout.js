@@ -19,15 +19,7 @@ export default function Layout({ children, home }) {
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
-			<header>
-				{home ? (
-					<>
-						<NavBar />
-					</>
-				) : (
-					<></>
-				)}
-			</header>
+			<header>{home ? <NavBar /> : <NavBar />}</header>
 			<main>{children}</main>
 			{!home && <div></div>}
 			<Footer />
