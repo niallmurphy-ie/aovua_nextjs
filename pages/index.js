@@ -16,7 +16,7 @@ export default function Home() {
 			</Head>
 
 			<Layout home>
-        <HomePage />
+				<HomePage />
 			</Layout>
 		</>
 	);

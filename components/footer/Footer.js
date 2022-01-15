@@ -1,8 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Logo from '../../public/images/logo.png';
 import ft1 from '../../public/images/images/footer/img-1.jpg';
 import ft2 from '../../public/images/images/footer/img-2.jpg';
+import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = (props) => {
 	const ClickHandler = () => {
@@ -21,7 +23,7 @@ const Footer = (props) => {
 						<div className="row">
 							<div className="col-lg-6 col-md-6 col-sm-6 col-12 custom-grid">
 								<div className="logo widget-title">
-									<img src={Logo} alt="logo" />
+									<Image src={Logo} alt="logo" />
 								</div>
 							</div>
 							<div className="col-lg-6 col-md-6 col-sm-6 col-12 custom-grid">
@@ -29,7 +31,8 @@ const Footer = (props) => {
 									<li>
 										<Link onClick={ClickHandler} href="/">
 											<a>
-												<i className="ti-facebook"></i>
+												{/* <i className="ti-facebook"></i> */}
+												<FaFacebookF />
 											</a>
 										</Link>
 									</li>
