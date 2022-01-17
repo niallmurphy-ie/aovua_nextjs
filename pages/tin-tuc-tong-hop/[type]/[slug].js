@@ -3,9 +3,9 @@ import Layout from '../../../components/Layout';
 import PageTitle from '../../../components/main/PageTitle';
 import Article from '../../../components/main/article/Article';
 import client from '../../../lib/apolloClient';
-import { CATEGORY, ARTICLE, CATEGORIES } from '../../../lib/queries';
+import { CATEGORY, ARTICLE, CATEGORIES, ARTICLES } from '../../../lib/queries';
 
-const ArticlePage = ({ category, article }) => {
+const ArticlePage = ({ category, article, categories, articles }) => {
 	console.log(category, article);
 	return (
 		<>
@@ -19,7 +19,11 @@ const ArticlePage = ({ category, article }) => {
 			</Head>
 			<Layout home={false}>
 				<PageTitle pageTitle={article.Title} breadcrumb={null} />
-				<Article article={article} />
+				<Article
+					article={article}
+					articles={articles}
+					categories={categories}
+				/>
 			</Layout>
 		</>
 	);
@@ -66,12 +70,27 @@ export async function getStaticProps(context) {
 		},
 	});
 
-	const responses = await Promise.all([categoryQuery, articleQuery]);
+	const categoriesQuery = client.query({
+		query: CATEGORIES,
+	});
+
+	const articlesQuery = client.query({
+		query: ARTICLES,
+	});
+
+	const responses = await Promise.all([
+		categoryQuery,
+		articleQuery,
+		categoriesQuery,
+		articlesQuery,
+	]);
 
 	return {
 		props: {
 			category: responses[0].data.categories[0],
 			article: responses[1].data.articles[0],
+			categories: responses[2].data.categories,
+			articles: responses[3].data.articles,
 		},
 	};
 }

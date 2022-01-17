@@ -5,7 +5,7 @@ import ArticleSideBar from './ArticleSideBar';
 import Loading from '../../Loading';
 import ReactMarkdown from 'react-markdown';
 
-const Article = ({ article }) => {
+const Article = ({ article, articles, categories }) => {
 	if (!article) return <Loading />;
 
 	const ClickHandler = () => {
@@ -24,7 +24,10 @@ const Article = ({ article }) => {
 									<Image
 										src={`http://localhost:1337${article.Thumbnail.url}`}
 										alt={article.Thumbnail.alternativeText}
-										width="100%" height="100%" layout="responsive" objectFit="contain"
+										width="100%"
+										height="80%"
+										layout="responsive"
+										objectFit="contain"
 									/>
 								</div>
 								<ul className="entry-meta">
@@ -96,7 +99,10 @@ const Article = ({ article }) => {
 							</div>
 						</div>
 					</div>
-					<ArticleSideBar />
+					<ArticleSideBar
+						articles={articles}
+						categories={categories}
+					/>
 				</div>
 			</div>
 		</section>

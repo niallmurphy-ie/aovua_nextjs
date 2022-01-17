@@ -6,36 +6,25 @@ import { ARTICLES } from '../../../lib/queries';
 import Loading from '../../Loading';
 import { articleUrl } from '../../../lib/articles';
 
-const ArticlesPostsListing = () => {
+const ArticlesPostsListing = ({ articles }) => {
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
-
-	const [posts, setPosts] = useState([]);
-	const { loading, error, data } = useQuery(ARTICLES);
-
-	useEffect(() => {
-		if (data) {
-			setPosts(data.articles);
-		}
-	}, [data]);
-
-	if (loading) return <Loading />;
-	if (error) return <div>Error</div>;
-
-	console.log(`posts`, posts);
 
 	return (
 		<div className="widget recent-post-widget">
 			<h3>Tin Nổi Bật</h3>
 			<div className="posts">
-				{posts.map((post, id) => (
+				{articles.map((post, id) => (
 					<div key={id + post.Title} className="post">
 						<div className="img-holder">
 							<Image
 								src={`http://localhost:1337${post.Thumbnail.formats.thumbnail.url}`}
 								alt=""
-								width="100%" height="100%" layout="responsive" objectFit="contain"
+								width="100%"
+								height="100%"
+								layout="responsive"
+								objectFit="contain"
 							/>
 						</div>
 						<div className="details">

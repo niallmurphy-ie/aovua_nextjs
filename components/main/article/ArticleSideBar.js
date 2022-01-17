@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ArticleSideBarCategories from './ArticleSideBarCategories';
 import ArticleSideBarArticles from './ArticleSideBarArticles';
+import Loading from '../../Loading';
 
 import inst1 from '../../../public/images/images/instragram/1.jpg';
 import inst2 from '../../../public/images/images/instragram/2.jpg';
@@ -14,16 +15,18 @@ import inst6 from '../../../public/images/images/instragram/6.jpg';
 import about from '../../../public/images/images/blog/profile.png';
 import bicon from '../../../public/images/images/blog/icon.png';
 
-const BlogSidebar = (props) => {
+const ArticleSidebar = ({ articles, categories }) => {
+
+
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
 
 	return (
-		<div className={`col col-lg-4 col-12 ${props.blLeft}`}>
+		<div className={`col col-lg-4 col-12 `}>
 			<div className="wpo-blog-sidebar">
-				<ArticleSideBarCategories />
-				<ArticleSideBarArticles />
+				<ArticleSideBarCategories categories={categories} />
+				<ArticleSideBarArticles articles={articles} />
 				<div className="widget instagram">
 					<h3>Service</h3>
 					<ul className="d-flex">
@@ -81,4 +84,4 @@ const BlogSidebar = (props) => {
 	);
 };
 
-export default BlogSidebar;
+export default ArticleSidebar;
