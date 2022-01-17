@@ -54,7 +54,7 @@ const About = ({ greetingMessage, greetingImage, greetingVideo }) => {
 									href="/about"
 									className="theme-btn-s2"
 								>
-									<a>More About Us</a>
+									<a className="theme-btn-s2">More About Us</a>
 								</Link>
 							</div>
 						</div>

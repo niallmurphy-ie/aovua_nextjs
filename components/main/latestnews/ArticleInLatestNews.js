@@ -8,8 +8,6 @@ function Article({ article, blg }) {
 		window.scrollTo(10, 0);
 	};
 
-	console.log(article);
-
 	return (
 		<div className="col-lg-4 col-md-6 col-12" key={blg}>
 			<div className="blog-item">

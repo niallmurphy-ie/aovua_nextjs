@@ -25,7 +25,6 @@ export default function Home({ homepageData, articles }) {
 }
 
 export const getStaticProps = async () => {
-
 	const homepageQuery = client.query({
 		query: HOMEPAGE,
 	});
@@ -34,6 +33,7 @@ export const getStaticProps = async () => {
 		query: LATEST_NEWS,
 	});
 
+	// This is superlative in an static site but it's good practice I suppose.
 	const responses = await Promise.all([homepageQuery, latestNewsQuery]);
 
 	return {
