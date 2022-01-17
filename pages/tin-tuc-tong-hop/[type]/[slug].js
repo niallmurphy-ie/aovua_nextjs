@@ -15,54 +15,43 @@ const ArticlePage = ({ category, article }) => {
 };
 
 export async function getStaticPaths() {
-	const categoriesQuery = client.query({
+	const categoriesQuery = await client.query({
 		query: CATEGORIES,
 	});
 
-	const response = await categoriesQuery;
-
-	console.log(response);
-
-	const paths = response.data.categories.map((category) => {
+	const paths = [];
+	categoriesQuery.data.categories.forEach((category) => {
 		if (category.articles.length > 0) {
+			const params = [];
 			const slugs = category.articles.map((article) => article.slug);
-			return slugs.map((slug) => ({
-				params: {
-					type: category.urlPrefix,
+			slugs.forEach((slug) =>
+				params.push({
+					type: category.urlPrefix.split('/')[1], // First part is hard-coded in Strapi.
 					slug,
-				},
-			}));
-		} else {
-			return null;
+				})
+			);
+			params.forEach((param) => paths.push({ params: param }));
 		}
 	});
 
-	const pathsFiltered = paths.filter((path) =>
-		path !== null && path !== undefined
-	);
-
-	// console.log(pathsFiltered);
-
-	console.log(pathsFiltered);
-
 	return {
-		paths: pathsFiltered,
+		paths,
 		fallback: false,
 	};
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
 	const categoryQuery = client.query({
 		query: CATEGORY,
 		variables: {
-			urlPrefix: type,
+			urlPrefix: `tin-tuc-tong-hop/${context.params.type}`, // First part is hard-coded in Strapi.
 		},
 	});
 
 	const articleQuery = client.query({
 		query: ARTICLE,
 		variables: {
-			slug,
+			slug: context.params.slug
 		},
 	});
 
