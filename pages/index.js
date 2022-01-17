@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import HomePage from '../components/pages/Homepage';
 import client from '../lib/apolloClient';
-import { HOMEPAGE, LATEST_NEWS } from '../lib/queries';
+import { HOMEPAGE, ARTICLES } from '../lib/queries';
 
 export default function Home({ homepageData, articles }) {
 	return (
@@ -25,15 +25,15 @@ export default function Home({ homepageData, articles }) {
 }
 
 export const getStaticProps = async () => {
+
 	const homepageQuery = client.query({
 		query: HOMEPAGE,
 	});
 
 	const latestNewsQuery = client.query({
-		query: LATEST_NEWS,
+		query: ARTICLES,
 	});
 
-	// This is superlative in an static site but it's good practice I suppose.
 	const responses = await Promise.all([homepageQuery, latestNewsQuery]);
 
 	return {
