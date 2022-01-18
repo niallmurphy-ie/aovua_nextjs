@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ArticleSideBar from './ArticleSideBar';
 import Loading from '../../Loading';
-import ReactMarkdown from 'react-markdown';
+import parse from 'html-react-parser';
 
 const Article = ({ article, articles, categories }) => {
 	if (!article) return <Loading />;
@@ -34,7 +34,7 @@ const Article = ({ article, articles, categories }) => {
 									<li>{article.Date}</li>
 								</ul>
 								<h2>{article.Title}</h2>
-								<ReactMarkdown>{article.Body}</ReactMarkdown>
+								{parse(article.Body)}
 							</div>
 
 							<div className="tag-share clearfix">

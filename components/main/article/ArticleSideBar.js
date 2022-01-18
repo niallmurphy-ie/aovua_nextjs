@@ -17,68 +17,11 @@ import bicon from '../../../public/images/images/blog/icon.png';
 
 const ArticleSidebar = ({ articles, categories }) => {
 
-
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	return (
 		<div className={`col col-lg-4 col-12 `}>
 			<div className="wpo-blog-sidebar">
 				<ArticleSideBarCategories categories={categories} />
 				<ArticleSideBarArticles articles={articles} />
-				<div className="widget instagram">
-					<h3>Service</h3>
-					<ul className="d-flex">
-						<li>
-							<Link onClick={ClickHandler} href="/service-single">
-								<a>
-									<Image
-										src={inst1}
-										alt=""
-										width="100%"
-										height="100%"
-										layout="responsive"
-										objectFit="contain"
-									/>
-								</a>
-							</Link>
-						</li>
-					</ul>
-				</div>
-				<div className="widget tag-widget">
-					<h3>Tags</h3>
-					<ul>
-						<li>
-							<Link
-								onClick={ClickHandler}
-								href="/blog-details-left"
-							>
-								<a>Travelling</a>
-							</Link>
-						</li>
-					</ul>
-				</div>
-				<div className="widget get-intouch">
-					<div className="get-item">
-						<Image
-							src={bicon}
-							alt=""
-							width="100%"
-							height="100%"
-							layout="responsive"
-							objectFit="contain"
-						/>
-						<h2>Let’s start your dreamy journey</h2>
-						<Link
-							onClick={ClickHandler}
-							className="theme-btn"
-							href="/contact"
-						>
-							Get in touch
-						</Link>
-					</div>
-				</div>
 			</div>
 		</div>
 	);

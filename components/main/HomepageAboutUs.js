@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import ReactMarkdown from 'react-markdown';
 import VideoModal from '../utils/ModalVideo';
+import parse from 'html-react-parser'
 
 const About = ({ greetingMessage, greetingImage, greetingVideo }) => {
 	const ClickHandler = () => {
@@ -45,7 +45,7 @@ const About = ({ greetingMessage, greetingImage, greetingVideo }) => {
 						<div className="wpo-about-text">
 							<div className="wpo-section-title">
 								<span>About Us</span>
-								<ReactMarkdown>{greetingMessage}</ReactMarkdown>
+								{parse(greetingMessage)}
 							</div>
 
 							<div className="btns">
@@ -54,7 +54,9 @@ const About = ({ greetingMessage, greetingImage, greetingVideo }) => {
 									href="/about"
 									className="theme-btn-s2"
 								>
-									<a className="theme-btn-s2">More About Us</a>
+									<a className="theme-btn-s2">
+										More About Us
+									</a>
 								</Link>
 							</div>
 						</div>

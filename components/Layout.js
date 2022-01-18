@@ -9,7 +9,6 @@ export default function Layout({ children, home }) {
 		<div className="App">
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
-				<meta name="description" content="Ao Vua, Ba Vi" />
 				<meta
 					property="og:image"
 					content={`https://og-image.vercel.app/${encodeURI(

@@ -13,7 +13,19 @@ export const VietnameseMenu = () => {
 				subMenu: [
 					{
 						title: 'Khu du lịch Ao Vua',
-						link: '/ao-vua-xanh',
+						link: '/ao-vua-xanh/',
+					},
+					{
+						title: 'Khu du lịch Đảo Ngọc Xanh',
+						link: '/dao-ngoc-xanh/',
+					},
+					{
+						title: 'Khu du lịch Đầm Long',
+						link: '/dam-long/',
+					},
+					{
+						title: 'Công viên Vĩnh Hằng',
+						link: '/cong-vien-vinh-hang/',
 					},
 				],
 			},
