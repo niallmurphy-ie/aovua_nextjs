@@ -22,6 +22,8 @@ const HomePage = ({ homepageData, articles }) => {
 
 	if (!homepageData) return <Loading />;
 
+	console.log(homepageData);
+
 	return (
 		<>
 			<Hero
@@ -32,6 +34,7 @@ const HomePage = ({ homepageData, articles }) => {
 			<About
 				greetingMessage={homepageData.Greeting}
 				greetingImage={homepageData.GreetingImage}
+				greetingYoutubeURL={homepageData.GreetingYoutubeURL}
 			/>
 			<LatestNewsSection articles={articles} />
 			{/*<Destination2 />

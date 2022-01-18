@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import VideoModal from '../utils/ModalVideo';
-import parse from 'html-react-parser'
+import parse from 'html-react-parser';
 
-const About = ({ greetingMessage, greetingImage, greetingVideo }) => {
+const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
@@ -17,7 +17,7 @@ const About = ({ greetingMessage, greetingImage, greetingVideo }) => {
 		setVideoModal(true);
 	}, []);
 
-	if (!greetingMessage || !greetingImage) return null;
+	if (!greetingMessage || !greetingImage || !greetingYoutubeURL) return null;
 
 	return (
 		<div className="wpo-about-area-2 section-padding">
@@ -35,7 +35,7 @@ const About = ({ greetingMessage, greetingImage, greetingVideo }) => {
 								<ul className="banner-video">
 									<li className="video-holder">
 										{/* <VideoModal video={greetingVideo} /> */}
-										<VideoModal />
+										<VideoModal greetingYoutubeURL={greetingYoutubeURL} />
 									</li>
 								</ul>
 							) : null}
