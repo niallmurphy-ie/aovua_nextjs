@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../Loading';
-import Article from './latestnews/ArticleInLatestNews';
+import Article from './homepage/ArticleInLatestNews';
 
 const LatestNewsSection = ({ articles }) => {
 

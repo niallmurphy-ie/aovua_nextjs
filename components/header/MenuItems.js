@@ -7,14 +7,14 @@ export const MenuItems = ({ menu, ClickHandler }) => {
 			<ul>
 				{menu.components.map((item, index) => {
 					return (
-						<li key={index}>
+						<li key={`${item.title}${index}`}>
 							<Link onClick={ClickHandler} href={item.link}>
 								<a>{item.title}</a>
 							</Link>
 							{item.subMenu ? (
 								<ul>
 									{item.subMenu.map((sub) => (
-										<li key={index}>
+										<li key={sub.link + index}>
 											<Link
 												onClick={ClickHandler}
 												href={sub.link}

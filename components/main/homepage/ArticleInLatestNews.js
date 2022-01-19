@@ -17,7 +17,10 @@ function Article({ article, blg }) {
 							<Image
 								src={`http://localhost:1337${article.Thumbnail.url}`}
 								alt=""
-								width="100%" height="100%" layout="responsive" objectFit="contain"
+								width="100%"
+								height="100%"
+								layout="responsive"
+								objectFit="contain"
 							/>
 						</a>
 					</Link>
@@ -27,9 +30,9 @@ function Article({ article, blg }) {
 						<li>
 							{article.categories.map((b) => (
 								<Link
-									key={b.urlPrefix}
+									key={`article_category_${b.urlPrefix}`}
 									onClick={ClickHandler}
-									href={b.urlPrefix}
+									href={`/${b.urlPrefix}`}
 								>
 									<a>{b.CategoryName}</a>
 								</Link>
