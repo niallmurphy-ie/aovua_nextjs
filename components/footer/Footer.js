@@ -186,7 +186,7 @@ const Footer = (props) => {
 						</div>
 						<div className="col col-lg-6 col-md-6 col-12">
 							<p className="copyright">
-								&copy; 2021 Varaus. All rights reserved
+								&copy; 2021 Ao Vua JSC. All rights reserved
 							</p>
 						</div>
 					</div>
