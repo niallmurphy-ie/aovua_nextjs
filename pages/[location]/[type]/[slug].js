@@ -8,8 +8,18 @@ import {
 	ENTERTAINMENTS,
 } from '../../../lib/queries';
 
-const ArticlePage = ({ location, entertainment, entertainments }) => {
-	console.log(location, entertainment);
+const ServicePage = ({ location, entertainment, entertainments }) => {
+
+	// location gives the first location if multuple are selected.
+
+	const pageTitle = entertainment.Name || '';
+	const breadcrumb = entertainment
+		? {
+				url: `/${location.urlPrefix}/vui-choi-giai-tri`,
+				name: `${location.Name} - Vui chơi giải trí`,
+		  }
+		: null;
+
 	return (
 		<>
 			<Head>
@@ -21,7 +31,7 @@ const ArticlePage = ({ location, entertainment, entertainments }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Layout home={false}>
-				<PageTitle pageTitle={entertainment.Name} breadcrumb={null} />
+				<PageTitle pageTitle={entertainment.Name} breadcrumb={breadcrumb} />
 				{/* <Article
 					article={article}
 					articles={articles}
@@ -33,78 +43,70 @@ const ArticlePage = ({ location, entertainment, entertainments }) => {
 };
 
 export async function getStaticPaths() {
-	// const categoriesQuery = await client.query({
-	// 	query: CATEGORIES,
-	// });
-
-	// const paths = [];
-	// categoriesQuery.data.categories.forEach((category) => {
-	// 	if (category.articles.length > 0) {
-	// 		const params = [];
-	// 		const slugs = category.articles.map((article) => article.slug);
-	// 		slugs.forEach((slug) =>
-	// 			params.push({
-	// 				type: category.urlPrefix.split('/')[1], // First part is hard-coded in Strapi.
-	// 				slug,
-	// 			})
-	// 		);
-	// 		params.forEach((param) => paths.push({ params: param }));
-	// 	}
-	// });
-
-	// return {
-	// 	paths,
-	// 	fallback: false,
-	// };
-	return {
-		paths: [
-			{
-				params: {
-					location: 'ao-vua-xanh',
+	const paths = [];
+	// Start Entertainment
+	const entertainmentsQuery = await client.query({
+		query: ENTERTAINMENTS,
+	});
+	entertainmentsQuery.data.entertainments.forEach((entertainment) => {
+		if (entertainment.locations.length > 0) {
+			const params = [];
+			const locations = entertainment.locations.map(
+				(location) => location.urlPrefix
+			);
+			locations.forEach((location) =>
+				params.push({
+					location: location,
 					type: 'vui-choi-giai-tri',
-					slug: 'nha-bong-nha-lien-hoan',
-				},
-			},
-		],
+					slug: entertainment.slug,
+				})
+			);
+			params.forEach((param) => paths.push({ params: param }));
+		}
+	});
+	// End entertainment
+
+	return {
+		paths,
 		fallback: false,
 	};
 }
 
 export async function getStaticProps(context) {
-	console.log(`context.params.slug`, context.params.slug)
-	console.log(`context.params`, context.params)
-	const entertainmentQuery = client.query({
-		query: ENTERTAINMENT,
-		variables: {
-			slug: context.params.slug,
-		},
-	});
+	console.log(`context.params`, context.params);
 
+	// All queries for all types of services
 	const locationQuery = client.query({
 		query: LOCATION_URLPREFIX,
 		variables: {
 			urlPrefix: context.params.location,
 		},
 	});
-
+	const entertainmentQuery = client.query({
+		query: ENTERTAINMENT,
+		variables: {
+			slug: context.params.slug,
+		},
+	});
 	const entertainmentsQuery = client.query({
 		query: ENTERTAINMENTS,
 	});
 
 	const responses = await Promise.all([
-		entertainmentQuery,
 		locationQuery,
+		entertainmentQuery,
 		entertainmentsQuery,
 	]);
 
-	console.log(`responses`, responses)
+	console.log(`responses`, responses);
+
 	return {
 		props: {
-			entertainment: responses[0].data.entertainments[0],
-			location: responses[1].data.locations[0],
+			location: responses[0].data.locations[0],
+			entertainment: responses[1].data.entertainments[0],
 			entertainments: responses[2].data.entertainments,
 		},
 	};
 }
 
-export default ArticlePage;
+export default ServicePage;
