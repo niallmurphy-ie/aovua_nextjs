@@ -21,6 +21,7 @@ import '../styles/video.css';
 import '../styles/blog.css';
 import '../styles/article.css';
 import '../styles/article-sidebar.css';
+import '../styles/location.css';
 
 // search date picker
 import 'react-datepicker/dist/react-datepicker.css';

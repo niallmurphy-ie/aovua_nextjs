@@ -19,8 +19,8 @@ const Service = ({ service, services }) => {
 					<div className={`col col-lg-8 col-12`}>
 						<div className="wpo-blog-content clearfix">
 							<div className="post">
-								<div className="entry-media">
-									{service.Thumbnail ? (
+								{service.Thumbnail ? (
+									<div className="entry-media">
 										<Image
 											src={`http://localhost:1337${service.Thumbnail.url}`}
 											alt={
@@ -32,8 +32,9 @@ const Service = ({ service, services }) => {
 											layout="responsive"
 											objectFit="contain"
 										/>
-									) : null}
-								</div>
+									</div>
+								) : null}
+
 								{service.Body ? parse(service.Body) : null}
 							</div>
 
