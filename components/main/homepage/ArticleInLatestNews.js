@@ -15,7 +15,7 @@ function Article({ article, blg }) {
 					<Link onClick={ClickHandler} href={articleUrl(article)}>
 						<a>
 							<Image
-								src={`http://localhost:1337${article.Thumbnail.url}`}
+								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}`}
 								alt=""
 								width="100%"
 								height="100%"

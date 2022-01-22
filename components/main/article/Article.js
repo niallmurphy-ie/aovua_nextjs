@@ -22,7 +22,7 @@ const Article = ({ article, articles, categories }) => {
 							<div className="post">
 								<div className="entry-media">
 									<Image
-										src={`http://localhost:1337${article.Thumbnail.url}`}
+										src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}`}
 										alt={article.Thumbnail.alternativeText}
 										width="100%"
 										height="80%"

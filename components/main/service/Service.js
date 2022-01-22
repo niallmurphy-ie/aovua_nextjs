@@ -22,7 +22,7 @@ const Service = ({ service, services }) => {
 								{service.Thumbnail ? (
 									<div className="entry-media">
 										<Image
-											src={`http://localhost:1337${service.Thumbnail.url}`}
+											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${service.Thumbnail.url}`}
 											alt={
 												service.Thumbnail
 													.alternativeText

@@ -5,7 +5,7 @@ const PageTitle = ({ headerImage, pageTitle, breadcrumb }) => {
 	// Set background image if available in props
 	const style = headerImage
 		? {
-				background: `url(http://localhost:1337${headerImage.url}) center center/cover no-repeat local`,
+				background: `url(${process.env.NEXT_PUBLIC_STRAPI_URL}${headerImage.url}) center center/cover no-repeat local`,
 		  }
 		: {
 				background: '#ddd',

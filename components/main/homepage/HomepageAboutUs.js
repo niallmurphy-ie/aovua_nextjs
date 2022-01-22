@@ -26,7 +26,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 					<div className="col-lg-6 col-md-12 col-sm-12">
 						<div className="banner-img">
 							<Image
-								src={`http://localhost:1337${greetingImage.url}`}
+								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}`}
 								alt={greetingImage.alternativeText}
 								layout="fill"
 								objectFit="contain"

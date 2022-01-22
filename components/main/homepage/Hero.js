@@ -25,7 +25,7 @@ const Hero = (props) => {
 							<div
 								className="slide-inner"
 								style={{
-									backgroundImage: `url(http://localhost:1337${image.url})`,
+									backgroundImage: `url(${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url})`,
 								}}
 							>
 								<div className="container">

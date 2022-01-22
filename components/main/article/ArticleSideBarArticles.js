@@ -19,7 +19,7 @@ const ArticlesPostsListing = ({ articles }) => {
 					<div key={id + post.Title} className="post">
 						<div className="img-holder">
 							<Image
-								src={`http://localhost:1337${post.Thumbnail.formats.thumbnail.url}`}
+								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${post.Thumbnail.formats.thumbnail.url}`}
 								alt=""
 								width="100%"
 								height="100%"
