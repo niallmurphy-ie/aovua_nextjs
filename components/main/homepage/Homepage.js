@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Hero from '../main/Hero';
-import Search from '../main/Search';
-import About from '../main/HomepageAboutUs';
-import LatestNewsSection from '../main/LatestNews';
+import Hero from './Hero';
+import Search from './Search';
+import About from './HomepageAboutUs';
+import LatestNewsSection from './LatestNews';
 // import About2 from '../../components/about2';
 // import Destination2 from '../../components/Destination2';
 // import RoomSection from '../../components/RoomSection';
@@ -11,9 +11,9 @@ import LatestNewsSection from '../main/LatestNews';
 
 // import Scrollbar from '../../components/scrollbar';
 import { useQuery } from '@apollo/client';
-import { HOMEPAGE } from '../../lib/queries';
-import Loading from '../Loading';
-import { initializeApollo, addApolloState } from '../../lib/apolloClient';
+import { HOMEPAGE } from '../../../lib/queries';
+import Loading from '../../Loading';
+import { initializeApollo, addApolloState } from '../../../lib/apolloClient';
 
 import { lazy, Suspense } from 'react'
 

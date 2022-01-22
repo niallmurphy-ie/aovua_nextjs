@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import VideoModal from '../utils/ModalVideo';
+import VideoModal from '../../utils/ModalVideo';
 import parse from 'html-react-parser';
 
 const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {

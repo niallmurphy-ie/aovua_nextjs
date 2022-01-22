@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
-import HomePage from '../components/pages/Homepage';
+import HomePage from '../components/main/homepage/Homepage';
 import client from '../lib/apolloClient';
 import { HOMEPAGE, ARTICLES } from '../lib/queries';
 
