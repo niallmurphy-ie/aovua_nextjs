@@ -15,7 +15,7 @@ const Hero = (props) => {
 		autoplay: true,
 		autoplaySpeed: 7500,
 		fade: true,
-		// lazyLoad: true,
+		lazyLoad: true,
 	};
 	return (
 		<section className={`hero ${props.heroClass}`}>
@@ -50,7 +50,7 @@ const Hero = (props) => {
 									alt={image.alternativeText}
 									layout="fill"
 									objectFit="cover"
-									priority={true}
+									priority
 								/>
 								<div className="container">
 									<div className="row">
