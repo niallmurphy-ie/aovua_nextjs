@@ -1,0 +1,8 @@
+{
+	"redirects": [
+		{
+			"source": "/uploads/:image",
+			"destination": "https://aovuastrapi.niallmurphy.dev/uploads/:image"
+		}
+	]
+}
