@@ -4,6 +4,7 @@ import Image from 'next/image';
 // import ArticleSideBar from './ArticleSideBar';
 import Loading from '../../Loading';
 import parse from 'html-react-parser';
+import CKContent from '../../utils/CKContent';
 
 const Service = ({ service, services }) => {
 	if (!service) return <Loading />;
@@ -35,7 +36,9 @@ const Service = ({ service, services }) => {
 									</div>
 								) : null}
 
-								{service.Body ? parse(service.Body) : null}
+								{service.Body ? (
+									<CKContent content={service.Body} />
+								) : null}
 							</div>
 
 							<div className="tag-share clearfix">

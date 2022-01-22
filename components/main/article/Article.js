@@ -4,6 +4,7 @@ import Image from 'next/image';
 import ArticleSideBar from './ArticleSideBar';
 import Loading from '../../Loading';
 import parse from 'html-react-parser';
+import CKContent from '../../utils/CKContent';
 
 const Article = ({ article, articles, categories }) => {
 	if (!article) return <Loading />;
@@ -34,7 +35,7 @@ const Article = ({ article, articles, categories }) => {
 									<li>{article.Date}</li>
 								</ul>
 								<h2>{article.Title}</h2>
-								{parse(article.Body)}
+								<CKContent content={article.Body} />
 							</div>
 
 							<div className="tag-share clearfix">

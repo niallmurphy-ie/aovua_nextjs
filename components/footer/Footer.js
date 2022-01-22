@@ -18,36 +18,6 @@ const Footer = (props) => {
 	return (
 		<footer className="wpo-site-footer">
 			<div className="wpo-upper-footer">
-				<div className="wpo-footer-top">
-					<div className="container">
-						<div className="row">
-							<div className="col-lg-6 col-md-6 col-sm-6 col-12 custom-grid">
-								<div className="logo widget-title">
-									<Image src={Logo} alt="logo" />
-								</div>
-							</div>
-							<div className="col-lg-6 col-md-6 col-sm-6 col-12 custom-grid">
-								<ul>
-									<li>
-										<Link onClick={ClickHandler} href="/">
-											<a>
-												{/* <i className="ti-facebook"></i> */}
-												{/* <FaFacebookF /> */}
-											</a>
-										</Link>
-									</li>
-									<li>
-										<Link onClick={ClickHandler} href="/">
-											<a>
-												<i className="ti-twitter-alt"></i>
-											</a>
-										</Link>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div className="footer-middle">
 					<div className="container">
 						<div className="row">

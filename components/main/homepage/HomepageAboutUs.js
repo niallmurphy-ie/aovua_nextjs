@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import VideoModal from '../../utils/ModalVideo';
 import parse from 'html-react-parser';
+import CKContent from '../../utils/CKContent';
 
 const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 	const ClickHandler = () => {
@@ -17,7 +18,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 		setVideoModal(true);
 	}, []);
 
-	if (!greetingMessage || !greetingImage || !greetingYoutubeURL) return null;
+	if (!greetingMessage || !greetingImage) return null;
 
 	return (
 		<div className="wpo-about-area-2 section-padding">
@@ -34,8 +35,11 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 							{videoModal ? (
 								<ul className="banner-video">
 									<li className="video-holder">
-										{/* <VideoModal video={greetingVideo} /> */}
-										<VideoModal greetingYoutubeURL={greetingYoutubeURL} />
+										<VideoModal
+											greetingYoutubeURL={
+												greetingYoutubeURL
+											}
+										/>
 									</li>
 								</ul>
 							) : null}
@@ -45,7 +49,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 						<div className="wpo-about-text">
 							<div className="wpo-section-title">
 								<span>About Us</span>
-								{parse(greetingMessage)}
+								<CKContent content={greetingMessage} />
 							</div>
 
 							<div className="btns">
