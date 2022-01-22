@@ -48,7 +48,7 @@ h4,
 h5,
 h6 {
 	font-family: 'Quicksand', sans-serif;
-	color: #283a5e;
+	color: #1c4c25;
 	font-weight: 600;
 }
 
@@ -542,5 +542,5 @@ button:focus {
 }
 
 .fixed-navbar.active .header-style-2 {
-	background: #283a5e;
+	background: #1c4c25;
 }

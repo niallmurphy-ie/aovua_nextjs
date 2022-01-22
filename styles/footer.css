@@ -3,7 +3,7 @@
 ==========================================*/
 
 .wpo-site-footer {
-	background: #062265;
+	background: #1c4c25;
 	position: relative;
 	font-size: 15px;
 	overflow: hidden;
@@ -47,7 +47,7 @@
 .wpo-site-footer .wpo-upper-footer,
 .wpo-site-footer-2 .wpo-upper-footer {
 	padding: 40px 0 70px;
-	background: url(../public/images/images/footer.jpg) center center/cover no-repeat local;
+
 }
 
 @media (max-width: 991px) {
@@ -281,7 +281,7 @@
 .wpo-site-footer-2 .wpo-lower-footer {
 	text-align: center;
 	position: relative;
-	background: #192b4e;
+	background: #1c4c25;
 }
 
 .wpo-site-footer .wpo-lower-footer .row,

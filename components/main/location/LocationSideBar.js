@@ -28,8 +28,8 @@ const LocationSidebar = ({ location }) => {
 						{menu.components[1].subMenu.map((item, index) => (
 							<li
 								className={
-									item.link.includes(location.urlPrefix) &&
-									'current'
+									item.link.includes(location.urlPrefix) ?
+									'current' : undefined
 								}
 								key={router.route + index}
 							>

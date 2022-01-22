@@ -45,7 +45,7 @@
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	border-radius: 0;
-	color: #283a5e;
+	color: #1c4c25;
 	font-weight: 700;
 }
 .wpo-select-area form input {
@@ -78,7 +78,7 @@
 	outline: 0;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	color: #283a5e;
+	color: #1c4c25;
 }
 
 .select-sub {
@@ -127,7 +127,7 @@
 .wpo-select-area .nice-select span {
 	position: relative;
 	font-size: 20px;
-	color: #283a5e;
+	color: #1c4c25;
 	font-weight: 700;
 }
 .select-sub span {
@@ -199,24 +199,24 @@
 
 .wpo-select-area ::-webkit-input-placeholder {
 	/* Chrome/Opera/Safari */
-	color: #283a5e;
+	color: #1c4c25;
 }
 
 .wpo-select-area ::-moz-placeholder {
 	/* Firefox 19+ */
 
-	color: #283a5e;
+	color: #1c4c25;
 }
 
 .wpo-select-area :-ms-input-placeholder {
 	/* IE 10+ */
-	color: #283a5e;
+	color: #1c4c25;
 }
 
 .wpo-select-area :-moz-placeholder {
 	/* Firefox 18- */
 
-	color: #283a5e;
+	color: #1c4c25;
 }
 .datepicker table tr td.active,
 .datepicker table tr td.active.disabled,
