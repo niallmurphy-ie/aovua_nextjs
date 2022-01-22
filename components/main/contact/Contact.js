@@ -1,8 +1,9 @@
 import React from 'react';
+import CKContent from '../../utils/CKContent';
 // import ContactForm from '../ContactFrom';
 
-
-const Contact= () => {
+const Contact = ({ contact }) => {
+	console.log('contact', contact);
 	return (
 		<div id="Contact" className="contact-area section-padding">
 			<div className="container">
@@ -15,10 +16,10 @@ const Contact= () => {
 										<i className="fi flaticon-internet"></i>
 									</div>
 									<div className="info-text">
-										<span>Hotel Address</span>
+										<span>Địa chỉ</span>
 									</div>
 								</div>
-								<h2>25 North Street,Dubai</h2>
+								<CKContent content={contact.Address} />
 							</div>
 						</div>
 						<div className="col-lg-4 col-md-6 col-sm-12 col-12">
@@ -57,7 +58,8 @@ const Contact= () => {
 					</div>
 				</div> */}
 				<div className="contact-map">
-					<iframe title='Map'
+					<iframe
+						title="Map"
 						src="https://www.google.com/maps/d/u/0/embed?mid=1YTVeIChavvKCPAxms8K5rIVJR7dBkem0&ehbc=2E312F"
 						loading="lazy"
 					></iframe>
