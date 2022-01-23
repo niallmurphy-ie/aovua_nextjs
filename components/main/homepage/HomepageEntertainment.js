@@ -116,14 +116,10 @@ const Entertainment = ({ entertainment}) => {
 					<div className="col-lg-5">
 						<div className="entertainment-text">
 							<div className="wpo-section-title">
-								<h2>Our Featured Destinations</h2>
+								<h2>Vui Chơi Giải Trí</h2>
 							</div>
 							<p>
-								There are many variations of passages of Lorem
-								Ipsum available, but the majority have suffered
-								alteration in some form, by injected humour, or
-								randomised words which dok even slightly
-								believable.{' '}
+								Hey baby x{' '}
 							</p>
 							<div className="btns">
 								<Link
@@ -131,7 +127,7 @@ const Entertainment = ({ entertainment}) => {
 									href="/destination"
 									className="theme-btn-s2"
 								>
-									<a>All Destination</a>
+									<a className='theme-btn-s2'>Xem tất cả</a>
 								</Link>
 							</div>
 						</div>
