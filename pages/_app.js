@@ -24,6 +24,7 @@ import '../styles/article-sidebar.css';
 import '../styles/location.css';
 import '../styles/ckeditor-output.css';
 import '../styles/contact.css';
+import '../styles/entertainment.css';
 
 // search date picker
 import 'react-datepicker/dist/react-datepicker.css';

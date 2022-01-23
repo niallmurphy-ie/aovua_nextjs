@@ -15,7 +15,7 @@ const Hero = (props) => {
 		autoplay: true,
 		autoplaySpeed: 7500,
 		fade: true,
-		lazyLoad: true,
+		lazyLoad: false,
 	};
 	return (
 		<section className={`hero ${props.heroClass}`}>

@@ -3,6 +3,7 @@ import Hero from './Hero';
 import Search from './Search';
 import About from './HomepageAboutUs';
 import LatestNewsSection from './LatestNews';
+import Entertainment from './HomepageEntertainment';
 // import About2 from '../../components/about2';
 // import Destination2 from '../../components/Destination2';
 // import RoomSection from '../../components/RoomSection';
@@ -15,14 +16,12 @@ import { HOMEPAGE } from '../../../lib/queries';
 import Loading from '../../Loading';
 import { initializeApollo, addApolloState } from '../../../lib/apolloClient';
 
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense } from 'react';
 
-
-const HomePage = ({ homepageData, articles }) => {
-
+const HomePage = ({ homepageData, articles, entertainment }) => {
 	if (!homepageData) return <Loading />;
 
-	console.log(homepageData);
+	console.log('entertainment', entertainment);
 
 	return (
 		<>
@@ -37,6 +36,7 @@ const HomePage = ({ homepageData, articles }) => {
 				greetingYoutubeURL={homepageData.GreetingYoutubeURL}
 			/>
 			<LatestNewsSection articles={articles} />
+			<Entertainment entertainment={entertainment} />
 			{/*<Destination2 />
 			<RoomSection />
 			<Features />
@@ -46,4 +46,3 @@ const HomePage = ({ homepageData, articles }) => {
 	);
 };
 export default HomePage;
-

@@ -30,7 +30,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}`}
 								alt={greetingImage.alternativeText}
 								layout="fill"
-								objectFit="contain"
+								objectFit="cover"
 							/>
 							{videoModal ? (
 								<ul className="banner-video">

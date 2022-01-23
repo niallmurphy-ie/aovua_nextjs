@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import HomePage from '../components/main/homepage/Homepage';
 import client from '../lib/apolloClient';
-import { HOMEPAGE, ARTICLES } from '../lib/queries';
+import { HOMEPAGE, ARTICLES, ENTERTAINMENTS } from '../lib/queries';
 
-export default function Home({ homepageData, articles }) {
+export default function Home({ homepageData, articlesData, entertainmentData }) {
 	return (
 		<>
 			<Head>
@@ -18,14 +18,13 @@ export default function Home({ homepageData, articles }) {
 			</Head>
 
 			<Layout home={true}>
-				<HomePage homepageData={homepageData} articles={articles} />
+				<HomePage homepageData={homepageData} articles={articlesData} entertainment={entertainmentData} />
 			</Layout>
 		</>
 	);
 }
 
 export const getStaticProps = async () => {
-
 	const homepageQuery = client.query({
 		query: HOMEPAGE,
 	});
@@ -34,12 +33,21 @@ export const getStaticProps = async () => {
 		query: ARTICLES,
 	});
 
-	const responses = await Promise.all([homepageQuery, latestNewsQuery]);
+	const entertainmentQuery = client.query({
+		query: ENTERTAINMENTS,
+	});
+
+	const responses = await Promise.all([
+		homepageQuery,
+		latestNewsQuery,
+		entertainmentQuery,
+	]);
 
 	return {
 		props: {
 			homepageData: responses[0].data.homepage,
-			articles: responses[1].data.articles,
+			articlesData: responses[1].data.articles,
+			entertainmentData: responses[2].data.entertainments,
 		},
 	};
 };
