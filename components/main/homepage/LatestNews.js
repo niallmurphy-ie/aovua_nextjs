@@ -7,7 +7,7 @@ const LatestNewsSection = ({ articles }) => {
 	if (!articles) return <Loading />;
 
 	return (
-		<div className="blog-area ptb-100-70">
+		<div className="blog-area ptb-0-70">
 			<div className="container">
 				<div className="col-12">
 					<div className="wpo-section-title">

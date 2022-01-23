@@ -22,6 +22,7 @@ const Contact = ({ contact }) => {
 								<CKContent content={contact.Address} />
 							</div>
 						</div>
+						{contact.Email && (
 						<div className="col-lg-4 col-md-6 col-sm-12 col-12">
 							<div className="info-item">
 								<div className="info-wrap">
@@ -29,25 +30,41 @@ const Contact = ({ contact }) => {
 										<i className="fi flaticon-email"></i>
 									</div>
 									<div className="info-text">
-										<span>Official Mail</span>
+										<span>Email</span>
 									</div>
 								</div>
-								<h2>info@varaus.com</h2>
+								<h2>
+									<a href={`mailto:${contact.Email}`}>
+										{contact.Email}
+									</a>
+								</h2>
 							</div>
 						</div>
-						<div className="col-lg-4 col-md-6 col-sm-12 col-12">
-							<div className="info-item">
-								<div className="info-wrap">
-									<div className="info-icon">
-										<i className="fi flaticon-null-1"></i>
+						)}
+						{contact.Phone && (
+							<div className="col-lg-4 col-md-6 col-sm-12 col-12">
+								<div className="info-item">
+									<div className="info-wrap">
+										<div className="info-icon">
+											<i className="fi flaticon-null-1"></i>
+										</div>
+										<div className="info-text">
+											<span>Số điện thoại</span>
+										</div>
 									</div>
-									<div className="info-text">
-										<span>Official Phone</span>
-									</div>
+									{contact.Phone.split('/').map(
+										(phone, index) => (
+											// <a href="tel:5554280940"></a>
+											<h2 key={`phone_${index}`}>
+												<a href={`tel:${phone}`}>
+													{phone}
+												</a>
+											</h2>
+										)
+									)}
 								</div>
-								<h2>+91 256-987-239</h2>
 							</div>
-						</div>
+						)}
 					</div>
 				</div>
 
