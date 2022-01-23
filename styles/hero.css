@@ -272,7 +272,7 @@ hero-style-1
 
 	.hero-style-1,
 	.hero-style-2 {
-		 height: 450px;
+		 height: 100vh;
 	}
 }
 
@@ -306,7 +306,7 @@ hero-style-1
 
 	.hero-style-1 .slide,
 	.hero-style-2 .slide {
-		 height: 450px;
+		 height: 100vh;
 	}
 
 	.hero .slide .container {
@@ -319,7 +319,7 @@ hero-style-1
 	}
 
 	.hero-style-2 .slide {
-		 height: 450px;
+		 height: 100vh;
 	}
 }
 
@@ -493,7 +493,7 @@ hero-style-1
 
 @media (max-width: 767px) {
 	.hero-style-2 {
-		 height: 450px;
+		 height: 100vh;
 	}
 }
 
@@ -517,7 +517,7 @@ hero-style-1
 
 @media (max-width: 767px) {
 	.hero-style-2 {
-		 height: 450px;
+		 height: 100vh;
 	}
 }
 
@@ -541,7 +541,7 @@ hero-style3
 
 @media (max-width: 767px) {
 	.hero-style-3 {
-		 height: 450px;
+		 height: 100vh;
 	}
 }
 
@@ -558,7 +558,7 @@ hero-style3
 
 @media (max-width: 767px) {
 	.hero-style-3 .hero-outer {
-		 height: 450px;
+		 height: 100vh;
 	}
 }
 
