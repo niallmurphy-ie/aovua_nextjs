@@ -60,49 +60,6 @@ const Entertainment = ({ entertainment}) => {
 		],
 	};
 
-	const destination = [
-		{
-			DImg: dsn1,
-			Title: 'United Arab',
-			price: '$750',
-			Date: '11 Jun 2021 - 22 Jun 2021',
-			per: 'Per Day',
-			link: '/room-single',
-		},
-		{
-			DImg: dsn2,
-			Title: 'Paris, France',
-			price: '$835',
-			Date: '11 Jun 2021 - 22 Jun 2021',
-			per: 'Per Day',
-			link: '/room-single',
-		},
-		{
-			DImg: dsn3,
-			Title: 'Singapore',
-			price: '$870',
-			Date: '11 Jun 2021 - 22 Jun 2021',
-			per: 'Per Day',
-			link: '/room-single',
-		},
-		{
-			DImg: dsn4,
-			Title: 'San Francisco',
-			price: '$653',
-			Date: '11 Jun 2021 - 22 Jun 2021',
-			per: 'Per Day',
-			link: '/room-single',
-		},
-		{
-			DImg: dsn5,
-			Title: 'Singapore',
-			price: '$750',
-			Date: '11 Jun 2021 - 22 Jun 2021',
-			per: 'Per Day',
-			link: '/room-single',
-		},
-	];
-
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
@@ -119,7 +76,7 @@ const Entertainment = ({ entertainment}) => {
 								<h2>Vui Chơi Giải Trí</h2>
 							</div>
 							<p>
-								Hey baby x{' '}
+								Hey baby x
 							</p>
 							<div className="btns">
 								<Link
