@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, CardBody, Card } from 'reactstrap';
 import Link from 'next/link';
+import { FaBars } from 'react-icons/fa';
 
 const menus = [
 	{
@@ -254,7 +255,8 @@ export default class MobileMenu extends Component {
 				</div>
 
 				<div className="showmenu" onClick={this.menuHandler}>
-					<i className="fa fa-bars" aria-hidden="true"></i>
+					{/* <i className="fa fa-bars" aria-hidden="true"></i> */}
+					<FaBars />
 				</div>
 			</div>
 		);
