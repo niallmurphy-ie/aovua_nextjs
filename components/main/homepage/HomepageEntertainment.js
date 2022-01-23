@@ -10,7 +10,7 @@ import dsn3 from '../../../public/images/images/destination/img-9.jpg';
 import dsn4 from '../../../public/images/images/destination/img-7.jpg';
 import dsn5 from '../../../public/images/images/destination/img-8.jpg';
 
-const Entertainment = ({ entertainment}) => {
+const Entertainment = ({ entertainment }) => {
 	const settings = {
 		dots: false,
 		arrows: false,
@@ -75,16 +75,14 @@ const Entertainment = ({ entertainment}) => {
 							<div className="wpo-section-title">
 								<h2>Vui Chơi Giải Trí</h2>
 							</div>
-							<p>
-								Hey baby x
-							</p>
+							<p>Hey baby x</p>
 							<div className="btns">
 								<Link
 									onClick={ClickHandler}
 									href="/destination"
 									className="theme-btn-s2"
 								>
-									<a className='theme-btn-s2'>Xem tất cả</a>
+									<a className="theme-btn-s2">Xem tất cả</a>
 								</Link>
 							</div>
 						</div>
@@ -104,7 +102,6 @@ const Entertainment = ({ entertainment}) => {
 														width={300}
 														layout="responsive"
 														objectFit="cover"
-
 													/>
 												</div>
 												<div className="entertainment-content">
@@ -114,13 +111,16 @@ const Entertainment = ({ entertainment}) => {
 																onClick={
 																	ClickHandler
 																}
-																href="/"
+																href={`/${ent.locations[0].urlPrefix}/vui-choi-giai-tri/${ent.slug}`}
 															>
 																{ent.Name}
 															</Link>
 														</h5>
 														<small>
-															{ent.locations[0].Name}
+															{
+																ent.locations[0]
+																	.Name
+															}
 														</small>
 													</div>
 													{/* <div className="content-right">
