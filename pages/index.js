@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import HomePage from '../components/main/homepage/Homepage';
 import client from '../lib/apolloClient';
-import { HOMEPAGE, ARTICLES, ENTERTAINMENTS } from '../lib/queries';
+import { ARTICLES, ENTERTAINMENTS } from '../lib/queries';
+import { HOMEPAGE } from '../lib/queries/homepageQueries';
 
 export default function Home({ homepageData, articlesData, entertainmentData }) {
 	return (

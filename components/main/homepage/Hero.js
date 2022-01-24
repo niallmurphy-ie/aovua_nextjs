@@ -1,9 +1,12 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
+import Link from 'next/link';
+import Loading from '../../Loading';
+import CKContent from '../../utils/CKContent';
 
-const Hero = (props) => {
-	if (!props.heroImages) return null;
+const Hero = ({ heroImages }) => {
+	if (!heroImages) return <Loading />;
 
 	// Slideshow Settings
 	const settings = {
@@ -18,36 +21,15 @@ const Hero = (props) => {
 		lazyLoad: false,
 	};
 	return (
-		<section className={`hero ${props.heroClass}`}>
+		<section className={`hero hero-style-2`}>
 			<div className="hero-slider">
 				<Slider {...settings}>
-					{props.heroImages.map((image, index) => (
-						// <div key={index} className="slide">
-						// 	<div
-						// 		className="slide-inner"
-						// 		style={{
-						// 			backgroundImage: `url(${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url})`,
-						// 		}}
-						// 	>
-						// 		<div className="container">
-						// 			<div className="row">
-						// 				<div className="col col-lg-8 col-md-12 col-12 slide-caption">
-						// 					<div className="slide-title">
-						// 						<h2>{image.alternativeText}</h2>
-						// 					</div>
-						// 					<div className="slide-subtitle">
-						// 						<p>{image.caption}</p>
-						// 					</div>
-						// 				</div>
-						// 			</div>
-						// 		</div>
-						// 	</div>
-						// </div>
+					{heroImages.map((hero, index) => (
 						<div key={`hero_${index}`} className="slide">
 							<div className="slide-inner">
 								<Image
-									src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
-									alt={image.alternativeText}
+									src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.HeroImage.url}`}
+									alt={hero.Name}
 									layout="fill"
 									objectFit="cover"
 									priority
@@ -56,11 +38,22 @@ const Hero = (props) => {
 									<div className="row">
 										<div className="col col-lg-8 col-md-12 col-12 slide-caption">
 											<div className="slide-title">
-												<h2>{image.alternativeText}</h2>
+												<h2>{hero.Name}</h2>
 											</div>
 											<div className="slide-subtitle">
-												<p>{image.caption}</p>
+												<CKContent
+													content={hero.Description}
+												/>
 											</div>
+											{hero.Link && (
+												<div className="btns">
+													<Link href={hero.Link}>
+														<a className="theme-btn">
+															Xem Thêm
+														</a>
+													</Link>
+												</div>
+											)}
 										</div>
 									</div>
 								</div>

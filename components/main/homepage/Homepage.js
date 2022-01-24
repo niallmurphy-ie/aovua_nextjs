@@ -26,8 +26,7 @@ const HomePage = ({ homepageData, articles, entertainment }) => {
 	return (
 		<>
 			<Hero
-				heroClass={'hero-style-2'}
-				heroImages={homepageData.HeroImages}
+				heroImages={homepageData.HomepageLocationsSlider}
 			/>
 			<Search />
 			<About
