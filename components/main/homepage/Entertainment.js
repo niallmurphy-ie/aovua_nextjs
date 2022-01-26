@@ -67,7 +67,7 @@ const Entertainment = ({ entertainment }) => {
 	console.log('entertainment', entertainment);
 
 	return (
-		<div className="entertainment-area-2 section-padding">
+		<div className="entertainment-service section-padding">
 			<div className="container-fluid">
 				<div className="row align-items-center">
 					<div className="col-lg-5">
@@ -98,9 +98,7 @@ const Entertainment = ({ entertainment }) => {
 													<Image
 														src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Thumbnail.url}`}
 														alt=""
-														height={400}
-														width={300}
-														layout="responsive"
+														layout="fill"
 														objectFit="cover"
 													/>
 												</div>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Hero from './Hero';
 import Search from './Search';
-import About from './HomepageAboutUs';
+import About from './AboutUs';
 import LatestNewsSection from './LatestNews';
-import Entertainment from './HomepageEntertainment';
+import Entertainment from './Entertainment';
 import Destination from './Destination';
 // import About2 from '../../components/about2';
 // import Destination2 from '../../components/Destination2';
