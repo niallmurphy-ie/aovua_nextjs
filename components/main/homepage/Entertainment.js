@@ -68,71 +68,48 @@ const Entertainment = ({ entertainment }) => {
 
 	return (
 		<div className="entertainment-service section-padding">
-			<div className="container-fluid">
-				<div className="row align-items-center">
-					<div className="col-lg-5">
-						<div className="entertainment-text">
-							<div className="wpo-section-title">
-								<h2>Vui Chơi Giải Trí</h2>
-							</div>
-							<p>Hey baby x</p>
-							<div className="btns">
-								<Link
-									onClick={ClickHandler}
-									href="/destination"
-									className="theme-btn-s2"
-								>
-									<a className="theme-btn-s2">Xem tất cả</a>
-								</Link>
-							</div>
-						</div>
+			<div className="container">
+				<div className="col-12">
+					<div className="wpo-section-title text-center">
+						<h2>Vui Chơi Giải Trí</h2>
 					</div>
-					<div className="col-lg-7">
-						<div className="entertainment-r">
-							<div className="entertainment-carousel">
-								<Slider {...settings}>
-									{entertainment.map((ent, index) => (
-										<div className="item" key={ent.Name}>
-											<div className="entertainment-item">
-												<div className="entertainment-img">
-													<Image
-														src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Thumbnail.url}`}
-														alt=""
-														layout="fill"
-														objectFit="cover"
-													/>
-												</div>
-												<div className="entertainment-content">
-													<div className="content-left">
-														<h5>
-															<Link
-																onClick={
-																	ClickHandler
-																}
-																href={`/${ent.locations[0].urlPrefix}/vui-choi-giai-tri/${ent.slug}`}
-															>
-																{ent.Name}
-															</Link>
-														</h5>
-														<small>
-															{
-																ent.locations[0]
-																	.Name
-															}
-														</small>
-													</div>
-													{/* <div className="content-right">
+				</div>
+				<div className="entertainment-carousel">
+					<Slider {...settings}>
+						{entertainment.map((ent, index) => (
+							<div className="item" key={ent.Name}>
+								<div className="entertainment-item">
+									<div className="entertainment-img">
+										<Image
+											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Thumbnail.url}`}
+											alt=""
+											layout="fill"
+											objectFit="cover"
+										/>
+									</div>
+									<div className="entertainment-content">
+										<div className="content-left">
+											<h5>
+												<Link
+													onClick={ClickHandler}
+													href={`/${ent.locations[0].urlPrefix}/vui-choi-giai-tri/${ent.slug}`}
+												>
+													{ent.Name}
+												</Link>
+											</h5>
+											<small>
+												{ent.locations[0].Name}
+											</small>
+										</div>
+										{/* <div className="content-right">
 														<h5>{dest.price}</h5>
 														<span>{dest.per}</span>
 													</div> */}
-												</div>
-											</div>
-										</div>
-									))}
-								</Slider>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
+						))}
+					</Slider>
 				</div>
 			</div>
 		</div>
