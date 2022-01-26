@@ -4,6 +4,7 @@ import Search from './Search';
 import About from './HomepageAboutUs';
 import LatestNewsSection from './LatestNews';
 import Entertainment from './HomepageEntertainment';
+import Destination from './Destination';
 // import About2 from '../../components/about2';
 // import Destination2 from '../../components/Destination2';
 // import RoomSection from '../../components/RoomSection';
@@ -18,7 +19,7 @@ import { initializeApollo, addApolloState } from '../../../lib/apolloClient';
 
 import { lazy, Suspense } from 'react';
 
-const HomePage = ({ homepageData, articles, entertainment }) => {
+const HomePage = ({ homepageData, articles, entertainment, locations }) => {
 	if (!homepageData) return <Loading />;
 
 	console.log('entertainment', entertainment);
@@ -36,6 +37,7 @@ const HomePage = ({ homepageData, articles, entertainment }) => {
 			/>
 			<LatestNewsSection articles={articles} />
 			<Entertainment entertainment={entertainment} />
+			<Destination locations={locations} />
 			{/*<Destination2 />
 			<RoomSection />
 			<Features />

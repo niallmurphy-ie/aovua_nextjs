@@ -4,10 +4,10 @@ import PageTitle from '../../../components/main/PageTitle';
 import Service from '../../../components/main/service/Service';
 import client from '../../../lib/apolloClient';
 import {
-	LOCATION_URLPREFIX,
 	ENTERTAINMENT,
 	ENTERTAINMENTS,
 } from '../../../lib/queries';
+import { LOCATION_URLPREFIX } from '../../../lib/queries/locationQueries';
 
 const ServicePage = ({ location, entertainment, entertainments }) => {
 	// location gives the first location if multuple are selected.

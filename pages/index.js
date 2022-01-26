@@ -5,8 +5,14 @@ import HomePage from '../components/main/homepage/Homepage';
 import client from '../lib/apolloClient';
 import { ARTICLES, ENTERTAINMENTS } from '../lib/queries';
 import { HOMEPAGE } from '../lib/queries/homepageQueries';
+import { LOCATIONS } from '../lib/queries/locationQueries';
 
-export default function Home({ homepageData, articlesData, entertainmentData }) {
+export default function Home({
+	homepageData,
+	articlesData,
+	entertainmentData,
+	locationsData,
+}) {
 	return (
 		<>
 			<Head>
@@ -19,7 +25,12 @@ export default function Home({ homepageData, articlesData, entertainmentData }) 
 			</Head>
 
 			<Layout home={true}>
-				<HomePage homepageData={homepageData} articles={articlesData} entertainment={entertainmentData} />
+				<HomePage
+					homepageData={homepageData}
+					articles={articlesData}
+					entertainment={entertainmentData}
+					locations={locationsData}
+				/>
 			</Layout>
 		</>
 	);
@@ -38,10 +49,15 @@ export const getStaticProps = async () => {
 		query: ENTERTAINMENTS,
 	});
 
+	const locationsQuery = client.query({
+		query: LOCATIONS,
+	});
+
 	const responses = await Promise.all([
 		homepageQuery,
 		latestNewsQuery,
 		entertainmentQuery,
+		locationsQuery,
 	]);
 
 	return {
@@ -49,6 +65,7 @@ export const getStaticProps = async () => {
 			homepageData: responses[0].data.homepage,
 			articlesData: responses[1].data.articles,
 			entertainmentData: responses[2].data.entertainments,
+			locationsData: responses[3].data.locations,
 		},
 	};
 };
