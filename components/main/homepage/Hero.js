@@ -18,7 +18,7 @@ const Hero = ({ heroImages }) => {
 		autoplay: true,
 		autoplaySpeed: 7500,
 		fade: true,
-		lazyLoad: false,
+		lazyLoad: true,
 	};
 	return (
 		<section className={`hero hero-style-2`}>
