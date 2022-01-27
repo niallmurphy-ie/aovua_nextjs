@@ -71,5 +71,5 @@ App.getInitialProps = async (appContext) => {
 	const footerData = await client.query({
 		query: FOOTER,
 	});
-	return { ...appProps, footerData };
+	return { ...appProps, footerData: footerData.data.footer };
 };
