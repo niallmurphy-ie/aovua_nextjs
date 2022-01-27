@@ -4,7 +4,8 @@ import Footer from './footer/Footer';
 
 export const siteTitle = 'Ao Vua';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }, props) {
+	console.log('footerLayout', props);
 	return (
 		<div className="App">
 			<Head>
@@ -18,11 +19,9 @@ export default function Layout({ children, home }) {
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
-			<div className="App">
-				<NavBar home={home} />
-				{children}
-				<Footer />
-			</div>
+			<NavBar home={home} />
+			{children}
+			<Footer />
 		</div>
 	);
 }

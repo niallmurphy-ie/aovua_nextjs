@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Logo from '../../public/images/logo.png';
 import ft1 from '../../public/images/images/footer/img-1.jpg';
 import ft2 from '../../public/images/images/footer/img-2.jpg';
+import { cloneWith } from 'lodash';
 // import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = (props) => {
@@ -14,6 +15,8 @@ const Footer = (props) => {
 	const SubmitHandler = (e) => {
 		e.preventDefault();
 	};
+
+	console.log('props.footer', props);
 
 	return (
 		<footer className="wpo-site-footer">

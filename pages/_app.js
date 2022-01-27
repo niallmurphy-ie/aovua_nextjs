@@ -30,14 +30,35 @@ import '../styles/destination.css';
 // search date picker
 import 'react-datepicker/dist/react-datepicker.css';
 
+import NextApp, { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client';
 import client from '../lib/apolloClient';
+import { FOOTER } from '../lib/queries/footer';
+import Footer from '../components/footer/Footer';
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, footerData }) {
+	const withFooter = {
+		...pageProps,
+		footer: footerData.data.footer,
+	}
 	return (
 		<ApolloProvider client={client}>
-			<Component {...pageProps} />
+			<Component {...withFooter} />
+			{/* <Footer footer={footerData} /> */}
 		</ApolloProvider>
 	);
 }
 
+// Only uncomment this method if you have blocking data requirements for
+// every single page in your application. This disables the ability to
+// perform automatic static optimization, causing every page in your app to
+// be server-side rendered.
+
+App.getInitialProps = async (appContext) => {
+	const appProps = await NextApp.getInitialProps(appContext);
+	const footerData = await client.query({
+		query: FOOTER,
+	});
+
+	return { ...appProps, footerData };
+};
