@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Layout from '../components/Layout';
 import Contact from '../components/main/contact/Contact';
 import { CONTACT_PAGE } from '../lib/queries';
 import client from '../lib/apolloClient';
@@ -17,9 +16,7 @@ export default function ContactPage({ contact }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Layout home={false}>
-				<Contact contact={contact} />
-			</Layout>
+			<Contact contact={contact} />
 		</>
 	);
 }

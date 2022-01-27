@@ -1,12 +1,8 @@
 import Head from 'next/head';
-import Layout from '../../../components/Layout';
 import PageTitle from '../../../components/main/PageTitle';
 import Service from '../../../components/main/service/Service';
 import client from '../../../lib/apolloClient';
-import {
-	ENTERTAINMENT,
-	ENTERTAINMENTS,
-} from '../../../lib/queries';
+import { ENTERTAINMENT, ENTERTAINMENTS } from '../../../lib/queries';
 import { LOCATION_URLPREFIX } from '../../../lib/queries/locationQueries';
 
 const ServicePage = ({ location, entertainment, entertainments }) => {
@@ -30,15 +26,13 @@ const ServicePage = ({ location, entertainment, entertainments }) => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Layout home={false}>
-				<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />
-				{/* <Article
+			<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />
+			{/* <Article
 					article={article}
 					articles={articles}
 					categories={categories}
 				/> */}
-				<Service service={entertainment} />
-			</Layout>
+			<Service service={entertainment} />
 		</>
 	);
 };

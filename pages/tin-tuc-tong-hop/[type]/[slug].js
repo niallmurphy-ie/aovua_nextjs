@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Layout from '../../../components/Layout';
 import PageTitle from '../../../components/main/PageTitle';
 import Article from '../../../components/main/article/Article';
 import client from '../../../lib/apolloClient';
@@ -17,14 +16,12 @@ const ArticlePage = ({ category, article, categories, articles }) => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Layout home={false}>
-				<PageTitle pageTitle={article.Title} breadcrumb={null} />
-				<Article
-					article={article}
-					articles={articles}
-					categories={categories}
-				/>
-			</Layout>
+			<PageTitle pageTitle={article.Title} breadcrumb={null} />
+			<Article
+				article={article}
+				articles={articles}
+				categories={categories}
+			/>
 		</>
 	);
 };

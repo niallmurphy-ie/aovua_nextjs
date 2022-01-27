@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Layout from '../components/Layout';
 import HomePage from '../components/main/homepage/Homepage';
 import client from '../lib/apolloClient';
 import { ARTICLES, ENTERTAINMENTS } from '../lib/queries';
@@ -23,15 +22,12 @@ export default function Home({
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
-			<Layout home={true}>
-				<HomePage
-					homepageData={homepageData}
-					articles={articlesData}
-					entertainment={entertainmentData}
-					locations={locationsData}
-				/>
-			</Layout>
+			<HomePage
+				homepageData={homepageData}
+				articles={articlesData}
+				entertainment={entertainmentData}
+				locations={locationsData}
+			/>
 		</>
 	);
 }

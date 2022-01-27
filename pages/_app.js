@@ -30,21 +30,33 @@ import '../styles/destination.css';
 // search date picker
 import 'react-datepicker/dist/react-datepicker.css';
 
-import NextApp, { AppProps } from 'next/app';
+import NextApp from 'next/app';
 import { ApolloProvider } from '@apollo/client';
 import client from '../lib/apolloClient';
 import { FOOTER } from '../lib/queries/footer';
 import Footer from '../components/footer/Footer';
-
-export default function App({ Component, pageProps, footerData }) {
-	const withFooter = {
-		...pageProps,
-		footer: footerData.data.footer,
-	}
+import Head from 'next/head';
+import NavBar from '../components/header/NavBar';
+export default function App({ Component, pageProps, footerData, ...appProps }) {
+	console.log('appProps', appProps);
 	return (
 		<ApolloProvider client={client}>
-			<Component {...withFooter} />
-			{/* <Footer footer={footerData} /> */}
+			<div className="App">
+				<Head>
+					<link rel="icon" href="/favicon.ico" />
+					<meta
+						property="og:image"
+						content={`https://og-image.vercel.app/${encodeURI(
+							'Ao Vua'
+						)}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+					/>
+					<meta name="og:title" content="Ao Vua" />
+					<meta name="twitter:card" content="summary_large_image" />
+				</Head>
+				<NavBar home={appProps.router.asPath === '/'} />
+				<Component {...pageProps} />
+				<Footer footer={footerData} />
+			</div>
 		</ApolloProvider>
 	);
 }
@@ -59,6 +71,5 @@ App.getInitialProps = async (appContext) => {
 	const footerData = await client.query({
 		query: FOOTER,
 	});
-
 	return { ...appProps, footerData };
 };
