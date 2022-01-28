@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import Loading from '../../../components/Loading';
 
 const Entertainment = ({ entertainment }) => {
 	const settings = {
@@ -85,6 +86,7 @@ const Entertainment = ({ entertainment }) => {
 											priority={
 												index === 0 ? true : false
 											}
+											placeholder={<Loading />}
 										/>
 									</div>
 									<div className="entertainment-content">

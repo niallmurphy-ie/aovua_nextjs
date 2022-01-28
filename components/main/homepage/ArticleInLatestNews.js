@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { articleUrl } from '../../../lib/articles';
+import Loading from '../../../components/Loading';
 
 function Article({ article, index }) {
 	const ClickHandler = () => {
@@ -21,11 +22,11 @@ function Article({ article, index }) {
 								// height={400}
 								// layout="responsive"
 								// objectFit="contain"
-								loading="eager"
 								width={600}
 								height={400}
 								objectFit="cover"
 								priority={index === 0 ? true : false}
+								placeholder={<Loading />}
 							/>
 						</a>
 					</Link>

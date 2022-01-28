@@ -1,10 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import dsn1 from '../../../public/images/images/destination/img-1.jpg';
-import dsn2 from '../../../public/images/images/destination/img-2.jpg';
-import dsn3 from '../../../public/images/images/destination/img-3.jpg';
-import dsn4 from '../../../public/images/images/destination/img-4.jpg';
+import Loading from '../../../components/Loading';
 
 const Destination = ({ locations }) => {
 	console.log('locations', locations);
@@ -75,6 +72,7 @@ const TileOutput = ({ location, firstImage }) => {
 					width="500px"
 					objectFit="cover"
 					priority={firstImage ? true : false}
+					placeholder={<Loading />}
 				/>
 			</div>
 			<div className="destination-content">

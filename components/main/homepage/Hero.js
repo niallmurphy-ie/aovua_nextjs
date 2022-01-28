@@ -18,7 +18,7 @@ const Hero = ({ heroImages }) => {
 		autoplay: true,
 		autoplaySpeed: 7500,
 		fade: true,
-		lazyLoad: "progressive",
+		lazyLoad: 'progressive',
 	};
 	return (
 		<section className={`hero hero-style-2`}>
@@ -33,6 +33,7 @@ const Hero = ({ heroImages }) => {
 									layout="fill"
 									objectFit="cover"
 									priority={index === 0 ? true : false}
+									placeholder={<Loading />}
 								/>
 								<div className="container">
 									<div className="row">
