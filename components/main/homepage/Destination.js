@@ -70,7 +70,8 @@ const TileOutput = ({ location }) => {
 				<Image
 					src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
 					alt={location.Name}
-					layout="fill"
+					height="600px"
+					width="500px"
 					objectFit="cover"
 				/>
 			</div>

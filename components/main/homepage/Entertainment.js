@@ -83,7 +83,8 @@ const Entertainment = ({ entertainment }) => {
 										<Image
 											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Thumbnail.url}`}
 											alt=""
-											layout="fill"
+											height="600px"
+											width="450px"
 											objectFit="cover"
 										/>
 									</div>

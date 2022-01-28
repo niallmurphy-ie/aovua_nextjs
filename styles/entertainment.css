@@ -70,12 +70,12 @@
 .entertainment-right {
 	margin-top: -100px;
 }
-.entertainment-img {
+/* .entertainment-img {
 	position: relative;
 	width: auto;
 	height: 400px;
 	max-width: 100%;
-}
+} */
 
 .entertainment-img img {
 	width: 100%;

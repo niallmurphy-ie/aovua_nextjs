@@ -70,13 +70,13 @@
 .destination-right {
 	margin-top: -100px;
 }
-.destination-img {
+/* .destination-img {
 	position: relative;
 	width: 500px;
 	height: 350px;
 	max-width: 100%;
 
-}
+} */
 .destination-img img {
 	width: 100%;
 }
