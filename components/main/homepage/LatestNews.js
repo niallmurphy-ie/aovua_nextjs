@@ -3,7 +3,6 @@ import Loading from '../../Loading';
 import Article from './ArticleInLatestNews';
 
 const LatestNewsSection = ({ articles }) => {
-
 	if (!articles) return <Loading />;
 
 	return (
@@ -15,8 +14,12 @@ const LatestNewsSection = ({ articles }) => {
 					</div>
 				</div>
 				<div className="row">
-					{articles.map((article, blg) => (
-						<Article key={blg + article.slug} article={article} />
+					{articles.map((article, index) => (
+						<Article
+							key={index+article.slug}
+							article={article}
+							index={index}
+						/>
 					))}
 				</div>
 			</div>

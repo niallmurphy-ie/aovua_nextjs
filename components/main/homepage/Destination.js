@@ -31,6 +31,7 @@ const Destination = ({ locations }) => {
 												<TileOutput
 													location={location}
 													key={location.Name + index}
+													firstImage={index === 0}
 												/>
 											)
 										)}
@@ -60,7 +61,7 @@ const Destination = ({ locations }) => {
 	);
 };
 
-const TileOutput = ({ location }) => {
+const TileOutput = ({ location, firstImage }) => {
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
@@ -73,6 +74,7 @@ const TileOutput = ({ location }) => {
 					height="600px"
 					width="500px"
 					objectFit="cover"
+					priority={firstImage ? true : false}
 				/>
 			</div>
 			<div className="destination-content">

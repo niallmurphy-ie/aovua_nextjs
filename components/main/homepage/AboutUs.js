@@ -31,6 +31,8 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 								alt={greetingImage.alternativeText}
 								layout="fill"
 								objectFit="cover"
+								loading="eager"
+								priority
 							/>
 							{videoModal ? (
 								<ul className="banner-video">

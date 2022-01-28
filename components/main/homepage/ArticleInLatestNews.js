@@ -3,13 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { articleUrl } from '../../../lib/articles';
 
-function Article({ article, blg }) {
+function Article({ article, index }) {
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
 
 	return (
-		<div className="col-lg-4 col-md-6 col-12" key={blg}>
+		<div className="col-lg-4 col-md-6 col-12">
 			<div className="blog-item">
 				<div className="blog-img">
 					<Link onClick={ClickHandler} href={articleUrl(article)}>
@@ -21,10 +21,11 @@ function Article({ article, blg }) {
 								// height={400}
 								// layout="responsive"
 								// objectFit="contain"
-								// loading="eager"
+								loading="eager"
 								width={600}
 								height={400}
 								objectFit="cover"
+								priority={index === 0 ? true : false}
 							/>
 						</a>
 					</Link>

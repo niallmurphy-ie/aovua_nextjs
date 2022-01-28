@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import dsn1 from '../../../public/images/images/destination/img-6.jpg';
-import dsn2 from '../../../public/images/images/destination/img-5.jpg';
-import dsn3 from '../../../public/images/images/destination/img-9.jpg';
-import dsn4 from '../../../public/images/images/destination/img-7.jpg';
-import dsn5 from '../../../public/images/images/destination/img-8.jpg';
 
 const Entertainment = ({ entertainment }) => {
 	const settings = {
@@ -19,6 +14,7 @@ const Entertainment = ({ entertainment }) => {
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 2500,
+		lazyLoad: 'progressive',
 		responsive: [
 			{
 				breakpoint: 1440,
@@ -86,6 +82,9 @@ const Entertainment = ({ entertainment }) => {
 											height="600px"
 											width="450px"
 											objectFit="cover"
+											priority={
+												index === 0 ? true : false
+											}
 										/>
 									</div>
 									<div className="entertainment-content">
