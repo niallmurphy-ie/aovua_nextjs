@@ -17,10 +17,14 @@ function Article({ article, blg }) {
 							<Image
 								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}`}
 								alt=""
-								width="100%"
-								height="100%"
-								layout="responsive"
-								objectFit="contain"
+								// width={600}
+								// height={400}
+								// layout="responsive"
+								// objectFit="contain"
+								// loading="eager"
+								width={600}
+								height={400}
+								objectFit="cover"
 							/>
 						</a>
 					</Link>
