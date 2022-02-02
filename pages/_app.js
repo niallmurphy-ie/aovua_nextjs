@@ -37,8 +37,9 @@ import { FOOTER } from '../lib/queries/footer';
 import Footer from '../components/footer/Footer';
 import Head from 'next/head';
 import NavBar from '../components/header/NavBar';
+import React from 'react';
+
 export default function App({ Component, pageProps, footerData, ...appProps }) {
-	console.log('appProps', appProps);
 	return (
 		<ApolloProvider client={client}>
 			<div className="App">
@@ -56,6 +57,7 @@ export default function App({ Component, pageProps, footerData, ...appProps }) {
 				<NavBar home={appProps.router.asPath === '/'} />
 				<Component {...pageProps} />
 				<Footer footer={footerData} />
+				<Timer />
 			</div>
 		</ApolloProvider>
 	);
@@ -72,4 +74,14 @@ App.getInitialProps = async (appContext) => {
 		query: FOOTER,
 	});
 	return { ...appProps, footerData: footerData.data.footer };
+};
+
+const Timer = () => {
+	// Timer
+	const [timer, setTimer] = React.useState(0);
+	setInterval(() => {
+		setTimer(timer + 1);
+	}, 1000);
+
+	return <div>{timer}</div>;
 };

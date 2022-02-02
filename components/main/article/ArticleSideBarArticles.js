@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useQuery } from '@apollo/client';
-import { ARTICLES } from '../../../lib/queries';
+import { ARTICLES } from '../../../lib/queries/articles';
 import Loading from '../../Loading';
 import { articleUrl } from '../../../lib/articles';
 

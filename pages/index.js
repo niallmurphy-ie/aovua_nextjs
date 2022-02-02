@@ -2,7 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import HomePage from '../components/main/homepage/Homepage';
 import client from '../lib/apolloClient';
-import { ARTICLES, ENTERTAINMENTS } from '../lib/queries';
+import { ARTICLES } from '../lib/queries/articles';
+import { ENTERTAINMENTS } from '../lib/queries';
 import { HOMEPAGE } from '../lib/queries/homepageQueries';
 import { LOCATIONS } from '../lib/queries/locationQueries';
 
