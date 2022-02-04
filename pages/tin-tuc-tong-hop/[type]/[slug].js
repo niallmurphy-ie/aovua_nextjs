@@ -2,7 +2,7 @@ import Head from 'next/head';
 import PageTitle from '../../../components/main/PageTitle';
 import Article from '../../../components/main/article/Article';
 import client from '../../../lib/apolloClient';
-import { CATEGORY, ARTICLE, CATEGORIES, ARTICLES } from '../../../lib/queries';
+import { CATEGORY, ARTICLE, CATEGORIES, ARTICLES } from '../../../lib/queries/articles';
 
 const ArticlePage = ({ category, article, categories, articles }) => {
 	console.log(category, article);

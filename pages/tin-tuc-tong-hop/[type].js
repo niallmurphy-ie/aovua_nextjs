@@ -1,8 +1,9 @@
 import PageTitle from '../../components/main/PageTitle';
+import Category from '../../components/main/category/Category';
 import { CATEGORY, CATEGORIES } from '../../lib/queries/articles';
 import client from '../../lib/apolloClient';
 
-const Post = ({ category }) => {
+const Post = ({ category, categories }) => {
 	const breadcrumb = category
 		? {
 				url: null,
@@ -17,6 +18,7 @@ const Post = ({ category }) => {
 				pageTitle={category.CategoryName}
 				breadcrumb={breadcrumb}
 			/>
+			<Category category={category} categories={categories} />
 		</>
 	);
 };
@@ -31,9 +33,14 @@ export const getStaticProps = async ({ params }) => {
 		},
 	});
 
+	const categoriesQuery = await client.query({
+		query: CATEGORIES,
+	});
+
 	return {
 		props: {
 			category: categoryQuery.data.categories[0],
+			categories: categoriesQuery.data.categories,
 		},
 	};
 };

@@ -3,14 +3,14 @@ import parse from 'html-react-parser';
 import Loading from '../Loading';
 
 function CKContent({ content }) {
-	const [body, setBody] = React.useState(null);
+	// const [body, setBody] = React.useState(null);
 
-	React.useEffect(() => {
-		setBody(parse(content));
-	}, [content]);
+	// React.useEffect(() => {
+	// 	setBody(parse(content));
+	// }, [content]);
 
-	if (!body) return <Loading />;
-	return <div className="ck-content">{body}</div>;
+	if (!content) return <Loading />;
+	return <div className="ck-content">{parse(content)}</div>;
 }
 
 export default CKContent;
