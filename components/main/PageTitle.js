@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 
 const PageTitle = ({ headerImage, pageTitle, breadcrumb }) => {
+
+	if (!pageTitle) return null;
+	console.log('breadcrumb', breadcrumb);
 	// Set background image if available in props
 	const style = headerImage
 		? {

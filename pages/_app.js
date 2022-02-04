@@ -57,7 +57,6 @@ export default function App({ Component, pageProps, footerData, ...appProps }) {
 				<NavBar home={appProps.router.asPath === '/'} />
 				<Component {...pageProps} />
 				<Footer footer={footerData} />
-				<Timer />
 			</div>
 		</ApolloProvider>
 	);
@@ -74,14 +73,4 @@ App.getInitialProps = async (appContext) => {
 		query: FOOTER,
 	});
 	return { ...appProps, footerData: footerData.data.footer };
-};
-
-const Timer = () => {
-	// Timer
-	const [timer, setTimer] = React.useState(0);
-	setInterval(() => {
-		setTimer(timer + 1);
-	}, 1000);
-
-	return <div>{timer}</div>;
 };

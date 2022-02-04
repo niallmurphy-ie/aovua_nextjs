@@ -1,10 +1,24 @@
-import { useRouter } from 'next/router';
+import PageTitle from '../../components/main/PageTitle';
 import { CATEGORY, CATEGORIES } from '../../lib/queries/articles';
 import client from '../../lib/apolloClient';
 
 const Post = ({ category }) => {
+	const breadcrumb = category
+		? {
+				url: null,
+				name: `Tin Nổi Bật`,
+		  }
+		: null;
+
 	console.log(category);
-	return <p>hELLL</p>;
+	return (
+		<>
+			<PageTitle
+				pageTitle={category.CategoryName}
+				breadcrumb={breadcrumb}
+			/>
+		</>
+	);
 };
 
 export default Post;
