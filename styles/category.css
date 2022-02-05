@@ -381,13 +381,15 @@
 	color: #00d690;
 }
 
-.wpo-blog-pg-section .post p {
+.wpo-blog-pg-section .post .ck-content {
 	margin-bottom: 1.5em;
 	font-size: 18px;
+	color: #687693;
+	line-height: 30px;
 }
 
 @media (max-width: 991px) {
-	.wpo-blog-pg-section .post p {
+	.wpo-blog-pg-section .post .ck-content {
 		font-size: 16px;
 		font-size: 1rem;
 	}

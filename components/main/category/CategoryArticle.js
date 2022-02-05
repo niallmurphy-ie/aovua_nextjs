@@ -19,8 +19,8 @@ function CategoryArticle({ categoryURLPrefix, article }) {
 					<Image
 						src={`http://localhost:1337${article.Thumbnail.url}`}
 						alt=""
-						height={500}
-						width={600}
+						height={600}
+						width={800}
 						objectFit={'cover'}
 					/>
 				</div>

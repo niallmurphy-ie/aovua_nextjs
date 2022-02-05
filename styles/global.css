@@ -9,7 +9,7 @@ html {
 	font-size: 16px;
 }
 
-body {
+body div.App {
 	font-family: 'Nunito Sans', sans-serif !important;
 	background-color: #fff;
 	font-size: 18px;
