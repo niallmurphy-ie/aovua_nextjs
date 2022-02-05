@@ -1,0 +1,239 @@
+/*--------------------------------------------------------------
+0.8 Room-section
+--------------------------------------------------------------*/
+.Room-area.section-padding,
+.Room-area2.section-padding {
+	padding-bottom: 100px;
+}
+
+.Room-section .gallery-filters {
+	margin-bottom: 35px;
+}
+
+@media (max-width: 767px) {
+	.Room-section .gallery-filters {
+		margin-bottom: 30px;
+	}
+	.Room-area.section-padding,
+	.Room-area2.section-padding {
+		padding-bottom: 70px;
+	}
+}
+.Room-section .gallery-filters .nav-tabs,
+.Room-section .gallery-filters .nav-tabs .nav-link {
+	border: 0 !important;
+}
+.Room-section .gallery-filters .nav-tabs .nav-item.show .nav-link {
+	font-weight: 500;
+	color: #687693;
+	display: block;
+	text-transform: capitalize;
+	border: 0 !important;
+	cursor: pointer;
+}
+
+.Room-section .gallery-filters .nav-tabs .nav-link.active,
+.Room-section .gallery-filters .nav-tabs .nav-link:hover,
+.Room-section .gallery-filters .nav-tabs .nav-link:focus {
+	border: 0 !important;
+	cursor: pointer;
+}
+.Room-section .gallery-filters .nav-tabs .nav-link.active {
+	color: #00d690;
+	text-decoration: none;
+}
+
+@media (max-width: 767px) {
+	.Room-section .gallery-filters .nav-tabs .nav-item.show .nav-link,
+	.Room-section .gallery-filters .nav-tabs .nav-link.active {
+		font-size: 15px;
+		font-size: 1rem;
+	}
+}
+
+.Room-section .gallery-container {
+	margin: 0 -7.5px;
+}
+
+@media (max-width: 991px) {
+	.Room-section .gallery-container {
+		margin: 0 5px;
+	}
+}
+
+@media (max-width: 500px) {
+	.Room-section .gallery-container {
+		margin: 0;
+	}
+}
+
+.Room-section .gallery-container .grid {
+	width: 33.33%;
+	float: left;
+	padding: 0 7.5px 15px;
+}
+
+@media (max-width: 991px) {
+	.Room-section .gallery-container .grid {
+		padding: 0 5px 10px;
+	}
+	.Room-section .gallery-container .grid {
+		width: 50%;
+	}
+}
+
+@media (max-width: 767px) {
+	.Room-section .gallery-container .grid {
+		width: 100%;
+	}
+}
+
+@media (max-width: 690px) {
+	.Room-section .gallery-container .grid {
+		width: 100%;
+		float: none;
+		padding: 0 0 15px;
+	}
+}
+.Room-section .room-item {
+	position: relative;
+	overflow: hidden;
+}
+.Room-section .grid img {
+	width: 100%;
+}
+
+.Room-section .item {
+	position: relative;
+	margin-bottom: 30px;
+	transition: all 0.3s;
+	overflow: hidden;
+}
+.room-text-show {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	text-align: center;
+	z-index: 999;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.8);
+	transition: all 0.8s;
+	z-index: 11;
+}
+.room-text-hide {
+	position: absolute;
+	bottom: -80%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	z-index: 999;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.9);
+	transition: all 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1111;
+}
+.room-item:hover .room-text-hide {
+	opacity: 1;
+	visibility: visible;
+	bottom: 4%;
+}
+.room-item:hover .room-text-show {
+	opacity: 0;
+	visibility: hidden;
+}
+.room-text-show h2 {
+	font-size: 25px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.room-text-hide h2 {
+	font-size: 25px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+.room-text-hide span {
+	font-size: 18px;
+	color: #727171;
+	margin-bottom: 20px;
+	display: block;
+}
+.room-text-hide small {
+	color: #283a5e;
+	display: block;
+	margin-bottom: 20px;
+}
+.room-text-hide small span {
+	display: inline-block;
+	font-size: 20px;
+	color: #283a5e;
+	font-weight: 700;
+}
+@media (max-width: 1200px) {
+	.room-text-show h2 {
+		font-size: 20px;
+	}
+	.room-text-hide p {
+		font-size: 14px;
+	}
+	.room-text-hide small {
+		margin-bottom: 0;
+	}
+	.room-text-hide {
+		padding: 10px 15px;
+	}
+	.room-text-hide span {
+		margin-bottom: 8px;
+	}
+	.room-text-hide h2 {
+		font-size: 20px;
+	}
+}
+@media (max-width: 991px) {
+	.room-text-show h2 {
+		font-size: 20px;
+	}
+	.room-text-hide p {
+		font-size: 16px;
+	}
+	.room-text-hide small {
+		margin-bottom: 0;
+	}
+	.room-text-hide {
+		padding: 20px;
+	}
+	.room-text-hide span {
+		margin-bottom: 8px;
+	}
+	.room-text-hide h2 {
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
+}
+@media (max-width: 350px) {
+	.room-text-show h2 {
+		font-size: 20px;
+	}
+	.room-text-hide p {
+		font-size: 14px;
+	}
+	.room-text-hide small {
+		margin-bottom: 0;
+	}
+	.room-text-hide {
+		padding: 10px 15px;
+	}
+	.room-text-hide span {
+		margin-bottom: 8px;
+	}
+	.room-text-hide h2 {
+		font-size: 20px;
+	}
+}
+
+.Room-area-2 {
+	background: #f5fbf9;
+}
