@@ -27,9 +27,7 @@ const HomePage = ({ homepageData, articles, entertainment, locations }) => {
 
 	return (
 		<>
-			<Hero
-				heroImages={homepageData.HomepageLocationsSlider}
-			/>
+			<Hero heroImages={homepageData.HomepageLocationsSlider} />
 			<Search />
 			<About
 				greetingMessage={homepageData.Greeting}
@@ -39,7 +37,7 @@ const HomePage = ({ homepageData, articles, entertainment, locations }) => {
 			<LatestNewsSection articles={articles} />
 			<Destination locations={locations} />
 			<Entertainment entertainment={entertainment} />
-			<HotelRestaurant />
+			<HotelRestaurant locations={locations} />
 			{/*<Destination2 />
 			<RoomSection />
 			<Features />

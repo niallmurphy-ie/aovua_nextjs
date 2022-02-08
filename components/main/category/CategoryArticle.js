@@ -17,7 +17,7 @@ function CategoryArticle({ categoryURLPrefix, article }) {
 			{article.Thumbnail && (
 				<div className="entry-media">
 					<Image
-						src={`http://localhost:1337${article.Thumbnail.url}`}
+						src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}`}
 						alt=""
 						height={600}
 						width={800}

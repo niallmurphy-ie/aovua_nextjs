@@ -3,25 +3,20 @@ import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import classnames from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
-import rm1 from '../../../public/images/images/room/img-1.jpg';
+import CKContent from '../../utils/CKContent';
 
-const HotelRestaurant = () => {
-	const [activeTab, setActiveTab] = useState('1');
+const HotelRestaurant = ({ locations }) => {
+	const [activeTab, setActiveTab] = useState(1);
 
 	const toggle = (tab) => {
 		if (activeTab !== tab) setActiveTab(tab);
 	};
 
-	const Room = [
-		{
-			RoomImg: rm1,
-			RoomHeading: 'Lake view Room',
-			RoomCount: 'Twin Room',
-			Des: "If you are going to use a passage Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
-			Price: '$142',
-			Link: '/room-single',
-		},
-	];
+	const locationsWithAccommodation = locations.filter(
+		(location) => location.accommodations.length > 0
+	);
+
+	console.log('locationsWithAccommodation', locationsWithAccommodation);
 
 	return (
 		<section className={`Room-area section-padding Room-area-2`}>
@@ -36,43 +31,52 @@ const HotelRestaurant = () => {
 						<div className="col col-xs-12 sortable-gallery">
 							<div className="gallery-filters">
 								<Nav tabs>
-									<NavItem>
-										<NavLink
-											className={classnames({
-												active: activeTab === '1',
-											})}
-											onClick={() => {
-												toggle('1');
-											}}
-										>
-											Classic
-										</NavLink>
-									</NavItem>
-									<NavItem>
-										<NavLink
-											className={classnames({
-												active: activeTab === '2',
-											})}
-											onClick={() => {
-												toggle('2');
-											}}
-										>
-											Budget
-										</NavLink>
-									</NavItem>
+									{locationsWithAccommodation.map(
+										(location, index) => (
+											<NavItem
+												key={`accomm_location_${index}`}
+											>
+												<NavLink
+													className={classnames({
+														active:
+															activeTab ===
+															index + 1,
+													})}
+													onClick={() => {
+														toggle(index + 1);
+													}}
+												>
+													{location.Name}
+												</NavLink>
+											</NavItem>
+										)
+									)}
 								</Nav>
 							</div>
 							<div className="gallery-container">
 								<TabContent activeTab={activeTab}>
-									<TabPane tabId="1">
-										{Room.map((room, rm) => (
-											<Element
-												key={`room_${rm}`}
-												room={room}
-											/>
-										))}
-									</TabPane>
-									<TabPane tabId="2"></TabPane>
+									{locationsWithAccommodation.map(
+										(location, index) => (
+											<TabPane
+												key={`accomm_tab_${index}`}
+												tabId={index + 1}
+											>
+												{location.accommodations.map(
+													(accommodation, jindex) => (
+														<Element
+															firstImage={
+																jindex === 0
+															}
+															key={`room_${jindex}`}
+															accommodation={
+																accommodation
+															}
+														/>
+													)
+												)}
+											</TabPane>
+										)
+									)}
 								</TabContent>
 							</div>
 						</div>
@@ -83,31 +87,32 @@ const HotelRestaurant = () => {
 	);
 };
 
-const Element = ({ room }) => {
+const Element = ({ accommodation, firstImage }) => {
 	return (
 		<div className="grid">
 			<div className="room-item">
 				<Image
-					src={room.RoomImg}
+					src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${accommodation.Thumbnail.url}`}
 					alt=""
 					// className="img img-responsive"
+					priority={firstImage ? true : false}
 					height={500}
 					width={400}
 					objectFit={'cover'}
 				/>
 				<div className="room-text-show">
-					<h2>{room.RoomHeading}</h2>
+					<h2>{accommodation.Name}</h2>
 				</div>
 				<div className="room-text-hide">
-					<h2>{room.RoomHeading}</h2>
-					<span>{room.RoomCount}</span>
-					<p>{room.Des}</p>
-					<small>
-						From: <span>{room.Price}</span> / Night
+					<h2>{accommodation.Name}</h2>
+					{/* <span>{accommodation.RoomCount}</span> */}
+					<CKContent content={accommodation.ShortDescription} />
+					{/* <small>
+						From: <span>{accommodation.Price}</span> / Night
 					</small>
-					<Link className="theme-btn-s2" href={room.Link}>
+					<Link className="theme-btn-s2" href={accommodation.Link}>
 						<a>Check Availability</a>
-					</Link>
+					</Link> */}
 				</div>
 			</div>
 		</div>
