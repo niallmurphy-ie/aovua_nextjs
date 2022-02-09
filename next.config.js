@@ -1,5 +1,10 @@
 const redirects = require('./lib/redirects');
 
+const withSass = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-css');
+
+module.exports = withCSS(withSass());
+
 module.exports = {
 	reactStrictMode: true,
 	images: {

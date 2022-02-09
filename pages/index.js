@@ -4,8 +4,7 @@ import HomePage from '../components/main/homepage/Homepage';
 import client from '../lib/apolloClient';
 import { ARTICLES } from '../lib/queries/articles';
 import { ENTERTAINMENTS } from '../lib/queries';
-import { HOMEPAGE } from '../lib/queries/homepageQueries';
-import { LOCATIONS } from '../lib/queries/locationQueries';
+import { HOMEPAGE, HOMEPAGE_LOCATIONS } from '../lib/queries/homepageQueries';
 
 export default function Home({
 	homepageData,
@@ -47,7 +46,7 @@ export const getStaticProps = async () => {
 	});
 
 	const locationsQuery = client.query({
-		query: LOCATIONS,
+		query: HOMEPAGE_LOCATIONS,
 	});
 
 	const responses = await Promise.all([
