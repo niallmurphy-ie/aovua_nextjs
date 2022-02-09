@@ -8,9 +8,9 @@ const FacebookMessenger = () => (
 		htmlRef="https://aovua.niallmurphy.dev"
 		themeColor="#1c4c25"
 		greetingDialogDisplay="fade"
-		loggedInGreeting="loggedInGreeting"
-		loggedOutGreeting="loggedOutGreeting"
-		lang="vn_VN"
+		// loggedInGreeting="loggedInGreeting"
+		// loggedOutGreeting="loggedOutGreeting"
+		language="vn_VN"
 	/>
 );
 
