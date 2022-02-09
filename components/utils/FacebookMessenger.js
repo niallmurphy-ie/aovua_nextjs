@@ -7,6 +7,7 @@ const FacebookMessenger = () => (
 		appId=""
 		htmlRef="https://aovua.niallmurphy.dev"
 		themeColor="#1c4c25"
+		greetingDialogDisplay="fade"
 	/>
 );
 
