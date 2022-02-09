@@ -1,0 +1,13 @@
+import React from 'react';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
+const FacebookMessenger = () => (
+	<MessengerCustomerChat
+		pageId="751126184998127"
+		appId=""
+		htmlRef="https://aovua.niallmurphy.dev"
+		themeColor="#1c4c25"
+	/>
+);
+
+export default FacebookMessenger;

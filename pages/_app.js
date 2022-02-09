@@ -39,6 +39,7 @@ import { FOOTER } from '../lib/queries/footer';
 import Footer from '../components/footer/Footer';
 import Head from 'next/head';
 import NavBar from '../components/header/NavBar';
+import FacebookMessenger from '../components/utils/FacebookMessenger';
 import React from 'react';
 
 export default function App({ Component, pageProps, footerData, ...appProps }) {
@@ -59,6 +60,7 @@ export default function App({ Component, pageProps, footerData, ...appProps }) {
 				<NavBar home={appProps.router.asPath === '/'} />
 				<Component {...pageProps} />
 				<Footer footer={footerData} />
+				<FacebookMessenger />
 			</div>
 		</ApolloProvider>
 	);
