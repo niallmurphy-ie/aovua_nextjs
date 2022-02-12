@@ -52,7 +52,7 @@ export async function getStaticPaths() {
 			locations.forEach((location) =>
 				params.push({
 					location: location,
-					type: 'vui-choi-giai-tri',
+					serviceType: 'vui-choi-giai-tri',
 					slug: entertainment.slug,
 				})
 			);
