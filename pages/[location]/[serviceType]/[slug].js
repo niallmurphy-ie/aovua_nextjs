@@ -3,6 +3,7 @@ import PageTitle from '../../../components/main/PageTitle';
 import Service from '../../../components/main/service/Service';
 import client from '../../../lib/apolloClient';
 import { ENTERTAINMENT, ENTERTAINMENTS } from '../../../lib/queries';
+import { LOCATIONS } from '../../../lib/queries/locationQueries';
 import { LOCATION_URLPREFIX } from '../../../lib/queries/locationQueries';
 
 const ServicePage = ({ location, entertainment, entertainments }) => {
@@ -40,26 +41,21 @@ const ServicePage = ({ location, entertainment, entertainments }) => {
 export async function getStaticPaths() {
 	const paths = [];
 	// Start Entertainment
-	const entertainmentsQuery = await client.query({
-		query: ENTERTAINMENTS,
+	const locationsQuery = await client.query({
+		query: LOCATIONS,
 	});
-	entertainmentsQuery.data.entertainments.forEach((entertainment) => {
-		if (entertainment.locations.length > 0) {
-			const params = [];
-			const locations = entertainment.locations.map(
-				(location) => location.urlPrefix
-			);
-			locations.forEach((location) =>
-				params.push({
-					location: location,
+	const locations = locationsQuery.data.locations;
+	locations.forEach((location) => {
+		location.entertainments.forEach((entertainment) => {
+			paths.push({
+				params: {
+					location: location.urlPrefix,
 					serviceType: 'vui-choi-giai-tri',
 					slug: entertainment.slug,
-				})
-			);
-			params.forEach((param) => paths.push({ params: param }));
-		}
+				},
+			});
+		});
 	});
-	// End entertainment
 
 	return {
 		paths,
