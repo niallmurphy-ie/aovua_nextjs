@@ -3,19 +3,33 @@ import PageTitle from '../../../components/main/PageTitle';
 import Service from '../../../components/main/service/Service';
 import client from '../../../lib/apolloClient';
 import { ENTERTAINMENT, ENTERTAINMENTS } from '../../../lib/queries';
+import { ACCOMMODATION } from '../../../lib/queries/accommodationQueries';
 import { LOCATIONS } from '../../../lib/queries/locationQueries';
 import { LOCATION_URLPREFIX } from '../../../lib/queries/locationQueries';
 
-const ServicePage = ({ location, entertainment, entertainments }) => {
+const ServicePage = ({
+	location,
+	entertainment,
+	entertainments,
+	accommodation,
+}) => {
 	// location gives the first location if multuple are selected.
-
-	const pageTitle = entertainment.Name || '';
-	const breadcrumb = entertainment
-		? {
-				url: `/${location.urlPrefix}/vui-choi-giai-tri`,
-				name: `${location.Name} - Vui chơi giải trí`,
-		  }
-		: null;
+	let pageTitle;
+	let breadcrumb;
+	if (entertainment) {
+		pageTitle = entertainment.Name || '';
+		breadcrumb = {
+			url: `/${location.urlPrefix}/vui-choi-giai-tri`,
+			name: `${location.Name} - Vui chơi giải trí`,
+		};
+	}
+	if (accommodation) {
+		pageTitle = accommodation.Name || '';
+		breadcrumb = {
+			url: `/${location.urlPrefix}`,
+			name: `${location.Name} `,
+		};
+	}
 
 	return (
 		<>
@@ -55,7 +69,18 @@ export async function getStaticPaths() {
 				},
 			});
 		});
+		location.accommodations.forEach((accommodation) => {
+			paths.push({
+				params: {
+					location: location.urlPrefix,
+					serviceType: 'khach-san-nha-hang',
+					slug: accommodation.slug,
+				},
+			});
+		});
 	});
+
+	console.log('paths :>> ', paths);
 
 	return {
 		paths,
@@ -73,6 +98,7 @@ export async function getStaticProps(context) {
 			urlPrefix: context.params.location,
 		},
 	});
+
 	const entertainmentQuery = client.query({
 		query: ENTERTAINMENT,
 		variables: {
@@ -83,10 +109,18 @@ export async function getStaticProps(context) {
 		query: ENTERTAINMENTS,
 	});
 
+	const accommodationQuery = client.query({
+		query: ACCOMMODATION,
+		variables: {
+			slug: context.params.slug,
+		},
+	});
+
 	const responses = await Promise.all([
 		locationQuery,
 		entertainmentQuery,
 		entertainmentsQuery,
+		accommodationQuery,
 	]);
 
 	console.log(`responses`, responses);
@@ -94,8 +128,9 @@ export async function getStaticProps(context) {
 	return {
 		props: {
 			location: responses[0].data.locations[0],
-			entertainment: responses[1].data.entertainments[0],
-			entertainments: responses[2].data.entertainments,
+			entertainment: responses[1].data.entertainments[0] || null,
+			entertainments: responses[2].data.entertainments || null,
+			accommodation: responses[3].data.accommodations[0] || null,
 		},
 	};
 }
