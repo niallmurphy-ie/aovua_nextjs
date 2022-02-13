@@ -3,11 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 // import ArticleSideBar from './ArticleSideBar';
 import Loading from '../../Loading';
-import parse from 'html-react-parser';
 import CKContent from '../../utils/CKContent';
 
-const Service = ({ service, services }) => {
-	if (!service) return <Loading />;
+const Service = ({ entertainment, accommodation }) => {
+	if (!entertainment && !accommodation) return <Loading />;
+
+	const service = entertainment || accommodation;
 
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
@@ -20,7 +21,7 @@ const Service = ({ service, services }) => {
 					<div className={`col col-lg-8 col-12`}>
 						<div className="wpo-blog-content clearfix">
 							<div className="post">
-								{service.Thumbnail ? (
+								{service.Thumbnail && (
 									<div className="entry-media">
 										<Image
 											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${service.Thumbnail.url}`}
@@ -34,11 +35,10 @@ const Service = ({ service, services }) => {
 											objectFit="contain"
 										/>
 									</div>
-								) : null}
-
-								{service.Body ? (
+								)}
+								{service.Body && (
 									<CKContent content={service.Body} />
-								) : null}
+								)}
 							</div>
 
 							<div className="tag-share clearfix">
