@@ -82,9 +82,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-	console.log(`context.params`, context.params);
 
-	// All queries for all types of services
 	const locationQuery = client.query({
 		query: LOCATION_URLPREFIX,
 		variables: {

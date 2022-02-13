@@ -86,7 +86,7 @@ const Entertainment = ({ entertainment }) => {
 											priority={
 												index === 0 ? true : false
 											}
-											placeholder={<Loading />}
+											lazyBoundary="500px"
 										/>
 									</div>
 									<div className="entertainment-content">
