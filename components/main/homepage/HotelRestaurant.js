@@ -71,6 +71,7 @@ const HotelRestaurant = ({ locations }) => {
 															accommodation={
 																accommodation
 															}
+															location={location}
 														/>
 													)
 												)}
@@ -87,7 +88,8 @@ const HotelRestaurant = ({ locations }) => {
 	);
 };
 
-const Element = ({ accommodation, firstImage }) => {
+const Element = ({ location, accommodation, firstImage }) => {
+	console.log('accommodation', accommodation);
 	return (
 		<div className="grid">
 			<div className="room-item">
@@ -107,12 +109,18 @@ const Element = ({ accommodation, firstImage }) => {
 					<h2>{accommodation.Name}</h2>
 					{/* <span>{accommodation.RoomCount}</span> */}
 					<CKContent content={accommodation.ShortDescription} />
-					{/* <small>
-						From: <span>{accommodation.Price}</span> / Night
-					</small>
-					<Link className="theme-btn-s2" href={accommodation.Link}>
-						<a>Check Availability</a>
-					</Link> */}
+					{accommodation.Price && (
+						<small>
+							<span>{accommodation.Price}</span>
+						</small>
+					)}
+					{
+						<Link
+							href={`/${location.urlPrefix}/khach-san-nha-hang/${accommodation.slug}`}
+						>
+							<a className="theme-btn-s2">Xem Thêm</a>
+						</Link>
+					}
 				</div>
 			</div>
 		</div>

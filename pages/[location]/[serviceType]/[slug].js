@@ -40,6 +40,7 @@ const ServicePage = ({
 			</Head>
 			<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />
 			<Service
+				location={location}
 				entertainment={entertainment}
 				accommodation={accommodation}
 			/>

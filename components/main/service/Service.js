@@ -5,14 +5,16 @@ import Image from 'next/image';
 import Loading from '../../Loading';
 import CKContent from '../../utils/CKContent';
 
-const Service = ({ entertainment, accommodation }) => {
-	if (!entertainment && !accommodation) return <Loading />;
+const Service = ({ location, entertainment, accommodation }) => {
+	if (!location && !entertainment && !accommodation) return <Loading />;
 
 	const service = entertainment || accommodation;
 
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
+
+	console.log('service', service)
 
 	return (
 		<section className="wpo-blog-single-section section-padding">
@@ -21,7 +23,7 @@ const Service = ({ entertainment, accommodation }) => {
 					<div className={`col col-lg-8 col-12`}>
 						<div className="wpo-blog-content clearfix">
 							<div className="post">
-								{service.Thumbnail && (
+								{/* {service.Thumbnail && (
 									<div className="entry-media">
 										<Image
 											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${service.Thumbnail.url}`}
@@ -35,7 +37,7 @@ const Service = ({ entertainment, accommodation }) => {
 											objectFit="contain"
 										/>
 									</div>
-								)}
+								)} */}
 								{service.Body && (
 									<CKContent content={service.Body} />
 								)}
