@@ -36,6 +36,10 @@ body div.App {
 	overflow-x: hidden;
 }
 
+.hidden {
+	display: none;
+}
+
 p {
 	color: #687693;
 	line-height: 30px;
