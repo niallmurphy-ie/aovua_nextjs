@@ -3,20 +3,14 @@ import PageTitle from '../PageTitle';
 import Loading from '../../Loading';
 import Description from './LocationDescription';
 import LocationSideBar from './LocationSideBar';
-// import ServiceSingle from '../../components/ServiceSingle';
+import LocationEntertainment from './LocationEntertainment';
 
 const LocationPage = ({ location }) => {
-	const breadcrumb = {
-		url: '/diadiem',
-		name: 'Địa điểm',
-	};
-
 	return (
 		<>
 			<PageTitle
 				headerImage={location.WideHeaderImage}
 				pageTitle={location.Name}
-				breadcrumb={breadcrumb}
 			/>
 			<section className="service-single-section section-padding">
 				<div className="container">
@@ -30,7 +24,11 @@ const LocationPage = ({ location }) => {
 						</div>
 						<LocationSideBar location={location} />
 					</div>
+					<div className="row">
+
+					</div>
 				</div>
+				<LocationEntertainment location={location} />
 			</section>
 		</>
 	);

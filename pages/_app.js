@@ -28,7 +28,7 @@ import '../styles/entertainment.css';
 import '../styles/destination.css';
 import '../styles/category.css';
 import '../styles/restaurant-accommodation.css';
-
+import '../styles/features.css';
 // search date picker
 import 'react-datepicker/dist/react-datepicker.css';
 

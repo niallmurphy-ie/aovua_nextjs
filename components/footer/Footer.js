@@ -16,8 +16,6 @@ const Footer = ({ footer }) => {
 		e.preventDefault();
 	};
 
-	console.log('props.footer', footer);
-
 	return (
 		<footer className="wpo-site-footer">
 			<div className="wpo-upper-footer">
