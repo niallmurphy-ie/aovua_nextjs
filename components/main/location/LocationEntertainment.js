@@ -14,7 +14,7 @@ function LocationEntertainment({ location }) {
 		<>
 			<div className="col-12">
 				<div className="wpo-section-title text-center">
-					<h2>Khách Sạn Nhà Hàng</h2>
+					<h2>{`Vui chơi giải trí tại ${location.Name}`}</h2>
 				</div>
 			</div>
 			<div className="featured-area featured-sub">
