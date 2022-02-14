@@ -4,6 +4,7 @@ import Loading from '../../Loading';
 import Description from './LocationDescription';
 import LocationSideBar from './LocationSideBar';
 import LocationEntertainment from './LocationEntertainment';
+import LocationHotelRestaurant from './LocationHotelRestaurant';
 
 const LocationPage = ({ location }) => {
 	return (
@@ -29,6 +30,7 @@ const LocationPage = ({ location }) => {
 					</div>
 				</div>
 				<LocationEntertainment location={location} />
+				<LocationHotelRestaurant location={location} />
 			</section>
 		</>
 	);

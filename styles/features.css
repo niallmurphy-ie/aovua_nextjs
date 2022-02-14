@@ -2,6 +2,9 @@
 #2.0 featured-area start
 =============================*/
 
+.featured-area {
+	padding-bottom: 40px;
+}
 .featured-wrap {
 	position: relative;
 }
