@@ -58,9 +58,9 @@ const Header = ({ home }) => {
 							</div>
 							<div className="col-xl-1 col-lg-1 col-md-6 col-sm-6 col-6"></div>
 							<div className="col-md-2 col-sm-2 col-2">
-								<MobileMenu
+								{/* <MobileMenu
 									menu={menu}
-								/>
+								/> */}
 							</div>
 						</div>
 

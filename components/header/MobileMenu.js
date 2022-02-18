@@ -44,7 +44,7 @@ const MobileMenu = ({ menu }) => {
 									</p>
 								) : (
 									<Link href={item.link}>
-										<a onClick={() => setIsMenuOpen(false)}>
+										<a onClick={() => ClickHandler()}>
 											{item.title}
 										</a>
 									</Link>
@@ -67,9 +67,7 @@ const MobileMenu = ({ menu }) => {
 																>
 																	<a
 																		onClick={() =>
-																			setIsMenuOpen(
-																				false
-																			)
+																			ClickHandler()
 																		}
 																	>
 																		{
