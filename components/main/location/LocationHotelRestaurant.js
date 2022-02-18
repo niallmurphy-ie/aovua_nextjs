@@ -8,7 +8,7 @@ const LocationHotelRestaurant = ({ location }) => {
 				<div className="container">
 					<div className="col-12">
 						<div className="wpo-section-title text-center">
-							<h2>Khách Sạn Nhà Hàng</h2>
+							<h2>Khách sạn nhà hàng</h2>
 						</div>
 					</div>
 					<div className="row">
