@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export const MenuItems = ({ menu, ClickHandler }) => {
+export const DesktopMenu = ({ menu, ClickHandler }) => {
 	return (
 		<nav>
 			<ul>

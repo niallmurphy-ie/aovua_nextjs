@@ -5,7 +5,7 @@ import Image from 'next/image';
 import MobileMenu from './MobileMenu';
 import { VietnameseMenu } from '../../utils/menu';
 
-import { MenuItems } from './MenuItems';
+import { DesktopMenu } from './DesktopMenu';
 
 const Header = ({ home }) => {
 	const ClickHandler = () => {
@@ -36,7 +36,7 @@ const Header = ({ home }) => {
 								</div>
 							</div>
 							<div className="col-xl-6 col-lg-8 d-lg-block d-none">
-								<MenuItems
+								<DesktopMenu
 									menu={menu}
 									ClickHandler={ClickHandler}
 								/>
@@ -58,7 +58,9 @@ const Header = ({ home }) => {
 							</div>
 							<div className="col-xl-1 col-lg-1 col-md-6 col-sm-6 col-6"></div>
 							<div className="col-md-2 col-sm-2 col-2">
-								<MobileMenu />
+								<MobileMenu
+									menu={menu}
+								/>
 							</div>
 						</div>
 
