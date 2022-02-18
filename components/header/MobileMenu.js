@@ -25,7 +25,7 @@ const MobileMenu = ({ menu }) => {
 				<ul className="responsivemenu">
 					{menu.components.map((item) => {
 						return (
-							<li key={item.id}>
+							<li key={`mobile_menu_sub_${item.id}`}>
 								{item.subMenu ? (
 									<p
 										onClick={() =>
@@ -35,13 +35,11 @@ const MobileMenu = ({ menu }) => {
 										}
 									>
 										{item.title}
-										{item.subMenu ? (
+										{item.subMenu && (
 											<i
 												className="fa fa-angle-right"
 												aria-hidden="true"
 											></i>
-										) : (
-											''
 										)}
 									</p>
 								) : (
@@ -51,7 +49,7 @@ const MobileMenu = ({ menu }) => {
 										</a>
 									</Link>
 								)}
-								{item.subMenu ? (
+								{item.subMenu && (
 									<Collapse isOpen={item.id === isOpen}>
 										<Card>
 											<CardBody>
@@ -86,8 +84,6 @@ const MobileMenu = ({ menu }) => {
 											</CardBody>
 										</Card>
 									</Collapse>
-								) : (
-									''
 								)}
 							</li>
 						);
