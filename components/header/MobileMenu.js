@@ -12,7 +12,6 @@ const MobileMenu = ({ menu }) => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
-	return <h1></h1>
 	return (
 		<div>
 			<div className={`mobileMenu ${isMenuOpen ? 'show' : ''}`}>
