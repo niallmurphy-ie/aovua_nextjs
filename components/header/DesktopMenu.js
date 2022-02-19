@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 
-export const DesktopMenu = ({ menu, ClickHandler }) => {
+export const DesktopMenu = ({ menu }) => {
 	return (
 		<nav>
 			<ul>
 				{menu.components.map((item, index) => {
 					return (
 						<li key={`${item.title}${index}`}>
-							<Link onClick={ClickHandler} href={item.link}>
+							<Link href={item.link}>
 								<a>{item.title}</a>
 							</Link>
 							{item.subMenu ? (
@@ -16,7 +16,6 @@ export const DesktopMenu = ({ menu, ClickHandler }) => {
 									{item.subMenu.map((sub) => (
 										<li key={sub.link + index}>
 											<Link
-												onClick={ClickHandler}
 												href={sub.link}
 											>
 												<a>{sub.title}</a>

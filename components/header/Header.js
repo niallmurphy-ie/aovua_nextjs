@@ -8,9 +8,6 @@ import { VietnameseMenu } from '../../utils/menu';
 import { DesktopMenu } from './DesktopMenu';
 
 const Header = ({ home }) => {
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
 
 	const menu = VietnameseMenu();
 
@@ -25,7 +22,7 @@ const Header = ({ home }) => {
 						<div className="row align-items-center">
 							<div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4">
 								<div className="logo">
-									<Link onClick={ClickHandler} href="/">
+									<Link href="/">
 										<a>
 											<Image
 												src={Logo}
@@ -39,13 +36,11 @@ const Header = ({ home }) => {
 							<div className="col-xl-6 col-lg-8 d-lg-block d-none">
 								<DesktopMenu
 									menu={menu}
-									ClickHandler={ClickHandler}
 								/>
 							</div>
 							<div className="col-xl-4 get-q">
 								<div className="get-contact">
 									<Link
-										onClick={ClickHandler}
 										href="/lien-he/"
 									>
 										<a>

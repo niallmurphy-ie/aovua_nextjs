@@ -2,13 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ServiceSidebar = ({
-	ClickHandler,
-	location,
-	type,
-	typeURL,
-	services,
-}) => {
+const ServiceSidebar = ({ location, type, typeURL, services }) => {
 	if (!services) return null;
 
 	console.log('services', services);
@@ -36,9 +30,7 @@ const ServiceSidebar = ({
 										<Link
 											href={`/${location.urlPrefix}/${typeURL}/${service.slug}`}
 										>
-											<a onClick={ClickHandler}>
-												{service.Name}
-											</a>
+											<a>{service.Name}</a>
 										</Link>
 									</h4>
 								</div>
@@ -49,7 +41,7 @@ const ServiceSidebar = ({
 								<Link
 									href={`/${location.urlPrefix}/${typeURL}`}
 								>
-									<a onClick={ClickHandler}>Xem tất cả</a>
+									<a>Xem tất cả</a>
 								</Link>
 							</div>
 						)}

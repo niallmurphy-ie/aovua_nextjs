@@ -6,12 +6,6 @@ import CKTeaser from '../../utils/CKTeaser';
 function CategoryArticle({ categoryURLPrefix, article }) {
 	if (!article) return null;
 
-	console.log('article', article);
-	console.log('categoryURLPrefix', categoryURLPrefix);
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	return (
 		<div className="post format-standard-image">
 			{article.Thumbnail && (
@@ -29,19 +23,13 @@ function CategoryArticle({ categoryURLPrefix, article }) {
 				<li>{article.Date && article.Date}</li>
 			</ul>
 			<h3>
-				<Link
-					onClick={ClickHandler}
-					href={`/${categoryURLPrefix}/${article.slug}`}
-				>
+				<Link href={`/${categoryURLPrefix}/${article.slug}`}>
 					<a>{article.Title}</a>
 				</Link>
 			</h3>
 			{article.Body && <CKTeaser content={article.Body} length={120} />}
 			<div className="entry-bottom">
-				<Link
-					onClick={ClickHandler}
-					href={`/${categoryURLPrefix}/${article.slug}`}
-				>
+				<Link href={`/${categoryURLPrefix}/${article.slug}`}>
 					<a className="read-more">Xem Thêm...</a>
 				</Link>
 			</div>

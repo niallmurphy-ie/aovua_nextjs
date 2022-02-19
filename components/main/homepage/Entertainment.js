@@ -57,12 +57,6 @@ const Entertainment = ({ entertainment }) => {
 		],
 	};
 
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
-	console.log('entertainment', entertainment);
-
 	return (
 		<div className="entertainment-service section-padding">
 			<div className="container">
@@ -93,7 +87,6 @@ const Entertainment = ({ entertainment }) => {
 										<div className="content-left">
 											<h5>
 												<Link
-													onClick={ClickHandler}
 													href={`/${ent.locations[0].urlPrefix}/vui-choi-giai-tri/${ent.slug}`}
 												>
 													{ent.Name}

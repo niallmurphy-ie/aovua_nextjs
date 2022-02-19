@@ -9,10 +9,6 @@ import CKContent from '../../utils/CKContent';
 const Article = ({ article, articles, categories }) => {
 	if (!article) return <Loading />;
 
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	return (
 		<section className="wpo-blog-single-section section-padding">
 			<div className="container">
@@ -50,9 +46,6 @@ const Article = ({ article, articles, categories }) => {
 														}
 													>
 														<Link
-															onClick={
-																ClickHandler
-															}
 															href={
 																category.urlPrefix
 															}
@@ -73,7 +66,6 @@ const Article = ({ article, articles, categories }) => {
 									<ul>
 										<li>
 											<Link
-												onClick={ClickHandler}
 												href="/blog-details"
 											>
 												<i className="ti-facebook"></i>
@@ -81,7 +73,6 @@ const Article = ({ article, articles, categories }) => {
 										</li>
 										<li>
 											<Link
-												onClick={ClickHandler}
 												href="/blog-details"
 											>
 												<i className="ti-twitter-alt"></i>
@@ -89,7 +80,6 @@ const Article = ({ article, articles, categories }) => {
 										</li>
 										<li>
 											<Link
-												onClick={ClickHandler}
 												href="/blog-details"
 											>
 												<i className="ti-instagram"></i>

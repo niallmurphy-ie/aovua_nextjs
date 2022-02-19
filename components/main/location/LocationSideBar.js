@@ -5,19 +5,10 @@ import { VietnameseMenu } from '../../../utils/menu';
 import { useRouter } from 'next/router';
 
 const LocationSidebar = ({ location }) => {
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
 
 	const router = useRouter();
 	if (!location) return <Loading />;
-	console.log('router', router);
 	const menu = VietnameseMenu();
-	console.log(
-		'menu',
-		menu.components[1].subMenu.map((item) => item.title)
-	);
-	console.log('location', location);
 
 	return (
 		<div className="col col-lg-4 col-12 order-lg-1">
@@ -33,7 +24,7 @@ const LocationSidebar = ({ location }) => {
 								}
 								key={router.route + index}
 							>
-								<Link onClick={ClickHandler} href={item.link}>
+								<Link href={item.link}>
 									<a>{item.title}</a>
 								</Link>
 							</li>

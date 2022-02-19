@@ -4,10 +4,6 @@ import Image from 'next/image';
 import { articleUrl } from '../../../lib/articles';
 
 const ArticlesPostsListing = ({ articles }) => {
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	return (
 		<div className="widget recent-post-widget">
 			<h3>Tin nổi bật</h3>
@@ -26,10 +22,7 @@ const ArticlesPostsListing = ({ articles }) => {
 						</div>
 						<div className="details">
 							<h4>
-								<Link
-									onClick={ClickHandler}
-									href={articleUrl(post)}
-								>
+								<Link href={articleUrl(post)}>
 									<a>{post.Title}</a>
 								</Link>
 							</h4>

@@ -7,11 +7,6 @@ const MobileMenu = ({ menu }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(0);
 
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-		setIsMenuOpen(!isMenuOpen);
-	};
-
 	return (
 		<div>
 			<div className={`mobileMenu ${isMenuOpen ? 'show' : ''}`}>
@@ -44,9 +39,7 @@ const MobileMenu = ({ menu }) => {
 									</p>
 								) : (
 									<Link href={item.link}>
-										<a onClick={() => ClickHandler()}>
-											{item.title}
-										</a>
+										<a>{item.title}</a>
 									</Link>
 								)}
 								{item.subMenu && (
@@ -65,11 +58,7 @@ const MobileMenu = ({ menu }) => {
 																		subMenu.link
 																	}
 																>
-																	<a
-																		onClick={() =>
-																			ClickHandler()
-																		}
-																	>
+																	<a>
 																		{
 																			subMenu.title
 																		}

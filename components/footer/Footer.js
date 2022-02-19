@@ -8,13 +8,6 @@ import CKContent from '../utils/CKContent';
 // import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = ({ footer }) => {
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
-	const SubmitHandler = (e) => {
-		e.preventDefault();
-	};
 
 	return (
 		<footer className="wpo-site-footer">

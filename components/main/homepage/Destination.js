@@ -59,9 +59,6 @@ const Destination = ({ locations }) => {
 };
 
 const TileOutput = ({ location, firstImage }) => {
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
 	return (
 		<div className="destination-item">
 			<div className="destination-img">
@@ -78,10 +75,7 @@ const TileOutput = ({ location, firstImage }) => {
 			<div className="destination-content">
 				<div className="content-left">
 					<h5>
-						<Link
-							onClick={ClickHandler}
-							href={`/${location.urlPrefix}`}
-						>
+						<Link href={`/${location.urlPrefix}`}>
 							<a>{location.Name}</a>
 						</Link>
 					</h5>

@@ -6,10 +6,6 @@ import parse from 'html-react-parser';
 import CKContent from '../../utils/CKContent';
 
 const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	// Fix hydration error caused by window not existing in node.
 	// useEffect only runs in the browser.
 	// This is nextjs specific.
@@ -54,11 +50,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 							</div>
 
 							<div className="btns">
-								<Link
-									onClick={ClickHandler}
-									href="/about"
-									className="theme-btn-s2"
-								>
+								<Link href="/about" className="theme-btn-s2">
 									<a className="theme-btn-s2">
 										More About Us
 									</a>

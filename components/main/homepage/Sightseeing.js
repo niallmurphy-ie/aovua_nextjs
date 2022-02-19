@@ -55,10 +55,6 @@ const Sightseeing = ({ sightseeings }) => {
 		],
 	};
 
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	return (
 		<div className="destination-area-2 section-padding">
 			<div className="container-fluid">
@@ -77,21 +73,6 @@ const Sightseeing = ({ sightseeings }) => {
 							</p>
 							<div className="btns">
 								<Link
-									onClick={ClickHandler}
-									href="/destination"
-									className="theme-btn-s2"
-								>
-									<a>Khu du lịch Ao Vua</a>
-								</Link>
-								<Link
-									onClick={ClickHandler}
-									href="/destination"
-									className="theme-btn-s2"
-								>
-									<a>Khu du lịch Ao Vua</a>
-								</Link>
-								<Link
-									onClick={ClickHandler}
 									href="/destination"
 									className="theme-btn-s2"
 								>
@@ -125,11 +106,7 @@ const Sightseeing = ({ sightseeings }) => {
 															<Link
 																href={`${destination.locations[0].urlPrefix}/cac-diem-tham-quan/${destination.slug}`}
 															>
-																<a
-																	onClick={
-																		ClickHandler
-																	}
-																>
+																<a>
 																	{
 																		destination.Name
 																	}

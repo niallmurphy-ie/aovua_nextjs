@@ -6,10 +6,6 @@ import classNames from 'classnames';
 function LocationEntertainment({ location }) {
 	const [itemsToShow, setItemsToShow] = useState(3);
 
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	return (
 		<>
 			<div className="col-12">
@@ -42,7 +38,6 @@ function LocationEntertainment({ location }) {
 										/>
 										<div className="featured-content">
 											<Link
-												onClick={ClickHandler}
 												href={`/${location.urlPrefix}/vui-choi-giai-tri/${feature.slug}`}
 											>
 												<a>{feature.Name}</a>

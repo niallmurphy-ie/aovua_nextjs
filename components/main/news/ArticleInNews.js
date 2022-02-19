@@ -5,15 +5,11 @@ import { articleUrl } from '../../../lib/articles';
 import Loading from '../../../components/Loading';
 
 function Article({ article, index }) {
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	return (
 		<div className="col-lg-4 col-md-6 col-12">
 			<div className="blog-item">
 				<div className="blog-img">
-					<Link onClick={ClickHandler} href={articleUrl(article)}>
+					<Link href={articleUrl(article)}>
 						<a>
 							<Image
 								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}`}
@@ -32,7 +28,6 @@ function Article({ article, index }) {
 							{article.categories.map((b) => (
 								<Link
 									key={`article_category_${b.urlPrefix}`}
-									onClick={ClickHandler}
 									href={`/${b.urlPrefix}`}
 								>
 									<a>{b.CategoryName}</a>
@@ -42,11 +37,11 @@ function Article({ article, index }) {
 						<li>{article.date}</li>
 					</ul>
 					<h3>
-						<Link onClick={ClickHandler} href={articleUrl(article)}>
+						<Link href={articleUrl(article)}>
 							<a>{article.Title}</a>
 						</Link>
 					</h3>
-					<Link onClick={ClickHandler} href={articleUrl(article)}>
+					<Link href={articleUrl(article)}>
 						<a>Xem Thêm</a>
 					</Link>
 				</div>

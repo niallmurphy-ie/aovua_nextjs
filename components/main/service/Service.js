@@ -28,10 +28,6 @@ const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 
 	const service = entertainment || accommodation || sightseeing;
 
-	const ClickHandler = () => {
-		window.scrollTo(10, 0);
-	};
-
 	return (
 		<section className="wpo-blog-single-section section-padding">
 			<div className="container">
@@ -52,7 +48,6 @@ const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 						</div>
 					</div>
 					<ServiceSidebar
-						ClickHandler={ClickHandler}
 						type={type}
 						typeURL={typeURL}
 						location={location}
