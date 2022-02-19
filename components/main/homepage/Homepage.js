@@ -6,10 +6,17 @@ import LatestNewsSection from './LatestNews';
 import Entertainment from './Entertainment';
 import Destination from './Destination';
 import HotelRestaurant from './HotelRestaurant';
+import Sightseeing from './Sightseeing';
 
 import Loading from '../../Loading';
 
-const HomePage = ({ homepageData, articles, entertainment, locations }) => {
+const HomePage = ({
+	homepageData,
+	articles,
+	entertainment,
+	locations,
+	sightseeings,
+}) => {
 	if (!homepageData) return <Loading />;
 
 	return (
@@ -25,6 +32,7 @@ const HomePage = ({ homepageData, articles, entertainment, locations }) => {
 			<Destination locations={locations} />
 			<Entertainment entertainment={entertainment} />
 			<HotelRestaurant locations={locations} />
+			<Sightseeing sightseeings={sightseeings} />
 			{/*<Destination2 />
 			<RoomSection />
 			<Features />
