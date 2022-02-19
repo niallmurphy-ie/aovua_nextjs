@@ -8,7 +8,7 @@ export const VietnameseMenu = () => {
 				subMenu: null,
 			},
 			{
-				title: 'Địa Điểm',
+				title: 'Địa điểm',
 				link: '/diadiem',
 				subMenu: [
 					{

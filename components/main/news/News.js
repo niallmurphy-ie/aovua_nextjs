@@ -6,13 +6,8 @@ const News = ({ articles }) => {
 	if (!articles) return <Loading />;
 
 	return (
-		<div className="blog-area ptb-0-70">
+		<div className="blog-area ptb-0-70" style={{ marginTop: '60px' }}>
 			<div className="container">
-				<div className="col-12">
-					<div className="wpo-section-title">
-						<h2>Tin Nổi Bật</h2>
-					</div>
-				</div>
 				<div className="row">
 					{articles.map((article, index) => (
 						<Article
