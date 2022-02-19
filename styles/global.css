@@ -373,7 +373,6 @@ button:focus {
 	font-weight: 600;
 	padding: 15px 27px;
 	border: 0;
-	text-transform: capitalize;
 	display: block;
 	background: #fff;
 	display: inline-block;
