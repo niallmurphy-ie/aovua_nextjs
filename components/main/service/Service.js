@@ -4,6 +4,7 @@ import Image from 'next/image';
 // import ArticleSideBar from './ArticleSideBar';
 import Loading from '../../Loading';
 import CKContent from '../../utils/CKContent';
+import Share from '../../utils/Share';
 
 const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 	if ((!location && !entertainment && !accommodation) || !sightseeing)
@@ -45,6 +46,9 @@ const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 							</div>
 
 							<div className="tag-share clearfix">
+								<div className="share">
+									<Share />
+								</div>
 								{/* <div className="share">
 									<ul>
 										<li>
