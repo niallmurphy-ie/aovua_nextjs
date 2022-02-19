@@ -59,9 +59,10 @@ const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 						typeURL={typeURL}
 						location={location}
 						services={
-							entertainment.locations[0].entertainments ||
-							accommodation ||
-							sightseeing
+							entertainment?.locations[0].entertainments ||
+							accommodation?.locations[0].accommodations ||
+							sightseeing?.locations[0].sightseeings ||
+							null
 						}
 					/>
 				</div>
