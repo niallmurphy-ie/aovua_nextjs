@@ -14,7 +14,7 @@ export default function Home({
 	locationsData,
 	sightseeingsData,
 }) {
-	console.log('sightseeingsData', sightseeingsData)
+	console.log('sightseeingsData', sightseeingsData);
 	return (
 		<>
 			<Head>
@@ -43,6 +43,9 @@ export const getStaticProps = async () => {
 
 	const latestNewsQuery = client.query({
 		query: ARTICLES,
+		variables: {
+			limit: 3,
+		},
 	});
 
 	const entertainmentQuery = client.query({
