@@ -60,6 +60,10 @@ const ServicePage = ({
 					property="og:image:secure_url"
 					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
 				/>
+				<meta
+					property="og:image"
+					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
+				/>
 				<meta property="og:description" content={og.description} />
 			</Head>
 			<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />
