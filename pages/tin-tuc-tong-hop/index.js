@@ -16,7 +16,7 @@ const NewsPage = ({ articles }) => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<PageTitle pageTitle="Tin tức" breadcrumb={null} />
+			<PageTitle pageTitle="Tin tức của Ao Vua JSC." breadcrumb={null} />
 			<News articles={articles} />
 		</>
 	);

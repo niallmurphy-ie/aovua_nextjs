@@ -13,7 +13,6 @@ export default function Home({
 	locationsData,
 	sightseeingsData,
 }) {
-	console.log('sightseeingsData', sightseeingsData);
 	return (
 		<>
 			<Head>

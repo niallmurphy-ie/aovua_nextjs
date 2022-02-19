@@ -8,7 +8,7 @@ const CategoriesListing = ({ categories }) => {
 
 	return (
 		<div className="widget category-widget">
-			<h3>Chuyên Mục Tin Tức</h3>
+			<h3>Chuyên mục tin tức</h3>
 			<ul>
 				{categories.map((category, cat) => (
 					<li key={cat}>

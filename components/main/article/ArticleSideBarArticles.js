@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useQuery } from '@apollo/client';
-import { ARTICLES } from '../../../lib/queries/articles';
-import Loading from '../../Loading';
 import { articleUrl } from '../../../lib/articles';
 
 const ArticlesPostsListing = ({ articles }) => {
@@ -13,7 +10,7 @@ const ArticlesPostsListing = ({ articles }) => {
 
 	return (
 		<div className="widget recent-post-widget">
-			<h3>Tin Nổi Bật</h3>
+			<h3>Tin nổi bật</h3>
 			<div className="posts">
 				{articles.map((post, id) => (
 					<div key={id + post.Title} className="post">

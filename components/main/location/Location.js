@@ -25,12 +25,14 @@ const LocationPage = ({ location }) => {
 						</div>
 						<LocationSideBar location={location} />
 					</div>
-					<div className="row">
-
-					</div>
+					<div className="row"></div>
 				</div>
-				<LocationEntertainment location={location} />
-				<LocationHotelRestaurant location={location} />
+				{location.entertainments.length > 0 && (
+					<LocationEntertainment location={location} />
+				)}
+				{location.accommodations.length > 0 && (
+					<LocationHotelRestaurant location={location} />
+				)}
 			</section>
 		</>
 	);

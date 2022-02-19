@@ -73,6 +73,9 @@ export async function getStaticProps(context) {
 
 	const articlesQuery = client.query({
 		query: ARTICLES,
+		variables: {
+			limit: 5
+		}
 	});
 
 	const responses = await Promise.all([
