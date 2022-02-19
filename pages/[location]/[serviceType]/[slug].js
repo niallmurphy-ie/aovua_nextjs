@@ -57,7 +57,7 @@ const ServicePage = ({
 				<meta property="og:title" content={pageTitle} />
 				<meta property="og:url" content={url} />
 				<meta
-					property="og:image"
+					property="og:image:secure_url"
 					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
 				/>
 				<meta property="og:description" content={og.description} />
