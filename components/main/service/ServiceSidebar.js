@@ -1,0 +1,52 @@
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const ServiceSidebar = ({
+	ClickHandler,
+	location,
+	type,
+	typeURL,
+	services,
+}) => {
+	if (!services) return null;
+
+	console.log('services', services);
+
+	return (
+		<div className={`col col-lg-4 col-12 `}>
+			<div className="wpo-blog-sidebar">
+				<div className="widget recent-post-widget">
+					<h3>{`${type} tại ${location.Name}`}</h3>
+					<div className="posts">
+						{services.map((service, index) => (
+							<div key={index + service.Title} className="post">
+								<div className="img-holder">
+									<Image
+										src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${service.Thumbnail.formats.thumbnail.url}`}
+										alt=""
+										width="100%"
+										height="100%"
+										layout="responsive"
+										objectFit="contain"
+									/>
+								</div>
+								<div className="details">
+									<h4>
+										<Link href="/">
+											<a onClick={ClickHandler}>
+												{service.Name}
+											</a>
+										</Link>
+									</h4>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default ServiceSidebar;

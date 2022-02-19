@@ -30,7 +30,7 @@ const ArticlesPostsListing = ({ articles }) => {
 									onClick={ClickHandler}
 									href={articleUrl(post)}
 								>
-									{post.Title}
+									<a>{post.Title}</a>
 								</Link>
 							</h4>
 							<span className="date">{post.Date}</span>

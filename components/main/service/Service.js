@@ -5,10 +5,26 @@ import Image from 'next/image';
 import Loading from '../../Loading';
 import CKContent from '../../utils/CKContent';
 import Share from '../../utils/Share';
+import ServiceSidebar from './ServiceSidebar';
 
 const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 	if (!location && !entertainment && !accommodation && !sightseeing)
 		return <Loading />;
+
+	let type = null;
+	let typeURL = null;
+	if (entertainment) {
+		type = 'Vui chơi giải trí';
+		typeURL = 'vui-choi-giai-tri';
+	}
+	if (accommodation) {
+		type = 'Khách sạn nhà hàng';
+		typeURL = 'khach-san-nha-hang';
+	}
+	if (sightseeing) {
+		type = 'Các điểm tham quan';
+		typeURL = 'cac-diem-tham-quan';
+	}
 
 	const service = entertainment || accommodation || sightseeing;
 
@@ -37,10 +53,17 @@ const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 							</div>
 						</div>
 					</div>
-					{/* <ArticleSideBar
-						articles={articles}
-						categories={categories}
-					/> */}
+					<ServiceSidebar
+						ClickHandler={ClickHandler}
+						type={type}
+						typeURL={typeURL}
+						location={location}
+						services={
+							entertainment.locations[0].entertainments ||
+							accommodation ||
+							sightseeing
+						}
+					/>
 				</div>
 			</div>
 		</section>
