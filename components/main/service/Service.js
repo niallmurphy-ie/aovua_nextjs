@@ -32,8 +32,6 @@ const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 		window.scrollTo(10, 0);
 	};
 
-	console.log('service', service);
-
 	return (
 		<section className="wpo-blog-single-section section-padding">
 			<div className="container">
