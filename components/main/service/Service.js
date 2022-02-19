@@ -25,58 +25,15 @@ const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 					<div className={`col col-lg-8 col-12`}>
 						<div className="wpo-blog-content clearfix">
 							<div className="post">
-								{/* {service.Thumbnail && (
-									<div className="entry-media">
-										<Image
-											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${service.Thumbnail.url}`}
-											alt={
-												service.Thumbnail
-													.alternativeText
-											}
-											width="100%"
-											height="80%"
-											layout="responsive"
-											objectFit="contain"
-										/>
-									</div>
-								)} */}
 								{service.Body && (
 									<CKContent content={service.Body} />
 								)}
 							</div>
 
 							<div className="tag-share clearfix">
-								<div className="share">
+								<span className="share">
 									<Share />
-								</div>
-								{/* <div className="share">
-									<ul>
-										<li>
-											<Link
-												onClick={ClickHandler}
-												href="/blog-details"
-											>
-												<i className="ti-facebook"></i>
-											</Link>
-										</li>
-										<li>
-											<Link
-												onClick={ClickHandler}
-												href="/blog-details"
-											>
-												<i className="ti-twitter-alt"></i>
-											</Link>
-										</li>
-										<li>
-											<Link
-												onClick={ClickHandler}
-												href="/blog-details"
-											>
-												<i className="ti-instagram"></i>
-											</Link>
-										</li>
-									</ul>
-								</div> */}
+								</span>
 							</div>
 						</div>
 					</div>
