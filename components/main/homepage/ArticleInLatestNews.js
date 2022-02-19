@@ -25,7 +25,7 @@ function Article({ article, index }) {
 								width={600}
 								height={400}
 								objectFit="cover"
-								priority={index === 0 ? true : false}
+								loading={index === 0 ? 'eager' : 'lazy'}
 								placeholder={<Loading />}
 							/>
 						</a>

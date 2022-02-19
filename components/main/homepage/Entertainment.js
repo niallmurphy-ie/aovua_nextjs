@@ -83,8 +83,8 @@ const Entertainment = ({ entertainment }) => {
 											height="600px"
 											width="450px"
 											objectFit="cover"
-											priority={
-												index === 0 ? true : false
+											loading={
+												index === 0 ? 'eager' : 'lazy'
 											}
 											lazyBoundary="500px"
 										/>

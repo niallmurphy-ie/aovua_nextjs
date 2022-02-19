@@ -71,7 +71,7 @@ const TileOutput = ({ location, firstImage }) => {
 					height="600px"
 					width="500px"
 					objectFit="cover"
-					priority={firstImage ? true : false}
+					loading={firstImage ? 'eager' : 'lazy'}
 					placeholder={<Loading />}
 				/>
 			</div>

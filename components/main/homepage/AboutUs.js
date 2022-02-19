@@ -32,7 +32,6 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 								layout="fill"
 								objectFit="cover"
 								loading="eager"
-								priority
 							/>
 							{videoModal ? (
 								<ul className="banner-video">

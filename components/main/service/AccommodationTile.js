@@ -10,7 +10,7 @@ const AccommodationTile = ({ location, accommodation, firstImage }) => (
 				src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${accommodation.Thumbnail.url}`}
 				alt=""
 				// className="img img-responsive"
-				priority={firstImage ? true : false}
+				loading={firstImage ? 'eager' : 'lazy'}
 				height={500}
 				width={400}
 				objectFit={'cover'}
