@@ -5,16 +5,17 @@ import Image from 'next/image';
 import Loading from '../../Loading';
 import CKContent from '../../utils/CKContent';
 
-const Service = ({ location, entertainment, accommodation }) => {
-	if (!location && !entertainment && !accommodation) return <Loading />;
+const Service = ({ location, entertainment, accommodation, sightseeing }) => {
+	if ((!location && !entertainment && !accommodation) || !sightseeing)
+		return <Loading />;
 
-	const service = entertainment || accommodation;
+	const service = entertainment || accommodation || sightseeing;
 
 	const ClickHandler = () => {
 		window.scrollTo(10, 0);
 	};
 
-	console.log('service', service)
+	console.log('service', service);
 
 	return (
 		<section className="wpo-blog-single-section section-padding">

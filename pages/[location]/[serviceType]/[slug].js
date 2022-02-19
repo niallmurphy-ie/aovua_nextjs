@@ -6,12 +6,14 @@ import { ENTERTAINMENT, ENTERTAINMENTS } from '../../../lib/queries';
 import { ACCOMMODATION } from '../../../lib/queries/accommodationQueries';
 import { LOCATIONS } from '../../../lib/queries/locationQueries';
 import { LOCATION_URLPREFIX } from '../../../lib/queries/locationQueries';
+import { SIGHTSEEING } from '../../../lib/queries/sightseeingQueries';
 
 const ServicePage = ({
 	location,
 	entertainment,
 	entertainments,
 	accommodation,
+	sightseeing,
 }) => {
 	// location gives the first location if multuple are selected.
 	let pageTitle;
@@ -30,6 +32,13 @@ const ServicePage = ({
 			name: `${location.Name} `,
 		};
 	}
+	if (sightseeing) {
+		pageTitle = sightseeing.Name || '';
+		breadcrumb = {
+			url: `/${location.urlPrefix}/cac-diem-tham-quan`,
+			name: `${location.Name} - Các điểm tham quan`,
+		};
+	}
 
 	return (
 		<>
@@ -43,6 +52,7 @@ const ServicePage = ({
 				location={location}
 				entertainment={entertainment}
 				accommodation={accommodation}
+				sightseeing={sightseeing}
 			/>
 		</>
 	);
@@ -73,6 +83,15 @@ export async function getStaticPaths() {
 				},
 			});
 		});
+		location.sightseeings.forEach((sightseeing) => {
+			paths.push({
+				params: {
+					location: location.urlPrefix,
+					serviceType: 'cac-diem-tham-quan',
+					slug: sightseeing.slug,
+				},
+			});
+		});
 	});
 
 	return {
@@ -82,7 +101,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-
 	const locationQuery = client.query({
 		query: LOCATION_URLPREFIX,
 		variables: {
@@ -107,11 +125,19 @@ export async function getStaticProps(context) {
 		},
 	});
 
+	const sightseeingQuery = client.query({
+		query: SIGHTSEEING,
+		variables: {
+			slug: context.params.slug,
+		},
+	});
+
 	const responses = await Promise.all([
 		locationQuery,
 		entertainmentQuery,
 		entertainmentsQuery,
 		accommodationQuery,
+		sightseeingQuery,
 	]);
 
 	return {
@@ -120,6 +146,7 @@ export async function getStaticProps(context) {
 			entertainment: responses[1].data.entertainments[0] || null,
 			entertainments: responses[2].data.entertainments || null,
 			accommodation: responses[3].data.accommodations[0] || null,
+			sightseeing: responses[4].data.sightseeings[0] || null,
 		},
 	};
 }
