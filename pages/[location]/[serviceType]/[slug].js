@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import React, { useState, useEffect } from 'react';
 import PageTitle from '../../../components/main/PageTitle';
 import Service from '../../../components/main/service/Service';
 import client from '../../../lib/apolloClient';
@@ -15,11 +16,15 @@ const ServicePage = ({
 	accommodation,
 	sightseeing,
 }) => {
-	// location gives the first location if multuple are selected.
+	console.log('entertainment :>> ', entertainment);
+	const [url, setUrl] = useState('');
 	let pageTitle;
 	let breadcrumb;
+	const og = { description: '', image: '' };
 	if (entertainment) {
 		pageTitle = entertainment.Name || '';
+		og.description = `${entertainment.Name} tại ${location.Name}` || '';
+		og.image = entertainment.Thumbnail?.url || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/vui-choi-giai-tri`,
 			name: `${location.Name} - Vui chơi giải trí`,
@@ -40,12 +45,22 @@ const ServicePage = ({
 		};
 	}
 
+	useEffect(() => {
+		setUrl(window.location.href);
+	}, []);
+
 	return (
 		<>
 			<Head>
 				<title>{pageTitle}</title>
 				<meta name="description" content={pageTitle} />
-				<link rel="icon" href="/favicon.ico" />
+				<meta property="og:title" content={pageTitle} />
+				<meta property="og:url" content={url} />
+				<meta
+					property="og:image"
+					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
+				/>
+				<meta property="og:description" content={og.description} />
 			</Head>
 			<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />
 			<Service
