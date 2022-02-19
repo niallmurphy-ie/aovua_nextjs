@@ -28,12 +28,14 @@ const ServiceSidebar = ({
 										width="100%"
 										height="100%"
 										layout="responsive"
-										objectFit="contain"
+										objectFit="cover"
 									/>
 								</div>
 								<div className="details">
 									<h4>
-										<Link href="/">
+										<Link
+											href={`/${location.urlPrefix}/${typeURL}/${service.slug}`}
+										>
 											<a onClick={ClickHandler}>
 												{service.Name}
 											</a>
@@ -42,6 +44,15 @@ const ServiceSidebar = ({
 								</div>
 							</div>
 						))}
+						{services.length > 5 && (
+							<div className="view-all blog-content">
+								<Link
+									href={`/${location.urlPrefix}/${typeURL}`}
+								>
+									<a onClick={ClickHandler}>Xem tất cả</a>
+								</Link>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
