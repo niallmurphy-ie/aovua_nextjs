@@ -29,6 +29,11 @@ export const VietnameseMenu = () => {
 					},
 				],
 			},
+			{
+				title: 'Tin tức',
+				link: '/tin-tuc-tong-hop',
+				subMenu: null,
+			},
 		],
 		contact: {
 			phone: '0968-910-998',
