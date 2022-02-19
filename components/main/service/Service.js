@@ -7,7 +7,7 @@ import CKContent from '../../utils/CKContent';
 import Share from '../../utils/Share';
 
 const Service = ({ location, entertainment, accommodation, sightseeing }) => {
-	if ((!location && !entertainment && !accommodation) || !sightseeing)
+	if (!location && !entertainment && !accommodation && !sightseeing)
 		return <Loading />;
 
 	const service = entertainment || accommodation || sightseeing;
