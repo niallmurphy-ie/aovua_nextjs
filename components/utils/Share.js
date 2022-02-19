@@ -12,10 +12,9 @@ const Share = () => {
 	return (
 		<FacebookShareButton
 			url={shareURL}
-			quote={
-				'next-share is a social share buttons for your next React apps.'
-			}
-			hashtag={'#nextshare'}
+			quote=""
+			hashtag={'#aovua'}
+			media="https://aovuastrapi.niallmurphy.dev/uploads/tro_be_5_2a2e5879be.jpg"
 		>
 			<FacebookIcon size={32} round />
 		</FacebookShareButton>
