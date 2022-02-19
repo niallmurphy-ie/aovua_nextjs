@@ -33,6 +33,7 @@ const Hero = ({ heroImages }) => {
 									layout="fill"
 									objectFit="cover"
 									priority={index === 0 ? true : false}
+									loading={index === 0 ? 'eager' : 'lazy'}
 									placeholder={<Loading />}
 								/>
 								<div className="container">
