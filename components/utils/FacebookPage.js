@@ -5,12 +5,7 @@ const FacebookPage = ({ url, name }) => {
 
 	useEffect(() => {
 		facebookMapURL(url);
-		window.document.dispatchEvent(
-			new Event('DOMContentLoaded', {
-				bubbles: true,
-				cancelable: true,
-			})
-		);
+		window.fbAsyncInit();
 	}, []);
 
 	if (!facebookURL) return null;
