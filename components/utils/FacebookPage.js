@@ -13,11 +13,11 @@ const FacebookPage = ({ url, name }) => {
 
 	return (
 		<div
-			className="fb-page"
+			className="fb-page widget"
 			data-href={facebookURL}
 			data-tabs="timeline"
 			data-width="500"
-			data-height="400"
+			data-height="340"
 			data-small-header="true"
 			data-adapt-container-width="true"
 			data-hide-cover="true"
