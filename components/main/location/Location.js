@@ -6,6 +6,7 @@ import LocationSideBar from './LocationSideBar';
 import LocationEntertainment from './LocationEntertainment';
 import LocationHotelRestaurant from './LocationHotelRestaurant';
 import LocationMap from './LocationMap';
+import FacebookAlbum from '../../utils/FacebookAlbum'
 
 const LocationPage = ({ location }) => {
 	console.log('location :>> ', location);
@@ -38,6 +39,7 @@ const LocationPage = ({ location }) => {
 				{location.GoogleMapsURL && (
 					<LocationMap mapURL={location.GoogleMapsURL} />
 				)}
+				<FacebookAlbum albumId="https://www.facebook.com/aovuaxanh/photos/" />
 			</section>
 		</>
 	);
