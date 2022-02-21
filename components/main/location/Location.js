@@ -6,7 +6,7 @@ import LocationSideBar from './LocationSideBar';
 import LocationEntertainment from './LocationEntertainment';
 import LocationHotelRestaurant from './LocationHotelRestaurant';
 import LocationMap from './LocationMap';
-import FacebookAlbum from '../../utils/FacebookAlbum'
+import FacebookAlbum from '../../utils/FacebookPage';
 
 const LocationPage = ({ location }) => {
 	console.log('location :>> ', location);
@@ -36,10 +36,27 @@ const LocationPage = ({ location }) => {
 				{location.accommodations.length > 0 && (
 					<LocationHotelRestaurant location={location} />
 				)}
-				{location.GoogleMapsURL && (
-					<LocationMap mapURL={location.GoogleMapsURL} />
-				)}
-				<FacebookAlbum albumId="https://www.facebook.com/aovuaxanh/photos/" />
+				<div style={{ backgroundColor: '#f5f5f5' }}>
+					<div className="container location-embeds">
+						<div className="row">
+							<div className="col col-lg-6 col-12 order-lg-2">
+								{location.FacebookPageURL && (
+									<FacebookAlbum
+										url={location.FacebookPageURL}
+										name={location.Name}
+									/>
+								)}
+							</div>
+							<div className="col col-lg-6 col-12 order-lg-2">
+								{location.GoogleMapsURL && (
+									<LocationMap
+										mapURL={location.GoogleMapsURL}
+									/>
+								)}
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</>
 	);
