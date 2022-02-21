@@ -22,7 +22,7 @@ const HomePage = ({
 	return (
 		<>
 			<Hero heroImages={homepageData.HomepageLocationsSlider} />
-			<Search />
+			{/* <Search /> */}
 			<About
 				greetingMessage={homepageData.Greeting}
 				greetingImage={homepageData.GreetingImage}

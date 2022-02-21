@@ -22,7 +22,7 @@ const FacebookPage = ({ url, name }) => {
 			data-adapt-container-width="true"
 			data-hide-cover="true"
 			data-show-facepile="true"
-			data-lazy="false"
+			data-lazy="true"
 		>
 			<blockquote cite={facebookURL} className="fb-xfbml-parse-ignore">
 				<a href={facebookURL}>{name}</a>

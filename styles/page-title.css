@@ -6,7 +6,7 @@
 	height: 400px;
 	text-align: center;
 	position: relative;
-	margin: 0 40px;
+	margin: 0 40px 40px 40px;
 }
 
 .page-title:before {

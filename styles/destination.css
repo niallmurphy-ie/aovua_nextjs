@@ -6,7 +6,7 @@
 	background: #f5fbf9;
 }
 .destination-area.section-padding {
-	padding-top: 230px;
+	padding-top: 160px;
 }
 .destination-area .container {
 	width: 1425px;
@@ -143,7 +143,8 @@ destination-area-2
 }
 
 .destination-area-2.section-padding {
-	padding-bottom: 70px;
+	padding-bottom: 60px;
+	padding-top: 60px;
 }
 .country-r {
 	margin-right: -220px;

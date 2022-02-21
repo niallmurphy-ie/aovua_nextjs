@@ -36,7 +36,7 @@ const LocationPage = ({ location }) => {
 				{location.accommodations.length > 0 && (
 					<LocationHotelRestaurant location={location} />
 				)}
-				<div style={{ backgroundColor: '#f5f5f5' }}>
+				<div className='div-embeds'>
 					<div className="container location-embeds">
 						<div className="row">
 							<div className="col col-lg-6 col-12 order-lg-2">

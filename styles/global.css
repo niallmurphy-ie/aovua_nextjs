@@ -188,7 +188,8 @@ button:focus {
 }
 
 .section-padding {
-	padding: 110px 0;
+	padding: 35px 0;
+
 }
 
 @media (max-width: 991px) {

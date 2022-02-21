@@ -2,10 +2,9 @@
 #0.6 wpo-about-area
 ======================================================*/
 
-.wpo-about-area-2,
-.wpo-about-area {
+.wpo-about-area-2 {
+	margin-top: 70px
 }
-
 .wpo-about-text .wpo-section-title,
 .wpo-about-text-2 .wpo-section-title {
 	margin: unset;
