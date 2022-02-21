@@ -17,9 +17,9 @@ const Footer = ({ footer }) => {
 							<div className="col col-lg-3 col-md-6 col-sm-12 col-12">
 								<div className="widget market-widget wpo-service-link-widget">
 									<div className="widget-title">
-										<h3>Contact </h3>
+										<h3>Liên hệ</h3>
 									</div>
-									{<CKContent content={footer.Contact} />}
+									<CKContent content={footer.Contact} />
 								</div>
 							</div>
 							<div className="col col-lg-6 col-md-6 col-sm-12 col-12">

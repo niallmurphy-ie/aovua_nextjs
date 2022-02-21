@@ -65,7 +65,7 @@ const TileOutput = ({ location, firstImage }) => {
 				<Image
 					src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
 					alt={location.Name}
-					height="600px"
+					height="400px"
 					width="500px"
 					objectFit="cover"
 					loading={firstImage ? 'eager' : 'lazy'}
@@ -79,7 +79,9 @@ const TileOutput = ({ location, firstImage }) => {
 							<a>{location.Name}</a>
 						</Link>
 					</h5>
-					<small>Short Description</small>
+					{location.ShortDescription && (
+						<small>{location.ShortDescription}</small>
+					)}
 				</div>
 			</div>
 		</div>
