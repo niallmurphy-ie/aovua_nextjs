@@ -5,8 +5,10 @@ import Description from './LocationDescription';
 import LocationSideBar from './LocationSideBar';
 import LocationEntertainment from './LocationEntertainment';
 import LocationHotelRestaurant from './LocationHotelRestaurant';
+import LocationMap from './LocationMap';
 
 const LocationPage = ({ location }) => {
+	console.log('location :>> ', location);
 	return (
 		<>
 			<PageTitle
@@ -32,6 +34,9 @@ const LocationPage = ({ location }) => {
 				)}
 				{location.accommodations.length > 0 && (
 					<LocationHotelRestaurant location={location} />
+				)}
+				{location.GoogleMapsURL && (
+					<LocationMap mapURL={location.GoogleMapsURL} />
 				)}
 			</section>
 		</>
