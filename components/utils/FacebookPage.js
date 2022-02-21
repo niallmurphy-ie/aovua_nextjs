@@ -5,7 +5,8 @@ const FacebookPage = ({ url, name }) => {
 
 	useEffect(() => {
 		facebookMapURL(url);
-		window.fbAsyncInit();
+		// This fixes Facebook not loading on page change.
+		if (typeof window.FB !== 'undefined') window.fbAsyncInit();
 	}, []);
 
 	if (!facebookURL) return null;
