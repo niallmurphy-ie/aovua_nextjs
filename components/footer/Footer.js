@@ -8,7 +8,6 @@ import CKContent from '../utils/CKContent';
 // import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = ({ footer }) => {
-
 	return (
 		<footer className="wpo-site-footer">
 			<div className="wpo-upper-footer">
@@ -23,20 +22,18 @@ const Footer = ({ footer }) => {
 									{<CKContent content={footer.Contact} />}
 								</div>
 							</div>
-							<div className="col col-lg-3 col-md-6 col-sm-12 col-12">
+							<div className="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div className="widget link-widget resource-widget">
-									<div className="widget-title">
-										<h3>Placeholder</h3>
+									<div className="container map-footer">
+										<iframe
+											title="Map"
+											src="https://www.google.com/maps/d/u/0/embed?mid=1YTVeIChavvKCPAxms8K5rIVJR7dBkem0&ehbc=2E312F"
+											loading="lazy"
+										></iframe>
 									</div>
 								</div>
 							</div>
-							<div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-								<div className="widget link-widget">
-									<div className="widget-title">
-										<h3>Placeholder</h3>
-									</div>
-								</div>
-							</div>
+
 							<div className="col col-lg-3 col-md-6 col-sm-12 col-12">
 								<div className="widget newsletter-widget">
 									<div className="widget-title">

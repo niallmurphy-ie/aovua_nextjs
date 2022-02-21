@@ -38,6 +38,7 @@ const HomePage = ({
 			<Features />
 			<Testimonial />
 			<Scrollbar /> */}
+
 		</>
 	);
 };
