@@ -45,15 +45,13 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 					<div className="col-lg-6 col-md-12 colsm-12">
 						<div className="wpo-about-text">
 							<div className="wpo-section-title">
-								<span>About Us</span>
+								<span>Giới thiệu</span>
 								<CKContent content={greetingMessage} />
 							</div>
 
 							<div className="btns">
-								<Link href="/about" className="theme-btn-s2">
-									<a className="theme-btn-s2">
-										More About Us
-									</a>
+								<Link href="/gioi-thieu/ve-cong-ty" className="theme-btn-s2">
+									<a className="theme-btn-s2">Đọc thêm</a>
 								</Link>
 							</div>
 						</div>
