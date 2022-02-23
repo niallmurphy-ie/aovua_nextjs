@@ -38,13 +38,14 @@ const MobileMenu = ({ menu }) => {
 										)}
 									</p>
 								) : (
-									<Link
-										onClick={() =>
-											setIsMenuOpen(!isMenuOpen)
-										}
-										href={item.link}
-									>
-										<a>{item.title}</a>
+									<Link href={item.link}>
+										<a
+											onClick={() =>
+												setIsMenuOpen(!isMenuOpen)
+											}
+										>
+											{item.title}
+										</a>
 									</Link>
 								)}
 								{item.subMenu && (
@@ -58,17 +59,18 @@ const MobileMenu = ({ menu }) => {
 																key={subMenu.id}
 															>
 																<Link
-																	onClick={() =>
-																		setIsMenuOpen(
-																			!isMenuOpen
-																		)
-																	}
 																	className="active"
 																	href={
 																		subMenu.link
 																	}
 																>
-																	<a>
+																	<a
+																		onClick={() =>
+																			setIsMenuOpen(
+																				!isMenuOpen
+																			)
+																		}
+																	>
 																		{
 																			subMenu.title
 																		}
