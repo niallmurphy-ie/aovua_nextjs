@@ -64,7 +64,7 @@ const TileOutput = ({ location, firstImage }) => {
 			<div className="destination-img">
 				<Image
 					src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
-					alt={location.Name}
+					alt={`Hình ảnh của ${location.Name}`}
 					height="400px"
 					width="500px"
 					objectFit="cover"

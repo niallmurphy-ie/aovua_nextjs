@@ -14,7 +14,7 @@ const MobileMenu = ({ menu }) => {
 					className="clox"
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
 				>
-					Close Me
+					x
 				</div>
 
 				<ul className="responsivemenu">
@@ -38,7 +38,12 @@ const MobileMenu = ({ menu }) => {
 										)}
 									</p>
 								) : (
-									<Link href={item.link}>
+									<Link
+										onClick={() =>
+											setIsMenuOpen(!isMenuOpen)
+										}
+										href={item.link}
+									>
 										<a>{item.title}</a>
 									</Link>
 								)}
@@ -53,6 +58,11 @@ const MobileMenu = ({ menu }) => {
 																key={subMenu.id}
 															>
 																<Link
+																	onClick={() =>
+																		setIsMenuOpen(
+																			!isMenuOpen
+																		)
+																	}
 																	className="active"
 																	href={
 																		subMenu.link
