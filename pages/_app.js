@@ -67,7 +67,7 @@ export default function App({ Component, pageProps, footerData, ...appProps }) {
 				<NavBar home={appProps.router.asPath === '/'} />
 				<AnimatePresence
 					exitBeforeEnter
-					initial={false}
+					// initial={false}
 					onExitComplete={() => window.scrollTo(0, 0)}
 				>
 					<Component {...pageProps} />

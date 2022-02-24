@@ -2,51 +2,40 @@ import React, { useState, useEffect } from 'react';
 import Loading from '../../Loading';
 import Article from './ArticleInLatestNews';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { FadeInWhenVisible } from '../../utils/Animations';
 
 const LatestNewsSection = ({ articles }) => {
 	if (!articles) return <Loading />;
 
 	return (
 		<div className="blog-area ptb-0-70 section-padding">
-			<div className="container">
-				<div className="col-12">
-					<motion.div initial="hidden" animate="visible" variants={
-						{
-							hidden: {
-								opacity: 0,
-								y: 50,
-							},
-							visible: {
-								opacity: 1,
-								y: 0,
-								transition: {
-									delay: 0.5,
-									duration: 0.5,
-								},
-							},
-						}
-					} className="wpo-section-title">
-						<h2>Tin Nổi Bật</h2>
-					</motion.div>
-				</div>
-				<div className="row">
-					{articles.map((article, index) => (
-						<Article
-							key={index + article.slug}
-							article={article}
-							index={index}
-						/>
-					))}
-				</div>
-				<div className="row view-more-news">
-					<div className="col-12 text-center">
-						<Link href="/tin-tuc-tong-hop" >
-							<a className="theme-btn-s2">Xem tất cả tin tức</a>
-						</Link>
+			<FadeInWhenVisible delay={0} speed={0.5} initialScale={0.85}>
+				<div className="container">
+					<div className="col-12">
+						<div className="wpo-section-title">
+							<h2>Tin Nổi Bật</h2>
+						</div>
+					</div>
+					<div className="row">
+						{articles.map((article, index) => (
+							<Article
+								key={index + article.slug}
+								article={article}
+								index={index}
+							/>
+						))}
+					</div>
+					<div className="row view-more-news">
+						<div className="col-12 text-center">
+							<Link href="/tin-tuc-tong-hop">
+								<a className="theme-btn-s2">
+									Xem tất cả tin tức
+								</a>
+							</Link>
+						</div>
 					</div>
 				</div>
-			</div>
+			</FadeInWhenVisible>
 		</div>
 	);
 };
