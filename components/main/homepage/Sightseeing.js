@@ -4,8 +4,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import CKContent from '../../utils/CKContent';
 
-const Sightseeing = ({ sightseeings }) => {
+const Sightseeing = ({ sightseeingText, sightseeings }) => {
 	const settings = {
 		dots: true,
 		arrows: false,
@@ -64,13 +65,9 @@ const Sightseeing = ({ sightseeings }) => {
 							<div className="wpo-section-title">
 								<h2>Các Điểm Tham Quan</h2>
 							</div>
-							<p>
-								There are many variations of passages of Lorem
-								Ipsum available, but the majority have suffered
-								alteration in some form, by injected humour, or
-								randomised words which look even slightly
-								believable.{' '}
-							</p>
+							{sightseeingText && (
+								<CKContent content={sightseeingText} />
+							)}
 							<div className="btns">
 								<Link
 									href="/destination"

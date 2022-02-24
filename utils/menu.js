@@ -8,6 +8,11 @@ export const VietnameseMenu = () => {
 				subMenu: null,
 			},
 			{
+				title: 'Giới thiệu',
+				link: '/gioi-thieu/ve-cong-ty',
+				subMenu: null,
+			},
+			{
 				title: 'Địa điểm',
 				link: '/diadiem',
 				subMenu: [
@@ -34,11 +39,6 @@ export const VietnameseMenu = () => {
 				link: '/tin-tuc-tong-hop',
 				subMenu: null,
 			},
-			{
-				title: 'Giới thiệu',
-				link: '/gioi-thieu/ve-cong-ty',
-				subMenu: null,
-			}
 		],
 		contact: {
 			phone: '0968-910-998',

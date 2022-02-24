@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Loading from '../../../components/Loading';
+import Loading from '../../Loading';
 import { FadeInWhenVisible } from '../../utils/Animations';
+import CKContent from '../../utils/CKContent';
 
-const Destination = ({ locations }) => {
+const Locations = ({ locationText, locations }) => {
 	console.log('locations', locations);
 	return (
 		<div className="destination-area section-padding">
@@ -15,7 +16,9 @@ const Destination = ({ locations }) => {
 							<div className="wpo-section-title">
 								<h2>Ao Vua JSC.</h2>
 							</div>
-							<p>Discover Ba Vi in these locations</p>
+							{locationText && (
+								<CKContent content={locationText} />
+							)}
 						</div>
 					</div>
 					<div className="col-lg-8">
@@ -91,4 +94,4 @@ const TileOutput = ({ location, firstImage }) => {
 	);
 };
 
-export default Destination;
+export default Locations;

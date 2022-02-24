@@ -52,7 +52,6 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 					<div className="col-lg-6 col-md-12 colsm-12">
 						<div className="wpo-about-text">
 							<div className="wpo-section-title">
-								<span>Giới thiệu</span>
 								<CKContent content={greetingMessage} />
 							</div>
 

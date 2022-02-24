@@ -24,55 +24,59 @@ const Hero = ({ heroImages }) => {
 	};
 	return (
 		<section className={`hero hero-style-2`}>
-			<div className="hero-slider">
-				<Slider {...settings}>
-					{heroImages.map((hero, index) => (
-						<div key={`hero_${index}`} className="slide">
-							<div className="slide-inner">
-								<Image
-									src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.HeroImage.url}`}
-									alt={hero.Name}
-									layout="fill"
-									objectFit="cover"
-									priority={index === 0 ? true : false}
-									loading={index === 0 ? 'eager' : 'lazy'}
-								/>
-								<div className="container">
-									<div className="row">
-										<FadeInWhenVisible
-											speed={0.5}
-											delay={0.5}
-											initialScale={0.5}
-										>
-											<div className="col col-lg-8 col-md-12 col-12 slide-caption">
-												<div className="slide-title">
-													<h2>{hero.Name}</h2>
-												</div>
-												<div className="slide-subtitle">
-													<CKContent
-														content={
-															hero.Description
-														}
-													/>
-												</div>
-												{hero.Link && (
-													<div className="btns">
-														<Link href={hero.Link}>
-															<a className="theme-btn">
-																Xem Thêm
-															</a>
-														</Link>
+			<FadeInWhenVisible speed={1} delay={0.25} initialScale={1.05}>
+				<div className="hero-slider">
+					<Slider {...settings}>
+						{heroImages.map((hero, index) => (
+							<div key={`hero_${index}`} className="slide">
+								<div className="slide-inner">
+									<Image
+										src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.HeroImage.url}`}
+										alt={hero.Name}
+										layout="fill"
+										objectFit="cover"
+										priority={index === 0 ? true : false}
+										loading={index === 0 ? 'eager' : 'lazy'}
+									/>
+									<div className="container">
+										<div className="row">
+											<FadeInWhenVisible
+												speed={1}
+												delay={0.25}
+												initialScale={0.8}
+											>
+												<div className="col col-lg-8 col-md-12 col-12 slide-caption">
+													<div className="slide-title">
+														<h2>{hero.Name}</h2>
 													</div>
-												)}
-											</div>
-										</FadeInWhenVisible>
+													<div className="slide-subtitle">
+														<CKContent
+															content={
+																hero.Description
+															}
+														/>
+													</div>
+													{hero.Link && (
+														<div className="btns">
+															<Link
+																href={hero.Link}
+															>
+																<a className="theme-btn">
+																	Xem Thêm
+																</a>
+															</Link>
+														</div>
+													)}
+												</div>
+											</FadeInWhenVisible>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					))}
-				</Slider>
-			</div>
+						))}
+					</Slider>
+				</div>
+			</FadeInWhenVisible>
 		</section>
 	);
 };

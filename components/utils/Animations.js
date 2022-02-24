@@ -55,7 +55,7 @@ export const ScrollWhenVisible = ({
 			viewport={{ once: true }}
 			transition={{ duration: speed, delay }}
 			variants={{
-				visible: { opacity: 1, y: 0 },
+				visible: { opacity: 1, y: 0, x: 0 },
 				hidden,
 			}}
 		>

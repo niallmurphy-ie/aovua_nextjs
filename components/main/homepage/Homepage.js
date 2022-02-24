@@ -4,7 +4,7 @@ import Search from './Search';
 import About from './AboutUs';
 import LatestNewsSection from './LatestNews';
 import Entertainment from './Entertainment';
-import Destination from './Destination';
+import Locations from './Locations';
 import HotelRestaurant from './HotelRestaurant';
 import Sightseeing from './Sightseeing';
 
@@ -29,16 +29,21 @@ const HomePage = ({
 				greetingYoutubeURL={homepageData.GreetingYoutubeURL}
 			/>
 			<LatestNewsSection articles={articles} />
-			<Destination locations={locations} />
+			<Locations
+				locationText={homepageData.LocationsText}
+				locations={locations}
+			/>
 			<Entertainment entertainment={entertainment} />
 			<HotelRestaurant locations={locations} />
-			<Sightseeing sightseeings={sightseeings} />
+			<Sightseeing
+				sightseeingText={homepageData.SightseeingText}
+				sightseeings={sightseeings}
+			/>
 			{/*<Destination2 />
 			<RoomSection />
 			<Features />
 			<Testimonial />
 			<Scrollbar /> */}
-
 		</>
 	);
 };

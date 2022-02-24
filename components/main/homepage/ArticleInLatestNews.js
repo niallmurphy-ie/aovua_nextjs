@@ -28,7 +28,7 @@ function Article({ article, index }) {
 						</a>
 					</Link>
 				</div>
-				<ScrollWhenVisible speed={1} delay={0} direction="down">
+				<ScrollWhenVisible speed={1} delay={0} direction="up">
 					<div className="blog-content">
 						<ul className="post-meta">
 							<li>

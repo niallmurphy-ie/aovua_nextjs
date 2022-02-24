@@ -3,7 +3,7 @@
 ======================================================*/
 
 .wpo-about-area-2 {
-	margin-top: 70px
+	margin-top: 70px;
 }
 .wpo-about-text .wpo-section-title,
 .wpo-about-text-2 .wpo-section-title {
@@ -45,6 +45,9 @@
 	display: inline-block;
 	position: relative;
 	line-height: 75px;
+}
+.wpo-section-title h3 {
+	font-weight: 700;
 }
 .wpo-section-title {
 	margin-bottom: 35px;

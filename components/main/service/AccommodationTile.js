@@ -21,7 +21,9 @@ const AccommodationTile = ({ location, accommodation, firstImage }) => (
 			<div className="room-text-hide">
 				<h2>{accommodation.Name}</h2>
 				{/* <span>{accommodation.RoomCount}</span> */}
-				<CKContent content={accommodation.ShortDescription} />
+				{accommodation.ShortDescription && (
+					<CKContent content={accommodation.ShortDescription} />
+				)}
 				{accommodation.Price && (
 					<small>
 						<span>{accommodation.Price}</span>

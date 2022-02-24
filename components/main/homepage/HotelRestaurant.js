@@ -17,15 +17,15 @@ const HotelRestaurant = ({ locations }) => {
 
 	return (
 		<section className={`Room-area section-padding Room-area-2`}>
-			<div className="Room-section">
-				<div className="container">
-					<div className="col-12">
-						<div className="wpo-section-title">
-							<h2>Khách Sạn Nhà Hàng</h2>
+			<FadeInWhenVisible initialScale={0.5}>
+				<div className="Room-section">
+					<div className="container">
+						<div className="col-12">
+							<div className="wpo-section-title">
+								<h2>Khách Sạn Nhà Hàng</h2>
+							</div>
 						</div>
-					</div>
-					<div className="row">
-						<FadeInWhenVisible initialScale={0.5}>
+						<div className="row">
 							<div className="col col-xs-12 sortable-gallery">
 								<div className="gallery-filters">
 									<Nav tabs>
@@ -84,10 +84,10 @@ const HotelRestaurant = ({ locations }) => {
 									</TabContent>
 								</div>
 							</div>
-						</FadeInWhenVisible>
+						</div>
 					</div>
 				</div>
-			</div>
+			</FadeInWhenVisible>
 		</section>
 	);
 };
