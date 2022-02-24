@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Loading from '../../Loading';
 import Article from './ArticleInLatestNews';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const LatestNewsSection = ({ articles }) => {
 	if (!articles) return <Loading />;
@@ -10,9 +11,24 @@ const LatestNewsSection = ({ articles }) => {
 		<div className="blog-area ptb-0-70 section-padding">
 			<div className="container">
 				<div className="col-12">
-					<div className="wpo-section-title">
+					<motion.div initial="hidden" animate="visible" variants={
+						{
+							hidden: {
+								opacity: 0,
+								y: 50,
+							},
+							visible: {
+								opacity: 1,
+								y: 0,
+								transition: {
+									delay: 0.5,
+									duration: 0.5,
+								},
+							},
+						}
+					} className="wpo-section-title">
 						<h2>Tin Nổi Bật</h2>
-					</div>
+					</motion.div>
 				</div>
 				<div className="row">
 					{articles.map((article, index) => (

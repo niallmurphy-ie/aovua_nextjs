@@ -4,6 +4,7 @@ import Image from 'next/image';
 import VideoModal from '../../utils/ModalVideo';
 import parse from 'html-react-parser';
 import CKContent from '../../utils/CKContent';
+import { FadeInWhenVisible } from '../../utils/Animations';
 
 const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 	// Fix hydration error caused by window not existing in node.
@@ -21,26 +22,32 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 			<div className="container">
 				<div className="row align-items-center">
 					<div className="col-lg-6 col-md-12 col-sm-12">
-						<div className="banner-img">
-							<Image
-								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}`}
-								alt={greetingImage.alternativeText}
-								layout="fill"
-								objectFit="cover"
-								loading="eager"
-							/>
-							{videoModal ? (
-								<ul className="banner-video">
-									<li className="video-holder">
-										<VideoModal
-											greetingYoutubeURL={
-												greetingYoutubeURL
-											}
-										/>
-									</li>
-								</ul>
-							) : null}
-						</div>
+						<FadeInWhenVisible
+							speed={0.75}
+							delay={0.25}
+							initialScale={0.5}
+						>
+							<div className="banner-img">
+								<Image
+									src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}`}
+									alt={greetingImage.alternativeText}
+									layout="fill"
+									objectFit="cover"
+									loading="eager"
+								/>
+								{videoModal ? (
+									<ul className="banner-video">
+										<li className="video-holder">
+											<VideoModal
+												greetingYoutubeURL={
+													greetingYoutubeURL
+												}
+											/>
+										</li>
+									</ul>
+								) : null}
+							</div>
+						</FadeInWhenVisible>
 					</div>
 					<div className="col-lg-6 col-md-12 colsm-12">
 						<div className="wpo-about-text">
@@ -50,7 +57,10 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 							</div>
 
 							<div className="btns">
-								<Link href="/gioi-thieu/ve-cong-ty" className="theme-btn-s2">
+								<Link
+									href="/gioi-thieu/ve-cong-ty"
+									className="theme-btn-s2"
+								>
 									<a className="theme-btn-s2">Đọc thêm</a>
 								</Link>
 							</div>

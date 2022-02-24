@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import Loading from '../../../components/Loading';
+import { ScrollWhenVisible } from '../../utils/Animations';
 
 const Entertainment = ({ entertainment }) => {
 	const settings = {
@@ -59,54 +60,58 @@ const Entertainment = ({ entertainment }) => {
 
 	return (
 		<div className="entertainment-service section-padding">
-			<div className="container">
-				<div className="col-12">
-					<div className="wpo-section-title text-center">
-						<h2>Vui Chơi Giải Trí</h2>
+			<ScrollWhenVisible delay={.5} direction="right">
+				<div className="container">
+					<div className="col-12">
+						<div className="wpo-section-title text-center">
+							<h2>Vui Chơi Giải Trí</h2>
+						</div>
 					</div>
-				</div>
-				<div className="entertainment-carousel">
-					<Slider {...settings}>
-						{entertainment.map((ent, index) => (
-							<div className="item" key={ent.Name}>
-								<div className="entertainment-item">
-									<div className="entertainment-img">
-										<Image
-											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Thumbnail.url}`}
-											alt=""
-											height="600px"
-											width="450px"
-											objectFit="cover"
-											loading={
-												index === 0 ? 'eager' : 'lazy'
-											}
-											lazyBoundary="500px"
-										/>
-									</div>
-									<div className="entertainment-content">
-										<div className="content-left">
-											<h5>
-												<Link
-													href={`/${ent.locations[0].urlPrefix}/vui-choi-giai-tri/${ent.slug}`}
-												>
-													{ent.Name}
-												</Link>
-											</h5>
-											<small>
-												{ent.locations[0].Name}
-											</small>
+					<div className="entertainment-carousel">
+						<Slider {...settings}>
+							{entertainment.map((ent, index) => (
+								<div className="item" key={ent.Name}>
+									<div className="entertainment-item">
+										<div className="entertainment-img">
+											<Image
+												src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Thumbnail.url}`}
+												alt=""
+												height="600px"
+												width="450px"
+												objectFit="cover"
+												loading={
+													index === 0
+														? 'eager'
+														: 'lazy'
+												}
+												lazyBoundary="500px"
+											/>
 										</div>
-										{/* <div className="content-right">
+										<div className="entertainment-content">
+											<div className="content-left">
+												<h5>
+													<Link
+														href={`/${ent.locations[0].urlPrefix}/vui-choi-giai-tri/${ent.slug}`}
+													>
+														{ent.Name}
+													</Link>
+												</h5>
+												<small>
+													{ent.locations[0].Name}
+												</small>
+											</div>
+											{/* <div className="content-right">
 														<h5>{dest.price}</h5>
 														<span>{dest.per}</span>
 													</div> */}
+										</div>
 									</div>
 								</div>
-							</div>
-						))}
-					</Slider>
+							))}
+						</Slider>
+					</div>
 				</div>
-			</div>
+			</ScrollWhenVisible>
 		</div>
 	);
 };

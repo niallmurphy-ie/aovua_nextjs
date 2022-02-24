@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Loading from '../../Loading';
 import CKContent from '../../utils/CKContent';
+import { FadeInWhenVisible } from '../../utils/Animations';
 
 const Hero = ({ heroImages }) => {
 	if (!heroImages) return <Loading />;
@@ -19,6 +20,7 @@ const Hero = ({ heroImages }) => {
 		autoplaySpeed: 4500,
 		fade: true,
 		lazyLoad: 'progressive',
+		pauseOnHover: false,
 	};
 	return (
 		<section className={`hero hero-style-2`}>
@@ -37,25 +39,33 @@ const Hero = ({ heroImages }) => {
 								/>
 								<div className="container">
 									<div className="row">
-										<div className="col col-lg-8 col-md-12 col-12 slide-caption">
-											<div className="slide-title">
-												<h2>{hero.Name}</h2>
-											</div>
-											<div className="slide-subtitle">
-												<CKContent
-													content={hero.Description}
-												/>
-											</div>
-											{hero.Link && (
-												<div className="btns">
-													<Link href={hero.Link}>
-														<a className="theme-btn">
-															Xem Thêm
-														</a>
-													</Link>
+										<FadeInWhenVisible
+											speed={0.5}
+											delay={0.5}
+											initialScale={0.5}
+										>
+											<div className="col col-lg-8 col-md-12 col-12 slide-caption">
+												<div className="slide-title">
+													<h2>{hero.Name}</h2>
 												</div>
-											)}
-										</div>
+												<div className="slide-subtitle">
+													<CKContent
+														content={
+															hero.Description
+														}
+													/>
+												</div>
+												{hero.Link && (
+													<div className="btns">
+														<Link href={hero.Link}>
+															<a className="theme-btn">
+																Xem Thêm
+															</a>
+														</Link>
+													</div>
+												)}
+											</div>
+										</FadeInWhenVisible>
 									</div>
 								</div>
 							</div>

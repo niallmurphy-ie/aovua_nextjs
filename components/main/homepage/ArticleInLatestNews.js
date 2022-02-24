@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { articleUrl } from '../../../lib/articles';
 import Loading from '../../../components/Loading';
+import { ScrollWhenVisible } from '../../../components/utils/Animations';
 
 function Article({ article, index }) {
 	return (
@@ -27,29 +28,31 @@ function Article({ article, index }) {
 						</a>
 					</Link>
 				</div>
-				<div className="blog-content">
-					<ul className="post-meta">
-						<li>
-							{article.categories.map((b) => (
-								<Link
-									key={`article_category_${b.urlPrefix}`}
-									href={`/${b.urlPrefix}`}
-								>
-									<a>{b.CategoryName}</a>
-								</Link>
-							))}{' '}
-						</li>
-						<li>{article.date}</li>
-					</ul>
-					<h3>
+				<ScrollWhenVisible speed={1} delay={0} direction="down">
+					<div className="blog-content">
+						<ul className="post-meta">
+							<li>
+								{article.categories.map((b) => (
+									<Link
+										key={`article_category_${b.urlPrefix}`}
+										href={`/${b.urlPrefix}`}
+									>
+										<a>{b.CategoryName}</a>
+									</Link>
+								))}{' '}
+							</li>
+							<li>{article.date}</li>
+						</ul>
+						<h3>
+							<Link href={articleUrl(article)}>
+								<a>{article.Title}</a>
+							</Link>
+						</h3>
 						<Link href={articleUrl(article)}>
-							<a>{article.Title}</a>
+							<a>Xem Thêm</a>
 						</Link>
-					</h3>
-					<Link href={articleUrl(article)}>
-						<a>Xem Thêm</a>
-					</Link>
-				</div>
+					</div>
+				</ScrollWhenVisible>
 			</div>
 		</div>
 	);
