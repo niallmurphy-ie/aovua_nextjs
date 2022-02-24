@@ -18,14 +18,14 @@ const MobileMenu = ({ menu }) => {
 				</div>
 
 				<ul className="responsivemenu">
-					{menu.components.map((item) => {
+					{menu.components.map((item, index) => {
 						return (
-							<li key={`mobile_menu_sub_${item.id}`}>
+							<li key={`mobile_menu_sub_${index}`}>
 								{item.subMenu ? (
 									<p
 										onClick={() =>
 											setIsOpen(
-												item.id === isOpen ? 0 : item.id
+												index === isOpen ? 0 : index
 											)
 										}
 									>
@@ -49,14 +49,14 @@ const MobileMenu = ({ menu }) => {
 									</Link>
 								)}
 								{item.subMenu && (
-									<Collapse isOpen={item.id === isOpen}>
+									<Collapse isOpen={index === isOpen}>
 										<Card>
 											<CardBody>
 												<ul>
 													{item.subMenu.map(
-														(subMenu) => (
+														(subMenu, jindex) => (
 															<li
-																key={subMenu.id}
+																key={`subMenu_${jindex}`}
 															>
 																<Link
 																	className="active"

@@ -104,7 +104,7 @@ const Sightseeing = ({ sightseeings }) => {
 													<div className="content-left">
 														<h5>
 															<Link
-																href={`${destination.locations[0].urlPrefix}/cac-diem-tham-quan/${destination.slug}`}
+																href={`/${destination.locations[0].urlPrefix}/cac-diem-tham-quan/${destination.slug}`}
 															>
 																<a>
 																	{
