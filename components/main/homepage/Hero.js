@@ -16,7 +16,7 @@ const Hero = ({ heroImages }) => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 7500,
+		autoplaySpeed: 4500,
 		fade: true,
 		lazyLoad: 'progressive',
 	};
