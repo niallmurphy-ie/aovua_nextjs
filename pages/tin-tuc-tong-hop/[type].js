@@ -2,6 +2,7 @@ import PageTitle from '../../components/main/PageTitle';
 import Category from '../../components/main/category/Category';
 import { CATEGORY, CATEGORIES } from '../../lib/queries/articles';
 import client from '../../lib/apolloClient';
+import WithTransition from '../../components/utils/WithTransition';
 
 const Post = ({ category, categories }) => {
 	const breadcrumb = category
@@ -14,11 +15,13 @@ const Post = ({ category, categories }) => {
 	console.log(category);
 	return (
 		<>
-			<PageTitle
-				pageTitle={category.CategoryName}
-				breadcrumb={breadcrumb}
-			/>
-			<Category category={category} categories={categories} />
+			<WithTransition>
+				<PageTitle
+					pageTitle={category.CategoryName}
+					breadcrumb={breadcrumb}
+				/>
+				<Category category={category} categories={categories} />
+			</WithTransition>
 		</>
 	);
 };

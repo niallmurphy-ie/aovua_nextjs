@@ -41,8 +41,15 @@ import Head from 'next/head';
 import NavBar from '../components/header/NavBar';
 import FacebookMessenger from '../components/utils/FacebookMessenger';
 import React from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 export default function App({ Component, pageProps, footerData, ...appProps }) {
+	const variants = {
+		hidden: { opacity: 0, x: -200, y: 0 },
+		enter: { opacity: 1, x: 0, y: 0 },
+		exit: { opacity: 0, x: 0, y: -100 },
+	};
+
 	return (
 		<ApolloProvider client={client}>
 			<div className="App">
@@ -58,7 +65,13 @@ export default function App({ Component, pageProps, footerData, ...appProps }) {
 					<meta name="twitter:card" content="summary_large_image" />
 				</Head>
 				<NavBar home={appProps.router.asPath === '/'} />
-				<Component {...pageProps} />
+				<AnimatePresence
+					exitBeforeEnter
+					initial={false}
+					onExitComplete={() => window.scrollTo(0, 0)}
+				>
+					<Component {...pageProps} />
+				</AnimatePresence>
 				<Footer footer={footerData} />
 				<FacebookMessenger />
 			</div>

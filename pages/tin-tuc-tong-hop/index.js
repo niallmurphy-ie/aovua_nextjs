@@ -4,6 +4,7 @@ import PageTitle from '../../components/main/PageTitle';
 import { ARTICLES } from '../../lib/queries/articles';
 import client from '../../lib/apolloClient';
 import News from '../../components/main/news/News';
+import WithTransition from '../../components/utils/WithTransition';
 
 const NewsPage = ({ articles }) => {
 	return (
@@ -16,8 +17,13 @@ const NewsPage = ({ articles }) => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<PageTitle pageTitle="Tin tức của Ao Vua JSC." breadcrumb={null} />
-			<News articles={articles} />
+			<WithTransition>
+				<PageTitle
+					pageTitle="Tin tức của Ao Vua JSC."
+					breadcrumb={null}
+				/>
+				<News articles={articles} />
+			</WithTransition>
 		</>
 	);
 };

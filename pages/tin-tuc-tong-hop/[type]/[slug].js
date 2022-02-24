@@ -2,7 +2,13 @@ import Head from 'next/head';
 import PageTitle from '../../../components/main/PageTitle';
 import Article from '../../../components/main/article/Article';
 import client from '../../../lib/apolloClient';
-import { CATEGORY, ARTICLE, CATEGORIES, ARTICLES } from '../../../lib/queries/articles';
+import {
+	CATEGORY,
+	ARTICLE,
+	CATEGORIES,
+	ARTICLES,
+} from '../../../lib/queries/articles';
+import WithTransition from '../../../components/utils/WithTransition';
 
 const ArticlePage = ({ category, article, categories, articles }) => {
 	console.log(category, article);
@@ -16,12 +22,14 @@ const ArticlePage = ({ category, article, categories, articles }) => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<PageTitle pageTitle={article.Title} breadcrumb={null} />
-			<Article
-				article={article}
-				articles={articles}
-				categories={categories}
-			/>
+			<WithTransition>
+				<PageTitle pageTitle={article.Title} breadcrumb={null} />
+				<Article
+					article={article}
+					articles={articles}
+					categories={categories}
+				/>
+			</WithTransition>
 		</>
 	);
 };
@@ -74,8 +82,8 @@ export async function getStaticProps(context) {
 	const articlesQuery = client.query({
 		query: ARTICLES,
 		variables: {
-			limit: 5
-		}
+			limit: 5,
+		},
 	});
 
 	const responses = await Promise.all([

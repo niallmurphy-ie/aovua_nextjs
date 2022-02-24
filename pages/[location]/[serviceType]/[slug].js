@@ -8,6 +8,7 @@ import { ACCOMMODATION } from '../../../lib/queries/accommodationQueries';
 import { LOCATIONS } from '../../../lib/queries/locationQueries';
 import { LOCATION_URLPREFIX } from '../../../lib/queries/locationQueries';
 import { SIGHTSEEING } from '../../../lib/queries/sightseeingQueries';
+import WithTransition from '../../../components/utils/WithTransition';
 
 const ServicePage = ({
 	location,
@@ -65,13 +66,15 @@ const ServicePage = ({
 				/> */}
 				<meta property="og:description" content={og.description} />
 			</Head>
-			<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />
-			<Service
-				location={location}
-				entertainment={entertainment}
-				accommodation={accommodation}
-				sightseeing={sightseeing}
-			/>
+			<WithTransition>
+				<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />
+				<Service
+					location={location}
+					entertainment={entertainment}
+					accommodation={accommodation}
+					sightseeing={sightseeing}
+				/>
+			</WithTransition>
 		</>
 	);
 };

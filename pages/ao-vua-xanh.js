@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Location from '../components/main/location/Location';
 import { LOCATION } from '../lib/queries/locationQueries';
 import client from '../lib/apolloClient';
+import WithTransition from '../components/utils/WithTransition';
 
 export default function AoVua({ location }) {
 	return (
@@ -15,8 +16,9 @@ export default function AoVua({ location }) {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
-			<Location location={location} />
+			<WithTransition>
+				<Location location={location} />
+			</WithTransition>
 		</>
 	);
 }

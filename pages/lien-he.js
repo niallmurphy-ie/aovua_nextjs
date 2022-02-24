@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Contact from '../components/main/contact/Contact';
 import { CONTACT_PAGE } from '../lib/queries';
 import client from '../lib/apolloClient';
+import WithTransition from '../components/utils/WithTransition';
 
 export default function ContactPage({ contact }) {
 	return (
@@ -15,8 +16,9 @@ export default function ContactPage({ contact }) {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
-			<Contact contact={contact} />
+			<WithTransition>
+				<Contact contact={contact} />
+			</WithTransition>
 		</>
 	);
 }

@@ -6,7 +6,6 @@ import { FadeInWhenVisible } from '../../utils/Animations';
 import CKContent from '../../utils/CKContent';
 
 const Locations = ({ locationText, locations }) => {
-	console.log('locations', locations);
 	return (
 		<div className="destination-area section-padding">
 			<div className="container">

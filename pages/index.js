@@ -5,6 +5,7 @@ import { ARTICLES } from '../lib/queries/articles';
 import { ENTERTAINMENTS } from '../lib/queries';
 import { SIGHTSEEING_HOMEPAGE } from '../lib/queries/sightseeingQueries';
 import { HOMEPAGE, HOMEPAGE_LOCATIONS } from '../lib/queries/homepageQueries';
+import WithTransition from '../components/utils/WithTransition';
 
 export default function Home({
 	homepageData,
@@ -23,13 +24,15 @@ export default function Home({
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<HomePage
-				homepageData={homepageData}
-				articles={articlesData}
-				entertainment={entertainmentData}
-				locations={locationsData}
-				sightseeings={sightseeingsData}
-			/>
+			<WithTransition>
+				<HomePage
+					homepageData={homepageData}
+					articles={articlesData}
+					entertainment={entertainmentData}
+					locations={locationsData}
+					sightseeings={sightseeingsData}
+				/>
+			</WithTransition>
 		</>
 	);
 }
