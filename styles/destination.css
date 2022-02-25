@@ -8,9 +8,7 @@
 	margin-top: -150px;
 	padding-top: 10px;
 } */
-.hero-destinations-section {
-	padding-top: 20px
-}
+
 @media (min-width: 1200px) {
 	.hero-destinations-section {
 		margin-top: -300px;
