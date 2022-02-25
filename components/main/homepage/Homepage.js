@@ -7,6 +7,7 @@ import Entertainment from './Entertainment';
 import Locations from './Locations';
 import HotelRestaurant from './HotelRestaurant';
 import Sightseeing from './Sightseeing';
+import HeroLocations from './HeroLocations';
 
 import Loading from '../../Loading';
 
@@ -23,16 +24,17 @@ const HomePage = ({
 		<>
 			<Hero heroImages={homepageData.HomepageLocationsSlider} />
 			{/* <Search /> */}
+			<HeroLocations locations={locations} />
 			<About
 				greetingMessage={homepageData.Greeting}
 				greetingImage={homepageData.GreetingImage}
 				greetingYoutubeURL={homepageData.GreetingYoutubeURL}
 			/>
 			<LatestNewsSection articles={articles} />
-			<Locations
+			{/* <Locations
 				locationText={homepageData.LocationsText}
 				locations={locations}
-			/>
+			/> */}
 			<Entertainment entertainment={entertainment} />
 			<HotelRestaurant locations={locations} />
 			<Sightseeing

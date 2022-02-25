@@ -2,6 +2,34 @@
 #0.7 destination-area
 ================================================*/
 
+/* Hero Area */
+
+/* .hero-destinations-section {
+	margin-top: -150px;
+	padding-top: 10px;
+} */
+.hero-destinations-section {
+	padding-top: 20px
+}
+@media (min-width: 1200px) {
+	.hero-destinations-section {
+		margin-top: -300px;
+		padding-top: 10px;
+	}
+}
+.hero-destinations-section .destination-item {
+	padding: 7px;
+	background: #fffc;
+	margin: 0;
+}
+.hero-destinations-section .destination-content {
+	width: 85%;
+	bottom: 30px;
+}
+.hero-destinations-section * {
+	text-align: center;
+}
+
 .destination-area {
 	background: #f5fbf9;
 }
@@ -71,12 +99,12 @@
 	margin-top: -100px;
 }
 /* .destination-img {
-	position: relative;
-	width: 500px;
-	height: 350px;
-	max-width: 100%;
+		position: relative;
+		width: 500px;
+		height: 350px;
+		max-width: 100%;
 
-} */
+	} */
 .destination-img img {
 	width: 100%;
 }
@@ -134,8 +162,8 @@
 }
 
 /*=============================================
-destination-area-2
-==============================================*/
+	destination-area-2
+	==============================================*/
 
 .destination-area-2 {
 	background: #f5fbf9;

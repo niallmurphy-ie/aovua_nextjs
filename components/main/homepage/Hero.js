@@ -45,7 +45,7 @@ const Hero = ({ heroImages }) => {
 												delay={0.25}
 												initialScale={0.8}
 											>
-												<div className="col col-lg-8 col-md-12 col-12 slide-caption">
+												<div className="col col-lg-9 col-md-12 col-12 slide-caption">
 													<div className="slide-title">
 														<h2>{hero.Name}</h2>
 													</div>
