@@ -10,8 +10,12 @@ import PageTitle from '../../components/main/PageTitle';
 const ServicePage = ({ location }) => {
 	console.log('location', location);
 	const [url, setUrl] = useState('');
-	let pageTitle;
-	let breadcrumb;
+	const pageTitle = `Khách sạn nhà hàng tại ${location.Name}`;
+	// breadcrumb to location
+	const breadcrumb = {
+		name: location.Name,
+		url: `/${location.urlPrefix}`,
+	};
 	const og = { description: '', image: '' };
 
 	useEffect(() => {
@@ -40,6 +44,7 @@ const ServicePage = ({ location }) => {
 				<LocationHotelRestaurant
 					location={location}
 					addLocationName={true}
+					addTitle={false}
 				/>
 			</WithTransition>
 		</>
