@@ -1,14 +1,18 @@
 import React from 'react';
 import AccommodationTile from '../service/AccommodationTile';
 
-const LocationHotelRestaurant = ({ location }) => {
+const LocationHotelRestaurant = ({ location, addLocationName = false }) => {
 	return (
 		<section className={`Room-area section-padding Room-area-2`}>
 			<div className="Room-section">
 				<div className="container">
 					<div className="col-12">
 						<div className="wpo-section-title text-center">
-							<h2>Khách sạn nhà hàng</h2>
+							{addLocationName ? (
+								<h2>{`Khách sạn nhà hàng tại ${location.Name}`}</h2>
+							) : (
+								<h2>Khách sạn nhà hàng</h2>
+							)}
 						</div>
 					</div>
 					<div className="row">
