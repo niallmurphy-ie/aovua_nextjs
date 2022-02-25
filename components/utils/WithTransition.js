@@ -13,7 +13,7 @@ const WithTransition = ({ children }) => {
 			initial="hidden" // Set the initial state to variants.hidden
 			animate="enter" // Animated state to variants.enter
 			exit="exit" // Exit state (used later) to variants.exit
-			transition={{ type: 'linear', duration: 1.5 }} // Set the transition to linear
+			transition={{ duration: 1.25 }} // Set the transition to linear
 			className=""
 		>
 			{children}
