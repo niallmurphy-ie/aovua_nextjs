@@ -5,7 +5,9 @@ const LocationHotelRestaurant = ({
 	location,
 	addLocationName = false,
 	addTitle = true,
+	limit = null,
 }) => {
+	console.log('limit', limit);
 	return (
 		<section className={`Room-area section-padding Room-area-2`}>
 			<div className="Room-section">
@@ -24,14 +26,32 @@ const LocationHotelRestaurant = ({
 					<div className="row">
 						<div className="gallery-container">
 							{location.accommodations.map(
-								(accommodation, index) => (
-									<AccommodationTile
-										firstImage={index === 0}
-										key={`room_${index}`}
-										accommodation={accommodation}
-										location={location}
-									/>
-								)
+								(accommodation, index) => {
+									console.log('accommodation', accommodation);
+									if (limit) {
+										if (index < limit) {
+											return (
+												<AccommodationTile
+													firstImage={index === 0}
+													key={`room_${index}`}
+													accommodation={
+														accommodation
+													}
+													location={location}
+												/>
+											);
+										}
+									} else {
+										return (
+											<AccommodationTile
+												firstImage={index === 0}
+												key={`room_${index}`}
+												accommodation={accommodation}
+												location={location}
+											/>
+										);
+									}
+								}
 							)}
 						</div>
 					</div>

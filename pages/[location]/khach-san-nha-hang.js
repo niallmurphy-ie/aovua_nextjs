@@ -4,11 +4,10 @@ import LocationHotelRestaurant from '../../components/main/location/LocationHote
 import client from '../../lib/apolloClient';
 import { LOCATIONS } from '../../lib/queries/locationQueries';
 import { LOCATION_URLPREFIX } from '../../lib/queries/locationQueries';
-import WithTransition from '../../components/utils/withTransition';
+import WithTransition from '../../components/utils/WithTransition';
 import PageTitle from '../../components/main/PageTitle';
 
 const ServicePage = ({ location }) => {
-	console.log('location', location);
 	const [url, setUrl] = useState('');
 	const pageTitle = `Khách sạn nhà hàng tại ${location.Name}`;
 	// breadcrumb to location
@@ -78,8 +77,6 @@ export async function getStaticProps(context) {
 			urlPrefix: context.params.location,
 		},
 	});
-
-	console.log('locationQuery :>> ', locationQuery);
 
 	return {
 		props: {

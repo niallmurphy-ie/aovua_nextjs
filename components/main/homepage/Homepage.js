@@ -36,7 +36,7 @@ const HomePage = ({
 				locations={locations}
 			/> */}
 			<Entertainment entertainment={entertainment} />
-			<HotelRestaurant locations={locations} />
+			<HotelRestaurant locations={locations} limit={3} />
 			<Sightseeing
 				sightseeingText={homepageData.SightseeingText}
 				sightseeings={sightseeings}

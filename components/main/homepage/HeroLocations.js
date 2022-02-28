@@ -22,7 +22,7 @@ const HeroLocations = ({ locationText, locations }) => {
 										<Image
 											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
 											alt={`Hình ảnh của ${location.Name}`}
-											height={500}
+											height={400}
 											width={500}
 											objectFit="cover"
 											loading={

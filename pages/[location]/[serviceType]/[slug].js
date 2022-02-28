@@ -33,8 +33,8 @@ const ServicePage = ({
 	if (accommodation) {
 		pageTitle = accommodation.Name || '';
 		breadcrumb = {
-			url: `/${location.urlPrefix}`,
-			name: `${location.Name} `,
+			url: `/${location.urlPrefix}/khach-san-nha-hang`,
+			name: `Khách sạn nhà hàng tại ${location.Name}`,
 		};
 	}
 	if (sightseeing) {
