@@ -37,6 +37,36 @@ export const VietnameseMenu = () => {
 			{
 				title: 'Tin tức',
 				link: '/tin-tuc-tong-hop',
+				subMenu: [
+					{
+						title: 'Tin nổi bật',
+						link: '/tin-tuc-tong-hop/khong-phan-loai',
+					},
+					{
+						title: 'Các Hoạt Động Của Công Ty',
+						link: '/tin-tuc-tong-hop/hoat-dong-cua-cong-ty',
+					},
+					{
+						title: 'Doanh Nhân',
+						link: '/tin-tuc-tong-hop/doanh-nhan',
+					},
+					{
+						title: 'HĐ. Từ Thiện',
+						link: '/tin-tuc-tong-hop/hd-tu-thien',
+					},
+					{
+						title: 'Thành Tích',
+						link: '/tin-tuc-tong-hop/thanh-tich',
+					},
+					{
+						title: 'Tin Tức Du Lịch',
+						link: '/tin-tuc-tong-hop/tin-tuc-du-lich',
+					},
+				],
+			},
+			{
+				title: 'Liên hệ',
+				link: '/lien-he',
 				subMenu: null,
 			},
 		],
