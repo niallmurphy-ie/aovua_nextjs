@@ -15,9 +15,7 @@ export const DesktopMenu = ({ menu }) => {
 								<ul>
 									{item.subMenu.map((sub) => (
 										<li key={sub.link + index}>
-											<Link
-												href={sub.link}
-											>
+											<Link href={sub.link}>
 												<a>{sub.title}</a>
 											</Link>
 										</li>

@@ -9,18 +9,19 @@ import { FadeInWhenVisible } from '../../utils/Animations';
 const Hero = ({ heroImages }) => {
 	if (!heroImages) return <Loading />;
 
+	// console.log('TiArrowRight', TiArrowRight);
 	// Slideshow Settings
 	const settings = {
-		dots: true,
+		dots: false,
 		arrows: true,
 		speed: 2200,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 4500,
+		autoplaySpeed: 6000,
 		fade: true,
 		lazyLoad: 'progressive',
-		pauseOnHover: false,
+		pauseOnHover: true,
 	};
 	return (
 		<section className={`hero hero-style-2`}>
@@ -62,7 +63,7 @@ const Hero = ({ heroImages }) => {
 																href={hero.Link}
 															>
 																<a className="theme-btn">
-																	Xem Thêm
+																	Xem Thêm{' '}
 																</a>
 															</Link>
 														</div>
@@ -82,3 +83,4 @@ const Hero = ({ heroImages }) => {
 };
 
 export default Hero;
+

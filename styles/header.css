@@ -1,3 +1,17 @@
+/* .fixed-navbar .header-style-2 .col-lg-8 nav > ul > li > a,
+.fixed-navbar .header-style-2 .get-contact {
+	padding: 5px 10px;
+	background: #fff;
+	color: black;
+	margin-right: 0;
+}
+.get-contact {
+	float: right;
+} */
+/* Add text shadow */
+/* .fixed-navbar .header-style-2 .col-lg-8 nav > ul > li > a {
+	text-shadow: 4px 4px 4px #333;
+} */
 .header-style-2 {
 	position: absolute;
 	z-index: 120;
@@ -78,10 +92,10 @@ nav > ul > li {
 nav ul li a {
 	display: inline-block;
 	color: #1c4c25;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 400;
 	position: relative;
-	padding: 45px 20px 40px;
+	padding: 15px 20px 15px;
 }
 nav ul li a:before {
 	content: '';
@@ -730,9 +744,6 @@ header.fixed .header-content {
 	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7479%)
 		hue-rotate(45deg) brightness(97%) contrast(100%);
 }
-
-
-
 
 /* HOME ------------------------------------------------------------ */
 
