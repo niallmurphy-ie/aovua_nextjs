@@ -10,13 +10,15 @@ import { ScrollWhenVisible } from '../../utils/Animations';
 const Entertainment = ({ entertainment }) => {
 	const settings = {
 		dots: false,
-		arrows: false,
-		speed: 3000,
+		arrows: true,
+		speed: 800,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 2500,
+		initialSlide: 3,
+		autoplaySpeed: 102500,
 		lazyLoad: 'progressive',
+		infinite: true,
 		responsive: [
 			{
 				breakpoint: 1440,
@@ -59,7 +61,7 @@ const Entertainment = ({ entertainment }) => {
 	};
 
 	return (
-		<div className="entertainment-service section-padding">
+		<div className="full-width-carousel entertainment-service section-padding">
 			<ScrollWhenVisible delay={.5} direction="right">
 				<div className="container">
 					<div className="col-12">

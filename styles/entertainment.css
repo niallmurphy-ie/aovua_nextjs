@@ -2,6 +2,62 @@
 #0.7 entertainment-area
 ================================================*/
 
+div.full-width-carousel .slick-prev {
+	margin-left: -50vw;
+	left: 53%;
+}
+
+div.full-width-carousel .slick-next {
+	margin-right: -50vw;
+	right: 53%;
+}
+
+div.full-width-carousel .slick-prev,
+div.full-width-carousel .slick-next {
+	background-color: rgba(0, 214, 144, 0.52);
+	width: 55px;
+	height: 55px;
+	z-index: 10;
+	border-radius: 50%;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+div.full-width-carousel .slick-prev:hover,
+div.full-width-carousel .slick-next:hover {
+	background-color: rgba(0, 214, 144);
+}
+
+@media (max-width: 991px) {
+	div.full-width-carousel .slick-prev,
+	div.full-width-carousel .slick-next {
+		display: none !important;
+	}
+}
+
+/* div.full-width-carousel .slick-prev {
+	left: -100px;
+} */
+
+div.full-width-carousel .slick-prev:before {
+	content: url('/arrow-left.svg');
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7479%)
+		hue-rotate(45deg) brightness(97%) contrast(100%);
+}
+
+/* div.full-width-carousel .slick-next {
+	right: -100px;
+} */
+
+div.full-width-carousel .slick-next:before {
+	content: url('/arrow-right.svg');
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7479%)
+		hue-rotate(45deg) brightness(97%) contrast(100%);
+}
+
 .entertainment-area {
 	background: #f5fbf9;
 }

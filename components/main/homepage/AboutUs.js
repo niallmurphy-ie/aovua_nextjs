@@ -25,7 +25,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 						<FadeInWhenVisible
 							speed={0.75}
 							delay={0.25}
-							initialScale={0.5}
+							initialScale={0.9}
 						>
 							<div className="banner-img">
 								<Image
