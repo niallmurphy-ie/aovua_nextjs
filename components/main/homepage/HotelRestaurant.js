@@ -20,7 +20,7 @@ const HotelRestaurant = ({ locations, limit = null }) => {
 
 	return (
 		<section className={`Room-area section-padding Room-area-2`}>
-			<FadeInWhenVisible initialScale={0.5}>
+			<FadeInWhenVisible initialScale={1.05}>
 				<div className="Room-section">
 					<div className="container">
 						<div className="col-12">

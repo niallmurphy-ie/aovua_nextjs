@@ -150,9 +150,11 @@ const Entertainment = ({ entertainment }) => {
 							{showButtonLocations && (
 								<div className="row">
 									<div className="col-12 text-center">
-										<h3 className="view-more-description">
-											Xem thêm vui chơi giải trí tại:
-										</h3>
+										<FadeInWhenVisible initialScale={0.9}>
+											<h3 className="view-more-description">
+												Xem thêm vui chơi giải trí tại:
+											</h3>
+										</FadeInWhenVisible>
 									</div>
 									{buttonLocations.map(
 										(buttonLocation, index) => (
@@ -160,7 +162,9 @@ const Entertainment = ({ entertainment }) => {
 												key={`buttonLocation_${index}`}
 												className="col-md-4 col-xs-12"
 											>
-												<FadeInWhenVisible initialScale={1.1}>
+												<FadeInWhenVisible
+													initialScale={1.1}
+												>
 													<div>
 														<Link
 															href={
