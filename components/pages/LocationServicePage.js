@@ -6,7 +6,11 @@ import { FadeInWhenVisible } from '../utils/Animations';
 const LocationServicePage = ({ location, entertainments }) => {
 	// Columns 3 wide
 	let content;
-	if (entertainments) content = entertainments
+	let urlFragement;
+	if (entertainments) {
+		content = entertainments;
+		urlFragement = 'vui-choi-giai-tri';
+	}
 	return (
 		<div className="container-fluid">
 			<div className="row gallery-wrap">
@@ -36,7 +40,7 @@ const LocationServicePage = ({ location, entertainments }) => {
 										<div className="content-left">
 											<h5>
 												<Link
-													href={`/${location.urlPrefix}/${cont.slug}`}
+													href={`/${location.urlPrefix}/${urlFragement}/${cont.slug}`}
 												>
 													<a>{cont.Name}</a>
 												</Link>
