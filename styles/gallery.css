@@ -17,18 +17,19 @@
 .gallery-item {
 	position: relative;
 	margin-bottom: 30px;
+	background-color: #ddd;
 }
 .gallery-content {
-	background: #ffffffd4;
+	background: #fff;
 	padding: 20px;
-	overflow: hidden;
-	position: absolute;
+	position: relative;
 	bottom: 20px;
 	left: 50%;
 	width: 90%;
 	transform: translateX(-50%);
 	border-radius: 10px;
 	transition: all 0.3s;
+	min-height: 118px;
 }
 .content-left {
 	float: left;

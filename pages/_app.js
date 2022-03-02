@@ -31,6 +31,7 @@ import '../styles/restaurant-accommodation.css';
 import '../styles/features.css';
 // search date picker
 import 'react-datepicker/dist/react-datepicker.css';
+import '../styles/gallery.css';
 
 import NextApp from 'next/app';
 import { ApolloProvider } from '@apollo/client';
