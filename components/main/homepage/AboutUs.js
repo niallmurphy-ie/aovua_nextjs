@@ -21,6 +21,22 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 		<div className="wpo-about-area-2 section-padding">
 			<div className="container">
 				<div className="row align-items-center">
+					<div className="col-lg-6 col-md-12 colsm-12">
+						<div className="wpo-about-text">
+							<div className="wpo-section-title">
+								<CKContent content={greetingMessage} />
+							</div>
+
+							<div className="btns">
+								<Link
+									href="/gioi-thieu/ve-cong-ty"
+									className="theme-btn-s2"
+								>
+									<a className="theme-btn-s2">Đọc thêm</a>
+								</Link>
+							</div>
+						</div>
+					</div>
 					<div className="col-lg-6 col-md-12 col-sm-12">
 						<FadeInWhenVisible
 							speed={0.75}
@@ -48,22 +64,6 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 								) : null}
 							</div>
 						</FadeInWhenVisible>
-					</div>
-					<div className="col-lg-6 col-md-12 colsm-12">
-						<div className="wpo-about-text">
-							<div className="wpo-section-title">
-								<CKContent content={greetingMessage} />
-							</div>
-
-							<div className="btns">
-								<Link
-									href="/gioi-thieu/ve-cong-ty"
-									className="theme-btn-s2"
-								>
-									<a className="theme-btn-s2">Đọc thêm</a>
-								</Link>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
