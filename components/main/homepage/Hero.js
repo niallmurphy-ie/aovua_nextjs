@@ -24,8 +24,8 @@ const Hero = ({ heroImages }) => {
 		pauseOnHover: true,
 	};
 	return (
-		<section className={`hero hero-style-2`}>
-			<FadeInWhenVisible speed={1} delay={0.25} initialScale={1.05}>
+		<FadeInWhenVisible speed={1} delay={0.25} initialScale={1.05}>
+			<section className={`hero hero-style-2`}>
 				<div className="hero-slider">
 					<Slider {...settings}>
 						{heroImages.map((hero, index) => (
@@ -77,10 +77,9 @@ const Hero = ({ heroImages }) => {
 						))}
 					</Slider>
 				</div>
-			</FadeInWhenVisible>
-		</section>
+			</section>
+		</FadeInWhenVisible>
 	);
 };
 
 export default Hero;
-
