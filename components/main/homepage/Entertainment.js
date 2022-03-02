@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import Loading from '../../../components/Loading';
-import { ScrollWhenVisible } from '../../utils/Animations';
+import { ScrollWhenVisible, FadeInWhenVisible } from '../../utils/Animations';
 
 const Entertainment = ({ entertainment }) => {
+	const [showButtonLocations, setShowButtonLocations] = useState(false);
+
+	const buttonLocations = [
+		{
+			title: 'Khu du lịch Ao Vua',
+			link: '/ao-vua-xanh/vui-choi-giai-tri',
+		},
+		{
+			title: 'Khu du lịch Đảo Ngọc Xanh',
+			link: '/dao-ngoc-xanh/vui-choi-giai-tri',
+		},
+		{
+			title: 'Khu du lịch Đầm Long',
+			link: '/dam-long/vui-choi-giai-tri',
+		},
+	];
+
 	const settings = {
 		dots: false,
 		arrows: true,
@@ -62,7 +78,7 @@ const Entertainment = ({ entertainment }) => {
 
 	return (
 		<div className="full-width-carousel entertainment-service section-padding">
-			<ScrollWhenVisible delay={.5} direction="right">
+			<ScrollWhenVisible delay={0.5} direction="right">
 				<div className="container">
 					<div className="col-12">
 						<div className="wpo-section-title text-center">
@@ -111,6 +127,60 @@ const Entertainment = ({ entertainment }) => {
 								</div>
 							))}
 						</Slider>
+					</div>
+					<div
+						style={{
+							display: 'block',
+						}}
+						className="row view-more-entertainment"
+					>
+						<div className="col-12 text-center">
+							{!showButtonLocations && (
+								<button
+									onClick={() =>
+										setShowButtonLocations(
+											!showButtonLocations
+										)
+									}
+									className="theme-btn-s2"
+								>
+									Xem Thêm
+								</button>
+							)}
+							{showButtonLocations && (
+								<div className="row">
+									<div className="col-12 text-center">
+										<h3 className="view-more-description">
+											Xem thêm vui chơi giải trí tại:
+										</h3>
+									</div>
+									{buttonLocations.map(
+										(buttonLocation, index) => (
+											<div
+												key={`buttonLocation_${index}`}
+												className="col-md-4 col-xs-12"
+											>
+												<FadeInWhenVisible initialScale={1.1}>
+													<div>
+														<Link
+															href={
+																buttonLocation.link
+															}
+														>
+															<a className="theme-btn-s2">
+																{
+																	buttonLocation.title
+																}
+															</a>
+														</Link>
+													</div>
+												</FadeInWhenVisible>
+											</div>
+										)
+									)}
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			</ScrollWhenVisible>
