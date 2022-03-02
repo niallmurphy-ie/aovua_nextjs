@@ -33,12 +33,12 @@ const LocationSidebar = ({ location }) => {
 							))}
 					</ul>
 				</div>
-				<div className="widget contact-widget">
+				{/* <div className="widget contact-widget">
 					<div>
 						<h4>Request a Call Back</h4>
 						<h2>(523) 456-789</h2>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
