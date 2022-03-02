@@ -2,12 +2,27 @@
 #1.2 footer-area
 ==========================================*/
 
+.footer-maps-section button {
+	width: 100%;
+	padding: 10px;
+}
+.footer-maps-section .footer-maps-box {
+	padding: 7px;
+}
+
+.footer-maps-section .maps-container {
+	margin-top: 5px;
+	padding: 5px;
+}
+.footer-maps-section iframe {
+	border-radius: 10px;
+}
 
 .map-footer {
-	 width: 100%;
-	 height: 300px;
-	 background: #fff;
-	 padding: 0;
+	width: 100%;
+	height: 300px;
+	background: #fff;
+	padding: 0;
 }
 .map-footer iframe {
 	width: 100%;
@@ -60,7 +75,6 @@
 .wpo-site-footer .wpo-upper-footer,
 .wpo-site-footer-2 .wpo-upper-footer {
 	padding: 40px 0 70px;
-
 }
 
 @media (max-width: 991px) {

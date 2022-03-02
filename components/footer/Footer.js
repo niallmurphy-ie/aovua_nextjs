@@ -1,13 +1,10 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import Logo from '../../public/images/logo.png';
-import ft1 from '../../public/images/images/footer/img-1.jpg';
-import ft2 from '../../public/images/images/footer/img-2.jpg';
+import React, { useState } from 'react';
+import FooterMaps from './FooterMaps';
 import CKContent from '../utils/CKContent';
 // import { FaFacebookF } from 'react-icons/fa';
 
-const Footer = ({ footer }) => {
+const Footer = ({ footer, mapsData }) => {
+	console.log('mapsData :>> ', mapsData);
 	return (
 		<footer className="wpo-site-footer">
 			<div className="wpo-upper-footer">
@@ -23,13 +20,10 @@ const Footer = ({ footer }) => {
 								</div>
 							</div>
 							<div className="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div className="widget link-widget resource-widget">
-									<div className="container map-footer">
-										<iframe
-											title="Map"
-											src="https://www.google.com/maps/d/u/0/embed?mid=1YTVeIChavvKCPAxms8K5rIVJR7dBkem0&ehbc=2E312F"
-											loading="lazy"
-										></iframe>
+								<div className="widget newsletter-widget">
+									<div className="widget-title">
+										<h3>Tìm chúng tôi trên bản đồ</h3>
+										<FooterMaps mapsData={mapsData} />
 									</div>
 								</div>
 							</div>
