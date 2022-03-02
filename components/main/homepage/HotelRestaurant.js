@@ -111,13 +111,13 @@ const HotelRestaurant = ({ locations, limit = null }) => {
 														style={{
 															display: 'block',
 														}}
-														className="row view-more-news"
+														className="row "
 													>
 														<div className="col-12 text-center">
 															<Link
 																href={`${location.urlPrefix}/khach-san-nha-hang`}
 															>
-																<a className="theme-btn-s2">
+																<a className="view-more-accommodation theme-btn-s2">
 																	{`Xem tất cả khách sạn nhà hàng tại ${location.Name}`}
 																</a>
 															</Link>
