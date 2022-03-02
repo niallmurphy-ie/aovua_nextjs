@@ -1,9 +1,10 @@
 /*====================================================
 #0.6 wpo-about-area
 ======================================================*/
-
-.wpo-about-area-2 {
-	margin-top: 70px;
+@media (min-width: 991px) {
+	.wpo-about-area-2 {
+		margin-top: 70px;
+	}
 }
 .wpo-about-text .wpo-section-title,
 .wpo-about-text-2 .wpo-section-title {
@@ -11,6 +12,9 @@
 	margin-bottom: 35px;
 }
 
+.view-more-about {
+	margin-bottom: 30px;
+}
 .wpo-about-text p,
 .wpo-about-text-2 p {
 	margin-bottom: 15px;
@@ -77,9 +81,9 @@
 	.wpo-about-img {
 		margin-bottom: 30px;
 	}
-	.wpo-about-text {
+	/* .wpo-about-text {
 		padding-top: 50px;
-	}
+	} */
 
 	.wpo-section-title h2 {
 		font-size: 40px;

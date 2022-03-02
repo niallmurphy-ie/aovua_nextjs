@@ -27,12 +27,12 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 								<CKContent content={greetingMessage} />
 							</div>
 
-							<div className="btns">
+							<div className="btns view-more-about">
 								<Link
 									href="/gioi-thieu/ve-cong-ty"
 									className="theme-btn-s2"
 								>
-									<a className="theme-btn-s2">Đọc thêm</a>
+									<a className="view-more-about theme-btn-s2">Đọc thêm</a>
 								</Link>
 							</div>
 						</div>
