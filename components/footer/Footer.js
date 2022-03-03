@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import FooterMaps from './FooterMaps';
 import CKContent from '../utils/CKContent';
+import FooterContact from './FooterContact';
 // import { FaFacebookF } from 'react-icons/fa';
 
-const Footer = ({ footer, mapsData }) => {
+const Footer = ({ footer, mapsData, contactData }) => {
 	console.log('mapsData :>> ', mapsData);
 	return (
 		<footer className="wpo-site-footer">
@@ -17,6 +18,7 @@ const Footer = ({ footer, mapsData }) => {
 										<h3>Liên hệ</h3>
 									</div>
 									<CKContent content={footer.Contact} />
+									<FooterContact contact={contactData} />
 								</div>
 							</div>
 							<div className="col col-lg-6 col-md-6 col-sm-12 col-12">

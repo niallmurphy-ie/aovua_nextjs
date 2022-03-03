@@ -38,6 +38,7 @@ import { ApolloProvider } from '@apollo/client';
 import client from '../lib/apolloClient';
 import { FOOTER } from '../lib/queries/footer';
 import { LOCATIONS_MAPS } from '../lib/queries/locationQueries';
+import { CONTACT_PAGE } from '../lib/queries';
 import Footer from '../components/footer/Footer';
 import Head from 'next/head';
 import NavBar from '../components/header/NavBar';
@@ -50,9 +51,9 @@ export default function App({
 	pageProps,
 	footerData,
 	mapsData,
+	contactData,
 	...appProps
 }) {
-
 	return (
 		<ApolloProvider client={client}>
 			<div className="App">
@@ -75,7 +76,11 @@ export default function App({
 				>
 					<Component {...pageProps} />
 				</AnimatePresence>
-				<Footer mapsData={mapsData} footer={footerData} />
+				<Footer
+					contactData={contactData}
+					mapsData={mapsData}
+					footer={footerData}
+				/>
 				<FacebookMessenger />
 			</div>
 		</ApolloProvider>
@@ -95,11 +100,15 @@ App.getInitialProps = async (appContext) => {
 	const mapsData = client.query({
 		query: LOCATIONS_MAPS,
 	});
-	const results = await Promise.all([footerData, mapsData]);
+	const contactData = client.query({
+		query: CONTACT_PAGE,
+	});
+	const results = await Promise.all([footerData, mapsData, contactData]);
 
 	return {
 		...appProps,
 		footerData: results[0].data.footer,
 		mapsData: results[1].data.locations,
+		contactData: results[2].data.contact,
 	};
 };

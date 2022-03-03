@@ -10,6 +10,16 @@
 	padding: 7px;
 }
 
+.footer-contact a {
+	color: #fff;
+}
+.footer-contact a:hover {
+	color: #00d690;
+}
+.footer-contact {
+	margin-bottom: 10px;
+}
+
 .footer-maps-section .maps-container {
 	margin-top: 5px;
 	padding: 5px;

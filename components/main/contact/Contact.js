@@ -23,23 +23,23 @@ const Contact = ({ contact }) => {
 							</div>
 						</div>
 						{contact.Email && (
-						<div className="col-lg-4 col-md-6 col-sm-12 col-12">
-							<div className="info-item">
-								<div className="info-wrap">
-									<div className="info-icon">
-										<i className="fi flaticon-email"></i>
+							<div className="col-lg-4 col-md-6 col-sm-12 col-12">
+								<div className="info-item">
+									<div className="info-wrap">
+										<div className="info-icon">
+											<i className="fi flaticon-email"></i>
+										</div>
+										<div className="info-text">
+											<span>Email</span>
+										</div>
 									</div>
-									<div className="info-text">
-										<span>Email</span>
-									</div>
+									<h2>
+										<a href={`mailto:${contact.Email}`}>
+											{contact.Email}
+										</a>
+									</h2>
 								</div>
-								<h2>
-									<a href={`mailto:${contact.Email}`}>
-										{contact.Email}
-									</a>
-								</h2>
 							</div>
-						</div>
 						)}
 						{contact.Phone && (
 							<div className="col-lg-4 col-md-6 col-sm-12 col-12">
