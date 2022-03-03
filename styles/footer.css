@@ -81,11 +81,11 @@
 .wpo-site-footer-2 .container {
 	position: relative;
 }
-
+/*
 .wpo-site-footer .wpo-upper-footer,
 .wpo-site-footer-2 .wpo-upper-footer {
 	padding: 40px 0 70px;
-}
+} */
 
 @media (max-width: 991px) {
 	.wpo-site-footer .wpo-upper-footer,
