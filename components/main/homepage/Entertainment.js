@@ -132,7 +132,7 @@ const Entertainment = ({ entertainment }) => {
 						style={{
 							display: 'block',
 						}}
-						className="row view-more-entertainment"
+						className="row "
 					>
 						<div className="col-12 text-center">
 							{!showButtonLocations && (

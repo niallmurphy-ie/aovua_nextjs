@@ -18,10 +18,10 @@
 	.Room-section .gallery-filters {
 		margin-bottom: 30px;
 	}
-	.Room-area.section-padding,
+	/* .Room-area.section-padding,
 	.Room-area2.section-padding {
 		padding-bottom: 70px;
-	}
+	} */
 }
 .Room-section .gallery-filters .nav-tabs,
 .Room-section .gallery-filters .nav-tabs .nav-link {
