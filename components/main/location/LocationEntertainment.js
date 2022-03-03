@@ -8,7 +8,10 @@ function LocationEntertainment({ location }) {
 
 	return (
 		<>
-			<div className="col-12">
+			<div
+				id="location-entertainment-section"
+				className="col-12 section-padding"
+			>
 				<div className="wpo-section-title text-center">
 					<h2>{`Vui chơi giải trí tại ${location.Name}`}</h2>
 				</div>

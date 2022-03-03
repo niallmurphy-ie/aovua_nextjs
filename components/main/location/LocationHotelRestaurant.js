@@ -7,9 +7,12 @@ const LocationHotelRestaurant = ({
 	addTitle = true,
 	limit = null,
 }) => {
-	console.log('limit', limit);
 	return (
-		<section className={`Room-area section-padding Room-area-2`}>
+		<section
+			id="location-accommodation-section"
+			className="Room-area section-padding Room-area-2"
+			y
+		>
 			<div className="Room-section">
 				<div className="container">
 					<div className="col-12">
