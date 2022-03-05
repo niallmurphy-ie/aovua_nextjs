@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FadeInWhenVisible } from '../utils/Animations';
 
-const LocationServicePage = ({ location, entertainments, sightseeings }) => {
+const LocationServicePage = ({ location, entertainments, sightseeings, events }) => {
 
 	console.log('sightseeings :>> ', sightseeings);
 	// Columns 3 wide
@@ -16,6 +16,10 @@ const LocationServicePage = ({ location, entertainments, sightseeings }) => {
 	if (sightseeings) {
 		content = sightseeings;
 		urlFragement = 'cac-diem-tham-quan';
+	}
+	if (events) {
+		content = events;
+		urlFragement = 'hoi-thao-su-kien';
 	}
 	return (
 		<div className="container-fluid">

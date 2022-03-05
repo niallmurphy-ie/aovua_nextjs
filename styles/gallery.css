@@ -29,7 +29,7 @@
 	transform: translateX(-50%);
 	border-radius: 10px;
 	transition: all 0.3s;
-	min-height: 118px;
+	min-height: 144px;
 }
 .content-left {
 	float: left;

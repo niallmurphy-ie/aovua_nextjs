@@ -59,6 +59,7 @@ const Service = ({ location, entertainment, accommodation, sightseeing, event })
 							entertainment?.locations[0].entertainments ||
 							accommodation?.locations[0].accommodations ||
 							sightseeing?.locations[0].sightseeings ||
+							event?.locations[0].events ||
 							null
 						}
 					/>
