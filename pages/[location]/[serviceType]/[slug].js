@@ -8,6 +8,7 @@ import { ACCOMMODATION } from '../../../lib/queries/accommodationQueries';
 import { LOCATIONS } from '../../../lib/queries/locationQueries';
 import { LOCATION_URLPREFIX } from '../../../lib/queries/locationQueries';
 import { SIGHTSEEING } from '../../../lib/queries/sightseeingQueries';
+import { EVENT } from '../../../lib/queries/eventsQueries';
 import WithTransition from '../../../components/utils/WithTransition';
 
 const ServicePage = ({
@@ -16,6 +17,7 @@ const ServicePage = ({
 	entertainments,
 	accommodation,
 	sightseeing,
+	event,
 }) => {
 	const [url, setUrl] = useState('');
 	let pageTitle;
@@ -42,6 +44,13 @@ const ServicePage = ({
 		breadcrumb = {
 			url: `/${location.urlPrefix}/cac-diem-tham-quan`,
 			name: `${location.Name} - Các điểm tham quan`,
+		};
+	}
+	if (event) {
+		pageTitle = event.Name || '';
+		breadcrumb = {
+			url: `/${location.urlPrefix}/hoi-thao-su-kien`,
+			name: `${location.Name} - Hội thao sự kiện`,
 		};
 	}
 
@@ -73,6 +82,7 @@ const ServicePage = ({
 					entertainment={entertainment}
 					accommodation={accommodation}
 					sightseeing={sightseeing}
+					event={event}
 				/>
 			</WithTransition>
 		</>
@@ -110,6 +120,15 @@ export async function getStaticPaths() {
 					location: location.urlPrefix,
 					serviceType: 'cac-diem-tham-quan',
 					slug: sightseeing.slug,
+				},
+			});
+		});
+		location.events.forEach((event) => {
+			paths.push({
+				params: {
+					location: location.urlPrefix,
+					serviceType: 'hoi-thao-su-kien',
+					slug: event.slug,
 				},
 			});
 		});
@@ -153,12 +172,20 @@ export async function getStaticProps(context) {
 		},
 	});
 
+	const eventQuery = client.query({
+		query: EVENT,
+		variables: {
+			slug: context.params.slug,
+		},
+	});
+
 	const responses = await Promise.all([
 		locationQuery,
 		entertainmentQuery,
 		entertainmentsQuery,
 		accommodationQuery,
 		sightseeingQuery,
+		eventQuery,
 	]);
 
 	return {
@@ -168,6 +195,7 @@ export async function getStaticProps(context) {
 			entertainments: responses[2].data.entertainments || null,
 			accommodation: responses[3].data.accommodations[0] || null,
 			sightseeing: responses[4].data.sightseeings[0] || null,
+			event: responses[5].data.events[0] || null,
 		},
 	};
 }

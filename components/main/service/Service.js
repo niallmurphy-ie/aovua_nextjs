@@ -7,8 +7,8 @@ import CKContent from '../../utils/CKContent';
 import Share from '../../utils/Share';
 import ServiceSidebar from './ServiceSidebar';
 
-const Service = ({ location, entertainment, accommodation, sightseeing }) => {
-	if (!location && !entertainment && !accommodation && !sightseeing)
+const Service = ({ location, entertainment, accommodation, sightseeing, event }) => {
+	if (!location && !entertainment && !accommodation && !sightseeing && !event)
 		return <Loading />;
 
 	let type = null;
@@ -25,8 +25,12 @@ const Service = ({ location, entertainment, accommodation, sightseeing }) => {
 		type = 'Các điểm tham quan';
 		typeURL = 'cac-diem-tham-quan';
 	}
+	if (event) {
+		type = 'Hội thao sự kiện';
+		typeURL = 'hoi-thao-su-kien';
+	}
 
-	const service = entertainment || accommodation || sightseeing;
+	const service = entertainment || accommodation || sightseeing || event;
 
 	return (
 		<section className="wpo-blog-single-section section-padding">
