@@ -8,6 +8,7 @@ import Locations from './Locations';
 import HotelRestaurant from './HotelRestaurant';
 import Sightseeing from './Sightseeing';
 import HeroLocations from './HeroLocations';
+import HomepageEvents from './HomepageEvents';
 
 import Loading from '../../Loading';
 
@@ -41,6 +42,7 @@ const HomePage = ({
 				sightseeingText={homepageData.SightseeingText}
 				sightseeings={sightseeings}
 			/>
+			<HomepageEvents locations={locations} />
 			{/*<Destination2 />
 			<RoomSection />
 			<Features />

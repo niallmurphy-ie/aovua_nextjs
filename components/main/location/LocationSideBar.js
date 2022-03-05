@@ -10,7 +10,6 @@ const LocationSidebar = ({ location }) => {
 	const menu = VietnameseMenu();
 
 	const handleScroll = (e) => {
-		console.log('e :>> ', e);
 		e.preventDefault();
 		const yOffset = -150;
 		const element = document.querySelector(

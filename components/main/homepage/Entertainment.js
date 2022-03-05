@@ -31,7 +31,7 @@ const Entertainment = ({ entertainment }) => {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
-		initialSlide: 3,
+		initialSlide: 5,
 		autoplaySpeed: 102500,
 		lazyLoad: 'progressive',
 		infinite: true,
@@ -94,8 +94,8 @@ const Entertainment = ({ entertainment }) => {
 											<Image
 												src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Thumbnail.url}`}
 												alt=""
-												height="600px"
-												width="450px"
+												height="400px"
+												width="350px"
 												objectFit="cover"
 												loading={
 													index === 0
@@ -134,14 +134,17 @@ const Entertainment = ({ entertainment }) => {
 						}}
 						className="row "
 					>
-						<div className="col-12 text-center">
+						<div
+							id="entertainment-view-more"
+							className="col-12 text-center"
+						>
 							{!showButtonLocations && (
 								<button
-									onClick={() =>
+									onClick={() => {
 										setShowButtonLocations(
 											!showButtonLocations
-										)
-									}
+										);
+									}}
 									className="theme-btn-s2"
 								>
 									Xem Thêm
