@@ -21,8 +21,6 @@ const ServicePage = ({ location }) => {
 		setUrl(window.location.href);
 	}, []);
 
-	console.log('location', location)
-
 	return (
 		<>
 			<Head>

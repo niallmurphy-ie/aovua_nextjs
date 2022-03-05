@@ -14,7 +14,7 @@ const NavBar = ({ home }) => {
 	const className =
 		scroll > 80
 			? 'fixed-navbar animated fadeInDown active'
-			: 'fixed-navbar';
+			: 'fixed-navbar ';
 
 	return (
 		<div className={className}>

@@ -57,7 +57,7 @@ const Hero = ({ heroImages }) => {
 															}
 														/>
 													</div>
-													{hero.Link && (
+													{/* {hero.Link && (
 														<div className="btns">
 															<Link
 																href={hero.Link}
@@ -67,7 +67,7 @@ const Hero = ({ heroImages }) => {
 																</a>
 															</Link>
 														</div>
-													)}
+													)} */}
 												</div>
 											</FadeInWhenVisible>
 										</div>
