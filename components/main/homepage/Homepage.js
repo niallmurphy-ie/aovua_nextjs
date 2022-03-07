@@ -32,10 +32,10 @@ const HomePage = ({
 				greetingYoutubeURL={homepageData.GreetingYoutubeURL}
 			/>
 			<LatestNewsSection articles={articles} />
-			{/* <Locations
+			<Locations
 				locationText={homepageData.LocationsText}
 				locations={locations}
-			/> */}
+			/>
 			<Entertainment entertainment={entertainment} />
 			<HotelRestaurant locations={locations} limit={3} />
 			<Sightseeing

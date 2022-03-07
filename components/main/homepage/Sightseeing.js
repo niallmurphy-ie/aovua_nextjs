@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import CKContent from '../../utils/CKContent';
+import { FadeInWhenVisible } from '../../utils/Animations';
 
 const Sightseeing = ({ sightseeingText, sightseeings }) => {
 	const settings = {
@@ -65,17 +66,10 @@ const Sightseeing = ({ sightseeingText, sightseeings }) => {
 							<div className="wpo-section-title">
 								<h2>Các Điểm Tham Quan</h2>
 							</div>
-							{sightseeingText && (
+							{/* {sightseeingText && (
 								<CKContent content={sightseeingText} />
-							)}
-							<div className="btns">
-								<Link
-									href="/destination"
-									className="theme-btn-s2"
-								>
-									<a>Khu du lịch Ao Vua</a>
-								</Link>
-							</div>
+							)} */}
+							<SightseeingViewMore />
 						</div>
 					</div>
 					<div className="col-lg-7">
@@ -137,3 +131,71 @@ const Sightseeing = ({ sightseeingText, sightseeings }) => {
 };
 
 export default Sightseeing;
+
+const SightseeingViewMore = () => {
+	const [showButtonLocations, setShowButtonLocations] = useState(false);
+
+	const buttonLocations = [
+		{
+			title: 'Ao Vua',
+			link: '/ao-vua-xanh/cac-diem-tham-quan',
+		},
+		{
+			title: 'Đảo Ngọc Xanh',
+			link: '/dao-ngoc-xanh/cac-diem-tham-quan',
+		},
+		{
+			title: 'Đầm Long',
+			link: '/dam-long/cac-diem-tham-quan',
+		},
+	];
+
+	return (
+		<div
+			style={{
+				display: 'block',
+			}}
+			className="row "
+		>
+			<div id="sightseeing-view-more" className="col-12 ">
+				{!showButtonLocations && (
+					<button
+						onClick={() => {
+							setShowButtonLocations(!showButtonLocations);
+						}}
+						className="theme-btn-s2"
+					>
+						Xem Thêm
+					</button>
+				)}
+				{showButtonLocations && (
+					<div className="row">
+						<div className="col-12 ">
+							<FadeInWhenVisible initialScale={0.9}>
+								<h3 className="view-more-description">
+									Xem thêm các điểm tham quan tại:
+								</h3>
+							</FadeInWhenVisible>
+						</div>
+						{buttonLocations.map((buttonLocation, index) => (
+							<div
+								key={`buttonLocation_${index}`}
+								className="col-md-12 col-xs-12"
+							>
+								<FadeInWhenVisible initialScale={1.1}>
+									<div>
+										<Link href={buttonLocation.link}>
+											<a className="theme-btn-s2">
+												{buttonLocation.title}
+											</a>
+										</Link>
+									</div>
+								</FadeInWhenVisible>
+							</div>
+						))}
+					</div>
+				)}
+			</div>
+		</div>
+	);
+};

@@ -7,23 +7,6 @@ import Image from 'next/image';
 import { ScrollWhenVisible, FadeInWhenVisible } from '../../utils/Animations';
 
 const Entertainment = ({ entertainment }) => {
-	const [showButtonLocations, setShowButtonLocations] = useState(false);
-
-	const buttonLocations = [
-		{
-			title: 'Khu du lịch Ao Vua',
-			link: '/ao-vua-xanh/vui-choi-giai-tri',
-		},
-		{
-			title: 'Khu du lịch Đảo Ngọc Xanh',
-			link: '/dao-ngoc-xanh/vui-choi-giai-tri',
-		},
-		{
-			title: 'Khu du lịch Đầm Long',
-			link: '/dam-long/vui-choi-giai-tri',
-		},
-	];
-
 	const settings = {
 		dots: false,
 		arrows: true,
@@ -128,67 +111,7 @@ const Entertainment = ({ entertainment }) => {
 							))}
 						</Slider>
 					</div>
-					<div
-						style={{
-							display: 'block',
-						}}
-						className="row "
-					>
-						<div
-							id="entertainment-view-more"
-							className="col-12 text-center"
-						>
-							{!showButtonLocations && (
-								<button
-									onClick={() => {
-										setShowButtonLocations(
-											!showButtonLocations
-										);
-									}}
-									className="theme-btn-s2"
-								>
-									Xem Thêm
-								</button>
-							)}
-							{showButtonLocations && (
-								<div className="row">
-									<div className="col-12 text-center">
-										<FadeInWhenVisible initialScale={0.9}>
-											<h3 className="view-more-description">
-												Xem thêm vui chơi giải trí tại:
-											</h3>
-										</FadeInWhenVisible>
-									</div>
-									{buttonLocations.map(
-										(buttonLocation, index) => (
-											<div
-												key={`buttonLocation_${index}`}
-												className="col-md-4 col-xs-12"
-											>
-												<FadeInWhenVisible
-													initialScale={1.1}
-												>
-													<div>
-														<Link
-															href={
-																buttonLocation.link
-															}
-														>
-															<a className="theme-btn-s2">
-																{
-																	buttonLocation.title
-																}
-															</a>
-														</Link>
-													</div>
-												</FadeInWhenVisible>
-											</div>
-										)
-									)}
-								</div>
-							)}
-						</div>
-					</div>
+					<EntertainmentViewMore />
 				</div>
 			</ScrollWhenVisible>
 		</div>
@@ -196,3 +119,71 @@ const Entertainment = ({ entertainment }) => {
 };
 
 export default Entertainment;
+
+const EntertainmentViewMore = () => {
+	const [showButtonLocations, setShowButtonLocations] = useState(false);
+
+	const buttonLocations = [
+		{
+			title: 'Khu du lịch Ao Vua',
+			link: '/ao-vua-xanh/vui-choi-giai-tri',
+		},
+		{
+			title: 'Khu du lịch Đảo Ngọc Xanh',
+			link: '/dao-ngoc-xanh/vui-choi-giai-tri',
+		},
+		{
+			title: 'Khu du lịch Đầm Long',
+			link: '/dam-long/vui-choi-giai-tri',
+		},
+	];
+
+	return (
+		<div
+			style={{
+				display: 'block',
+			}}
+			className="row "
+		>
+			<div id="entertainment-view-more" className="col-12 text-center">
+				{!showButtonLocations && (
+					<button
+						onClick={() => {
+							setShowButtonLocations(!showButtonLocations);
+						}}
+						className="theme-btn-s2"
+					>
+						Xem Thêm
+					</button>
+				)}
+				{showButtonLocations && (
+					<div className="row">
+						<div className="col-12 text-center">
+							<FadeInWhenVisible initialScale={0.9}>
+								<h3 className="view-more-description">
+									Xem thêm vui chơi giải trí tại:
+								</h3>
+							</FadeInWhenVisible>
+						</div>
+						{buttonLocations.map((buttonLocation, index) => (
+							<div
+								key={`buttonLocation_${index}`}
+								className="col-md-4 col-xs-12"
+							>
+								<FadeInWhenVisible initialScale={1.1}>
+									<div>
+										<Link href={buttonLocation.link}>
+											<a className="theme-btn-s2">
+												{buttonLocation.title}
+											</a>
+										</Link>
+									</div>
+								</FadeInWhenVisible>
+							</div>
+						))}
+					</div>
+				)}
+			</div>
+		</div>
+	);
+};
