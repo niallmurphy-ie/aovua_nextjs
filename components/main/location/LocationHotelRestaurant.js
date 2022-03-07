@@ -1,5 +1,6 @@
 import React from 'react';
 import AccommodationTile from '../service/AccommodationTile';
+import Link from 'next/link';
 
 const LocationHotelRestaurant = ({
 	location,
@@ -56,6 +57,15 @@ const LocationHotelRestaurant = ({
 									}
 								}
 							)}
+						</div>
+					</div>
+					<div className="row view-more-accommodation">
+						<div className="col-12 text-center">
+							<Link
+								href={`/${location.urlPrefix}/khach-san-nha-hang`}
+							>
+								<a className="theme-btn-s2">Xem Thêm</a>
+							</Link>
 						</div>
 					</div>
 				</div>

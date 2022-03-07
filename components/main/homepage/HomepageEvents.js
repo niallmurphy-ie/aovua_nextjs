@@ -38,6 +38,11 @@ function HomepageEvents({ locations }) {
 								<FadeInWhenVisible initialScale={0.95}>
 									<div className="featured-wrap">
 										<div className="featured-img">
+											<div className="blog-thumb-badge">
+												<div className="blog-thumb-text">
+													<span>{event.locations[0].Name}</span>
+												</div>
+											</div>
 											<Image
 												src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${event.Thumbnail.url}`}
 												alt=""

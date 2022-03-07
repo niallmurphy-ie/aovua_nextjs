@@ -35,7 +35,7 @@ const LocationPage = ({ location }) => {
 					<LocationEntertainment location={location} />
 				)}
 				{location.accommodations.length > 0 && (
-					<LocationHotelRestaurant location={location} />
+					<LocationHotelRestaurant limit={3} location={location} />
 				)}
 				{location.articles.length > 0 && (
 					<LocationNews location={location} />
