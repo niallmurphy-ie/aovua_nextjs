@@ -4,8 +4,6 @@ import Image from 'next/image';
 import classNames from 'classnames';
 
 function LocationEntertainment({ location }) {
-	const [itemsToShow, setItemsToShow] = useState(3);
-
 	return (
 		<>
 			<div
@@ -21,12 +19,7 @@ function LocationEntertainment({ location }) {
 					<div className="row grid ">
 						{location.entertainments.map((feature, i) => (
 							<div
-								className={classNames(
-									'col-lg-4 items col-md-6 col-sm-6 col-12',
-									{
-										hidden: i >= itemsToShow,
-									}
-								)}
+								className="col-lg-4 items col-md-6 col-sm-6 col-12"
 								key={`entertainment_${i}`}
 							>
 								<div className="featured-wrap">
@@ -51,17 +44,14 @@ function LocationEntertainment({ location }) {
 							</div>
 						))}
 					</div>
-					{location.entertainments.length > itemsToShow && (
+					{location.entertainments && (
 						<div className="row view-more-entertainment">
 							<div className="col-12 text-center">
-								<button
-									className="theme-btn-s2"
-									onClick={() =>
-										setItemsToShow(itemsToShow + 3)
-									}
+								<Link
+									href={`/${location.urlPrefix}/vui-choi-giai-tri`}
 								>
-									Xem Thêm
-								</button>
+									<a className="theme-btn-s2">Xem Thêm</a>
+								</Link>
 							</div>
 						</div>
 					)}

@@ -28,6 +28,7 @@ export async function getStaticProps() {
 		query: LOCATION,
 		variables: {
 			id: 5,
+			limit: 3,
 		},
 	});
 
