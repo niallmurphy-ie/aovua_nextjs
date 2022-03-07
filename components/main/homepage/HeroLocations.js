@@ -35,7 +35,7 @@ const HeroLocations = ({ locationText, locations }) => {
 								delay={isMobile ? 0 : 1.5}
 							>
 								<div className="destination-item">
-									<div className="destination-img">
+									{/* <div className="destination-img">
 										<Image
 											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
 											alt={`Hình ảnh của ${location.Name}`}
@@ -46,7 +46,7 @@ const HeroLocations = ({ locationText, locations }) => {
 												index === 0 ? 'eager' : 'lazy'
 											}
 										/>
-									</div>
+									</div> */}
 									<div className="destination-content">
 										<div className="content-left">
 											<h5>
