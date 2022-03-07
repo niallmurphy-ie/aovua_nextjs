@@ -7,6 +7,7 @@ import LocationEntertainment from './LocationEntertainment';
 import LocationHotelRestaurant from './LocationHotelRestaurant';
 import LocationMap from './LocationMap';
 import FacebookAlbum from '../../utils/FacebookPage';
+import LocationNews from './LocationNews';
 
 const LocationPage = ({ location }) => {
 	console.log('location :>> ', location);
@@ -35,6 +36,9 @@ const LocationPage = ({ location }) => {
 				)}
 				{location.accommodations.length > 0 && (
 					<LocationHotelRestaurant location={location} />
+				)}
+				{location.articles.length > 0 && (
+					<LocationNews location={location} />
 				)}
 				<div className="div-embeds">
 					<div className="container location-embeds">
