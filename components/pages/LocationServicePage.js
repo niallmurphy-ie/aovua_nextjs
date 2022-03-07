@@ -5,7 +5,6 @@ import { FadeInWhenVisible } from '../utils/Animations';
 
 const LocationServicePage = ({ location, entertainments, sightseeings, events }) => {
 
-	console.log('sightseeings :>> ', sightseeings);
 	// Columns 3 wide
 	let content;
 	let urlFragement;

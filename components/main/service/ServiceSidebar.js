@@ -5,8 +5,6 @@ import Link from 'next/link';
 const ServiceSidebar = ({ location, type, typeURL, services }) => {
 	if (!services) return null;
 
-	console.log('services', services);
-
 	return (
 		<div className={`col col-lg-4 col-12 `}>
 			<div className="wpo-blog-sidebar">

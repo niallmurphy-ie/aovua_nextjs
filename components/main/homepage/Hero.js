@@ -9,7 +9,6 @@ import { FadeInWhenVisible } from '../../utils/Animations';
 const Hero = ({ heroImages }) => {
 	if (!heroImages) return <Loading />;
 
-	// console.log('TiArrowRight', TiArrowRight);
 	// Slideshow Settings
 	const settings = {
 		dots: false,

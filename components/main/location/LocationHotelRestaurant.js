@@ -31,7 +31,7 @@ const LocationHotelRestaurant = ({
 						<div className="gallery-container">
 							{location.accommodations.map(
 								(accommodation, index) => {
-									console.log('accommodation', accommodation);
+
 									if (limit) {
 										if (index < limit) {
 											return (

@@ -12,7 +12,6 @@ const Post = ({ category, categories }) => {
 		  }
 		: null;
 
-	console.log(category);
 	return (
 		<>
 			<WithTransition>

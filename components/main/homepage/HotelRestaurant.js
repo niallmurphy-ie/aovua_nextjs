@@ -16,8 +16,6 @@ const HotelRestaurant = ({ locations, limit = null }) => {
 		(location) => location.accommodations.length > 0
 	);
 
-	console.log('limit :>> ', limit);
-
 	return (
 		<section className={`Room-area section-padding Room-area-2`}>
 			<FadeInWhenVisible initialScale={1.05}>

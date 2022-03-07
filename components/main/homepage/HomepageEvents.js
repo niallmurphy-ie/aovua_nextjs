@@ -10,8 +10,6 @@ function HomepageEvents({ locations }) {
 	// Put events from locations into a new array
 	const events = locations.map((location) => location.events).flat();
 
-	console.log('events :>> ', events);
-
 	return (
 		<div className="homepage-events">
 			<div

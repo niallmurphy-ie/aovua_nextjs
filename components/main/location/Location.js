@@ -10,7 +10,7 @@ import FacebookAlbum from '../../utils/FacebookPage';
 import LocationNews from './LocationNews';
 
 const LocationPage = ({ location }) => {
-	console.log('location :>> ', location);
+
 	return (
 		<>
 			<PageTitle

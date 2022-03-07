@@ -11,7 +11,7 @@ import {
 import WithTransition from '../../../components/utils/WithTransition';
 
 const ArticlePage = ({ category, article, categories, articles }) => {
-	console.log(category, article);
+
 	return (
 		<>
 			<Head>

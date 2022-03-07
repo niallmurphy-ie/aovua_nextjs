@@ -3,7 +3,6 @@ import CKContent from '../../utils/CKContent';
 // import ContactForm from '../ContactFrom';
 
 const Contact = ({ contact }) => {
-	console.log('contact', contact);
 	return (
 		<div id="Contact" className="contact-area section-padding">
 			<div className="container">

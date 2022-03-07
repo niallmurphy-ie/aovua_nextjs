@@ -14,7 +14,7 @@ export default function Home({
 	locationsData,
 	sightseeingsData,
 }) {
-	console.log('entertainmentData :>> ', entertainmentData.length);
+
 	return (
 		<>
 			<Head>
@@ -73,7 +73,6 @@ export const getStaticProps = async () => {
 		sightseeingsQuery,
 	]);
 
-	console.log('responses :>> ', responses);
 	return {
 		props: {
 			homepageData: responses[0].data.homepage,
