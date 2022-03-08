@@ -115,6 +115,11 @@
 }
 
 @media (max-width: 992px) {
+	/* Hide destination locations on mobile */
+	.hero-destinations-section {
+		display: none;
+	}
+
 	.destination-area.section-padding {
 		padding-top: 0;
 	}

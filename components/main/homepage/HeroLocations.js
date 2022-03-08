@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import CKContent from '../../utils/CKContent';
 import { FadeInWhenVisible } from '../../utils/Animations';
 
 // Return Four locations as horizonatal bootstrap grid
@@ -30,7 +27,7 @@ const HeroLocations = ({ locationText, locations }) => {
 		const y =
 			element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-		window.scrollTo({ top: y, behavior: 'smooth' });
+		window.scrollTo({ top: y, behavior: 'smooth', duration: 6000 });
 	};
 
 	return (
@@ -39,7 +36,7 @@ const HeroLocations = ({ locationText, locations }) => {
 				{[{ Name: 'Ao Vua JSC.' }, ...locations].map(
 					(location, index) => {
 						return (
-							<div key={`hero_location_${index}`} className="col">
+							<div key={`hero_location_${index}`} className="col-sm">
 								<FadeInWhenVisible
 									initialScale={0.95}
 									delay={isMobile ? 0 : 1.5}
@@ -58,9 +55,15 @@ const HeroLocations = ({ locationText, locations }) => {
 										/>
 									</div> */}
 										<div className="destination-content">
-											<div className="content-left">
+											<div
+												style={{ width: '100%' }}
+												className="content-left"
+											>
 												<h5>
 													<a
+														style={{
+															textAlign: 'center',
+														}}
 														href="#"
 														scrollTo={`#location_${index}`}
 														onClick={handleScroll}
