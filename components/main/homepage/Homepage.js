@@ -25,7 +25,7 @@ const HomePage = ({
 		<>
 			<Hero locations={locations} heroImages={homepageData.HomepageLocationsSlider} />
 			{/* <Search /> */}
-			{/* <HeroLocations locations={locations} /> */}
+			<HeroLocations locations={locations} />
 			<About
 				greetingMessage={homepageData.Greeting}
 				greetingImage={homepageData.GreetingImage}

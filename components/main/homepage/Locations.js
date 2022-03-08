@@ -10,7 +10,7 @@ const Locations = ({ locationText, locations }) => {
 		<div className="destination-area section-padding">
 			<div className="container">
 				<div className="row">
-					<div className="col-lg-4">
+					<div id="location_0" className="col-lg-4">
 						<div className="destination-text">
 							<div className="wpo-section-title">
 								<h2>Ao Vua JSC.</h2>
@@ -29,6 +29,7 @@ const Locations = ({ locationText, locations }) => {
 										{[locations[0], locations[1]].map(
 											(location, index) => (
 												<TileOutput
+													id={`location_${index + 1}`}
 													location={location}
 													key={location.Name + index}
 													firstImage={index === 0}
@@ -44,6 +45,7 @@ const Locations = ({ locationText, locations }) => {
 										{[locations[2], locations[3]].map(
 											(location, index) => (
 												<TileOutput
+													id={`location_${index + 3}`}
 													location={location}
 													key={location.Name + index}
 												/>
@@ -61,15 +63,15 @@ const Locations = ({ locationText, locations }) => {
 	);
 };
 
-const TileOutput = ({ location, firstImage }) => {
+const TileOutput = ({ id, location, firstImage }) => {
 	return (
 		<FadeInWhenVisible initialScale={0.5}>
-			<div className="destination-item">
+			<div id={id} className="destination-item">
 				<div className="destination-img">
 					<Image
 						src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
 						alt={`Hình ảnh của ${location.Name}`}
-						height="400px"
+						height="600px"
 						width="500px"
 						objectFit="cover"
 						loading={firstImage ? 'eager' : 'lazy'}

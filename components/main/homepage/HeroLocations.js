@@ -6,8 +6,8 @@ import { FadeInWhenVisible } from '../../utils/Animations';
 
 // Return Four locations as horizonatal bootstrap grid
 const HeroLocations = ({ locationText, locations }) => {
+	// Detect mobile
 	const [width, setWidth] = useState(1920);
-
 	function handleWindowSizeChange() {
 		setWidth(window.innerWidth);
 	}
@@ -18,24 +18,34 @@ const HeroLocations = ({ locationText, locations }) => {
 			window.removeEventListener('resize', handleWindowSizeChange);
 		};
 	}, []);
-
 	const isMobile = width <= 768;
+	// End detect mobile
+
+	const handleScroll = (e) => {
+		e.preventDefault();
+		const yOffset = -150;
+		const element = document.querySelector(
+			e.target.getAttribute('scrollTo')
+		);
+		const y =
+			element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+		window.scrollTo({ top: y, behavior: 'smooth' });
+	};
 
 	return (
 		<div className="hero-destinations-section container-fluid">
 			<div className="row destination-wrap">
-				{locations.map((location, index) => {
-					return (
-						<div
-							key={`hero_location_${index}`}
-							className="col-md-3"
-						>
-							<FadeInWhenVisible
-								initialScale={0.95}
-								delay={isMobile ? 0 : 1.5}
-							>
-								<div className="destination-item">
-									{/* <div className="destination-img">
+				{[{ Name: 'Ao Vua JSC.' }, ...locations].map(
+					(location, index) => {
+						return (
+							<div key={`hero_location_${index}`} className="col">
+								<FadeInWhenVisible
+									initialScale={0.95}
+									delay={isMobile ? 0 : 1.5}
+								>
+									<div className="destination-item">
+										{/* <div className="destination-img">
 										<Image
 											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
 											alt={`Hình ảnh của ${location.Name}`}
@@ -47,22 +57,25 @@ const HeroLocations = ({ locationText, locations }) => {
 											}
 										/>
 									</div> */}
-									<div className="destination-content">
-										<div className="content-left">
-											<h5>
-												<Link
-													href={`/${location.urlPrefix}`}
-												>
-													<a>{location.Name}</a>
-												</Link>
-											</h5>
+										<div className="destination-content">
+											<div className="content-left">
+												<h5>
+													<a
+														href="#"
+														scrollTo={`#location_${index}`}
+														onClick={handleScroll}
+													>
+														{location.Name}
+													</a>
+												</h5>
+											</div>
 										</div>
 									</div>
-								</div>
-							</FadeInWhenVisible>
-						</div>
-					);
-				})}
+								</FadeInWhenVisible>
+							</div>
+						);
+					}
+				)}
 			</div>
 		</div>
 	);

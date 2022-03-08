@@ -5,9 +5,8 @@ import Link from 'next/link';
 import Loading from '../../Loading';
 import CKContent from '../../utils/CKContent';
 import { FadeInWhenVisible } from '../../utils/Animations';
-import HeroLocations from './HeroLocations';
 
-const Hero = ({ locations, heroImages }) => {
+const Hero = ({ heroImages }) => {
 	if (!heroImages) return <Loading />;
 
 	// Slideshow Settings
@@ -78,7 +77,6 @@ const Hero = ({ locations, heroImages }) => {
 					</Slider>
 				</div>
 			</section>
-			<HeroLocations locations={locations} />
 		</FadeInWhenVisible>
 	);
 };
