@@ -1,7 +1,8 @@
-import React, { useState, Component } from 'react';
+import React, { useState } from 'react';
 import { Collapse, CardBody, Card } from 'reactstrap';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
+import { FadeInWhenVisible } from '../../components/utils/Animations';
 
 const MobileMenu = ({ menu }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -90,13 +91,15 @@ const MobileMenu = ({ menu }) => {
 				</ul>
 			</div>
 
-			<div
-				className="showmenu"
-				onClick={() => setIsMenuOpen(!isMenuOpen)}
-			>
-				{/* <i className="fa fa-bars" aria-hidden="true"></i> */}
-				<FaBars />
-			</div>
+			<FadeInWhenVisible delay={1} initialScale={1}>
+				<div
+					className="showmenu"
+					onClick={() => setIsMenuOpen(!isMenuOpen)}
+				>
+					{/* <i className="fa fa-bars" aria-hidden="true"></i> */}
+					<FaBars />
+				</div>
+			</FadeInWhenVisible>
 		</div>
 	);
 };
