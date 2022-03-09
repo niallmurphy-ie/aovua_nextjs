@@ -14,7 +14,6 @@ export default function Home({
 	locationsData,
 	sightseeingsData,
 }) {
-
 	return (
 		<>
 			<Head>
@@ -39,6 +38,8 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
+	const { getPlaiceholder } = require('plaiceholder');
+
 	const homepageQuery = client.query({
 		query: HOMEPAGE,
 	});
@@ -73,9 +74,26 @@ export const getStaticProps = async () => {
 		sightseeingsQuery,
 	]);
 
+	let homepageData = { ...responses[0].data.homepage };
+	// plaiceholder for homepageData homepageLocationSlider HeroImage
+	const withPlaiceholder = [];
+
+	for (let slide of homepageData.HomepageLocationsSlider) {
+		const { base64 } = await getPlaiceholder(
+			`${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.HeroImage.url}`
+		);
+		withPlaiceholder.push({ ...slide, plaiceholder: base64 });
+	}
+
+	console.log('withPlaiceholder :>> ', withPlaiceholder);
+
+	homepageData.HomepageLocationsSlider = withPlaiceholder;
+
+	console.log('withPlaiceholder :>> ', homepageData);
+
 	return {
 		props: {
-			homepageData: responses[0].data.homepage,
+			homepageData: homepageData,
 			articlesData: responses[1].data.articles,
 			entertainmentData: responses[2].data.entertainments,
 			locationsData: responses[3].data.locations,
