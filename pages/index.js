@@ -85,11 +85,7 @@ export const getStaticProps = async () => {
 		withPlaiceholder.push({ ...slide, plaiceholder: base64 });
 	}
 
-	console.log('withPlaiceholder :>> ', withPlaiceholder);
-
 	homepageData.HomepageLocationsSlider = withPlaiceholder;
-
-	console.log('withPlaiceholder :>> ', homepageData);
 
 	return {
 		props: {

@@ -9,7 +9,7 @@ import { FadeInWhenVisible } from '../../utils/Animations';
 const Hero = ({ heroImages }) => {
 	if (!heroImages) return <Loading />;
 
-	console.log('heroImages', heroImages)
+	console.log('heroImages', heroImages);
 
 	// Slideshow Settings
 	const settings = {
@@ -40,9 +40,8 @@ const Hero = ({ heroImages }) => {
 										priority={index === 0 ? true : false}
 										loading={index === 0 ? 'eager' : 'lazy'}
 										placeholder="blur"
-										blurDataURL={
-											hero.plaiceholder
-										}
+										blurDataURL={hero.plaiceholder}
+										quality={40}
 									/>
 									<div className="container">
 										<div className="row">

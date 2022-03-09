@@ -5,6 +5,10 @@
 0.4 hero-slider
 --------------------------------------------------------------*/
 
+.hero-slider img {
+	transition: 0.3s;
+}
+
 div.hero-slider button.slick-next:before {
 	content: url('/arrow-right.svg');
 	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7479%)
