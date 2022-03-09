@@ -28,7 +28,7 @@ const Hero = ({ heroImages }) => {
 		<FadeInWhenVisible
 			speed={1}
 			initialOpacity={0}
-			delay={0.5}
+			delay={0.75}
 			initialScale={1.05}
 		>
 			<section className={`hero hero-style-2`}>
