@@ -25,7 +25,12 @@ const Hero = ({ heroImages }) => {
 		pauseOnHover: true,
 	};
 	return (
-		<FadeInWhenVisible speed={1} delay={0.25} initialScale={1.05}>
+		<FadeInWhenVisible
+			speed={1}
+			initialOpacity={0}
+			delay={0.5}
+			initialScale={1.05}
+		>
 			<section className={`hero hero-style-2`}>
 				<div className="hero-slider">
 					<Slider {...settings}>
