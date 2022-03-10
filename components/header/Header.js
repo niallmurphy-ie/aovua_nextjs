@@ -43,14 +43,19 @@ const Header = ({ home }) => {
 							</div>
 							<div className="col-xl-4 get-q">
 								<div className="get-contact">
-									<Link href="/lien-he/">
-										<a>
-											{` `}
-											{menu.contact.phone}
-											{` | `}
-											{menu.contact.email}
-										</a>
-									</Link>
+									<FadeInWhenVisible
+										initialScale={1}
+										delay={1.25}
+									>
+										<Link href="/lien-he/">
+											<a>
+												{` `}
+												{menu.contact.phone}
+												{` | `}
+												{menu.contact.email}
+											</a>
+										</Link>
+									</FadeInWhenVisible>
 								</div>
 							</div>
 							<div className="col-xl-1 col-lg-1 col-md-6 col-sm-6 col-6"></div>

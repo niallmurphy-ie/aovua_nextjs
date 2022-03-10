@@ -15,7 +15,7 @@ const ServiceSidebar = ({ location, type, typeURL, services }) => {
 							const imageURL = service.Thumbnail.formats
 								? service.Thumbnail.formats.thumbnail.url
 								: service.Thumbnail.url;
-							return (
+							return index < 5 ? (
 								<div
 									key={index + service.Title}
 									className="post"
@@ -40,7 +40,7 @@ const ServiceSidebar = ({ location, type, typeURL, services }) => {
 										</h4>
 									</div>
 								</div>
-							);
+							) : null;
 						})}
 						{services.length > 5 && (
 							<div className="view-all blog-content">
