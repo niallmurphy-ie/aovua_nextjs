@@ -38,7 +38,12 @@ function HomepageEvents({ locations }) {
 										<div className="featured-img">
 											<div className="blog-thumb-badge">
 												<div className="blog-thumb-text">
-													<span>{event.locations[0].Name}</span>
+													<span>
+														{
+															event.locations[0]
+																.Name
+														}
+													</span>
 												</div>
 											</div>
 											<Image
@@ -47,6 +52,8 @@ function HomepageEvents({ locations }) {
 												height={350}
 												width={700}
 												objectFit="cover"
+												placeholder="blur"
+												blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${event.Thumbnail.url}&w=128&q=1`}
 											/>
 											<div className="featured-content">
 												<Link

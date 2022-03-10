@@ -86,6 +86,8 @@ const Entertainment = ({ entertainment }) => {
 														: 'lazy'
 												}
 												lazyBoundary="500px"
+												placeholder="blur"
+												blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Thumbnail.url}&w=128&q=1`}
 											/>
 										</div>
 										<div className="entertainment-content">

@@ -89,6 +89,8 @@ const Sightseeing = ({ sightseeingText, sightseeings }) => {
 														height={500}
 														width={400}
 														objectFit={'cover'}
+														placeholder="blur"
+														blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${destination.Thumbnail.url}&w=128&q=1`}
 													/>
 												</div>
 												<div className="destination-content">

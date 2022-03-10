@@ -24,7 +24,7 @@ function Article({ article, index }) {
 								objectFit="cover"
 								loading={index === 0 ? 'eager' : 'lazy'}
 								placeholder="blur"
-								blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}&w=16&q=1`}
+								blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}&w=128&q=1`}
 							/>
 						</a>
 					</Link>

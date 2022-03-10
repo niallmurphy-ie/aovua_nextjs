@@ -32,7 +32,9 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 									href="/gioi-thieu/ve-cong-ty"
 									className="theme-btn-s2"
 								>
-									<a className="view-more-about theme-btn-s2">Đọc thêm</a>
+									<a className="view-more-about theme-btn-s2">
+										Đọc thêm
+									</a>
 								</Link>
 							</div>
 						</div>
@@ -50,6 +52,8 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 									layout="fill"
 									objectFit="cover"
 									loading="eager"
+									placeholder="blur"
+									blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}&w=32&q=1`}
 								/>
 								{videoModal ? (
 									<ul className="banner-video">

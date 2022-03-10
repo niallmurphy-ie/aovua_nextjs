@@ -46,7 +46,7 @@ const Hero = ({ heroImages }) => {
 										loading={index === 0 ? 'eager' : 'lazy'}
 										placeholder="blur"
 										// blurDataURL={hero.plaiceholder}
-										blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.HeroImage.url}&w=16&q=1`}
+										blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.HeroImage.url}&w=256&q=1`}
 										quality={40}
 									/>
 									<div className="container">
