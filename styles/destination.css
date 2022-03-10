@@ -12,7 +12,7 @@
 @media (min-width: 1200px) {
 	.hero-destinations-section {
 		position: absolute;
-		top: 90vh;
+		top: 95vh;
 	}
 }
 @media (max-width: 767px) {

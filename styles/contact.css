@@ -42,7 +42,7 @@
 	color: #283a5e;
 }
 
-.info-icon .fi:before {
+.info-icon svg {
 	font-size: 40px;
 	color: #00d690;
 }
