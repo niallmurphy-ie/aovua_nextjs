@@ -11,9 +11,8 @@
 
 @media (min-width: 1200px) {
 	.hero-destinations-section {
-		margin-top: -150px;
-		margin-bottom: 150px;
-		padding-top: 10px;
+		position: absolute;
+		top: 90vh;
 	}
 }
 @media (max-width: 767px) {
