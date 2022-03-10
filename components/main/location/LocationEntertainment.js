@@ -31,6 +31,8 @@ function LocationEntertainment({ location }) {
 											height="50%"
 											layout="responsive"
 											objectFit="cover"
+											placeholder="blur"
+											blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${feature.Thumbnail.url}&w=128&q=1`}
 										/>
 										<div className="featured-content">
 											<Link

@@ -21,7 +21,6 @@
     "lodash": "^4.17.21",
     "next": "^12.1.0",
     "next-share": "^0.13.0",
-    "plaiceholder": "^2.3.0",
     "react": "^18.0.0-rc.0",
     "react-bootstrap": "^2.1.1",
     "react-datepicker": "^4.6.0",

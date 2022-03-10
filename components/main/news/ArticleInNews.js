@@ -18,6 +18,8 @@ function Article({ article, index }) {
 								height={400}
 								objectFit="cover"
 								loading={index < 3 ? 'eager' : 'lazy'}
+								placeholder="blur"
+								blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}&w=128&q=1`}
 							/>
 						</a>
 					</Link>

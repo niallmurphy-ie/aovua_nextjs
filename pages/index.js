@@ -38,7 +38,6 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-	const { getPlaiceholder } = require('plaiceholder');
 
 	const homepageQuery = client.query({
 		query: HOMEPAGE,
@@ -74,22 +73,9 @@ export const getStaticProps = async () => {
 		sightseeingsQuery,
 	]);
 
-	let homepageData = { ...responses[0].data.homepage };
-	// plaiceholder for homepageData homepageLocationSlider HeroImage
-	const homepagePlaiceholder = [];
-
-	for (let slide of homepageData.HomepageLocationsSlider) {
-		const { base64 } = await getPlaiceholder(
-			`${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.HeroImage.url}`,
-			{ size: 10 }
-		);
-		homepagePlaiceholder.push({ ...slide, plaiceholder: base64 });
-	}
-	homepageData.HomepageLocationsSlider = homepagePlaiceholder;
-
 	return {
 		props: {
-			homepageData: homepageData,
+			homepageData: responses[0].data.homepage,
 			articlesData: responses[1].data.articles,
 			entertainmentData: responses[2].data.entertainments,
 			locationsData: responses[3].data.locations,
