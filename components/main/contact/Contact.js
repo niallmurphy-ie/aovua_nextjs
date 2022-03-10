@@ -15,7 +15,7 @@ const Contact = ({ contact }) => {
 				breadcrumb={breadcrumb}
 				headerImage={contact.WideHeaderImage}
 			/>
-			<div id="Contact" className="contact-area ">
+			<div id="Contact" className="contact-area section-padding">
 				<div className="container">
 					<div className="wpo-contact-info">
 						<div className="row">
