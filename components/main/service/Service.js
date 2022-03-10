@@ -92,9 +92,11 @@ const Service = ({
 							accommodation?.locations[0].accommodations ||
 							sightseeing?.locations[0].sightseeings ||
 							event?.locations[0].events ||
-							cemeterySamples ||
-							cemeteryServices ||
-							null
+							cemeterySample
+								? cemeterySamples || null
+								: cemeteryService
+								? cemeteryServices || null
+								: null || null
 						}
 					/>
 				</div>

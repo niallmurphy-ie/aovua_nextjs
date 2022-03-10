@@ -39,7 +39,7 @@ const CemeteryServices = ({ location, cemeteryServices }) => {
 											<div className="content-left">
 												<h5>
 													<Link
-														href={`/${location.urlPrefix}/mau-mo/${cont.slug}`}
+														href={`/${location.urlPrefix}/dich-vu/${cont.slug}`}
 													>
 														<a>{cont.Name}</a>
 													</Link>
