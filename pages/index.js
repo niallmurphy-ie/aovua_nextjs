@@ -80,13 +80,12 @@ export const getStaticProps = async () => {
 
 	for (let slide of homepageData.HomepageLocationsSlider) {
 		const { base64 } = await getPlaiceholder(
-			`${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.HeroImage.url}`
+			`${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.HeroImage.url}`,
+			{ size: 10 }
 		);
 		homepagePlaiceholder.push({ ...slide, plaiceholder: base64 });
 	}
 	homepageData.HomepageLocationsSlider = homepagePlaiceholder;
-
-
 
 	return {
 		props: {

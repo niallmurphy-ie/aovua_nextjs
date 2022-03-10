@@ -45,7 +45,8 @@ const Hero = ({ heroImages }) => {
 										priority={index === 0 ? true : false}
 										loading={index === 0 ? 'eager' : 'lazy'}
 										placeholder="blur"
-										blurDataURL={hero.plaiceholder}
+										// blurDataURL={hero.plaiceholder}
+										blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.HeroImage.url}&w=16&q=1`}
 										quality={40}
 									/>
 									<div className="container">
