@@ -8,7 +8,10 @@
 	position: relative;
 	margin: 0 40px 40px 40px;
 }
-
+.page-title-text {
+	background: #00000047;
+	padding: 30px 0;
+}
 .page-title:before {
 	content: '';
 	background: rgba(10, 54, 94, 0.3);

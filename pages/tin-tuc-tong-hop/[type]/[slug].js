@@ -11,7 +11,6 @@ import {
 import WithTransition from '../../../components/utils/WithTransition';
 
 const ArticlePage = ({ category, article, categories, articles }) => {
-
 	return (
 		<>
 			<Head>
@@ -23,7 +22,11 @@ const ArticlePage = ({ category, article, categories, articles }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<WithTransition>
-				<PageTitle pageTitle={article.Title} breadcrumb={null} />
+				<PageTitle
+					thumbnail={article.Thumbnail.url}
+					pageTitle={article.Title}
+					breadcrumb={null}
+				/>
 				<Article
 					article={article}
 					articles={articles}

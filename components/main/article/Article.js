@@ -17,16 +17,6 @@ const Article = ({ article, articles, categories }) => {
 					<div className={`col col-lg-8 col-12`}>
 						<div className="wpo-blog-content clearfix">
 							<div className="post">
-								<div className="entry-media">
-									<Image
-										src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}`}
-										alt={article.Thumbnail.alternativeText}
-										width="100%"
-										height="80%"
-										layout="responsive"
-										objectFit="contain"
-									/>
-								</div>
 								<ul className="entry-meta">
 									<li>{article.Date}</li>
 								</ul>

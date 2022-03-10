@@ -1,13 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 
-const PageTitle = ({ headerImage, pageTitle, breadcrumb }) => {
-
+const PageTitle = ({ headerImage, pageTitle, breadcrumb, thumbnail }) => {
 	if (!pageTitle) return null;
 	// Set background image if available in props
 	const style = headerImage
 		? {
 				background: `url(${process.env.NEXT_PUBLIC_STRAPI_URL}${headerImage.url}) center center/cover no-repeat local`,
+		  }
+		: thumbnail
+		? {
+				background: `url(${process.env.NEXT_PUBLIC_STRAPI_URL}${thumbnail}) center center/cover no-repeat local`,
 		  }
 		: {
 				background: '#ddd',
@@ -17,7 +20,7 @@ const PageTitle = ({ headerImage, pageTitle, breadcrumb }) => {
 		<section className="page-title" style={style}>
 			<div className="container">
 				<div className="row">
-					<div className="col col-xs-12">
+					<div className="col col-xs-12 page-title-text">
 						<h2>{pageTitle}</h2>
 						<ol className="breadcrumb">
 							<li>

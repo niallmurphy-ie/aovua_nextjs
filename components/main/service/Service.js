@@ -6,6 +6,7 @@ import Loading from '../../Loading';
 import CKContent from '../../utils/CKContent';
 import Share from '../../utils/Share';
 import ServiceSidebar from './ServiceSidebar';
+import PageTitle from '../PageTitle';
 
 const Service = ({
 	location,
@@ -17,6 +18,8 @@ const Service = ({
 	cemeteryService,
 	cemeterySamples,
 	cemeteryServices,
+	pageTitle,
+	breadcrumb,
 }) => {
 	if (
 		!location &&
@@ -65,43 +68,50 @@ const Service = ({
 		cemeteryService;
 
 	return (
-		<section className="wpo-blog-single-section section-padding">
-			<div className="container">
-				<div className="row">
-					<div className={`col col-lg-8 col-12`}>
-						<div className="wpo-blog-content clearfix">
-							<div className="post">
-								{service.Body && (
-									<CKContent content={service.Body} />
-								)}
-							</div>
+		<>
+			<PageTitle
+				thumbnail={service.Thumbnail.url}
+				pageTitle={pageTitle}
+				breadcrumb={breadcrumb}
+			/>
+			<section className="wpo-blog-single-section section-padding">
+				<div className="container">
+					<div className="row">
+						<div className={`col col-lg-8 col-12`}>
+							<div className="wpo-blog-content clearfix">
+								<div className="post">
+									{service.Body && (
+										<CKContent content={service.Body} />
+									)}
+								</div>
 
-							<div className="tag-share clearfix">
-								<span className="share">
-									<Share />
-								</span>
+								<div className="tag-share clearfix">
+									<span className="share">
+										<Share />
+									</span>
+								</div>
 							</div>
 						</div>
+						<ServiceSidebar
+							type={type}
+							typeURL={typeURL}
+							location={location}
+							services={
+								entertainment?.locations[0].entertainments ||
+								accommodation?.locations[0].accommodations ||
+								sightseeing?.locations[0].sightseeings ||
+								event?.locations[0].events ||
+								cemeterySample
+									? cemeterySamples || null
+									: cemeteryService
+									? cemeteryServices || null
+									: null || null
+							}
+						/>
 					</div>
-					<ServiceSidebar
-						type={type}
-						typeURL={typeURL}
-						location={location}
-						services={
-							entertainment?.locations[0].entertainments ||
-							accommodation?.locations[0].accommodations ||
-							sightseeing?.locations[0].sightseeings ||
-							event?.locations[0].events ||
-							cemeterySample
-								? cemeterySamples || null
-								: cemeteryService
-								? cemeteryServices || null
-								: null || null
-						}
-					/>
 				</div>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 };
 

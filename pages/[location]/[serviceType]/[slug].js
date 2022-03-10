@@ -98,7 +98,6 @@ const ServicePage = ({
 				<meta property="og:description" content={og.description} />
 			</Head>
 			<WithTransition>
-				<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />
 				<Service
 					location={location}
 					entertainment={entertainment}
@@ -109,6 +108,8 @@ const ServicePage = ({
 					cemeteryService={cemeteryService}
 					cemeterySamples={cemeterySamples}
 					cemeteryServices={cemeteryServices}
+					pageTitle={pageTitle}
+					breadcrumb={breadcrumb}
 				/>
 			</WithTransition>
 		</>
