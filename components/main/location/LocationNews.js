@@ -11,7 +11,7 @@ const LocationNews = ({ location }) => {
 			<FadeInWhenVisible delay={0} speed={0.5} initialScale={0.85}>
 				<div className="container">
 					<div className="col-12">
-						<div className="wpo-section-title">
+						<div className="wpo-section-title text-center">
 							<h2>Tin nổi bật tại {location.Name}</h2>
 						</div>
 					</div>

@@ -7,10 +7,10 @@ import LocationEntertainment from './LocationEntertainment';
 import LocationHotelRestaurant from './LocationHotelRestaurant';
 import LocationMap from './LocationMap';
 import FacebookAlbum from '../../utils/FacebookPage';
-import LocationNews from './LocationNews';
+import CemeterySamples from './CemeterySamples';
+import CemeteryServices from './CemeteryServices';
 
-const LocationPage = ({ location }) => {
-
+const LocationPage = ({ location, cemeterySamples, cemeteryServices }) => {
 	return (
 		<>
 			<PageTitle
@@ -37,8 +37,17 @@ const LocationPage = ({ location }) => {
 				{location.accommodations.length > 0 && (
 					<LocationHotelRestaurant limit={3} location={location} />
 				)}
-				{location.articles.length > 0 && (
-					<LocationNews location={location} />
+				{cemeteryServices && cemeteryServices.length > 0 && (
+					<CemeteryServices
+						location={location}
+						cemeteryServices={cemeteryServices}
+					/>
+				)}
+				{cemeterySamples && cemeterySamples.length > 0 && (
+					<CemeterySamples
+						location={location}
+						cemeterySamples={cemeterySamples}
+					/>
 				)}
 				<div className="div-embeds">
 					<div className="container location-embeds">

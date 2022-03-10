@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { articleUrl } from '../../../lib/articles';
 
 const ArticlesPostsListing = ({ articles }) => {
+	if (!articles) return null;
 	return (
 		<div className="widget recent-post-widget">
 			<h3>Tin nổi bật</h3>

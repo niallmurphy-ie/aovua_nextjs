@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Location from '../components/main/location/Location';
 import { LOCATION } from '../lib/queries/locationQueries';
+import {
+	CEMETERY_SAMPLES,
+	CEMETERY_SERVICES,
+} from '../lib/queries/cemeteryQueries';
 import client from '../lib/apolloClient';
 import WithTransition from '../components/utils/WithTransition';
 
-export default function DaoNgocXanh({ location }) {
+export default function DaoNgocXanh({
+	location,
+	cemeterySamples,
+	cemeteryServices,
+}) {
 	return (
 		<>
 			<Head>
@@ -17,23 +25,46 @@ export default function DaoNgocXanh({ location }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<WithTransition>
-				<Location location={location} />
+				<Location
+					cemeterySamples={cemeterySamples}
+					cemeteryServices={cemeteryServices}
+					location={location}
+				/>
 			</WithTransition>
 		</>
 	);
 }
 
 export async function getStaticProps() {
-	const { data } = await client.query({
+	const locationQuery = client.query({
 		query: LOCATION,
 		variables: {
 			id: 6,
 		},
 	});
 
+	const cemeterySamplesQuery = client.query({
+		query: CEMETERY_SAMPLES,
+	});
+
+	const cemeteryServicesQuery = client.query({
+		query: CEMETERY_SERVICES,
+		variables: {
+			limit: 6,
+		},
+	});
+
+	const responses = await Promise.all([
+		locationQuery,
+		cemeterySamplesQuery,
+		cemeteryServicesQuery,
+	]);
+
 	return {
 		props: {
-			location: data.location,
+			location: responses[0].data.location,
+			cemeterySamples: responses[1].data.cemeterySamples,
+			cemeteryServices: responses[2].data.cemeteryServices,
 		},
 	};
 }

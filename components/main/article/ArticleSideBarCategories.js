@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const CategoriesListing = ({ categories }) => {
+	if (!categories) return null;
 	return (
 		<div className="widget category-widget">
 			<h3>Chuyên mục tin tức</h3>
