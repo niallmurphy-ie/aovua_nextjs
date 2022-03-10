@@ -9,6 +9,10 @@ import { LOCATIONS } from '../../../lib/queries/locationQueries';
 import { LOCATION_URLPREFIX } from '../../../lib/queries/locationQueries';
 import { SIGHTSEEING } from '../../../lib/queries/sightseeingQueries';
 import { EVENT } from '../../../lib/queries/eventsQueries';
+import {
+	CEMETERY_SAMPLES,
+	CEMETERY_SERVICES,
+} from '../../../lib/queries/cemeteryQueries';
 import WithTransition from '../../../components/utils/WithTransition';
 
 const ServicePage = ({
@@ -18,6 +22,10 @@ const ServicePage = ({
 	accommodation,
 	sightseeing,
 	event,
+	cemeterySample,
+	cemeteryService,
+	cemeterySamples,
+	cemeteryServices,
 }) => {
 	const [url, setUrl] = useState('');
 	let pageTitle;
@@ -53,6 +61,20 @@ const ServicePage = ({
 			name: `${location.Name} - Hội thao sự kiện`,
 		};
 	}
+	if (cemeterySample) {
+		pageTitle = cemeterySample.Name || '';
+		breadcrumb = {
+			url: `/${location.urlPrefix}/mau-mo`,
+			name: `${location.Name} - Mẫu mộ`,
+		};
+	}
+	if (cemeteryService) {
+		pageTitle = cemeteryService.Name || '';
+		breadcrumb = {
+			url: `/${location.urlPrefix}/dich-vu`,
+			name: `${location.Name} - Dịch vụ`,
+		};
+	}
 
 	useEffect(() => {
 		setUrl(window.location.href);
@@ -83,6 +105,10 @@ const ServicePage = ({
 					accommodation={accommodation}
 					sightseeing={sightseeing}
 					event={event}
+					cemeterySample={cemeterySample}
+					cemeteryService={cemeteryService}
+					cemeterySamples={cemeterySamples}
+					cemeteryServices={cemeteryServices}
 				/>
 			</WithTransition>
 		</>
@@ -91,10 +117,22 @@ const ServicePage = ({
 
 export async function getStaticPaths() {
 	const paths = [];
-	const locationsQuery = await client.query({
+	const locationsQuery = client.query({
 		query: LOCATIONS,
 	});
-	const locations = locationsQuery.data.locations;
+	const cemeterySamples = client.query({
+		query: CEMETERY_SAMPLES,
+	});
+	const cemeteryServices = client.query({
+		query: CEMETERY_SERVICES,
+	});
+	const responses = await Promise.all([
+		locationsQuery,
+		cemeterySamples,
+		cemeteryServices,
+	]);
+
+	const locations = responses[0].data.locations;
 	locations.forEach((location) => {
 		location.entertainments.forEach((entertainment) => {
 			paths.push({
@@ -131,6 +169,26 @@ export async function getStaticPaths() {
 					slug: event.slug,
 				},
 			});
+		});
+	});
+
+	responses[1].data.cemeterySamples.forEach((sample) => {
+		paths.push({
+			params: {
+				location: 'cong-vien-vinh-hang',
+				serviceType: 'mau-mo',
+				slug: sample.slug,
+			},
+		});
+	});
+
+	responses[2].data.cemeteryServices.forEach((service) => {
+		paths.push({
+			params: {
+				location: 'cong-vien-vinh-hang',
+				serviceType: 'dich-vu',
+				slug: service.slug,
+			},
 		});
 	});
 
@@ -179,6 +237,28 @@ export async function getStaticProps(context) {
 		},
 	});
 
+	const cemeterySampleQuery = client.query({
+		query: CEMETERY_SAMPLES,
+		variables: {
+			slug: context.params.slug,
+		},
+	});
+
+	const cemeteryServiceQuery = client.query({
+		query: CEMETERY_SERVICES,
+		variables: {
+			slug: context.params.slug,
+		},
+	});
+
+	const cemeterySamplesQuery = client.query({
+		query: CEMETERY_SAMPLES,
+	});
+
+	const cemeteryServicesQuery = client.query({
+		query: CEMETERY_SERVICES,
+	});
+
 	const responses = await Promise.all([
 		locationQuery,
 		entertainmentQuery,
@@ -186,6 +266,10 @@ export async function getStaticProps(context) {
 		accommodationQuery,
 		sightseeingQuery,
 		eventQuery,
+		cemeterySampleQuery,
+		cemeteryServiceQuery,
+		cemeterySamplesQuery,
+		cemeteryServicesQuery,
 	]);
 
 	return {
@@ -196,6 +280,10 @@ export async function getStaticProps(context) {
 			accommodation: responses[3].data.accommodations[0] || null,
 			sightseeing: responses[4].data.sightseeings[0] || null,
 			event: responses[5].data.events[0] || null,
+			cemeterySample: responses[6].data.cemeterySamples[0] || null,
+			cemeteryService: responses[7].data.cemeteryServices[0] || null,
+			cemeterySamples: responses[8].data.cemeterySamples || null,
+			cemeteryServices: responses[9].data.cemeteryServices || null,
 		},
 	};
 }

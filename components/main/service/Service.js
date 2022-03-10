@@ -7,8 +7,26 @@ import CKContent from '../../utils/CKContent';
 import Share from '../../utils/Share';
 import ServiceSidebar from './ServiceSidebar';
 
-const Service = ({ location, entertainment, accommodation, sightseeing, event }) => {
-	if (!location && !entertainment && !accommodation && !sightseeing && !event)
+const Service = ({
+	location,
+	entertainment,
+	accommodation,
+	sightseeing,
+	event,
+	cemeterySample,
+	cemeteryService,
+	cemeterySamples,
+	cemeteryServices,
+}) => {
+	if (
+		!location &&
+		!entertainment &&
+		!accommodation &&
+		!sightseeing &&
+		!event &&
+		!cemeterySample &&
+		!cemeteryService
+	)
 		return <Loading />;
 
 	let type = null;
@@ -29,8 +47,22 @@ const Service = ({ location, entertainment, accommodation, sightseeing, event })
 		type = 'Hội thao sự kiện';
 		typeURL = 'hoi-thao-su-kien';
 	}
+	if (cemeterySample) {
+		type = 'Mẫu mộ';
+		typeURL = 'mau-mo';
+	}
+	if (cemeteryService) {
+		type = 'Dịch vụ';
+		typeURL = 'dich-vu';
+	}
 
-	const service = entertainment || accommodation || sightseeing || event;
+	const service =
+		entertainment ||
+		accommodation ||
+		sightseeing ||
+		event ||
+		cemeterySample ||
+		cemeteryService;
 
 	return (
 		<section className="wpo-blog-single-section section-padding">
@@ -60,6 +92,8 @@ const Service = ({ location, entertainment, accommodation, sightseeing, event })
 							accommodation?.locations[0].accommodations ||
 							sightseeing?.locations[0].sightseeings ||
 							event?.locations[0].events ||
+							cemeterySamples ||
+							cemeteryServices ||
 							null
 						}
 					/>
