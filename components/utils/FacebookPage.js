@@ -16,7 +16,7 @@ const FacebookPage = ({ url, name }) => {
 			className="fb-page widget"
 			data-href={facebookURL}
 			data-tabs="timeline"
-			data-width="700"
+			data-width="500"
 			data-height="340"
 			data-small-header="true"
 			data-adapt-container-width="true"
