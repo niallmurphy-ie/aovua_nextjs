@@ -32,7 +32,7 @@ wpo-blog sidebar
 
 @media (max-width: 767px) {
 	.wpo-blog-sidebar {
-		margin-top: 60px;
+		margin-top: 0;
 		max-width: 400px;
 	}
 }

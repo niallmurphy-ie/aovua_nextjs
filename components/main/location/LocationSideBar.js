@@ -5,8 +5,8 @@ import LocationSidebarContact from './LocationSidebarContact';
 const LocationSidebar = ({ location }) => {
 	return (
 		<>
-			<ArticleSidebar articles={location.articles} />
 			<LocationSidebarContact location={location} />
+			<ArticleSidebar articles={location.articles} />
 		</>
 	);
 };

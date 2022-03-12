@@ -16,13 +16,13 @@ const FacebookPage = ({ url, name }) => {
 			className="fb-page widget"
 			data-href={facebookURL}
 			data-tabs="timeline"
-			data-width="500"
+			data-width="700"
 			data-height="340"
 			data-small-header="true"
 			data-adapt-container-width="true"
 			data-hide-cover="true"
 			data-show-facepile="true"
-			data-lazy="true"
+			data-lazy="false"
 		>
 			<blockquote cite={facebookURL} className="fb-xfbml-parse-ignore">
 				<a href={facebookURL}>{name}</a>
