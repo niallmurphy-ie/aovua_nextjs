@@ -297,10 +297,10 @@
 	}
 }
 
-.wpo-site-footer .contact-ft ul li .fi:before,
-.wpo-site-footer-2 .contact-ft ul li .fi:before {
+.footer-contact svg {
 	font-size: 20px;
 	margin-right: 15px;
+	color: #00d690;
 }
 
 .wpo-site-footer .contact-ft ul li,

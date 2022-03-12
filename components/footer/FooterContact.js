@@ -1,6 +1,7 @@
 import React from 'react';
 import CKContent from '../utils/CKContent';
-
+import { FiMail } from 'react-icons/fi';
+import { FiPhone } from 'react-icons/fi';
 const FooterContact = ({ contact }) => (
 	<>
 		{contact.Address && (
@@ -10,7 +11,7 @@ const FooterContact = ({ contact }) => (
 		)}
 		{contact.Email && (
 			<div className="footer-contact footer-email">
-				<a href={`mailto:${contact.Email}`}>{contact.Email}</a>
+				<FiMail /> <a href={`mailto:${contact.Email}`}>{contact.Email}</a>
 			</div>
 		)}
 		{contact.Phone &&
@@ -19,7 +20,7 @@ const FooterContact = ({ contact }) => (
 					className="footer-contact footer-phone"
 					key={`phone_${index}`}
 				>
-					<a href={`tel:${phone}`}>{phone}</a>
+					<FiPhone /> <a href={`tel:${phone}`}>{phone}</a>
 				</div>
 			))}
 	</>
