@@ -10,7 +10,7 @@ import { FadeInWhenVisible } from '../../utils/Animations';
 const Sightseeing = ({ sightseeingText, sightseeings }) => {
 	const settings = {
 		dots: true,
-		arrows: false,
+		arrows: true,
 		speed: 3000,
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -62,13 +62,13 @@ const Sightseeing = ({ sightseeingText, sightseeings }) => {
 			<div className="container-fluid">
 				<div className="row align-items-center">
 					<div className="col-lg-5">
-						<div className="destination-text">
+						<div className="destination-text text-center">
 							<div className="wpo-section-title">
 								<h2>Các Điểm Tham Quan</h2>
 							</div>
-							{/* {sightseeingText && (
+							{sightseeingText && (
 								<CKContent content={sightseeingText} />
-							)} */}
+							)}
 							<SightseeingViewMore />
 						</div>
 					</div>
@@ -159,7 +159,7 @@ const SightseeingViewMore = () => {
 			}}
 			className="row "
 		>
-			<div id="sightseeing-view-more" className="col-12 ">
+			<div id="sightseeing-view-more" className="col-12 text-center">
 				{!showButtonLocations && (
 					<button
 						onClick={() => {

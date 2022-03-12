@@ -8,28 +8,29 @@ import { ScrollWhenVisible } from '../../../components/utils/Animations';
 function Article({ article, index }) {
 	return (
 		<div className="col-lg-4 col-md-6 col-12">
-			<div className="blog-item">
-				<div className="blog-img">
-					<Link href={articleUrl(article)}>
-						<a>
-							<Image
-								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}`}
-								alt=""
-								// width={600}
-								// height={400}
-								// layout="responsive"
-								// objectFit="contain"
-								width={600}
-								height={400}
-								objectFit="cover"
-								loading={index === 0 ? 'eager' : 'lazy'}
-								placeholder="blur"
-								blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}&w=128&q=1`}
-							/>
-						</a>
-					</Link>
-				</div>
-				<ScrollWhenVisible speed={1} delay={0} direction="up">
+			<ScrollWhenVisible speed={1} delay={0} direction="up">
+				<div className="blog-item">
+					<div className="blog-img">
+						<Link href={articleUrl(article)}>
+							<a>
+								<Image
+									src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}`}
+									alt=""
+									// width={600}
+									// height={400}
+									// layout="responsive"
+									// objectFit="contain"
+									width={600}
+									height={400}
+									objectFit="cover"
+									loading={index === 0 ? 'eager' : 'lazy'}
+									placeholder="blur"
+									blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail.url}&w=128&q=1`}
+								/>
+							</a>
+						</Link>
+					</div>
+
 					<div className="blog-content">
 						<ul className="post-meta">
 							<li>
@@ -53,8 +54,8 @@ function Article({ article, index }) {
 							<a>Xem Thêm</a>
 						</Link>
 					</div>
-				</ScrollWhenVisible>
-			</div>
+				</div>
+			</ScrollWhenVisible>
 		</div>
 	);
 }

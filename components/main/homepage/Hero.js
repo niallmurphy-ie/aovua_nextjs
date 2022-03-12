@@ -9,8 +9,6 @@ import { FadeInWhenVisible } from '../../utils/Animations';
 const Hero = ({ heroImages }) => {
 	if (!heroImages) return <Loading />;
 
-	console.log('heroImages', heroImages);
-
 	// Slideshow Settings
 	const settings = {
 		dots: false,
@@ -28,7 +26,7 @@ const Hero = ({ heroImages }) => {
 		<FadeInWhenVisible
 			speed={1}
 			initialOpacity={0}
-			delay={0.75}
+			delay={0.25}
 			initialScale={1.05}
 		>
 			<section className={`hero hero-style-2`}>

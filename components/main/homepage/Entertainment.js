@@ -61,13 +61,13 @@ const Entertainment = ({ entertainment }) => {
 
 	return (
 		<div className="full-width-carousel entertainment-service section-padding">
-			<ScrollWhenVisible delay={0.5} direction="right">
-				<div className="container">
-					<div className="col-12">
-						<div className="wpo-section-title text-center">
-							<h2>Vui Chơi Giải Trí</h2>
-						</div>
+			<div className="container">
+				<div className="col-12">
+					<div className="wpo-section-title text-center">
+						<h2>Vui Chơi Giải Trí</h2>
 					</div>
+				</div>
+				<ScrollWhenVisible delay={0.5} direction="right">
 					<div className="entertainment-carousel">
 						<Slider {...settings}>
 							{entertainment.map((ent, index) => (
@@ -113,9 +113,9 @@ const Entertainment = ({ entertainment }) => {
 							))}
 						</Slider>
 					</div>
-					<EntertainmentViewMore />
-				</div>
-			</ScrollWhenVisible>
+				</ScrollWhenVisible>
+				<EntertainmentViewMore />
+			</div>
 		</div>
 	);
 };

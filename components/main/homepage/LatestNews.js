@@ -9,9 +9,9 @@ const LatestNewsSection = ({ articles }) => {
 
 	return (
 		<div className="blog-area ptb-0-70 section-padding">
-			<FadeInWhenVisible delay={0} speed={0.5} initialScale={0.85}>
+			<FadeInWhenVisible delay={0} speed={0.5} initialScale={0.95}>
 				<div className="container">
-					<div className="col-12">
+					<div className="col-12 text-center">
 						<div className="wpo-section-title">
 							<h2>Tin Nổi Bật</h2>
 						</div>
