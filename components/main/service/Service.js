@@ -97,15 +97,17 @@ const Service = ({
 							typeURL={typeURL}
 							location={location}
 							services={
-								entertainment?.locations[0].entertainments ||
-								accommodation?.locations[0].accommodations ||
-								sightseeing?.locations[0].sightseeings ||
-								event?.locations[0].events ||
 								cemeterySample
-									? cemeterySamples || null
+									? cemeterySamples
 									: cemeteryService
-									? cemeteryServices || null
-									: null || null
+									? cemeteryServices
+									: entertainment?.locations[0]
+											.entertainments ||
+									  accommodation?.locations[0]
+											.accommodations ||
+									  sightseeing?.locations[0].sightseeings ||
+									  event?.locations[0].events ||
+									  null
 							}
 						/>
 					</div>
