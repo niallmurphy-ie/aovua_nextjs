@@ -27,7 +27,9 @@ const LocationPage = ({ location, cemeterySamples, cemeteryServices }) => {
 									<Categorys /> */}
 							</div>
 						</div>
-						<LocationSideBar location={location} />
+						<div className={`col col-lg-4 col-12 `}>
+							<LocationSideBar location={location} />
+						</div>
 					</div>
 					<div className="row"></div>
 				</div>

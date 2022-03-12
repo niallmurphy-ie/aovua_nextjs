@@ -185,7 +185,7 @@ wpo-blog sidebar
 	padding-left: 20px;
 }
 
-.wpo-blog-sidebar .recent-post-widget .post h4 {
+.wpo-blog-sidebar h4 {
 	font-size: 16px;
 	line-height: 1.3em;
 	margin: 0 0 0.3em;
@@ -198,18 +198,18 @@ wpo-blog sidebar
 	}
 }
 
-.wpo-blog-sidebar .recent-post-widget .post h4 a {
+.wpo-blog-sidebar h4 a {
 	display: inline-block;
 	color: #242f6c;
 }
 
 @media (max-width: 1199px) {
-	.wpo-blog-sidebar .recent-post-widget .post h4 {
+	.wpo-blog-sidebar h4 {
 		font-size: 14px;
 	}
 }
 
-.wpo-blog-sidebar .recent-post-widget .post h4 a:hover {
+.wpo-blog-sidebar h4 a:hover {
 	color: #00d690;
 }
 
@@ -363,6 +363,7 @@ wpo-blog sidebar
 }
 .wpo-blog-sidebar {
 	padding-left: 30px;
+	padding-bottom: 45px;
 }
 @media (max-width: 767px) {
 	.post-bloquote p {
@@ -380,7 +381,8 @@ wpo-blog sidebar
 
 .get-intouch {
 	text-align: center;
-	background: url(../public/images/images/blog/get.png) no-repeat center center;
+	background: url(../public/images/images/blog/get.png) no-repeat center
+		center;
 	position: relative;
 	z-index: 1;
 	object-fit: cover;

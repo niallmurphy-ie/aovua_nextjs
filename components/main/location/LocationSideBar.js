@@ -1,14 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
-import Loading from '../../Loading';
-import { VietnameseMenu } from '../../../utils/menu';
-import { useRouter } from 'next/router';
 import ArticleSidebar from '../article/ArticleSideBar';
+import LocationSidebarContact from './LocationSidebarContact';
 
 const LocationSidebar = ({ location }) => {
-
 	return (
-		<ArticleSidebar articles={location.articles} />
+		<>
+			<ArticleSidebar articles={location.articles} />
+			<LocationSidebarContact location={location} />
+		</>
 	);
 };
 

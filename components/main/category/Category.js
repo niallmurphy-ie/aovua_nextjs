@@ -23,10 +23,12 @@ const ArticleList = ({ category, categories }) => {
 							))}
 						</div>
 					</div>
-					<ArticleSidebar
-						articles={category.articles}
-						categories={categories}
-					/>
+					<div className={`col col-lg-4 col-12 `}>
+						<ArticleSidebar
+							articles={category.articles}
+							categories={categories}
+						/>
+					</div>
 				</div>
 			</div>
 		</section>

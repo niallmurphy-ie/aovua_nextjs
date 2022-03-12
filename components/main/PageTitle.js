@@ -1,24 +1,30 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FadeInWhenVisible } from '../utils/Animations';
 
 const PageTitle = ({ headerImage, pageTitle, breadcrumb, thumbnail }) => {
 	if (!pageTitle) return null;
 	// Set background image if available in props
-	const style = headerImage
-		? {
-				background: `url(${process.env.NEXT_PUBLIC_STRAPI_URL}${headerImage.url}) center center/cover no-repeat local`,
-		  }
+	const imageURL = headerImage
+		? headerImage.url
 		: thumbnail
-		? {
-				background: `url(${process.env.NEXT_PUBLIC_STRAPI_URL}${thumbnail}) center center/cover no-repeat local`,
-		  }
-		: {
-				background: '#ddd',
-		  };
+		? thumbnail
+		: null;
 
 	return (
-		<section className="page-title" style={style}>
+		<section className="page-title">
+			{imageURL && (
+				<Image
+					src={process.env.NEXT_PUBLIC_STRAPI_URL + imageURL}
+					alt={pageTitle}
+					className="page-title-image"
+					layout="fill"
+					objectFit="cover"
+					placeholder="blur"
+					blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${imageURL}&w=128&q=1`}
+				/>
+			)}
 			<div className="container">
 				<div className="row">
 					<FadeInWhenVisible initialOpacity={0.5} initialScale={1.05}>
