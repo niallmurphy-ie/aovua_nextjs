@@ -10,7 +10,7 @@ import LocationServicePage from '../../components/pages/LocationServicePage';
 
 const ServicePage = ({ location }) => {
 	const [url, setUrl] = useState('');
-	const pageTitle = `Khách sạn nhà hàng tại ${location.Name}`;
+	const pageTitle = `Các điểm tham quan tại ${location.Name}`;
 	// breadcrumb to location
 	const breadcrumb = {
 		name: location.Name,

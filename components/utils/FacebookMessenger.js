@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const FacebookMessenger = () => {
@@ -13,8 +13,13 @@ const FacebookMessenger = () => {
 		},
 	];
 
+	const [isLoaded, setIsLoaded] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const [location, setLocation] = useState(locations[0].pageID);
+
+	useEffect(() => {
+		window.FB.Event.subscribe('customerchat.show', () => setIsLoaded(true));
+	}, []);
 
 	return (
 		<>
