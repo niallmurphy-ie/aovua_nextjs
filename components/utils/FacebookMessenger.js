@@ -27,10 +27,10 @@ const FacebookMessenger = () => {
 					<button
 						key={`messengerLocation_${index}`}
 						className={`messenger-location ${
-							location === item.pageID ? 'active' : ''
+							location.pageID === item.pageID ? 'active' : ''
 						}`}
 						onClick={() => {
-							setLocation(item.pageID);
+							setLocation(item);
 						}}
 					>
 						{item.name}
