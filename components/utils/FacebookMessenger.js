@@ -17,10 +17,6 @@ const FacebookMessenger = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [location, setLocation] = useState(locations[0].pageID);
 
-	useEffect(() => {
-		window.FB.Event.subscribe('customerchat.show', () => setIsLoaded(true));
-	}, []);
-
 	return (
 		<>
 			<div className="messenger-locations">
@@ -39,6 +35,7 @@ const FacebookMessenger = () => {
 				))}
 			</div>
 			<MessengerCustomerChat
+				shouldShowDialog={true}
 				pageId={location}
 				appId=""
 				htmlRef="https://aovua.niallmurphy.dev"
