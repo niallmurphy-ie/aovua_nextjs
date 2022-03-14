@@ -26,7 +26,7 @@ const FacebookMessenger = () => {
 				{locations.map((item, index) => (
 					<button
 						key={`messengerLocation_${index}`}
-						className={`messenger-location ${
+						className={`messenger-location theme-btn ${
 							location.pageID === item.pageID ? 'active' : ''
 						}`}
 						onClick={() => {
@@ -37,8 +37,8 @@ const FacebookMessenger = () => {
 					</button>
 				))}
 			</div>
+
 			<MessengerCustomerChat
-				shouldShowDialog={true}
 				pageId={location.pageID}
 				appId=""
 				htmlRef="https://aovua.niallmurphy.dev"
@@ -46,16 +46,10 @@ const FacebookMessenger = () => {
 				greetingDialogDisplay="fade"
 				// loggedInGreeting="loggedInGreeting"
 				// loggedOutGreeting="loggedOutGreeting"
-				language="vn_VN"
-				onCustomerChatDialogShow={() => {
-					setIsOpen(true);
-					console.log('onCustomerChatDialogShow');
-				}}
-				onCustomerChatDialogHide={() => {
-					setIsOpen(false);
-					console.log('onCustomerChatDialogHide');
-				}}
+				language="vi_VN"
 			/>
+
+			<div className="fb-loader"></div>
 		</>
 	);
 };

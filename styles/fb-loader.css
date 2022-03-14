@@ -1,0 +1,28 @@
+.fb-loader {
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+	border: 3px solid #ddd;
+	border-top: 3px solid #f4b800;
+	border-radius: 50%;
+	height: 55px;
+	width: 55px;
+	position: fixed;
+	bottom: 26px;
+	right: 26px;
+}
+
+@-webkit-keyframes spin {
+	to {
+		border-top-color: #f4b800;
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	to {
+		border-top-color: #f4b800;
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
