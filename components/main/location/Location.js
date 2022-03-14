@@ -5,7 +5,9 @@ import Description from './LocationDescription';
 import LocationSideBar from './LocationSideBar';
 import LocationEntertainment from './LocationEntertainment';
 import LocationHotelRestaurant from './LocationHotelRestaurant';
+import LocationSightseeing from './LocationSightseeing';
 import LocationMap from './LocationMap';
+import LocationEvents from './LocationEvents';
 import FacebookAlbum from '../../utils/FacebookPage';
 import CemeterySamples from './CemeterySamples';
 import CemeteryServices from './CemeteryServices';
@@ -38,6 +40,12 @@ const LocationPage = ({ location, cemeterySamples, cemeteryServices }) => {
 				)}
 				{location.accommodations.length > 0 && (
 					<LocationHotelRestaurant limit={3} location={location} />
+				)}
+				{location.sightseeings.length > 0 && (
+					<LocationSightseeing location={location} />
+				)}
+				{location.events.length > 0 && (
+					<LocationEvents location={location} />
 				)}
 				{cemeteryServices && cemeteryServices.length > 0 && (
 					<CemeteryServices

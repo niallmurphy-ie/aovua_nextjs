@@ -11,6 +11,7 @@ import HeroLocations from './HeroLocations';
 import HomepageEvents from './HomepageEvents';
 
 import Loading from '../../Loading';
+import Router from 'next/router';
 
 const HomePage = ({
 	homepageData,
@@ -19,11 +20,15 @@ const HomePage = ({
 	locations,
 	sightseeings,
 }) => {
+
 	if (!homepageData) return <Loading />;
 
 	return (
 		<>
-			<Hero locations={locations} heroImages={homepageData.HomepageLocationsSlider} />
+			<Hero
+				locations={locations}
+				heroImages={homepageData.HomepageLocationsSlider}
+			/>
 			{/* <Search /> */}
 			<HeroLocations locations={locations} />
 			<About

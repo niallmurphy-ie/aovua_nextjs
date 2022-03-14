@@ -49,7 +49,9 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 								<Image
 									src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}`}
 									alt={greetingImage.alternativeText}
-									layout="fill"
+									layout="responsive"
+									width="100%"
+									height="75%"
 									objectFit="cover"
 									loading="eager"
 									placeholder="blur"
