@@ -6,20 +6,23 @@ const FacebookMessenger = () => {
 		{
 			name: 'Ao Vua',
 			pageID: '751126184998127',
+			color: '#1c4c25',
 		},
 		{
 			name: 'Đảo Ngọc Xanh',
 			pageID: '1608577759385364',
+			color: '#f4b800',
 		},
 	];
 
-	const [isLoaded, setIsLoaded] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
-	const [location, setLocation] = useState(locations[0].pageID);
+	const [location, setLocation] = useState(locations[0]);
 
 	return (
 		<>
-			<div className="messenger-locations">
+			<div
+				className={`messenger-locations ${isOpen ? 'open' : 'closed'}`}
+			>
 				{locations.map((item, index) => (
 					<button
 						key={`messengerLocation_${index}`}
@@ -36,10 +39,10 @@ const FacebookMessenger = () => {
 			</div>
 			<MessengerCustomerChat
 				shouldShowDialog={true}
-				pageId={location}
+				pageId={location.pageID}
 				appId=""
 				htmlRef="https://aovua.niallmurphy.dev"
-				themeColor="#1c4c25"
+				themeColor={location.color}
 				greetingDialogDisplay="fade"
 				// loggedInGreeting="loggedInGreeting"
 				// loggedOutGreeting="loggedOutGreeting"
