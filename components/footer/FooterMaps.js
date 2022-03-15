@@ -20,10 +20,6 @@ const FooterMaps = ({ mapsData }) => {
 		<div className="footer-maps-section" style={{ marginTop: '20px' }}>
 			<div
 				className="footer-maps-container"
-				style={{
-					display: 'Grid',
-					gridTemplateColumns: '2fr 2fr',
-				}}
 			>
 				{
 					<MapsSelect
