@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Collapse, CardBody, Card } from 'reactstrap';
 import Link from 'next/link';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaChevronRight, FaArrowLeft } from 'react-icons/fa';
+// import { FiArrowDown } from 'react-icons/fi';
 import { FadeInWhenVisible } from '../../components/utils/Animations';
 
-const MobileMenu = ({ menu }) => {
+const MobileMenu = ({ menu, phone, email }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(0);
 
@@ -15,9 +16,8 @@ const MobileMenu = ({ menu }) => {
 					className="clox"
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
 				>
-					x
+					<FaArrowLeft />
 				</div>
-
 				<ul className="responsivemenu">
 					{menu.components.map((item, index) => {
 						return (
@@ -31,12 +31,7 @@ const MobileMenu = ({ menu }) => {
 										}
 									>
 										{item.title}
-										{item.subMenu && (
-											<i
-												className="fa fa-angle-right"
-												aria-hidden="true"
-											></i>
-										)}
+										{item.subMenu && <FaChevronRight />}
 									</p>
 								) : (
 									<Link href={item.link}>

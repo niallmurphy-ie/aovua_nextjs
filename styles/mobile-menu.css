@@ -42,6 +42,11 @@
 	color: #666;
 	cursor: pointer;
 }
+.clox svg {
+	color: #666;
+	float: right;
+	margin: 10px 10px 0 0;
+}
 .responsivemenu li p {
 	position: relative;
 	margin-bottom: 0;
@@ -78,6 +83,12 @@
 	color: #fff;
 	position: relative;
 	top: -8px;
+}
+
+.mobileMenu p svg {
+	float: right;
+	margin-top: 9px;
+	font-size: 12px;
 }
 
 .mobileMenu {
@@ -119,7 +130,7 @@
 	}
 	.responsivemenu li a,
 	.responsivemenu li p {
-		font-size: 14px;
+		font-size: 16px;
 	}
 }
 
