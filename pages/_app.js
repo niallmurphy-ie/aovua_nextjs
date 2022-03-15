@@ -69,7 +69,7 @@ export default function App({
 					<meta name="og:title" content="Ao Vua" />
 					<meta name="twitter:card" content="summary_large_image" />
 				</Head>
-				<NavBar home={appProps.router.asPath === '/'} />
+				<NavBar home={appProps?.router.asPath === '/'} />
 				<AnimatePresence
 					exitBeforeEnter
 					// initial={false}

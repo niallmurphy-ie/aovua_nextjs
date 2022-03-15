@@ -76,7 +76,7 @@ const HotelRestaurant = ({ locations, limit = null }) => {
 																				jindex ===
 																				0
 																			}
-																			key={`room_${index}`}
+																			key={`hotel_restautant_${index}_${jindex}`}
 																			accommodation={
 																				accommodation
 																			}
@@ -93,7 +93,7 @@ const HotelRestaurant = ({ locations, limit = null }) => {
 																			jindex ===
 																			0
 																		}
-																		key={`room_${index}`}
+																		key={`hotel_restautant_${index}_${jindex}`}
 																		accommodation={
 																			accommodation
 																		}
@@ -113,7 +113,7 @@ const HotelRestaurant = ({ locations, limit = null }) => {
 													>
 														<div className="col-12 text-center">
 															<Link
-																href={`${location.urlPrefix}/khach-san-nha-hang`}
+																href={`/${location.urlPrefix}/khach-san-nha-hang`}
 															>
 																<a className="view-more-accommodation theme-btn-s2">
 																	{`Xem tất cả khách sạn nhà hàng tại ${location.Name}`}

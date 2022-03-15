@@ -22,7 +22,7 @@ const HeroLocations = ({ locationText, locations }) => {
 		e.preventDefault();
 		const yOffset = -150;
 		const element = document.querySelector(
-			e.target.getAttribute('scrollTo')
+			e.target.getAttribute('scrolltolocation')
 		);
 		const y =
 			element.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -65,7 +65,7 @@ const HeroLocations = ({ locationText, locations }) => {
 															textAlign: 'center',
 														}}
 														href="#"
-														scrollTo={`#location_${index}`}
+														scrolltolocation={`#location_${index}`}
 														onClick={handleScroll}
 													>
 														{location.Name}
