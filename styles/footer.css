@@ -2,9 +2,8 @@
 #1.2 footer-area
 ==========================================*/
 
-.footer-maps-section button {
-	width: 100%;
-	padding: 10px 0 7px;
+.footer-maps-container {
+	margin: -10px 5px 20px 5px;
 }
 .footer-maps-section .footer-maps-box {
 	padding: 7px;

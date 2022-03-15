@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import classnames from 'classnames';
-import { FadeInWhenVisible } from '../utils/Animations';
+import React, { Fragment, useState } from 'react';
 import { motion } from 'framer-motion';
+import Select from 'react-select';
+import { FaMapMarker } from 'react-icons/fa';
 
 const FooterMaps = ({ mapsData }) => {
-	const [mapShown, setMapShown] = useState(0);
-	const [map, setMap] = useState(mapsData[mapShown].GoogleMapsURL);
+	const options = mapsData.map((m, index) => ({
+		value: index,
+		label: (
+			<Fragment>
+				<FaMapMarker /> {m.Name}
+			</Fragment>
+		),
+		...m,
+	}));
 
-	useEffect(() => {
-		setMap(mapsData[mapShown].GoogleMapsURL);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [mapShown]);
+	const [mapShown, setMapShown] = useState(options[0]);
 
 	return (
 		<div className="footer-maps-section" style={{ marginTop: '20px' }}>
@@ -21,26 +25,18 @@ const FooterMaps = ({ mapsData }) => {
 					gridTemplateColumns: '2fr 2fr',
 				}}
 			>
-				{mapsData.map((map, index) => (
-					<div className="footer-maps-box" key={index}>
-						<button
-							className={classnames(
-								'theme-btn',
-								'footer-map-button',
-								{
-									'theme-btn-s2': mapShown === index,
-								}
-							)}
-							onClick={() => setMapShown(index)}
-						>
-							{map.Name}
-						</button>
-					</div>
-				))}
+				{
+					<MapsSelect
+						options={options}
+						onChange={(e) => setMapShown(e.value)}
+						mapShown={mapShown}
+						setMapShown={setMapShown}
+					/>
+				}
 			</div>
 			<div className="maps-container">
 				<motion.iframe
-					key={map}
+					key={mapShown.Name}
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
@@ -53,7 +49,7 @@ const FooterMaps = ({ mapsData }) => {
 						},
 					}}
 					title="map"
-					src={map}
+					src={mapShown.GoogleMapsURL}
 					width="100%"
 					height="350"
 					frameBorder="0"
@@ -65,4 +61,30 @@ const FooterMaps = ({ mapsData }) => {
 	);
 };
 
+const MapsSelect = ({ options, mapShown, setMapShown }) => {
+	const customStyles = {
+		option: (provided, state) => ({
+			...provided,
+			backgroundColor: state.isSelected ? '#00d690' : '#fff',
+			fontSize: '15px',
+		}),
+
+		singleValue: (provided, state) => {
+			const opacity = state.isDisabled ? 0.5 : 1;
+			const transition = 'opacity 300ms';
+
+			return { ...provided, opacity, transition };
+		},
+	};
+
+	return (
+		<Select
+			styles={customStyles}
+			options={options}
+			value={mapShown}
+			isSearchable={false}
+			onChange={(e) => setMapShown(e)}
+		/>
+	);
+};
 export default FooterMaps;

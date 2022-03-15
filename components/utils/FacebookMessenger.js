@@ -2,7 +2,6 @@ import React, { Fragment, useState } from 'react';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import { FaFacebookMessenger } from 'react-icons/fa';
 import Select from 'react-select';
-import { FadeInWhenVisible } from '../../components/utils/Animations';
 
 const FacebookMessenger = () => {
 	const options = [
@@ -31,7 +30,6 @@ const FacebookMessenger = () => {
 
 	return (
 		<>
-			{/* <FadeInWhenVisible initialScale={0.9} delay={2}> */}
 			<div className="messenger-choice">
 				<MessengerSelect
 					selectedOption={selectedOption}
@@ -39,7 +37,6 @@ const FacebookMessenger = () => {
 					options={options}
 				/>
 			</div>
-			{/* </FadeInWhenVisible> */}
 			<MessengerCustomerChat
 				pageId={selectedOption.pageID}
 				appId=""
