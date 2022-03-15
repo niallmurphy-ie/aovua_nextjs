@@ -94,6 +94,7 @@ const MessengerSelect = ({ selectedOption, setSelectedOption, options }) => {
 			onChange={setSelectedOption}
 			options={options}
 			styles={customStyles}
+			isSearchable={false}
 		/>
 	);
 };
