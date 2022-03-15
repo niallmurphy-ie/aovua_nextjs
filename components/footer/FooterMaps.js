@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Select from 'react-select';
 import { FaMapMarker } from 'react-icons/fa';
@@ -13,14 +13,11 @@ const FooterMaps = ({ mapsData }) => {
 		),
 		...m,
 	}));
-
 	const [mapShown, setMapShown] = useState(options[0]);
 
 	return (
 		<div className="footer-maps-section" style={{ marginTop: '20px' }}>
-			<div
-				className="footer-maps-container"
-			>
+			<div className="footer-maps-container">
 				{
 					<MapsSelect
 						options={options}
