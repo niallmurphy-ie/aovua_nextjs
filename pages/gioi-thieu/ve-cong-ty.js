@@ -20,7 +20,7 @@ const AboutPage = ({ about }) => {
 					breadcrumb={null}
 					headerImage={about.WideHeaderImage}
 				/>
-				<div className="container">
+				<div className="container section-padding">
 					<div className="row">
 						<div className="col-md-8">
 							<CKContent content={about.Body} />
