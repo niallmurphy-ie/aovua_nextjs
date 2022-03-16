@@ -8,6 +8,7 @@ import LocationHotelRestaurant from './LocationHotelRestaurant';
 import LocationSightseeing from './LocationSightseeing';
 import LocationMap from './LocationMap';
 import LocationEvents from './LocationEvents';
+import LocationEmbeds from './LocationEmbeds';
 import FacebookAlbum from '../../utils/FacebookPage';
 import CemeterySamples from './CemeterySamples';
 import CemeteryServices from './CemeteryServices';
@@ -59,28 +60,8 @@ const LocationPage = ({ location, cemeterySamples, cemeteryServices }) => {
 						cemeterySamples={cemeterySamples}
 					/>
 				)}
-				<div className="div-embeds">
-					<div className="container location-embeds">
-						<div className="row">
-							<div className="col col-lg-6 col-12 order-lg-2">
-								{location.FacebookPageURL && (
-									<FacebookAlbum
-										url={location.FacebookPageURL}
-										name={location.Name}
-									/>
-								)}
-							</div>
-							<div className="col col-lg-6 col-12 order-lg-2">
-								{location.GoogleMapsURL && (
-									<LocationMap
-										mapURL={location.GoogleMapsURL}
-									/>
-								)}
-							</div>
-						</div>
-					</div>
-				</div>
 			</section>
+			<LocationEmbeds location={location} />
 		</>
 	);
 };

@@ -7,6 +7,7 @@ import CKContent from '../../utils/CKContent';
 import Share from '../../utils/Share';
 import ServiceSidebar from './ServiceSidebar';
 import PageTitle from '../PageTitle';
+import LocationEmbeds from '../location/LocationEmbeds';
 
 const Service = ({
 	location,
@@ -123,6 +124,7 @@ const Service = ({
 					</div>
 				</div>
 			</section>
+			{location && <LocationEmbeds location={location} />}
 		</>
 	);
 };

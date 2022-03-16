@@ -19,7 +19,7 @@ const ServiceSidebar = ({ location, type, typeURL, services }) => {
 								: service.Thumbnail.url;
 							return index < 5 ? (
 								<div
-									key={index + service.Title}
+									key={index + service.Name}
 									className="post"
 								>
 									<div className="img-holder">
