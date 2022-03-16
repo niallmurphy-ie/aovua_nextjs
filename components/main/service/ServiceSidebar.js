@@ -1,12 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import LocationSidebarContact from '../location/LocationSidebarContact';
 
 const ServiceSidebar = ({ location, type, typeURL, services }) => {
 	if (!services) return null;
 
 	return (
 		<div className={`col col-lg-4 col-12 `}>
+			<LocationSidebarContact location={location} />
 			<div className="wpo-blog-sidebar">
 				<div className="widget recent-post-widget">
 					<h3>{`${type} tại ${location.Name}`}</h3>
