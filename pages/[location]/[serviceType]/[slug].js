@@ -26,6 +26,7 @@ const ServicePage = ({
 	cemeteryService,
 	cemeterySamples,
 	cemeteryServices,
+	priceList,
 }) => {
 	const [url, setUrl] = useState('');
 	let pageTitle;
@@ -75,6 +76,13 @@ const ServicePage = ({
 			name: `${location.Name} - Dịch vụ`,
 		};
 	}
+	if (priceList) {
+		pageTitle = priceList.Name || '';
+		breadcrumb = {
+			url: `/${location.urlPrefix}/bang-gia`,
+			name: `${location.Name} - Bảng giá`,
+		};
+	}
 
 	useEffect(() => {
 		setUrl(window.location.href);
@@ -104,6 +112,7 @@ const ServicePage = ({
 					accommodation={accommodation}
 					sightseeing={sightseeing}
 					event={event}
+					priceList={priceList}
 					cemeterySample={cemeterySample}
 					cemeteryService={cemeteryService}
 					cemeterySamples={cemeterySamples}
@@ -134,6 +143,8 @@ export async function getStaticPaths() {
 	]);
 
 	const locations = responses[0].data.locations;
+
+	console.log('locations', locations);
 	locations.forEach((location) => {
 		location.entertainments.forEach((entertainment) => {
 			paths.push({
@@ -171,6 +182,17 @@ export async function getStaticPaths() {
 				},
 			});
 		});
+		location.PriceList.length > 0 &&
+			location.PriceList.forEach((list) => {
+				list.slug &&
+					paths.push({
+						params: {
+							location: location.urlPrefix,
+							serviceType: 'bang-gia',
+							slug: list.slug,
+						},
+					});
+			});
 	});
 
 	responses[1].data.cemeterySamples.forEach((sample) => {
@@ -260,6 +282,11 @@ export async function getStaticProps(context) {
 		query: CEMETERY_SERVICES,
 	});
 
+	// For priceList
+	const locationsQuery = client.query({
+		query: LOCATIONS,
+	});
+
 	const responses = await Promise.all([
 		locationQuery,
 		entertainmentQuery,
@@ -271,7 +298,23 @@ export async function getStaticProps(context) {
 		cemeteryServiceQuery,
 		cemeterySamplesQuery,
 		cemeteryServicesQuery,
+		locationsQuery,
 	]);
+
+	// Flatted all priceLists and find by slug since they aren't a content type
+	const allPriceLists = responses[10].data.locations.reduce(
+		(lists, location) => {
+			location.PriceList.forEach((list) => {
+				lists.push(list);
+			});
+			return lists;
+		},
+		[]
+	);
+	const priceList = allPriceLists.filter(
+		(list) => list.slug === context.params.slug
+	);
+	// End priceLists
 
 	return {
 		props: {
@@ -285,6 +328,7 @@ export async function getStaticProps(context) {
 			cemeteryService: responses[7].data.cemeteryServices[0] || null,
 			cemeterySamples: responses[8].data.cemeterySamples || null,
 			cemeteryServices: responses[9].data.cemeteryServices || null,
+			priceList: (priceList && priceList[0]) || null,
 		},
 	};
 }

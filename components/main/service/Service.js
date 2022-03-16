@@ -14,6 +14,7 @@ const Service = ({
 	accommodation,
 	sightseeing,
 	event,
+	priceList,
 	cemeterySample,
 	cemeteryService,
 	cemeterySamples,
@@ -28,7 +29,8 @@ const Service = ({
 		!sightseeing &&
 		!event &&
 		!cemeterySample &&
-		!cemeteryService
+		!cemeteryService &&
+		!priceList
 	)
 		return <Loading />;
 
@@ -58,6 +60,10 @@ const Service = ({
 		type = 'Dịch vụ';
 		typeURL = 'dich-vu';
 	}
+	if (priceList) {
+		type = 'Bảng giá';
+		typeURL = 'bang-gia';
+	}
 
 	const service =
 		entertainment ||
@@ -65,12 +71,15 @@ const Service = ({
 		sightseeing ||
 		event ||
 		cemeterySample ||
-		cemeteryService;
+		cemeteryService ||
+		priceList;
+
+	console.log('service', service);
 
 	return (
 		<>
 			<PageTitle
-				thumbnail={service.Thumbnail.url}
+				thumbnail={service?.Thumbnail?.url}
 				pageTitle={pageTitle}
 				breadcrumb={breadcrumb}
 			/>
@@ -80,7 +89,7 @@ const Service = ({
 						<div className={`col col-lg-8 col-12`}>
 							<div className="wpo-blog-content clearfix">
 								<div className="post">
-									{service.Body && (
+									{service && service.Body && (
 										<CKContent content={service.Body} />
 									)}
 								</div>
@@ -107,6 +116,7 @@ const Service = ({
 											.accommodations ||
 									  sightseeing?.locations[0].sightseeings ||
 									  event?.locations[0].events ||
+									  location.priceList ||
 									  null
 							}
 						/>
