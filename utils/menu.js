@@ -36,8 +36,12 @@ export const VietnameseMenu = () => {
 			},
 			{
 				title: 'Tin tức',
-				link: '/tin-tuc-tong-hop',
+				link: null,
 				subMenu: [
+					{
+						title: "Tất cả tin tuc",
+						link: '/tin-tuc-tong-hop',
+					},
 					{
 						title: 'Tin nổi bật',
 						link: '/tin-tuc-tong-hop/khong-phan-loai',

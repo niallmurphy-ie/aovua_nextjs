@@ -6,14 +6,14 @@ import { FadeInWhenVisible } from '../utils/Animations';
 const PageTitle = ({ headerImage, pageTitle, breadcrumb, thumbnail }) => {
 	if (!pageTitle) return null;
 	// Set background image if available in props
-	const imageURL = headerImage
-		? headerImage
-		: thumbnail
-		? thumbnail
-		: null;
+	const imageURL = headerImage ? headerImage : thumbnail ? thumbnail : null;
 
 	return (
-		<section className="page-title">
+		<section
+			className={`page-title ${
+				imageURL ? 'page-title-image' : 'page-title-no-image'
+			}`}
+		>
 			{imageURL && (
 				<Image
 					src={process.env.NEXT_PUBLIC_STRAPI_URL + imageURL}

@@ -16,10 +16,12 @@
 .header-style-2 .null-menu-link {
 	color: #fff;
 	cursor: default;
+	padding: 15px 20px 15px;
 }
 .header-style-3 .null-menu-link {
 	color: #1c4c25;
 	cursor: default;
+	padding: 15px 20px 15px;
 }
 .header-style-2 {
 	position: absolute;

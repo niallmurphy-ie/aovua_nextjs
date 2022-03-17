@@ -7,8 +7,8 @@ import WithTransition from '../../components/utils/WithTransition';
 const Post = ({ category, categories }) => {
 	const breadcrumb = category
 		? {
-				url: null,
-				name: `Tin Nổi Bật`,
+				url: "/tin-tuc-tong-hop",
+				name: `Tin tức`,
 		  }
 		: null;
 
