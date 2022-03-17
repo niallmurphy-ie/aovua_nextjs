@@ -9,6 +9,8 @@ import CKContent from '../../utils/CKContent';
 const Article = ({ article, articles, categories }) => {
 	if (!article) return <Loading />;
 
+	console.log('article :>> ', article);
+
 	return (
 		<section className="wpo-blog-single-section section-padding">
 			<div className="container">
@@ -36,9 +38,7 @@ const Article = ({ article, articles, categories }) => {
 														}
 													>
 														<Link
-															href={
-																category.urlPrefix
-															}
+															href={`/${category.urlPrefix}`}
 														>
 															<a>
 																{
