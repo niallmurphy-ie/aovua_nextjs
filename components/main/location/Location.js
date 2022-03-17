@@ -17,7 +17,7 @@ const LocationPage = ({ location, cemeterySamples, cemeteryServices }) => {
 	return (
 		<>
 			<PageTitle
-				headerImage={location.WideHeaderImage}
+				headerImage={location.WideHeaderImage?.url}
 				pageTitle={location.Name}
 			/>
 			<section className="service-single-section section-padding">

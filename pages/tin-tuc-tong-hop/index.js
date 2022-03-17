@@ -1,12 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import PageTitle from '../../components/main/PageTitle';
-import { ARTICLES } from '../../lib/queries/articles';
+import { ARTICLES, CATEGORIES } from '../../lib/queries/articles';
 import client from '../../lib/apolloClient';
 import News from '../../components/main/news/News';
 import WithTransition from '../../components/utils/WithTransition';
 
-const NewsPage = ({ articles }) => {
+const NewsPage = ({ articles, categories }) => {
 	return (
 		<>
 			<Head>
@@ -22,20 +22,26 @@ const NewsPage = ({ articles }) => {
 					pageTitle="Tin tức của Ao Vua JSC."
 					breadcrumb={null}
 				/>
-				<News articles={articles} />
+				<News articles={articles} categories={categories} />
 			</WithTransition>
 		</>
 	);
 };
 
 export const getStaticProps = async () => {
-	const articlesQuery = await client.query({
+	const articlesQuery = client.query({
 		query: ARTICLES,
 	});
+	const categoriesQuery = client.query({
+		query: CATEGORIES,
+	});
+
+	const responses = await Promise.all([articlesQuery, categoriesQuery]);
 
 	return {
 		props: {
-			articles: articlesQuery.data.articles,
+			articles: responses[0].data.articles,
+			categories: responses[1].data.categories,
 		},
 	};
 };

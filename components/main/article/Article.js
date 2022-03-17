@@ -80,10 +80,12 @@ const Article = ({ article, articles, categories }) => {
 							</div>
 						</div>
 					</div>
-					<ArticleSideBar
-						articles={articles}
-						categories={categories}
-					/>
+					<div className={`col col-lg-4 col-12 `}>
+						<ArticleSideBar
+							articles={articles}
+							categories={categories}
+						/>
+					</div>
 				</div>
 			</div>
 		</section>
