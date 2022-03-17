@@ -14,7 +14,7 @@ export const VietnameseMenu = () => {
 			},
 			{
 				title: 'Địa điểm',
-				link: '/diadiem',
+				link: null,
 				subMenu: [
 					{
 						title: 'Khu du lịch Ao Vua',

@@ -12,6 +12,15 @@
 /* .fixed-navbar .header-style-2 .col-lg-8 nav > ul > li > a {
 	text-shadow: 4px 4px 4px #333;
 } */
+
+.header-style-2 .null-menu-link {
+	color: #fff;
+	cursor: default;
+}
+.header-style-3 .null-menu-link {
+	color: #1c4c25;
+	cursor: default;
+}
 .header-style-2 {
 	position: absolute;
 	z-index: 120;

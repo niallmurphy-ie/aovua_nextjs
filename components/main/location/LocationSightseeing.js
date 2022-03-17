@@ -9,7 +9,7 @@ const LocationSightseeing = ({ location }) => {
 			<div className="row gallery-wrap">
 				<div className="col-12">
 					<div className="wpo-section-title text-center">
-						<h2>Dịch vụ tại {location.Name}</h2>
+						<h2>Các điểm tham quan tại {location.Name}</h2>
 					</div>
 				</div>
 				{location.sightseeings &&

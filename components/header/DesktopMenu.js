@@ -10,9 +10,15 @@ export const DesktopMenu = ({ menu }) => {
 					{menu.components.map((item, index) => {
 						return (
 							<li key={`${item.title}${index}`}>
-								<Link href={item.link}>
-									<a>{item.title}</a>
-								</Link>
+								{item.link ? (
+									<Link href={item.link}>
+										<a>{item.title}</a>
+									</Link>
+								) : (
+									<div className="null-menu-link">
+										{item.title}
+									</div>
+								)}
 								{item.subMenu ? (
 									<ul>
 										{item.subMenu.map((sub) => (
