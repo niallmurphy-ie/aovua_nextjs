@@ -33,16 +33,15 @@ const HeroLocations = ({ locationText, locations }) => {
 	return (
 		<div className="hero-destinations-section container-fluid">
 			<div className="row destination-wrap">
-				{[{ Name: 'Ao Vua JSC.' }, ...locations].map(
-					(location, index) => {
-						return (
-							<div key={`hero_location_${index}`} className="col-sm">
-								<FadeInWhenVisible
-									initialScale={0.95}
-									delay={isMobile ? 0 : 1.5}
-								>
-									<div className="destination-item">
-										{/* <div className="destination-img">
+				{locations.map((location, index) => {
+					return (
+						<div key={`hero_location_${index}`} className="col-sm">
+							<FadeInWhenVisible
+								initialScale={0.95}
+								delay={isMobile ? 0 : 1.5}
+							>
+								<div className="destination-item">
+									{/* <div className="destination-img">
 										<Image
 											src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
 											alt={`Hình ảnh của ${location.Name}`}
@@ -54,31 +53,28 @@ const HeroLocations = ({ locationText, locations }) => {
 											}
 										/>
 									</div> */}
-										<div className="destination-content">
-											<div
-												style={{ width: '100%' }}
-												className="content-left"
-											>
-												<h5>
-													<a
-														style={{
-															textAlign: 'center',
-														}}
-														href="#"
-														scrolltolocation={`#location_${index}`}
-														onClick={handleScroll}
-													>
-														{location.Name}
-													</a>
-												</h5>
-											</div>
+									<div className="destination-content">
+										<div
+											style={{ width: '100%' }}
+											className="content-left"
+										>
+											<h5>
+												<a
+													style={{
+														textAlign: 'center',
+													}}
+													href={`/${location.urlPrefix}`}
+												>
+													{location.Name}
+												</a>
+											</h5>
 										</div>
 									</div>
-								</FadeInWhenVisible>
-							</div>
-						);
-					}
-				)}
+								</div>
+							</FadeInWhenVisible>
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);
