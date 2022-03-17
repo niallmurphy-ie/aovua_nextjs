@@ -93,6 +93,12 @@
 	margin-bottom: 0;
 	justify-content: center;
 }
+.page-title-image .breadcrumb {
+	padding: 0;
+}
+.page-title-no-image .breadcrumb {
+	padding: 10px 0 0 0;
+}
 
 @media (max-width: 767px) {
 	.page-title .breadcrumb {
@@ -138,9 +144,14 @@ div.page-title-no-image div.page-title .breadcrumb li a {
 
 .page-title .breadcrumb > li + li:before {
 	content: '/';
-	color: #fff;
 	padding: 0;
 	position: absolute;
 	left: -8px;
 	top: 2px;
+}
+.page-title-image .breadcrumb > li + li:before {
+	color: #fff;
+}
+.page-title-no-image .breadcrumb > li + li:before {
+	color: #1c4c25;
 }
