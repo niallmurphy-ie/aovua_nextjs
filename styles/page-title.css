@@ -23,7 +23,7 @@
 	height: 100%;
 }
 .page-title-image .page-title-text {
-	background: #00000047;
+	/* background: #00000047; */
 	padding: 30px 0;
 }
 .page-title:before {
