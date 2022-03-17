@@ -18,7 +18,7 @@ const AboutPage = ({ about }) => {
 				<PageTitle
 					pageTitle="Giới thiệu của Ao Vua JSC."
 					breadcrumb={null}
-					headerImage={about.WideHeaderImage}
+					headerImage={about.WideHeaderImage?.url}
 				/>
 				<div className="container section-padding">
 					<div className="row">

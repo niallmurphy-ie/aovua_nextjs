@@ -13,7 +13,7 @@ const Contact = ({ contact }) => {
 			<PageTitle
 				pageTitle={pageTitle}
 				breadcrumb={breadcrumb}
-				headerImage={contact.WideHeaderImage}
+				headerImage={contact.WideHeaderImage?.url}
 			/>
 			<div id="Contact" className="contact-area section-padding">
 				<div className="container">

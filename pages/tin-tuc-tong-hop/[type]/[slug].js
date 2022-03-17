@@ -20,11 +20,18 @@ const ArticlePage = ({ category, article, categories, articles }) => {
 		<>
 			<Head>
 				<title>{article.Title}</title>
+				<meta name="og:title" content={article.Title} />
 				<meta
 					name="description"
 					content={`${article.categories[0].CategoryName} - ${article.Title}`}
 				/>
-				<link rel="icon" href="/favicon.ico" />
+				{article.Thumbnail && (
+					<meta
+						property="og:image"
+						content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${article.Thumbnail?.url}`}
+					/>
+				)}
+				<meta property="og:type" content="article" />
 			</Head>
 			<WithTransition>
 				<PageTitle

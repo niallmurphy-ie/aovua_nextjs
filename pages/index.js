@@ -22,33 +22,7 @@ export default function Home({
 					name="description"
 					content="Ao Vua JSC rất hân hạnh được chào đón quý khách tới các chi nhánh của chúng tôi. Với những con người tận tâm, chúng tôi đảm bảo những trải nghiệm hài lòng nhất cho quý khách."
 				/>
-				<link
-					rel="apple-touch-icon"
-					sizes="180x180"
-					href="/apple-touch-icon.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="32x32"
-					href="/favicon-32x32.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="16x16"
-					href="/favicon-16x16.png"
-				/>
-				<link rel="manifest" href="/site.webmanifest" />
-				<link
-					rel="mask-icon"
-					href="/safari-pinned-tab.svg"
-					color="#5bbad5"
-				/>
-				<meta name="apple-mobile-web-app-title" content="Ao Vua JSC." />
-				<meta name="application-name" content="Ao Vua JSC." />
-				<meta name="msapplication-TileColor" content="#ffffff" />
-				<meta name="theme-color" content="#ffffff" />
+
 			</Head>
 			<WithTransition>
 				<HomePage

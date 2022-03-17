@@ -6,15 +6,22 @@ import client from '../lib/apolloClient';
 import WithTransition from '../components/utils/WithTransition';
 
 export default function ContactPage({ contact }) {
+	const title = 'Liên hệ | Ao Vua JSC.';
 	return (
 		<>
 			<Head>
-				<title>Liên Hệ</title>
+				<title>{title}</title>
+				<meta name="og:title" content={title} />
 				<meta
 					name="description"
-					content="Du lịch Ao Vua Xanh trải dài dưới chân núi Tản Viên, thuộc thôn Bát Đầm – xã Tản Lĩnh – huyện Ba Vì – thành phố Hà Nội."
+					content="Công ty cổ phần ao vua, du lịch nghỉ dưỡng, vui chơi giải trí, du lịch cuối tuần, du lịch Ba Vì."
 				/>
-				<link rel="icon" href="/favicon.ico" />
+				{contact.WideHeaderImage && (
+					<meta
+						property="og:image"
+						content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${contact.WideHeaderImage?.url}`}
+					/>
+				)}
 			</Head>
 			<WithTransition>
 				<Contact contact={contact} />
