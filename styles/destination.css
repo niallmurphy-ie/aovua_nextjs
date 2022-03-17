@@ -20,6 +20,10 @@ div.destination-area-2 .country-carousels button.slick-prev:before {
 		hue-rotate(45deg) brightness(97%) contrast(100%);
 } */
 
+.sightseeing-view-more {
+	margin-top: 45px;
+}
+
 @media (min-width: 1200px) {
 	.hero-destinations-section {
 		position: absolute;

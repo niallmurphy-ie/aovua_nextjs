@@ -69,7 +69,6 @@ const Sightseeing = ({ sightseeingText, sightseeings }) => {
 							{sightseeingText && (
 								<CKContent content={sightseeingText} />
 							)}
-							<SightseeingViewMore />
 						</div>
 					</div>
 					<div className="col-lg-7">
@@ -127,6 +126,7 @@ const Sightseeing = ({ sightseeingText, sightseeings }) => {
 						</div>
 					</div>
 				</div>
+				<SightseeingViewMore />
 			</div>
 		</div>
 	);
@@ -139,15 +139,15 @@ const SightseeingViewMore = () => {
 
 	const buttonLocations = [
 		{
-			title: 'Ao Vua',
+			title: 'Khu du lịch Ao Vua',
 			link: '/ao-vua-xanh/cac-diem-tham-quan',
 		},
 		{
-			title: 'Đảo Ngọc Xanh',
+			title: 'Khu du lịch Đảo Ngọc Xanh',
 			link: '/dao-ngoc-xanh/cac-diem-tham-quan',
 		},
 		{
-			title: 'Đầm Long',
+			title: 'Khu du lịch Đầm Long',
 			link: '/dam-long/cac-diem-tham-quan',
 		},
 	];
@@ -157,46 +157,48 @@ const SightseeingViewMore = () => {
 			style={{
 				display: 'block',
 			}}
-			className="row "
+			className="row sightseeing-view-more"
 		>
-			<div id="sightseeing-view-more" className="col-12 text-center">
-				{!showButtonLocations && (
-					<button
-						onClick={() => {
-							setShowButtonLocations(!showButtonLocations);
-						}}
-						className="theme-btn-s2"
-					>
-						Xem Thêm
-					</button>
-				)}
-				{showButtonLocations && (
-					<div className="row">
-						<div className="col-12 ">
-							<FadeInWhenVisible initialScale={0.9}>
-								<h3 className="view-more-description">
-									Xem thêm các điểm tham quan tại:
-								</h3>
-							</FadeInWhenVisible>
-						</div>
-						{buttonLocations.map((buttonLocation, index) => (
-							<div
-								key={`buttonLocation_${index}`}
-								className="col-md-12 col-xs-12"
-							>
-								<FadeInWhenVisible initialScale={1.1}>
-									<div>
-										<Link href={buttonLocation.link}>
-											<a className="theme-btn-s2">
-												{buttonLocation.title}
-											</a>
-										</Link>
-									</div>
+			<div className="container">
+				<div className="col-12 text-center">
+					{!showButtonLocations && (
+						<button
+							onClick={() => {
+								setShowButtonLocations(!showButtonLocations);
+							}}
+							className="theme-btn-s2"
+						>
+							Xem Thêm
+						</button>
+					)}
+					{showButtonLocations && (
+						<div className="row">
+							<div className="col-12 text-center ">
+								<FadeInWhenVisible initialScale={0.9}>
+									<h3 className="view-more-description">
+										Xem thêm các điểm tham quan tại:
+									</h3>
 								</FadeInWhenVisible>
 							</div>
-						))}
-					</div>
-				)}
+							{buttonLocations.map((buttonLocation, index) => (
+								<div
+									key={`buttonLocation_${index}`}
+									className="col-md-4 col-xs-12"
+								>
+									<FadeInWhenVisible initialScale={1.1}>
+										<div>
+											<Link href={buttonLocation.link}>
+												<a className="theme-btn-s2">
+													{buttonLocation.title}
+												</a>
+											</Link>
+										</div>
+									</FadeInWhenVisible>
+								</div>
+							))}
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	);
