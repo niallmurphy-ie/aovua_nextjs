@@ -11,7 +11,11 @@ import {
 import WithTransition from '../../../components/utils/WithTransition';
 
 const ArticlePage = ({ category, article, categories, articles }) => {
-	console.log('article', article);
+	const breadcrumb = {
+		name: 'Tin tức',
+		url: '/tin-tuc-tong-hop',
+	};
+
 	return (
 		<>
 			<Head>
@@ -27,7 +31,7 @@ const ArticlePage = ({ category, article, categories, articles }) => {
 					headerImage={article.WideHeaderImage?.url}
 					thumbnail={article.Thumbnail.url}
 					pageTitle={article.Title}
-					breadcrumb={null}
+					breadcrumb={breadcrumb}
 				/>
 				<Article
 					article={article}
