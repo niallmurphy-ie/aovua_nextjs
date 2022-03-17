@@ -2,7 +2,7 @@
 	"redirects": [
 		{
 			"source": "/uploads/:image",
-			"destination": "https://aovuastrapi.niallmurphy.dev/uploads/:image"
+			"destination": "https://aovua.com.vn/uploads/:image"
 		}
 	]
 }
