@@ -24,6 +24,7 @@ const ArticlePage = ({ category, article, categories, articles }) => {
 			</Head>
 			<WithTransition>
 				<PageTitle
+					headerImage={article.WideHeaderImage?.url}
 					thumbnail={article.Thumbnail.url}
 					pageTitle={article.Title}
 					breadcrumb={null}

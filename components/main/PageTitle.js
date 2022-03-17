@@ -7,7 +7,7 @@ const PageTitle = ({ headerImage, pageTitle, breadcrumb, thumbnail }) => {
 	if (!pageTitle) return null;
 	// Set background image if available in props
 	const imageURL = headerImage
-		? headerImage.url
+		? headerImage
 		: thumbnail
 		? thumbnail
 		: null;
