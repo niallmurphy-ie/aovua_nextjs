@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FadeInWhenVisible } from '../../utils/Animations';
-
+import Link from 'next/link';
 // Return Four locations as horizonatal bootstrap grid
 const HeroLocations = ({ locationText, locations }) => {
 	// Detect mobile
@@ -59,14 +59,17 @@ const HeroLocations = ({ locationText, locations }) => {
 											className="content-left"
 										>
 											<h5>
-												<a
-													style={{
-														textAlign: 'center',
-													}}
+												<Link
 													href={`/${location.urlPrefix}`}
 												>
-													{location.Name}
-												</a>
+													<a
+														style={{
+															textAlign: 'center',
+														}}
+													>
+														{location.Name}
+													</a>
+												</Link>
 											</h5>
 										</div>
 									</div>
