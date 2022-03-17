@@ -10,11 +10,15 @@ export default function DaoNgocXanh({ location }) {
 		<>
 			<Head>
 				<title>{location.Name}</title>
+				<meta name="og:title" content={location.Name} />
 				<meta
 					name="description"
-					content="Khu du lịch Đầm Long meta description #toDO"
+					content="Khi đến với Khu du lịch sinh thái Đầm Long, quý khách sẽ được hoà mình vào thiên nhiên và tận hưởng những trải nghiệm khó quên."
 				/>
-				<link rel="icon" href="/favicon.ico" />
+				<meta
+					name="og:image"
+					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail?.url}`}
+				/>
 			</Head>
 			<WithTransition>
 				<Location location={location} />

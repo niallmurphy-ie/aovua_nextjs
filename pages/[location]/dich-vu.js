@@ -27,17 +27,17 @@ const ServicePage = ({ location, cemeteryServices }) => {
 			<Head>
 				<title>{pageTitle}</title>
 				<meta name="description" content={pageTitle} />
-				<meta property="og:title" content={pageTitle} />
-				<meta property="og:url" content={url} />
-				{/* <meta
-					property="og:image:secure_url"
-					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
-				/>
-				<meta
-					property="og:image"
-					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
-				/> */}
-				<meta property="og:description" content={og.description} />
+				<meta name="og:title" content={pageTitle} />
+				<meta name="og:description" content={pageTitle} />
+				{
+					// location Thumbnail }
+					location.Thumbnail && (
+						<meta
+							name="og:image"
+							content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}`}
+						/>
+					)
+				}
 			</Head>
 			<WithTransition>
 				<PageTitle pageTitle={pageTitle} breadcrumb={breadcrumb} />

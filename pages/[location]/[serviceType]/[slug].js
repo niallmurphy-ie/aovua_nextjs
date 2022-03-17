@@ -33,7 +33,7 @@ const ServicePage = ({
 	let breadcrumb;
 	const og = { description: '', image: '' };
 	if (entertainment) {
-		pageTitle = entertainment.Name || '';
+		pageTitle = `${entertainment.Name} | ${location.Name}` || '';
 		og.description = `Tại ${location.Name}` || '';
 		og.image = entertainment.Thumbnail?.url || '';
 		breadcrumb = {
@@ -42,42 +42,42 @@ const ServicePage = ({
 		};
 	}
 	if (accommodation) {
-		pageTitle = accommodation.Name || '';
+		pageTitle = `${accommodation.Name} | ${location.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/khach-san-nha-hang`,
 			name: `Khách sạn nhà hàng tại ${location.Name}`,
 		};
 	}
 	if (sightseeing) {
-		pageTitle = sightseeing.Name || '';
+		pageTitle = `${sightseeing.Name} | ${location.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/cac-diem-tham-quan`,
 			name: `${location.Name} - Các điểm tham quan`,
 		};
 	}
 	if (event) {
-		pageTitle = event.Name || '';
+		pageTitle = `${event.Name} | ${location.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/hoi-thao-su-kien`,
 			name: `${location.Name} - Hội thao sự kiện`,
 		};
 	}
 	if (cemeterySample) {
-		pageTitle = cemeterySample.Name || '';
+		pageTitle = `${cemeterySample.Name} | ${location.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/mau-mo`,
 			name: `${location.Name} - Mẫu mộ`,
 		};
 	}
 	if (cemeteryService) {
-		pageTitle = cemeteryService.Name || '';
+		pageTitle = `${cemeteryService.Name} | ${location.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/dich-vu`,
 			name: `${location.Name} - Dịch vụ`,
 		};
 	}
 	if (priceList) {
-		pageTitle = priceList.Name || '';
+		pageTitle = `${priceList.Name} | ${location.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/bang-gia`,
 			name: `${location.Name} - Bảng giá`,
@@ -94,16 +94,13 @@ const ServicePage = ({
 				<title>{pageTitle}</title>
 				<meta name="description" content={pageTitle} />
 				<meta property="og:title" content={pageTitle} />
-				<meta property="og:url" content={url} />
-				{/* <meta
-					property="og:image:secure_url"
-					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
-				/>
-				<meta
-					property="og:image"
-					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
-				/> */}
 				<meta property="og:description" content={og.description} />
+				{og.image && (
+					<meta
+						property="og:image"
+						content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${og.image}`}
+					/>
+				)}
 			</Head>
 			<WithTransition>
 				<Service

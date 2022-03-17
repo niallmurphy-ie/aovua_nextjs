@@ -10,11 +10,15 @@ export default function AoVua({ location }) {
 		<>
 			<Head>
 				<title>{location.Name}</title>
+				<meta name="og:title" content={location.Name} />
 				<meta
 					name="description"
-					content="Du lịch Ao Vua Xanh trải dài dưới chân núi Tản Viên, thuộc thôn Bát Đầm – xã Tản Lĩnh – huyện Ba Vì – thành phố Hà Nội."
+					content="Điểm nghỉ dưỡng, vui chơi giải trí lý tưởng toạ lạc dưới chân núi Tản Viên hùng vĩ."
 				/>
-				<link rel="icon" href="/favicon.ico" />
+				<meta
+					name="og:image"
+					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail?.url}`}
+				/>
 			</Head>
 			<WithTransition>
 				<Location location={location} />

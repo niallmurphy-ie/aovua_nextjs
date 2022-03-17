@@ -1,19 +1,32 @@
 import PageTitle from '../../components/main/PageTitle';
 import Category from '../../components/main/category/Category';
 import { CATEGORY, CATEGORIES } from '../../lib/queries/articles';
+import Head from 'next/head';
 import client from '../../lib/apolloClient';
 import WithTransition from '../../components/utils/WithTransition';
 
 const Post = ({ category, categories }) => {
 	const breadcrumb = category
 		? {
-				url: "/tin-tuc-tong-hop",
+				url: '/tin-tuc-tong-hop',
 				name: `Tin tức`,
 		  }
 		: null;
 
 	return (
 		<>
+			<Head>
+				<title>{category?.CategoryName} | Ao Vua JSC.</title>
+				<meta
+					name="og:title"
+					content={`${category?.CategoryName} | Ao Vua JSC.`}
+				/>
+				<meta
+					name="description"
+					content={`${category?.Category} | Ao Vua JSC.`}
+				/>
+				<meta name="og:image" content="/images/logo.png" />
+			</Head>
 			<WithTransition>
 				<PageTitle
 					pageTitle={category.CategoryName}

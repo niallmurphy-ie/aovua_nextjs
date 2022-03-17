@@ -19,11 +19,14 @@ const ArticlePage = ({ category, article, categories, articles }) => {
 	return (
 		<>
 			<Head>
-				<title>{article.Title}</title>
-				<meta name="og:title" content={article.Title} />
+				<title>{article.Title} | Ao Vua JSC.</title>
+				<meta
+					name="og:title"
+					content={`${article.Title} | Ao Vua JSC.`}
+				/>
 				<meta
 					name="description"
-					content={`${article.categories[0].CategoryName} - ${article.Title}`}
+					content={`${article.Title} | Ao Vua JSC.`}
 				/>
 				{article.Thumbnail && (
 					<meta

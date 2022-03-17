@@ -18,11 +18,15 @@ export default function DaoNgocXanh({
 		<>
 			<Head>
 				<title>{location.Name}</title>
+				<meta name="og:title" content={location.Name} />
 				<meta
 					name="description"
-					content="Công viên Vĩnh Hằng meta description #toDO"
+					content="Một con đường đưa ta vào cuộc sống bình an thư thái, nơi ta có thể tìm thấy sự thanh thản chở che, nơi ta có thể cảm nhận tình yêu thương vô bờ bến, nơi chữ hiếu chữ nghĩa vẹn tròn."
 				/>
-				<link rel="icon" href="/favicon.ico" />
+				<meta
+					name="og:image"
+					content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail?.url}`}
+				/>
 			</Head>
 			<WithTransition>
 				<Location

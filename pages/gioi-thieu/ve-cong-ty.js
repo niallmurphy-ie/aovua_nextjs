@@ -11,8 +11,14 @@ const AboutPage = ({ about }) => {
 		<>
 			<Head>
 				<title>Giới thiệu | Ao Vua JSC.</title>
+				<meta name="og:title" content="Giới thiệu | Ao Vua JSC." />
 				<meta name="description" content="Giới thiệu của Ao Vua JSC." />
-				<link rel="icon" href="/favicon.ico" />
+				{about.WideHeaderImage && (
+					<meta
+						property="og:image"
+						content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${about.WideHeaderImage.url}`}
+					/>
+				)}
 			</Head>
 			<WithTransition>
 				<PageTitle

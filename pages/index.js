@@ -23,6 +23,7 @@ export default function Home({
 					name="description"
 					content="Ao Vua JSC rất hân hạnh được chào đón quý khách tới các chi nhánh của chúng tôi. Với những con người tận tâm, chúng tôi đảm bảo những trải nghiệm hài lòng nhất cho quý khách."
 				/>
+				<meta name="og:image" content="/images/logo.png" />
 			</Head>
 			<WithTransition>
 				<HomePage
