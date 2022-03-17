@@ -18,11 +18,11 @@ export default function Home({
 		<>
 			<Head>
 				<title>Ao Vua JSC.</title>
+				<meta name="og:title" content="Ao Vua JSC." />
 				<meta
 					name="description"
 					content="Ao Vua JSC rất hân hạnh được chào đón quý khách tới các chi nhánh của chúng tôi. Với những con người tận tâm, chúng tôi đảm bảo những trải nghiệm hài lòng nhất cho quý khách."
 				/>
-
 			</Head>
 			<WithTransition>
 				<HomePage

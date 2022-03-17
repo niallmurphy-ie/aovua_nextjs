@@ -55,6 +55,10 @@ export default function App({
 	contactData,
 	...appProps
 }) {
+	let url = '';
+	if (typeof window !== 'undefined') {
+		url = window.location.href;
+	}
 	return (
 		<ApolloProvider client={client}>
 			<div className="App">
@@ -69,6 +73,7 @@ export default function App({
 					<meta property="og:locale" content="vi_VN" />
 					<meta name="og:title" content="Ao Vua JSC." />
 					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="og:url" content={url} />
 					<link
 						rel="apple-touch-icon"
 						sizes="180x180"

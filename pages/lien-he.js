@@ -7,6 +7,10 @@ import WithTransition from '../components/utils/WithTransition';
 
 export default function ContactPage({ contact }) {
 	const title = 'Liên hệ | Ao Vua JSC.';
+
+	// Current url from router
+	let url = '';
+
 	return (
 		<>
 			<Head>
