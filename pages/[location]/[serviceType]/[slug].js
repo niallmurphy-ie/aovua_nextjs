@@ -33,7 +33,7 @@ const ServicePage = ({
 	let breadcrumb;
 	const og = { description: '', image: '' };
 	if (entertainment) {
-		pageTitle = `${entertainment.Name} | ${location.Name}` || '';
+		pageTitle = `${entertainment.Name}` || '';
 		og.description = `Tại ${location.Name}` || '';
 		og.image = entertainment.Thumbnail?.url || '';
 		breadcrumb = {
@@ -42,42 +42,42 @@ const ServicePage = ({
 		};
 	}
 	if (accommodation) {
-		pageTitle = `${accommodation.Name} | ${location.Name}` || '';
+		pageTitle = `${accommodation.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/khach-san-nha-hang`,
 			name: `Khách sạn nhà hàng tại ${location.Name}`,
 		};
 	}
 	if (sightseeing) {
-		pageTitle = `${sightseeing.Name} | ${location.Name}` || '';
+		pageTitle = `${sightseeing.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/cac-diem-tham-quan`,
 			name: `${location.Name} - Các điểm tham quan`,
 		};
 	}
 	if (event) {
-		pageTitle = `${event.Name} | ${location.Name}` || '';
+		pageTitle = `${event.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/hoi-thao-su-kien`,
 			name: `${location.Name} - Hội thao sự kiện`,
 		};
 	}
 	if (cemeterySample) {
-		pageTitle = `${cemeterySample.Name} | ${location.Name}` || '';
+		pageTitle = `${cemeterySample.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/mau-mo`,
 			name: `${location.Name} - Mẫu mộ`,
 		};
 	}
 	if (cemeteryService) {
-		pageTitle = `${cemeteryService.Name} | ${location.Name}` || '';
+		pageTitle = `${cemeteryService.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/dich-vu`,
 			name: `${location.Name} - Dịch vụ`,
 		};
 	}
 	if (priceList) {
-		pageTitle = `${priceList.Name} | ${location.Name}` || '';
+		pageTitle = `${priceList.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/bang-gia`,
 			name: `${location.Name} - Bảng giá`,
