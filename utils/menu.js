@@ -39,7 +39,7 @@ export const VietnameseMenu = () => {
 				link: null,
 				subMenu: [
 					{
-						title: "Tất cả tin tuc",
+						title: 'Tất cả tin tức',
 						link: '/tin-tuc-tong-hop',
 					},
 					{
