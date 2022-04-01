@@ -17,7 +17,7 @@ function HomepageEvents({ locations }) {
 				className="col-12 section-padding"
 			>
 				<div className="wpo-section-title text-center">
-					<h2>Hội Thao Sự Kiện</h2>
+					<h2>Hội Thảo Sự Kiện</h2>
 				</div>
 			</div>
 			<div className="featured-area featured-sub">

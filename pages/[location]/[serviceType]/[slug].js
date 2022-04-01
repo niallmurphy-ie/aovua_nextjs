@@ -59,7 +59,7 @@ const ServicePage = ({
 		pageTitle = `${event.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/hoi-thao-su-kien`,
-			name: `${location.Name} - Hội thao sự kiện`,
+			name: `${location.Name} - Hội thảo sự kiện`,
 		};
 	}
 	if (cemeterySample) {

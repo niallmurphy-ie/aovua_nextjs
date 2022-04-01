@@ -64,7 +64,7 @@ const LocationEvents = ({ location }) => {
 			<div className="container">
 				<div className="col-12">
 					<div className="wpo-section-title text-center">
-						<h2>Hội Thao Sự Kiện</h2>
+						<h2>Hội Thảo Sự Kiện</h2>
 					</div>
 				</div>
 				<ScrollWhenVisible delay={0.5} direction="right">
@@ -119,7 +119,7 @@ const LocationEvents = ({ location }) => {
 								href={`/${location.urlPrefix}/hoi-thao-su-kien`}
 							>
 								<a className="theme-btn-s2">
-									Xem tất cả hội thao sự kiện
+									Xem tất cả hội thảo sự kiện
 								</a>
 							</Link>
 						</div>

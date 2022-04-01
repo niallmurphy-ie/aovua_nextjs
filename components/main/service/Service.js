@@ -50,7 +50,7 @@ const Service = ({
 		typeURL = 'cac-diem-tham-quan';
 	}
 	if (event) {
-		type = 'Hội thao sự kiện';
+		type = 'Hội thảo sự kiện';
 		typeURL = 'hoi-thao-su-kien';
 	}
 	if (cemeterySample) {
