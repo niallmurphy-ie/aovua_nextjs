@@ -9,6 +9,7 @@ import HotelRestaurant from './HotelRestaurant';
 import Sightseeing from './Sightseeing';
 import HeroLocations from './HeroLocations';
 import HomepageEvents from './HomepageEvents';
+import HomepageProduct from './HomepageProduct';
 
 import Loading from '../../Loading';
 import Router from 'next/router';
@@ -19,8 +20,8 @@ const HomePage = ({
 	entertainment,
 	locations,
 	sightseeings,
+	products,
 }) => {
-
 	if (!homepageData) return <Loading />;
 
 	return (
@@ -37,6 +38,9 @@ const HomePage = ({
 				greetingYoutubeURL={homepageData.GreetingYoutubeURL}
 			/>
 			<LatestNewsSection articles={articles} />
+			{products && products.length > 0 && (
+				<HomepageProduct product={products[0]} />
+			)}
 			<Locations
 				locationText={homepageData.LocationsText}
 				locations={locations}

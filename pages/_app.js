@@ -33,6 +33,7 @@ import '../styles/features.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../styles/gallery.css';
 import '../styles/fb-loader.css';
+import '../styles/product.css';
 
 import NextApp from 'next/app';
 import { ApolloProvider } from '@apollo/client';

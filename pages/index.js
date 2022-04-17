@@ -5,6 +5,7 @@ import { ARTICLES } from '../lib/queries/articles';
 import { ENTERTAINMENTS } from '../lib/queries';
 import { SIGHTSEEING_HOMEPAGE } from '../lib/queries/sightseeingQueries';
 import { HOMEPAGE, HOMEPAGE_LOCATIONS } from '../lib/queries/homepageQueries';
+import { PRODUCTS } from '../lib/queries/productQueries';
 import WithTransition from '../components/utils/WithTransition';
 
 export default function Home({
@@ -13,7 +14,9 @@ export default function Home({
 	entertainmentData,
 	locationsData,
 	sightseeingsData,
+	productsData,
 }) {
+	console.log('productsData', productsData);
 	return (
 		<>
 			<Head>
@@ -32,6 +35,7 @@ export default function Home({
 					entertainment={entertainmentData}
 					locations={locationsData}
 					sightseeings={sightseeingsData}
+					products={productsData}
 				/>
 			</WithTransition>
 		</>
@@ -65,12 +69,17 @@ export const getStaticProps = async () => {
 		query: SIGHTSEEING_HOMEPAGE,
 	});
 
+	const productQueries = client.query({
+		query: PRODUCTS,
+	});
+
 	const responses = await Promise.all([
 		homepageQuery,
 		latestNewsQuery,
 		entertainmentQuery,
 		locationsQuery,
 		sightseeingsQuery,
+		productQueries,
 	]);
 
 	return {
@@ -80,6 +89,7 @@ export const getStaticProps = async () => {
 			entertainmentData: responses[2].data.entertainments,
 			locationsData: responses[3].data.locations,
 			sightseeingsData: responses[4].data.sightseeings,
+			productsData: responses[5].data.products,
 		},
 	};
 };
