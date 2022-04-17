@@ -22,6 +22,7 @@ const Service = ({
 	cemeteryServices,
 	pageTitle,
 	breadcrumb,
+	product,
 }) => {
 	if (
 		!location &&
@@ -31,7 +32,8 @@ const Service = ({
 		!event &&
 		!cemeterySample &&
 		!cemeteryService &&
-		!priceList
+		!priceList &&
+		!product
 	)
 		return <Loading />;
 
@@ -65,6 +67,10 @@ const Service = ({
 		type = 'Bảng giá';
 		typeURL = 'bang-gia';
 	}
+	if (product) {
+		type = 'Sản phẩm';
+		typeURL = 'san-pham';
+	}
 
 	const service =
 		entertainment ||
@@ -73,13 +79,15 @@ const Service = ({
 		event ||
 		cemeterySample ||
 		cemeteryService ||
-		priceList;
+		priceList ||
+		product;
 
 	console.log('service', service);
 
 	return (
 		<>
 			<PageTitle
+				headerImage={service?.WideHeaderImage?.url}
 				thumbnail={service?.Thumbnail?.url}
 				pageTitle={pageTitle}
 				breadcrumb={breadcrumb}
@@ -102,25 +110,28 @@ const Service = ({
 								</div>
 							</div>
 						</div>
-						<ServiceSidebar
-							type={type}
-							typeURL={typeURL}
-							location={location}
-							services={
-								cemeterySample
-									? cemeterySamples
-									: cemeteryService
-									? cemeteryServices
-									: entertainment?.locations[0]
-											.entertainments ||
-									  accommodation?.locations[0]
-											.accommodations ||
-									  sightseeing?.locations[0].sightseeings ||
-									  event?.locations[0].events ||
-									  location.priceList ||
-									  null
-							}
-						/>
+						{location && (
+							<ServiceSidebar
+								type={type}
+								typeURL={typeURL}
+								location={location}
+								services={
+									cemeterySample
+										? cemeterySamples
+										: cemeteryService
+										? cemeteryServices
+										: entertainment?.locations[0]
+												.entertainments ||
+										  accommodation?.locations[0]
+												.accommodations ||
+										  sightseeing?.locations[0]
+												.sightseeings ||
+										  event?.locations[0].events ||
+										  location.priceList ||
+										  null
+								}
+							/>
+						)}
 					</div>
 				</div>
 			</section>
