@@ -35,6 +35,11 @@ export const VietnameseMenu = () => {
 				],
 			},
 			{
+				title: 'Sản phẩm',
+				link: '/san-pham/ngu-coc-thuc-duong',
+				subMenu: null,
+			},
+			{
 				title: 'Tin tức',
 				link: null,
 				subMenu: [
