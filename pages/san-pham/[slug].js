@@ -68,7 +68,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
 	const slug = context.params.slug;
-	console.log('slug :>> ', slug);
 	const productQuery = await client.query({
 		query: PRODUCT,
 		variables: { slug },

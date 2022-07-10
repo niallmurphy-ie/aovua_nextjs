@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Loading from '../../Loading';
 import { FadeInWhenVisible } from '../../utils/Animations';
 import CKContent from '../../utils/CKContent';
 
@@ -65,7 +64,7 @@ const Locations = ({ locationText, locations }) => {
 
 const TileOutput = ({ id, location, firstImage }) => {
 	return (
-		<FadeInWhenVisible initialScale={0.5}>
+		<FadeInWhenVisible initialScale={0.85}>
 			<div id={id} className="destination-item">
 				<div className="destination-img">
 					<Image

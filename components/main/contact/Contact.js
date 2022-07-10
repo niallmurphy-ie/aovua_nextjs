@@ -2,6 +2,7 @@ import React from 'react';
 import CKContent from '../../utils/CKContent';
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
 import PageTitle from '../PageTitle';
+import { isSpecifiedScalarType } from 'graphql';
 // import ContactForm from '../ContactFrom';
 
 const Contact = ({ contact }) => {
