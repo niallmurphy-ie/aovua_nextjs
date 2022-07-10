@@ -42,8 +42,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 					<div className="col-lg-6 col-md-12 col-sm-12">
 						<FadeInWhenVisible
 							speed={0.75}
-							delay={0.25}
-							initialScale={0.9}
+							initialScale={1.05}
 						>
 							<div className="banner-img">
 								<Image
