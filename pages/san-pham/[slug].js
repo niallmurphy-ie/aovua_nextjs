@@ -50,8 +50,6 @@ export async function getStaticPaths() {
 		query: PRODUCTS,
 	});
 
-	console.log('productsQuery', productsQuery.data.products[0]);
-
 	productsQuery.data.products.forEach((product) => {
 		paths.push({
 			params: {

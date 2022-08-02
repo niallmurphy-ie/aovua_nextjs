@@ -141,7 +141,6 @@ export async function getStaticPaths() {
 
 	const locations = responses[0].data.locations;
 
-	console.log('locations', locations);
 	locations.forEach((location) => {
 		location.entertainments.forEach((entertainment) => {
 			paths.push({

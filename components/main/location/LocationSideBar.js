@@ -5,7 +5,6 @@ import LocationSidebarPrices from './LocationSidebarPrices';
 import Link from 'next/link';
 
 const LocationSidebar = ({ location }) => {
-	console.log('location :>> ', location);
 	return (
 		<>
 			<LocationSidebarContact location={location} />

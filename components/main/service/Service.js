@@ -82,8 +82,6 @@ const Service = ({
 		priceList ||
 		product;
 
-	console.log('service', service);
-
 	return (
 		<>
 			<PageTitle

@@ -16,7 +16,7 @@ export default function Home({
 	sightseeingsData,
 	productsData,
 }) {
-	console.log('productsData', productsData);
+
 	return (
 		<>
 			<Head>

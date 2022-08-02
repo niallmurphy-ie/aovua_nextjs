@@ -16,7 +16,4 @@ module.exports = {
 		minimumCacheTTL: 31536000,
 	},
 	redirects,
-	experimental: {
-		concurrentFeatures: true,
-	},
 };
