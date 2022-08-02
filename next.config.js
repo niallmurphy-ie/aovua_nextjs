@@ -12,6 +12,7 @@ module.exports = {
 			'http://localhost:1337',
 			'localhost',
 			'aovuastrapi.niallmurphy.dev',
+			'aovua.com.vn',
 		],
 		minimumCacheTTL: 31536000,
 	},
