@@ -66,7 +66,7 @@ const LocationServicePage = ({
 															: 'lazy'
 													}
 													placeholder="blur"
-													blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${cont.Thumbnail.url}&w=128&q=1`}
+													blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${cont.Thumbnail.url}?w=128&q=1`}
 												/>
 											)}
 										</div>

@@ -54,7 +54,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 									objectFit="cover"
 									loading="eager"
 									placeholder="blur"
-									blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}&w=32&q=1`}
+									blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}?w=32&q=1`}
 								/>
 								{videoModal ? (
 									<ul className="banner-video">

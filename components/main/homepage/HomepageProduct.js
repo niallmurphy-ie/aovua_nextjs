@@ -46,7 +46,7 @@ const HomepageProduct = ({ product }) => {
 									objectFit="cover"
 									loading="eager"
 									placeholder="blur"
-									blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${product.Thumbnail.url}&w=32&q=1`}
+									blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${product.Thumbnail.url}?w=32&q=1`}
 								/>
 							</div>
 						</FadeInWhenVisible>
