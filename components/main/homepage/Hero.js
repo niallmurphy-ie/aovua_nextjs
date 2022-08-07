@@ -40,12 +40,12 @@ const Hero = ({ heroImages }) => {
 										alt={hero.Name}
 										layout="fill"
 										objectFit="cover"
-										priority={index === 0 ? true : false}
-										loading={index === 0 ? 'eager' : 'lazy'}
+										// priority={index === 0 ? true : false}
+										// loading={index === 0 ? 'eager' : 'lazy'}
 										placeholder="blur"
 										// blurDataURL={hero.plaiceholder}
-										blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.HeroImage.url}&w=256&q=1`}
-										quality={40}
+										blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.HeroImage.url}?w=256&q=1`}
+										// quality={40}
 									/>
 									<div className="container">
 										<div className="row">
