@@ -52,7 +52,7 @@ const About = ({ greetingMessage, greetingImage, greetingYoutubeURL }) => {
 									width="100%"
 									height="75%"
 									objectFit="cover"
-									loading="eager"
+									// loading="eager"
 									placeholder="blur"
 									blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${greetingImage.url}?w=32&q=1`}
 								/>

@@ -44,7 +44,7 @@ const HomepageProduct = ({ product }) => {
 									height={400}
 									width={400}
 									objectFit="cover"
-									loading="eager"
+									// loading="eager"
 									placeholder="blur"
 									blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${product.Thumbnail.url}?w=32&q=1`}
 								/>

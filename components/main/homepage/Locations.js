@@ -73,7 +73,7 @@ const TileOutput = ({ id, location, firstImage }) => {
 						height="600px"
 						width="500px"
 						objectFit="cover"
-						loading={firstImage ? 'eager' : 'lazy'}
+						// loading={firstImage ? 'eager' : 'lazy'}
 						placeholder="blur"
 						blurDataURL={`/_next/image?url=${process.env.NEXT_PUBLIC_STRAPI_URL}${location.Thumbnail.url}?w=128&q=1`}
 					/>
