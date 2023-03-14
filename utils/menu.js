@@ -21,6 +21,10 @@ export const VietnameseMenu = () => {
 						link: '/ao-vua-xanh/',
 					},
 					{
+						title: 'Trung Tâm Chăm Sóc Sức Khỏe Ao Vua',
+						link: '/trung-tam-cham-soc-suc-khoe-ao-vua',
+					},
+					{
 						title: 'Khu du lịch Đảo Ngọc Xanh',
 						link: '/dao-ngoc-xanh/',
 					},

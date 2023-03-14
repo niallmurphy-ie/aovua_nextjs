@@ -17,7 +17,7 @@ const LocationSidebarContact = ({ location }) => {
 					))}
 				</div>
 				<div>
-					{location.Email.split('/').map((email, index) => (
+					{location.Email && location.Email.split('/').map((email, index) => (
 						<div key={index}>
 							<h4>
 								<a href={`mailto:${email}`}>{email}</a>

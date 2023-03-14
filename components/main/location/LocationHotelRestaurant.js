@@ -12,7 +12,6 @@ const LocationHotelRestaurant = ({
 		<section
 			id="location-accommodation-section"
 			className="Room-area section-padding Room-area-2"
-			y
 		>
 			<div className="Room-section">
 				<div className="container">
