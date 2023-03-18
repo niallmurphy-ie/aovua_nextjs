@@ -44,7 +44,7 @@ const Service = ({
 		typeURL = 'vui-choi-giai-tri';
 	}
 	if (accommodation) {
-		type = 'Khách sạn nhà hàng';
+		type = 'Dịch vụ';
 		typeURL = 'khach-san-nha-hang';
 	}
 	if (sightseeing) {

@@ -23,7 +23,7 @@ const HotelRestaurant = ({ locations, limit = null }) => {
 					<div className="container">
 						<div className="col-12">
 							<div className="wpo-section-title">
-								<h2>Khách Sạn Nhà Hàng</h2>
+								<h2>Dịch vụ</h2>
 							</div>
 						</div>
 						<div className="row">
@@ -116,7 +116,7 @@ const HotelRestaurant = ({ locations, limit = null }) => {
 																href={`/${location.urlPrefix}/khach-san-nha-hang`}
 															>
 																<a className="view-more-accommodation theme-btn-s2">
-																	{`Xem tất cả khách sạn nhà hàng tại ${location.Name}`}
+																	{`Xem tất cả dịch vụ tại ${location.Name}`}
 																</a>
 															</Link>
 														</div>

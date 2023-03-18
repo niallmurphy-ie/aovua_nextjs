@@ -45,7 +45,7 @@ const ServicePage = ({
 		pageTitle = `${accommodation.Name}` || '';
 		breadcrumb = {
 			url: `/${location.urlPrefix}/khach-san-nha-hang`,
-			name: `Khách sạn nhà hàng tại ${location.Name}`,
+			name: `Dịch vụ tại ${location.Name}`,
 		};
 	}
 	if (sightseeing) {

@@ -9,7 +9,7 @@ import PageTitle from '../../components/main/PageTitle';
 
 const ServicePage = ({ location }) => {
 	const [url, setUrl] = useState('');
-	const pageTitle = `Khách sạn nhà hàng tại ${location.Name}`;
+	const pageTitle = `Dịch vụ tại ${location.Name}`;
 	// breadcrumb to location
 	const breadcrumb = {
 		name: location.Name,

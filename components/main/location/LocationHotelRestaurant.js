@@ -19,9 +19,9 @@ const LocationHotelRestaurant = ({
 						{addTitle && (
 							<div className="wpo-section-title text-center">
 								{addLocationName ? (
-									<h2>{`Khách sạn nhà hàng tại ${location.Name}`}</h2>
+									<h2>{`Dịch vụ tại ${location.Name}`}</h2>
 								) : (
-									<h2>Khách sạn nhà hàng</h2>
+									<h2>Dịch vụ</h2>
 								)}
 							</div>
 						)}
