@@ -32,7 +32,7 @@ export async function getStaticProps() {
 		query: LOCATION,
 		variables: {
 			id: 7,
-			limit: 3,
+			limit: 6,
 		},
 	});
 
