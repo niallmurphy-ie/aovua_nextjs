@@ -44,7 +44,7 @@ import { CONTACT_PAGE } from '../lib/queries';
 import Footer from '../components/footer/Footer';
 import Head from 'next/head';
 import NavBar from '../components/header/NavBar';
-import FacebookMessenger from '../components/utils/FacebookMessenger';
+// import FacebookMessenger from '../components/utils/FacebookMessenger';
 import React from 'react';
 import { AnimatePresence } from 'framer-motion';
 
@@ -119,7 +119,7 @@ export default function App({
 					mapsData={mapsData}
 					footer={footerData}
 				/>
-				<FacebookMessenger />
+				{/* <FacebookMessenger /> */}
 			</div>
 		</ApolloProvider>
 	);
