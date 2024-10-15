@@ -1,21 +1,33 @@
-import Head from 'next/head';
-import HomePage from '../components/main/homepage/Homepage';
-import client from '../lib/apolloClient';
-import { ARTICLES } from '../lib/queries/articles';
-import { ENTERTAINMENTS } from '../lib/queries';
-import { SIGHTSEEING_HOMEPAGE } from '../lib/queries/sightseeingQueries';
-import { HOMEPAGE, HOMEPAGE_LOCATIONS } from '../lib/queries/homepageQueries';
-import { PRODUCTS } from '../lib/queries/productQueries';
-import WithTransition from '../components/utils/WithTransition';
+import { useEffect, useState } from "react";
+import Head from "next/head";
+import HomePage from "../components/main/homepage/Homepage";
+import client from "../lib/apolloClient";
+import { ARTICLES } from "../lib/queries/articles";
+import { ENTERTAINMENTS } from "../lib/queries";
+import { SIGHTSEEING_HOMEPAGE } from "../lib/queries/sightseeingQueries";
+import { HOMEPAGE, HOMEPAGE_LOCATIONS } from "../lib/queries/homepageQueries";
+import { PRODUCTS } from "../lib/queries/productQueries";
+import WithTransition from "../components/utils/WithTransition";
+import { getSiteVersion } from "../utils/siteVersion";
+import { get } from "lodash";
 
 export default function Home({
-	homepageData,
+	initialHomepageData,
 	articlesData,
 	entertainmentData,
 	locationsData,
 	sightseeingsData,
 	productsData,
 }) {
+	const [homepageData, setHomepageData] = useState(initialHomepageData[0]);
+	useEffect(() => {
+		const siteVersion = getSiteVersion(window.location.hostname);
+		if (siteVersion === "aovua.com.vn") {
+			setHomepageData(initialHomepageData[0]);
+		} else {
+			setHomepageData(initialHomepageData[1]);
+		}
+	}, [initialHomepageData]);
 
 	return (
 		<>
@@ -84,12 +96,13 @@ export const getStaticProps = async () => {
 
 	return {
 		props: {
-			homepageData: responses[0].data.homepage,
+			initialHomepageData: [responses[0].data.homepage, responses[0].data.homepageDaoNgocXanh],
 			articlesData: responses[1].data.articles,
 			entertainmentData: responses[2].data.entertainments,
 			locationsData: responses[3].data.locations,
 			sightseeingsData: responses[4].data.sightseeings,
 			productsData: responses[5].data.products,
 		},
+		revalidate: 60, // Revalidate every 60 seconds
 	};
 };

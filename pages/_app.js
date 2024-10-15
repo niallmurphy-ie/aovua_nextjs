@@ -63,13 +63,20 @@ export default function App({
 		url = window.location.href;
 		siteVersion = getSiteVersion(window.location.hostname);
 	}
+	let companyName = '';
+	if (siteVersion === "aovua.com.vn") {
+		companyName = "Ao Vua JSC.";
+	} else {
+		companyName = "Khu Du Lịch Đảo Ngọc Xanh"
+	}
+
 	return (
 		<ApolloProvider client={client}>
 			<div className="App">
 				<Head>
 					<link rel="icon" href="/favicon.ico" />
 					<meta property="og:locale" content="vi_VN" />
-					<meta name="og:title" content="Ao Vua JSC." />
+					<meta name="og:title" content={companyName} />
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="og:url" content={url} />
 					<link
@@ -97,9 +104,9 @@ export default function App({
 					/>
 					<meta
 						name="apple-mobile-web-app-title"
-						content="Ao Vua JSC."
+						content={companyName}
 					/>
-					<meta name="application-name" content="Ao Vua JSC." />
+					<meta name="application-name" content={companyName} />
 					<meta name="msapplication-TileColor" content="#ffffff" />
 					<meta name="theme-color" content="#ffffff" />
 				</Head>
@@ -113,11 +120,6 @@ export default function App({
 					footer={footerData}
 					siteVersion={siteVersion}
 				/>
-				{siteVersion === 'aovua.niallmurphy.dev' && (
-					<div style={{ display: 'none' }}>
-						This is a hidden message for the aovua.niallmurphy.dev domain.
-					</div>
-				)}
 			</div>
 		</ApolloProvider>
 	);

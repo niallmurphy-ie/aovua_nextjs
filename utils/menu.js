@@ -90,7 +90,7 @@ export const AoVuaMenu = () => {
 	};
 };
 
-export const NiallMurphyMenu = () => {
+export const DaoNgocXanhMenu = () => {
 	return {
 		title: 'Menu',
 		components: [
@@ -102,37 +102,6 @@ export const NiallMurphyMenu = () => {
 			{
 				title: 'Giới thiệu',
 				link: '/gioi-thieu/ve-cong-ty',
-				subMenu: null,
-			},
-			{
-				title: 'Địa điểm',
-				link: null,
-				subMenu: [
-					{
-						title: 'Khu du lịch Ao Vua',
-						link: '/ao-vua-xanh/',
-					},
-					{
-						title: 'Trung Tâm Chăm Sóc Sức Khỏe Ao Vua',
-						link: '/trung-tam-cham-soc-suc-khoe-ao-vua',
-					},
-					{
-						title: 'Khu du lịch Đảo Ngọc Xanh',
-						link: '/dao-ngoc-xanh/',
-					},
-					{
-						title: 'Khu du lịch Đầm Long',
-						link: '/dam-long/',
-					},
-					{
-						title: 'Công viên Vĩnh Hằng',
-						link: '/cong-vien-vinh-hang/',
-					},
-				],
-			},
-			{
-				title: 'Sản phẩm',
-				link: '/san-pham/ngu-coc-thuc-duong',
 				subMenu: null,
 			},
 			{
@@ -176,8 +145,8 @@ export const NiallMurphyMenu = () => {
 			},
 		],
 		contact: {
-			phone: '0968-910-998',
-			email: 'aovuajsc@gmail.com',
+			phone: '0210-655-8822',
+			email: 'dulichdaongocxanh.av@gmail.com',
 		},
 	};
 };
@@ -185,7 +154,7 @@ export const NiallMurphyMenu = () => {
 export const getMenu = (siteVersion) => {
 	switch (siteVersion) {
 		case 'aovua.niallmurphy.dev':
-			return NiallMurphyMenu();
+			return DaoNgocXanhMenu();
 		case 'aovua.com.vn':
 		default:
 			return AoVuaMenu();
