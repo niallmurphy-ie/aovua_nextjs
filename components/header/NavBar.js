@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 
-const NavBar = ({ home }) => {
+const NavBar = ({ home, siteVersion }) => {
 	const [scroll, setScroll] = React.useState(0);
 
 	const handleScroll = () => setScroll(document.documentElement.scrollTop);
@@ -18,7 +18,7 @@ const NavBar = ({ home }) => {
 
 	return (
 		<div className={className}>
-			<Header home={home} />
+			<Header home={home} siteVersion={siteVersion} />
 		</div>
 	);
 };

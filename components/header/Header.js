@@ -3,13 +3,13 @@ import Logo from '../../public/images/logo.png';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
-import { VietnameseMenu } from '../../utils/menu';
+import { getMenu } from '../../utils/menu';
 import { FadeInWhenVisible } from '../utils/Animations';
 
 import { DesktopMenu } from './DesktopMenu';
 
-const Header = ({ home }) => {
-	const menu = VietnameseMenu();
+const Header = ({ home, siteVersion }) => {
+	const menu = getMenu(siteVersion);
 
 	const parentClass = home ? 'header-home middle-header' : 'middle-header';
 	const headerClass = home ? 'header-style-2' : 'header-style-3';

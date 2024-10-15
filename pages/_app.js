@@ -47,6 +47,7 @@ import NavBar from '../components/header/NavBar';
 // import FacebookMessenger from '../components/utils/FacebookMessenger';
 import React from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { getSiteVersion } from '../utils/siteVersion';
 
 export default function App({
 	Component,
@@ -57,20 +58,16 @@ export default function App({
 	...appProps
 }) {
 	let url = '';
+	let siteVersion = '';
 	if (typeof window !== 'undefined') {
 		url = window.location.href;
+		siteVersion = getSiteVersion(window.location.hostname);
 	}
 	return (
 		<ApolloProvider client={client}>
 			<div className="App">
 				<Head>
 					<link rel="icon" href="/favicon.ico" />
-					{/* <meta
-						property="og:image"
-						content={`https://og-image.vercel.app/${encodeURI(
-							'Ao Vua'
-						)}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-					/> */}
 					<meta property="og:locale" content="vi_VN" />
 					<meta name="og:title" content="Ao Vua JSC." />
 					<meta name="twitter:card" content="summary_large_image" />
@@ -106,29 +103,25 @@ export default function App({
 					<meta name="msapplication-TileColor" content="#ffffff" />
 					<meta name="theme-color" content="#ffffff" />
 				</Head>
-				<NavBar home={appProps?.router.asPath === '/'} />
-				<AnimatePresence
-					exitBeforeEnter
-					// initial={false}
-					// onExitComplete={() => window.scrollTo(0, 0)}
-				>
-					<Component {...pageProps} />
+				<NavBar home={appProps?.router.asPath === '/'} siteVersion={siteVersion} />
+				<AnimatePresence exitBeforeEnter>
+					<Component {...pageProps} siteVersion={siteVersion} />
 				</AnimatePresence>
 				<Footer
 					contactData={contactData}
 					mapsData={mapsData}
 					footer={footerData}
+					siteVersion={siteVersion}
 				/>
-				{/* <FacebookMessenger /> */}
+				{siteVersion === 'aovua.niallmurphy.dev' && (
+					<div style={{ display: 'none' }}>
+						This is a hidden message for the aovua.niallmurphy.dev domain.
+					</div>
+				)}
 			</div>
 		</ApolloProvider>
 	);
 }
-
-// Only uncomment this method if you have blocking data requirements for
-// every single page in your application. This disables the ability to
-// perform automatic static optimization, causing every page in your app to
-// be server-side rendered.
 
 App.getInitialProps = async (appContext) => {
 	const appProps = await NextApp.getInitialProps(appContext);
